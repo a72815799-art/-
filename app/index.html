@@ -68,6 +68,8 @@ main{max-width:1160px; margin:0 auto; padding-left:max(16px,env(safe-area-inset-
 .chip.ok{background:var(--ok-soft); color:var(--ok)} .chip.warn{background:var(--warn-soft); color:var(--warn)} .chip.stop{background:var(--stop-soft); color:var(--stop)}
 input[type=text],input[type=search],input[type=number],select,textarea{background:var(--surface); border:1px solid var(--line); border-radius:7px; padding:7px 10px; width:100%}
 textarea{min-height:92px; resize:vertical; line-height:1.6}
+input[type=range]{width:100%; accent-color:var(--accent); margin:2px 0}
+label.f small{font-weight:400; color:var(--muted)}
 label.f{display:flex; flex-direction:column; gap:4px; font-size:13px; color:var(--muted); font-weight:500}
 
 /* hero */
@@ -216,6 +218,7 @@ footer{border-top:1px solid var(--line); margin-top:40px; padding-top:16px; font
     <a href="#codes" data-r="codes">코드타입</a>
     <a href="#compare" data-r="compare">성인 vs 청소년</a>
     <a href="#analyzer" data-r="analyzer">프로파일 분석기</a>
+    <a href="#lab" data-r="lab">실험실</a>
     <a href="#cases" data-r="cases">사례 실습</a>
     <a href="#quiz" data-r="quiz">퀴즈</a>
     <a href="#mentor" data-r="mentor">슈퍼바이저</a>
@@ -230,4 +233,5 @@ footer{border-top:1px solid var(--line); margin-top:40px; padding-top:16px; font
 <script src="data-mmpia.js"></script>
 <script src="data-extra.js"></script>
 <script src="engine.js"></script>
+<script src="sim.js"></script>
 <script src="app.js"></script>

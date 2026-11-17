@@ -66,6 +66,10 @@ function chart(p, opt={}){
     pts.forEach(([k,i])=>{ const t=+p[k], h=t>=65; s+=`<circle cx="${xs(i).toFixed(1)}" cy="${y(t).toFixed(1)}" r="${h?4.2:3.4}" fill="${h?'var(--plot)':'var(--surface)'}" stroke="${h?'var(--plot)':'var(--ink)'}" stroke-width="1.5"/>`;
       if(opt.labels!==false) s+=`<text x="${xs(i).toFixed(1)}" y="${(y(t)-8).toFixed(1)}" text-anchor="middle" font-size="10" fill="${h?'var(--plot)':'var(--muted)'}" font-family="IBM Plex Mono, monospace">${t}</text>`; });
     return s; };
+  if(opt.band){ const b=1.96*opt.band; CLI.forEach((k,j)=>{ if(!MMPI.has(p,k)) return; const i=j+VAL.length, t=+p[k], x=xs(i);
+      g+=`<rect x="${(x-6).toFixed(1)}" y="${y(t+b).toFixed(1)}" width="12" height="${(y(t-b)-y(t+b)).toFixed(1)}" rx="3" fill="var(--accent)" fill-opacity="0.16"/>`; }); }
+  if(opt.ghost){ const gl=(keys,off)=>{ const pts=keys.map((k,i)=>[k,i+off]).filter(([k])=>MMPI.has(opt.ghost,k)); return pts.length?`<polyline fill="none" stroke="var(--muted)" stroke-width="1.3" stroke-dasharray="5 4" points="${pts.map(([k,i])=>`${xs(i).toFixed(1)},${y(+opt.ghost[k]).toFixed(1)}`).join(' ')}"/>`:''; };
+    g+=gl(VAL,0)+gl(CLI,VAL.length); }
   g += line(VAL,0) + line(CLI,VAL.length);
   g+=`<text x="${left-6}" y="${y(65)+4}" text-anchor="end" font-size="10.5" font-weight="600" fill="var(--plot)" font-family="IBM Plex Mono, monospace">65</text>`;
   return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="MMPI-2 프로파일 차트">${g}</svg>`;
@@ -89,7 +93,7 @@ function scoreTable(p, ver){
 }
 
 /* ── 라우터 ── */
-const routes = {home:viewHome, theory:viewTheory, scales:viewScales, codes:viewCodes, analyzer:viewAnalyzer, cases:viewCases, quiz:viewQuiz, mentor:viewMentor, compare:viewCompare};
+const routes = {home:viewHome, theory:viewTheory, scales:viewScales, codes:viewCodes, analyzer:viewAnalyzer, cases:viewCases, quiz:viewQuiz, mentor:viewMentor, compare:viewCompare, lab:viewLab, stability:viewStability};
 function route(){
   const h = (location.hash||'#home').slice(1);
   let r = h, arg=null;
@@ -97,7 +101,8 @@ function route(){
   else if(h.startsWith('case-')){ r='cases'; arg=h.slice(5); }
   else if(h==='cases-teen'){ r='cases'; arg='#teen'; }
   if(!routes[r]) r='home';
-  document.querySelectorAll('#tabs a').forEach(a=>a.classList.toggle('on', a.dataset.r===r));
+  const tab = r==='stability' ? 'lab' : r;
+  document.querySelectorAll('#tabs a').forEach(a=>a.classList.toggle('on', a.dataset.r===tab));
   app.innerHTML=''; routes[r](arg); window.scrollTo(0,0);
 }
 window.addEventListener('hashchange', route);
@@ -139,9 +144,9 @@ function viewHome(){
         const mods = MODULES.filter(m=>m.level===L.n);
         let links = mods.map(m=>`<a href="#module-${m.id}" class="${prog.mods[m.id]?'done':''}">${prog.mods[m.id]?'✓ ':''}${esc(m.title)}</a>`).join('');
         let tot = mods.length, done = mods.filter(m=>prog.mods[m.id]).length;
-        if(L.n===2) links += `<a href="#quiz">타당도 퀴즈</a>`;
+        if(L.n===2) links += `<a href="#quiz">타당도 퀴즈</a><a href="#lab">응답 양식 실험실</a>`;
         if(L.n===3) links += `<a href="#scales">척도 사전</a>`;
-        if(L.n===4) links += `<a href="#codes">코드타입 사전</a>`;
+        if(L.n===4) links += `<a href="#codes">코드타입 사전</a><a href="#stability">코드타입 안정성 실험</a>`;
         if(L.n===6) links += `<a href="#analyzer">프로파일 분석기</a>`;
         if(L.n===7){ const ad=CASES.filter(c=>c.version!=='A'); tot=ad.length; done=ad.filter(c=>prog.cases[c.id]).length; links = `<a href="#cases">성인 사례 ${ad.length}개</a><a href="#mentor">슈퍼바이저에게 질문</a>`; }
         if(L.n===8){ const ac=CASES.filter(c=>c.version==='A'); links += `<a href="#compare">성인 vs 청소년 비교</a><a href="#cases-teen">청소년 사례 ${ac.length}개</a>`; tot+=ac.length; done+=ac.filter(c=>prog.cases[c.id]).length; }
@@ -556,6 +561,155 @@ function viewMentor(){
     $('#sugg').onclick = e=>{ const b=e.target.closest('button'); if(b) ask(b.textContent); };
   });
   $('#mclear').onclick = ()=>{ turns=[]; render(); };
+}
+
+/* ════════ 실험실 ════════ */
+const LAB_NOTE = '교육용 단순화 모형입니다. 척도별 문항 수는 MMPI-2 공개 자료를 따랐지만, “그렇다” 채점 비율과 규준 평균·표준편차는 방향과 크기를 보여 주기 위한 근사치이며 실제 채점 키나 규준이 아닙니다. K 교정은 반영하지 않습니다. 정확한 점수가 아니라 “어떤 척도가 어느 방향으로 움직이는가”를 배우는 용도로 쓰세요.';
+const labTabs = cur => `<div class="seg" style="margin-top:4px"><a class="btn sm ${cur==='lab'?'pri':''}" href="#lab">응답 양식 실험실</a><a class="btn sm ${cur==='stability'?'pri':''}" href="#stability">측정오차와 코드타입 안정성</a></div>`;
+const ADULT = () => CASES.filter(c=>c.version!=='A');
+const pct = x => Math.round(x*100)+'%';
+const STYLES = [
+  {id:'none', name:'왜곡 없음(내용대로 응답)', mix:()=>({})},
+  {id:'random', name:'무선반응', mix:i=>({random:i})},
+  {id:'yea', name:'“그렇다” 고정반응(묵종)', mix:i=>({bias:i})},
+  {id:'nay', name:'“아니다” 고정반응', mix:i=>({bias:-i})},
+  {id:'over', name:'증상 과대보고', mix:i=>({over:i})},
+  {id:'under', name:'좋게 보이기(과소보고)', mix:i=>({under:i})},
+];
+const STYLE_WHY = {
+  none:'응답 양식의 왜곡이 없습니다. VRIN·TRIN이 정상이고 F 계열과 L·K·S도 극단적이지 않다면 내용대로 응답했다고 판단합니다.',
+  random:'무선반응은 VRIN을 가장 먼저, 가장 크게 올립니다. 동시에 F 계열이 오르고 임상척도 전반이 60~80대로 올라 “모든 척도가 고르게 높은” 모양이 됩니다. VRIN을 먼저 보지 않으면 심한 정신병리로 오해합니다.',
+  yea:'“그렇다”로 몰아서 답하면 TRIN이 T 방향으로 오르고, “그렇다”로 채점되는 문항이 많은 F, 6·7·8·9번이 오릅니다. 반대로 대부분 “아니다”로 채점되는 L·K·S는 바닥으로 내려갑니다. 과대보고와 비슷해 보이지만 TRIN이 단서입니다.',
+  nay:'“아니다”로 몰아서 답하면 TRIN이 F 방향으로 오르고, “아니다”로 채점되는 L·K·S와 1·2·3번이 오릅니다. 방어적인 프로파일처럼 보이지만 TRIN이 단서입니다.',
+  over:'증상을 과장하면 VRIN·TRIN은 정상인데 F, F(B), Fp가 함께 오르고 K·S는 내려갑니다. 정신과 환자도 드물게 응답하는 Fp가 오르는 것이 실제 심한 병리와 구분되는 핵심입니다.',
+  under:'좋게 보이려 하면 L·K·S가 오르고 F와 임상척도가 내려갑니다. 정상 범위 프로파일이 나와도 실제 문제가 없다는 뜻이 아닙니다. 3번은 부인 문항 때문에 덜 내려가거나 오히려 오를 수 있습니다.',
+};
+const VAL_KEYS = ['VRIN','TRIN','F','Fb','Fp','FBS','L','K','S'], CLI_KEYS = ['Hs','D','Hy','Pd','Pa','Pt','Sc','Ma','Si'];
+
+let labState = store.get('lab', {base:'', sex:'M', mix:{random:0,bias:0,over:0,under:0}, quiz:{n:0,ok:0}});
+function viewLab(){
+  const st = labState; const save = ()=>store.set('lab', labState);
+  const L = MMPILAB;
+  app.innerHTML = `<div class="stack"><div><div class="eyebrow">실험실</div><h1 style="margin-top:6px">응답 양식 실험실</h1>
+    <p class="lede" style="margin-top:8px">같은 사람이 무작위로, 한쪽으로 몰아서, 과장해서, 좋게 보이려고 답하면 프로파일이 어떻게 바뀔까요? 슬라이더로 응답 양식을 섞으면 척도 점수와 해석 엔진의 타당도 판정이 실시간으로 바뀝니다. 점선은 왜곡 전의 기준 프로파일입니다.</p>${labTabs('lab')}</div>
+  <div class="az">
+    <aside class="panel stack" style="gap:12px; padding:16px">
+      <label class="f">기준 프로파일 (왜곡 전의 실제 상태)<select id="lb-base"><option value="">평균 응답자 (모든 척도 T 50)</option>${ADULT().map(c=>`<option value="${c.id}" ${st.base===c.id?'selected':''}>사례 ${+c.id.slice(1)} · ${esc(c.title)}</option>`).join('')}</select></label>
+      ${[['random','무선반응','문항을 읽지 않고 아무렇게나 답한 비율',0,100],['bias','고정반응','← “아니다”로 몰기 · “그렇다”로 몰기 →',-100,100],['over','증상 과대보고','증상을 실제보다 나쁘게 보이려는 정도',0,100],['under','좋게 보이기','문제를 숨기고 바람직하게 보이려는 정도',0,100]].map(([k,n,h,mn,mx])=>`<label class="f" style="gap:2px"><span class="row" style="justify-content:space-between"><b style="color:var(--ink)">${n}</b><span class="mono" id="lv-${k}"></span></span><input type="range" id="lr-${k}" min="${mn}" max="${mx}" step="5" value="${Math.round((st.mix[k]||0)*100)}"><small>${h}</small></label>`).join('')}
+      <div><div class="note" style="margin-bottom:6px">빠른 설정</div><div class="row" style="gap:6px">
+        <button class="btn sm" data-pre='{}'>왜곡 없음</button><button class="btn sm" data-pre='{"random":0.3}'>무선 30%</button><button class="btn sm" data-pre='{"random":1}'>완전 무선</button><button class="btn sm" data-pre='{"bias":1}'>모두 그렇다</button><button class="btn sm" data-pre='{"bias":-1}'>모두 아니다</button><button class="btn sm" data-pre='{"over":0.6}'>과장 60%</button><button class="btn sm" data-pre='{"under":0.6}'>좋게 60%</button></div></div>
+      <p class="note" style="margin:0">${LAB_NOTE}</p>
+    </aside>
+    <section class="stack" style="min-width:0">
+      <div class="panel chartwrap" style="padding:12px 10px 6px" id="lb-chart"></div>
+      <div class="row" id="lb-chips"></div>
+      <div class="grid2" style="align-items:start">
+        <div class="stepbox"><div class="sh"><span>엔진의 타당도 판정</span></div><ul id="lb-valid"></ul></div>
+        <div class="stepbox"><div class="sh"><span>가장 많이 움직인 척도</span></div><ul id="lb-moved"></ul></div>
+      </div>
+      <div class="panel" id="lb-why"></div>
+    </section>
+  </div>
+  <section class="panel stack" style="gap:10px"><div class="row" style="justify-content:space-between"><h2>응답 양식 맞히기</h2><span class="chip mono" id="lq-score"></span></div>
+    <p class="note" style="margin:0">무작위로 고른 사례에 숨은 응답 양식을 섞었습니다. 프로파일만 보고 어떤 응답 양식인지 고르세요. 타당도 척도를 어떤 순서로 보는지가 실력입니다.</p>
+    <div id="lq"></div><button class="btn pri" id="lq-new" style="align-self:flex-start">새 문제</button></section>
+  </div>`;
+  const base = ()=> st.base ? CASES.find(c=>c.id===st.base).p : {};
+  const draw = ()=>{
+    ['random','bias','over','under'].forEach(k=>{ const v=st.mix[k]||0; $('#lv-'+k).textContent = k==='bias' ? (v===0?'0':(v>0?'그렇다 ':'아니다 ')+Math.round(Math.abs(v)*100)+'%') : Math.round(v*100)+'%'; });
+    const b = base(), sim = L.simulate(b, st.mix);
+    $('#lb-chart').innerHTML = chart(sim, {ghost: Object.keys(b).length? b : Object.fromEntries([...VAL_KEYS,...CLI_KEYS,'Mf'].map(k=>[k,50]))});
+    const r = MMPI.analyze(sim, {setting:'outpatient', sex:'M'});
+    const vc = r.validity==='invalid'?'stop':r.validity==='caution'?'warn':'ok';
+    $('#lb-chips').innerHTML = `<span class="chip ${vc}">타당도: ${r.vText}</span>${r.code?`<span class="chip acc">${esc(r.code.label)}</span>`:'<span class="chip">임상 해석 보류</span>'}${r.over?'<span class="chip warn">과대보고 신호</span>':''}${r.under?'<span class="chip warn">과소보고 신호</span>':''}`;
+    $('#lb-valid').innerHTML = r.steps[1].items.map(i=>`<li class="${i.tag}"><span>${i.text}</span></li>`).join('');
+    const ref = Object.keys(b).length? b : {};
+    const moved = [...VAL_KEYS,...CLI_KEYS].map(k=>({k, d: sim[k] - (ref[k]===undefined?50:+ref[k])})).filter(x=>x.d!==0).sort((a,b)=>Math.abs(b.d)-Math.abs(a.d)).slice(0,6);
+    $('#lb-moved').innerHTML = moved.length ? moved.map(x=>`<li class="${x.d>0?'warn':'info'}"><span><b class="mono">${esc(lab(x.k))}${x.k==='TRIN'?' '+sim.TRINdir:''}</b> ${x.d>0?'+':''}${x.d} <span class="note">(${ref[x.k]===undefined?50:ref[x.k]} → ${sim[x.k]})</span></span></li>`).join('') : '<li class="ok"><span>왜곡이 없어 기준 프로파일과 같습니다.</span></li>';
+    const dom = ['random','over','under'].map(k=>[k, st.mix[k]||0]).concat([[ (st.mix.bias||0)>=0?'yea':'nay', Math.abs(st.mix.bias||0)]]).sort((a,b)=>b[1]-a[1])[0];
+    const key = dom[1]>0 ? dom[0] : 'none';
+    $('#lb-why').innerHTML = `<h3 style="font-size:16px">${esc(STYLES.find(s=>s.id===key).name)}에서 일어나는 일</h3><p style="margin:6px 0 0">${STYLE_WHY[key]}</p>${(st.mix.random||0)>0 && (st.mix.random||0)<0.35 ? '<p class="note" style="margin-top:6px">무선반응 비율이 낮을 때는 VRIN이 주의 범위(70~79)에 머물 수 있습니다. 일부 문항만 대충 답한 경우를 VRIN이 완전히 잡아내지 못한다는 점도 기억하세요.</p>':''}`;
+  };
+  ['random','bias','over','under'].forEach(k=> $('#lr-'+k).addEventListener('input', e=>{ st.mix[k] = +e.target.value/100; save(); draw(); }));
+  $('#lb-base').onchange = e=>{ st.base=e.target.value; save(); draw(); };
+  app.querySelectorAll('[data-pre]').forEach(b=> b.onclick = ()=>{ st.mix = Object.assign({random:0,bias:0,over:0,under:0}, JSON.parse(b.dataset.pre)); ['random','bias','over','under'].forEach(k=>$('#lr-'+k).value=Math.round(st.mix[k]*100)); save(); draw(); });
+  draw();
+
+  // 맞히기 문제
+  const score = ()=>{ $('#lq-score').textContent = `정답 ${st.quiz.ok} / ${st.quiz.n}`; };
+  const newQ = ()=>{
+    const cs = ADULT(), c = cs[Math.floor(Math.random()*cs.length)], sty = STYLES[Math.floor(Math.random()*STYLES.length)];
+    const inten = 0.45 + Math.random()*0.45, sim = L.simulate(c.p, sty.mix(Math.round(inten*20)/20));
+    const opts = STYLES.slice().sort(()=>Math.random()-0.5);
+    $('#lq').innerHTML = `<div class="chartwrap">${chart(sim,{h:260})}</div><div class="row" style="gap:6px; margin-top:8px">${opts.map(o=>`<button class="btn sm" data-a="${o.id}">${esc(o.name)}</button>`).join('')}</div><div id="lq-res"></div>`;
+    $('#lq').querySelectorAll('[data-a]').forEach(btn=> btn.onclick = ()=>{
+      const ok = btn.dataset.a===sty.id; st.quiz.n++; if(ok) st.quiz.ok++; save(); score();
+      $('#lq').querySelectorAll('[data-a]').forEach(b=>{ b.disabled=true; if(b.dataset.a===sty.id) b.classList.add('pri'); });
+      const r = MMPI.analyze(sim,{setting:'outpatient',sex:'M'});
+      $('#lq-res').innerHTML = `<div class="q" style="margin-top:10px; padding:14px"><b>${ok?'정답입니다.':'오답입니다.'}</b> 정답은 <b>${esc(sty.name)}</b>${sty.id==='none'?'':` (강도 ${pct(Math.round(inten*20)/20)})`}이고, 기준 프로파일은 사례 ${+c.id.slice(1)}(${esc(c.code)})였습니다.<p style="margin:8px 0 0">${STYLE_WHY[sty.id]}</p><p class="note" style="margin:6px 0 0">엔진 판정: ${r.vText}${r.code?' · '+esc(r.code.label):''}</p></div>`;
+    });
+  };
+  $('#lq-new').onclick = newQ; score(); newQ();
+}
+
+let stabState = store.get('stab', {src:'c01', sem:5, seed:1, x1:78, x2:66});
+function viewStability(){
+  const st = stabState; const save = ()=>store.set('stab', stabState); const L = MMPILAB;
+  app.innerHTML = `<div class="stack"><div><div class="eyebrow">실험실</div><h1 style="margin-top:6px">측정오차와 코드타입 안정성</h1>
+    <p class="lede" style="margin-top:8px">모든 점수에는 측정오차가 있습니다. 같은 사람이 다시 검사를 받으면 코드타입은 얼마나 유지될까요? 각 척도에 측정오차만큼 무작위 잡음을 넣어 재검사를 2,000번 시뮬레이션합니다. “잘 정의된 코드(5T 이상)만 믿으라”는 규칙이 왜 필요한지 숫자로 확인하세요.</p>${labTabs('stability')}</div>
+  <div class="az">
+    <aside class="panel stack" style="gap:12px; padding:16px">
+      <label class="f">프로파일<select id="sb-src"><option value="az" ${st.src==='az'?'selected':''}>프로파일 분석기의 현재 점수</option>${CASES.map(c=>`<option value="${c.id}" ${st.src===c.id?'selected':''}>${c.version==='A'?'[A] ':''}사례 ${+c.id.slice(1)} · ${esc(c.title)}</option>`).join('')}</select></label>
+      <label class="f" style="gap:2px"><span class="row" style="justify-content:space-between"><b style="color:var(--ink)">측정의 표준오차(SEM)</b><span class="mono" id="sb-semv"></span></span><input type="range" id="sb-sem" min="2" max="9" step="0.5" value="${st.sem}"><small>T점수 단위. 차트의 띠는 ±1.96 SEM(95% 구간)입니다.</small></label>
+      <div class="row" style="gap:6px; align-items:flex-end; flex-wrap:nowrap"><label class="f" style="flex:1">재검사 신뢰도 r로 계산<input type="number" id="sb-r" min="0.5" max="0.99" step="0.01" value="0.80"></label><button class="btn sm" id="sb-rapply">SEM에 적용</button></div>
+      <p class="note" style="margin:0">SEM = 10 × √(1 − r). MMPI-2 임상척도의 단기 재검사 신뢰도는 대체로 0.7~0.9대로 보고되며, 그에 해당하는 SEM은 약 3~5.5입니다. 정확한 값은 매뉴얼의 척도별 신뢰도를 확인하세요. 재검사 차이의 표준편차는 √2 × SEM으로 계산합니다.</p>
+      <button class="btn pri" id="sb-run">재검사 2,000번 시뮬레이션</button>
+    </aside>
+    <section class="stack" style="min-width:0">
+      <div class="panel chartwrap" style="padding:12px 10px 6px" id="sb-chart"></div>
+      <div class="panel" id="sb-res"></div>
+    </section>
+  </div>
+  <div class="grid2" style="align-items:start">
+    <section class="panel stack" style="gap:8px"><h2>정의 수준이 안정성을 결정한다</h2><p class="note" style="margin:0">2번 75, 7번 74인 2-7 프로파일에서 세 번째 척도(8번)만 낮춰 가며, 재검사에서도 2·7번이 상위 두 척도로 남을 확률을 계산했습니다. 가로축은 정의 수준(두 번째 척도와 세 번째 척도의 차이)입니다.</p><div class="chartwrap" id="sb-curve"></div></section>
+    <section class="panel stack" style="gap:8px"><h2>신뢰할 수 있는 변화 지수 (RCI)</h2><p class="note" style="margin:0">치료 전후 점수 차이가 측정오차를 넘어서는 “진짜 변화”인지 판정합니다. RCI = (재검사 − 처음) ÷ (√2 × SEM), |RCI| ≥ 1.96이면 95% 수준에서 의미 있는 변화입니다(Jacobson·Truax).</p>
+      <div class="row" style="gap:8px; flex-wrap:nowrap"><label class="f" style="flex:1">처음 T점수<input type="number" id="rc-1" value="${st.x1}"></label><label class="f" style="flex:1">재검사 T점수<input type="number" id="rc-2" value="${st.x2}"></label></div><div id="rc-out"></div></section>
+  </div></div>`;
+  const src = ()=>{ if(st.src==='az') return {p:azState.p||{}, ver:azState.ver}; const c=CASES.find(x=>x.id===st.src)||CASES[0]; return {p:c.p, ver:c.version==='A'?'A':'2'}; };
+  const drawChart = ()=>{ const s=src(); $('#sb-semv').textContent = st.sem.toFixed(1)+' T'; $('#sb-chart').innerHTML = chart(s.p,{ver:s.ver, band:st.sem}); };
+  const run = ()=>{
+    const s=src(); const res = L.retest(s.p, {sem:st.sem, n:2000, seed:st.seed, version:s.ver==='A'?'A':undefined});
+    const top = res.dist.slice(0,6); const other = 1 - top.reduce((a,x)=>a+x.p,0);
+    const def = res.orig.def;
+    const msg = res.orig.key===null ? '코드타입을 정할 수 있는 임상척도 점수가 부족합니다.' :
+      (()=>{ const key = res.pSamePair!==null ? res.pSamePair : res.pSame;
+      return `같은 사람이 다시 검사를 받으면 <b>약 ${pct(res.pSame)}</b>의 확률로 정확히 같은 코드(${esc(L.codeLabel(res.orig.key))})가 나오고${res.pSamePair!==null?`, 같은 2개 척도 코드(상위 두 척도가 같고 둘 다 65 이상)는 <b>${pct(res.pSamePair)}</b>`:''}, 가장 높은 척도는 <b>${pct(res.pSameHigh)}</b>의 확률로 유지됩니다.${def!==null?` 이 프로파일의 정의 수준은 ${def}T입니다.`:''} ${key>=0.75?'코드타입의 기술 내용을 비교적 확신을 갖고 적용할 수 있습니다.':key>=0.5?'코드타입은 가설로 쓰되, 인접 척도의 의미를 함께 고려하세요.':'코드타입이 측정오차만으로도 쉽게 바뀝니다. 개별 척도 중심으로 해석하세요.'}`; })();
+    $('#sb-res').innerHTML = `<div class="row" style="justify-content:space-between"><h3 style="font-size:16px">시뮬레이션 결과</h3><button class="btn sm" id="sb-again">다른 난수로 다시</button></div><p style="margin:8px 0 12px">${msg}</p>
+      <div class="stack" style="gap:6px">${top.map(x=>`<div style="display:grid; grid-template-columns:96px minmax(0,1fr) 48px; gap:10px; align-items:center"><span class="mono" style="font-weight:${x.key===res.orig.key?700:400}; color:${x.key===res.orig.key?'var(--plot)':'var(--ink)'}">${esc(L.codeLabel(x.key))}</span><div class="scorebar"><i style="width:${(x.p*100).toFixed(1)}%; background:${x.key===res.orig.key?'var(--plot)':'var(--accent)'}"></i></div><span class="mono note" style="text-align:right">${pct(x.p)}</span></div>`).join('')}${other>0.005?`<div class="note">그 밖의 코드 ${pct(other)}</div>`:''}</div>
+      <p class="note" style="margin-top:10px">시뮬레이션 ${res.n.toLocaleString()}회, SEM ${res.sem}T. 코드 결정 규칙은 분석기 엔진과 같습니다(테스트로 일치를 검증). 척도마다 SEM이 같다고 가정한 단순화 모형입니다.</p>`;
+    $('#sb-again').onclick = ()=>{ st.seed++; save(); run(); };
+  };
+  const curve = ()=>{
+    const pts = L.definitionCurve({sem:st.sem, n:1500});
+    const W=560,H=250,l=46,r=16,t=16,b=40, X=d=>l+d/15*(W-l-r), Y=p=>t+(1-p)*(H-t-b);
+    let g=''; for(let p=0;p<=1.001;p+=0.25){ g+=`<line x1="${l}" x2="${W-r}" y1="${Y(p)}" y2="${Y(p)}" stroke="var(--line)" stroke-width="0.7"/><text x="${l-6}" y="${Y(p)+4}" text-anchor="end" font-size="11" fill="var(--muted)" font-family="IBM Plex Mono, monospace">${Math.round(p*100)}%</text>`; }
+    for(let d=0;d<=15;d+=5) g+=`<text x="${X(d)}" y="${H-b+16}" text-anchor="middle" font-size="11" fill="var(--muted)" font-family="IBM Plex Mono, monospace">${d}T</text>`;
+    g+=`<line x1="${X(5)}" x2="${X(5)}" y1="${t}" y2="${H-b}" stroke="var(--plot)" stroke-dasharray="4 3"/><text x="${X(5)+5}" y="${t+12}" font-size="11" fill="var(--plot)">잘 정의된 코드 기준(5T)</text>`;
+    g+=`<polyline fill="none" stroke="var(--accent)" stroke-width="2" points="${pts.map(q=>`${X(q.def).toFixed(1)},${Y(q.p).toFixed(1)}`).join(' ')}"/>`;
+    pts.forEach(q=>{ g+=`<circle cx="${X(q.def).toFixed(1)}" cy="${Y(q.p).toFixed(1)}" r="${q.def===5?4.5:3}" fill="${q.def===5?'var(--plot)':'var(--accent)'}"/>`; });
+    const p5=pts[5].p, p0=pts[0].p, p10=pts[10].p;
+    g+=`<text x="${W/2}" y="${H-6}" text-anchor="middle" font-size="11.5" fill="var(--muted)">정의 수준 (두 번째 − 세 번째 척도)</text>`;
+    $('#sb-curve').innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="정의 수준별 코드 유지 확률">${g}</svg><p class="note" style="margin:6px 0 0">SEM ${st.sem}T일 때 유지 확률: 정의 수준 0T ${pct(p0)}, 5T ${pct(p5)}, 10T ${pct(p10)}.</p>`;
+  };
+  const rcOut = ()=>{ st.x1=+$('#rc-1').value; st.x2=+$('#rc-2').value; save(); const o=L.rci(st.x1, st.x2, st.sem);
+    $('#rc-out').innerHTML = `<div class="q" style="padding:12px"><span class="mono">RCI = ${o.rci.toFixed(2)}</span> → <b style="color:${o.reliable?'var(--ok)':'var(--warn)'}">${o.reliable?'측정오차를 넘어서는 의미 있는 변화':'측정오차 범위 안의 변화일 수 있음'}</b><p class="note" style="margin:6px 0 0">SEM ${st.sem}T에서 의미 있는 변화로 보려면 최소 약 ${o.minChange}T 이상 차이가 나야 합니다.</p></div>`; };
+  $('#sb-src').onchange = e=>{ st.src=e.target.value; save(); drawChart(); run(); };
+  $('#sb-sem').addEventListener('input', e=>{ st.sem=+e.target.value; save(); drawChart(); rcOut(); });
+  $('#sb-sem').addEventListener('change', ()=>{ run(); curve(); });
+  $('#sb-rapply').onclick = ()=>{ const r=+$('#sb-r').value; if(!(r>0&&r<1)) return; st.sem=Math.round(L.semFromReliability(r)*2)/2; $('#sb-sem').value=st.sem; save(); drawChart(); run(); curve(); rcOut(); };
+  $('#sb-run').onclick = run;
+  ['rc-1','rc-2'].forEach(id=> $('#'+id).addEventListener('input', rcOut));
+  drawChart(); run(); curve(); rcOut();
 }
 
 route();

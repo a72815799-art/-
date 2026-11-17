@@ -72,8 +72,12 @@ describe('MMPI-2 코드타입 결정', () => {
     assert.equal(r.code.key, '27');
     assert.equal(r.code.def, 72 - 50);
   });
-  test('1등과 2등이 10T 이상 차이 나면 단독 상승', () => {
-    assert.equal(run2({ Ma: 85, Pd: 70 }).code.key, '9');
+  test('두 번째 척도가 65 미만일 때만 단독 상승', () => {
+    assert.equal(run2({ Ma: 85, Pd: 64 }).code.key, '9');
+  });
+  test('두 척도가 모두 65 이상이면 차이가 10T 이상이어도 2개 척도 코드 (Graham)', () => {
+    assert.equal(run2({ D: 85, Pt: 70 }).code.key, '27');
+    assert.equal(runA({ Pd: 85, Ma: 70 }).code.key, '49');
   });
   test('세 번째 척도도 65 이상이고 사전에 있는 조합이면 3개 척도 코드', () => {
     assert.equal(run2({ D: 78, Pt: 75, Sc: 72 }).code.key, '278');

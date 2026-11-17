@@ -125,7 +125,7 @@ function analyze(p, ctx){
     if(top.t<65){
       add(s4,'info',`가장 높은 척도가 ${NUM[top.k]}번(${top.t})으로 T 65 미만인 정상 범위 프로파일이다.${top.t>=60?` T 60~64인 ${r.filter(x=>x.t>=60).map(x=>NUM[x.k]+'번').join(', ')}은 경향성 수준으로 서술한다.`:''}`);
       if(under) add(s4,'warn','과소보고 지표가 있으므로, 정상 범위라는 결과를 “문제없음”으로 해석해서는 안 된다.');
-    } else if(sec.t<65 || top.t-sec.t>=10){
+    } else if(sec.t<65){ // 두 번째 척도가 65 미만일 때만 단독 상승(Graham). 둘 다 65 이상이면 차이가 커도 2개 척도 코드
       key = NUM[top.k]; label = `${NUM[top.k]} 단독 상승 (spike)`; members=[top.k];
       def = top.t-sec.t;
       add(s4,'info',`${NUM[top.k]}번(${top.t}) 단독 상승. 두 번째 척도 ${NUM[sec.k]}번(${sec.t})과 ${def}T 차이.`);
@@ -336,7 +336,7 @@ function analyzeA(p, ctx){
     let key='WNL', label='정상 범위 (WNL)', def=null, members=[];
     if(top.t<60){ add(s4,'info','모든 임상척도가 T 60 미만이다. 과소보고와 의뢰 맥락을 확인한다.'); }
     else if(top.t<65){ add(s4,'info',`가장 높은 척도가 ${NUM[top.k]}번(${top.t})으로 경계 범위다. 코드타입 대신 경계 범위 척도의 의미를 중심으로 해석한다.`); label='경계 범위 프로파일'; }
-    else if(sec.t<65 || top.t-sec.t>=10){ key=NUM[top.k]; members=[top.k]; def=top.t-sec.t; label=`${NUM[top.k]} 단독 상승`; add(s4,'info',`${NUM[top.k]}번(${top.t}) 단독 상승. 두 번째 척도와 ${def}T 차이.`); }
+    else if(sec.t<65){ key=NUM[top.k]; members=[top.k]; def=top.t-sec.t; label=`${NUM[top.k]} 단독 상승`; add(s4,'info',`${NUM[top.k]}번(${top.t}) 단독 상승. 두 번째 척도와 ${def}T 차이.`); }
     else { members=[top.k,sec.k]; key=[NUM[top.k],NUM[sec.k]].sort().join(''); def=thd?sec.t-thd.t:null; label=`${NUM[top.k]}-${NUM[sec.k]} 코드`; add(s4,'info',`${label}: ${NUM[top.k]}번 ${top.t}, ${NUM[sec.k]}번 ${sec.t}.`); if(thd&&thd.t>=65) add(s4,'info',`세 번째 척도 ${NUM[thd.k]}번(${thd.t})도 65 이상이다. 함께 고려한다.`); }
     if(def!==null && members.length){ if(def>=5) add(s4,'ok',`정의 수준 ${def}T: 잘 정의된 코드다. 청소년 코드타입 기술을 신중하게 적용한다.`); else add(s4,'warn',`정의 수준 ${def}T(<5): 청소년은 코드 안정성이 낮다. 코드타입보다 개별 척도를 중심으로 해석한다.`); }
     const ca=(window.CODETYPES_A||{})[key];
