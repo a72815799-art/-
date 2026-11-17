@@ -1,0 +1,216 @@
+{
+  "c01": {
+    "title": "승진 후 잠 못 드는 과장",
+    "intended": "7-2",
+    "version": "MMPI-2",
+    "validity": "valid",
+    "code": "7-2 코드",
+    "definition": 15,
+    "flags": [
+      "suicide"
+    ]
+  },
+  "c02": {
+    "title": "검사 결과가 모두 정상이라는 통증 환자",
+    "intended": "3-1 (전환 V)",
+    "version": "MMPI-2",
+    "validity": "valid",
+    "code": "3-1 코드",
+    "definition": 16,
+    "flags": []
+  },
+  "c03": {
+    "title": "법원 명령으로 온 22세",
+    "intended": "4-9",
+    "version": "MMPI-2",
+    "validity": "valid",
+    "code": "4-9 코드",
+    "definition": 16,
+    "flags": [
+      "substance",
+      "violence"
+    ]
+  },
+  "c04": {
+    "title": "감시당한다고 느끼는 입원 환자",
+    "intended": "6-8",
+    "version": "MMPI-2",
+    "validity": "valid",
+    "code": "6-8 코드",
+    "definition": 18,
+    "flags": [
+      "mood",
+      "psychosis"
+    ]
+  },
+  "c05": {
+    "title": "산재 후 장해 판정 평가",
+    "intended": "과대보고",
+    "version": "MMPI-2",
+    "validity": "invalid",
+    "code": null,
+    "definition": null,
+    "flags": []
+  },
+  "c06": {
+    "title": "양육권 소송 중인 어머니",
+    "intended": "과소보고 + 경도 상승",
+    "version": "MMPI-2",
+    "validity": "caution",
+    "code": "정상 범위 (WNL)",
+    "definition": null,
+    "flags": []
+  },
+  "c07": {
+    "title": "음주운전 후 별거한 영업팀장",
+    "intended": "4-2-7",
+    "version": "MMPI-2",
+    "validity": "valid",
+    "code": "4-2-7 (3개 척도 코드)",
+    "definition": 9,
+    "flags": [
+      "substance",
+      "suicide"
+    ]
+  },
+  "c08": {
+    "title": "관계마다 배신당한다는 직장인",
+    "intended": "4-6 (여성, 5번 낮음)",
+    "version": "MMPI-2",
+    "validity": "valid",
+    "code": "4-6 코드",
+    "definition": 11,
+    "flags": [
+      "violence"
+    ]
+  },
+  "c09": {
+    "title": "사흘째 잠을 자지 않는 사업 구상가",
+    "intended": "9 단독 상승",
+    "version": "MMPI-2",
+    "validity": "valid",
+    "code": "9 단독 상승 (spike)",
+    "definition": 24,
+    "flags": [
+      "mood"
+    ]
+  },
+  "c10": {
+    "title": "기숙사에서 나오지 않는 대학생",
+    "intended": "8-7-2",
+    "version": "MMPI-2",
+    "validity": "valid",
+    "code": "8-7-2 (3개 척도 코드)",
+    "definition": 6,
+    "flags": [
+      "suicide"
+    ]
+  },
+  "c11": {
+    "title": "공기업 경력직 지원자",
+    "intended": "WNL (인사 선발)",
+    "version": "MMPI-2",
+    "validity": "valid",
+    "code": "정상 범위 (WNL)",
+    "definition": null,
+    "flags": []
+  },
+  "c12": {
+    "title": "심장 수술 후 의욕을 잃은 은퇴자",
+    "intended": "2-1-3",
+    "version": "MMPI-2",
+    "validity": "valid",
+    "code": "2-1-3 (3개 척도 코드)",
+    "definition": 4,
+    "flags": [
+      "suicide"
+    ]
+  },
+  "c13": {
+    "title": "학교를 그만두겠다는 15세",
+    "intended": "MMPI-A 4-9",
+    "version": "MMPI-A",
+    "validity": "valid",
+    "code": "4-9 코드",
+    "definition": 12,
+    "flags": [
+      "school",
+      "substance",
+      "violence"
+    ]
+  },
+  "c14": {
+    "title": "손목에 상처가 있는 16세",
+    "intended": "MMPI-A 2-4",
+    "version": "MMPI-A",
+    "validity": "valid",
+    "code": "4-2 코드",
+    "definition": 6,
+    "flags": [
+      "suicide",
+      "violence"
+    ]
+  },
+  "c15": {
+    "title": "검사를 15분 만에 끝낸 14세",
+    "intended": "MMPI-A 무선반응",
+    "version": "MMPI-A",
+    "validity": "invalid",
+    "code": null,
+    "definition": null,
+    "flags": []
+  },
+  "c16": {
+    "title": "혼잣말이 늘어난 17세",
+    "intended": "MMPI-A 8-6",
+    "version": "MMPI-A",
+    "validity": "valid",
+    "code": "8-6 코드",
+    "definition": 8,
+    "flags": [
+      "psychosis",
+      "school",
+      "suicide"
+    ]
+  },
+  "c17": {
+    "title": "조용하던 이웃의 폭행",
+    "intended": "3-4 (과잉통제형 적대감)",
+    "version": "MMPI-2",
+    "validity": "valid",
+    "code": "3-4 코드",
+    "definition": 6,
+    "flags": [
+      "violence"
+    ]
+  },
+  "c18": {
+    "title": "잠들 때 전남편의 목소리가 들린다는 여성",
+    "intended": "7-8 (외상 후)",
+    "version": "MMPI-2",
+    "validity": "valid",
+    "code": "7-8 코드",
+    "definition": 4,
+    "flags": [
+      "suicide"
+    ]
+  },
+  "c19": {
+    "title": "모든 문항에 “그렇다”가 많은 70대",
+    "intended": "고정반응 (TRIN-T)",
+    "version": "MMPI-2",
+    "validity": "invalid",
+    "code": null,
+    "definition": null,
+    "flags": []
+  },
+  "c20": {
+    "title": "완벽한 성적, 줄어드는 체중",
+    "intended": "MMPI-A 방어 + 경계 범위",
+    "version": "MMPI-A",
+    "validity": "caution",
+    "code": "경계 범위 프로파일",
+    "definition": null,
+    "flags": []
+  }
+}

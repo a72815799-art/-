@@ -1,0 +1,14 @@
+{
+  "name": "mmpi-academy",
+  "version": "0.3.0",
+  "private": true,
+  "description": "MMPI-2·MMPI-A 해석 수련 프로그램",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "for f in app/*.js; do node --check \"$f\" || exit 1; done",
+    "golden:update": "node scripts/update-golden.mjs",
+    "preview": "node scripts/preview.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
