@@ -8,10 +8,82 @@ const NUM = MMPI.NUM;
 /* ── 개인 진도 (브라우저 저장, 실패해도 동작) ── */
 const store = {
   get(k,d){ try{ const v=localStorage.getItem('mmpi.'+k); return v?JSON.parse(v):d; }catch(e){ return d; } },
-  set(k,v){ try{ localStorage.setItem('mmpi.'+k, JSON.stringify(v)); }catch(e){} }
+  set(k,v){ try{ localStorage.setItem('mmpi.'+k, JSON.stringify(v)); }catch(e){} if(/^(prog|draft\.|drill|lab$)/.test(k)) Sync.changed(); },
+  keys(prefix){ try{ return Object.keys(localStorage).filter(k=>k.startsWith('mmpi.'+prefix)).map(k=>k.slice(5)); }catch(e){ return []; } }
 };
 let prog = store.get('prog', {mods:{}, quiz:{}, cases:{}});
 const saveProg = ()=> store.set('prog', prog);
+
+/* ── 클래스 모드 동기화 (artifact db). 쓸 수 없으면 이 브라우저 저장만으로 계속 동작한다 ── */
+const Sync = {
+  status:'connecting', reason:'', db:null, user:null, uid:null, admin:false,
+  assignments:[], timer:null, busy:false, again:false, lastProgress:null, lastResults:null, subs:[],
+  changed(){ if(this.status!=='synced') return; clearTimeout(this.timer); this.timer=setTimeout(()=>this.push(), 2000); },
+  notify(){ const el=document.getElementById('sync'); if(!el) return;
+    const map={connecting:['','연결 중'], synced:['ok','동기화됨'], local:['', '이 브라우저에만 저장'], readonly:['warn','읽기 전용']};
+    const [cls,txt]=map[this.status]||map.local; el.className='chip sync-chip '+cls; el.textContent=txt; el.title=this.reason||''; el.hidden=false; },
+  async push(){
+    if(this.status!=='synced') return;
+    if(this.busy){ this.again=true; return; }
+    this.busy=true;
+    try{
+      const L = gatherLocal();
+      if(!CLASSDATA.hasActivity(L)){ this.busy=false; return; }
+      if(!CLASSDATA.same(L, this.lastProgress)){ await this.db.doc(`data/users/${this.uid}/progress`).set({v:CLASSDATA.SCHEMA, local:L, updatedAt:new Date().toISOString()}); this.lastProgress=L; }
+      const R = CLASSDATA.buildResults(L, CASES, QUIZ, MODULES);
+      if(!CLASSDATA.same(R, this.lastResults)){ await this.db.doc(`results/${this.uid}`).set(Object.assign({}, R, {updatedAt:new Date().toISOString()})); this.lastResults=R; }
+    }catch(e){ this.fail(e); }
+    this.busy=false; if(this.again){ this.again=false; this.push(); }
+  },
+  fail(e){
+    const code = e && e.code;
+    if(code==='invalid_argument'){ this.status='readonly'; this.reason='이 문서에서는 기록을 저장할 권한이 없습니다. 운영자에게 “기여자(Contributor)” 이상으로 공유해 달라고 요청하세요. 기록은 이 브라우저에 계속 저장됩니다.'; }
+    else if(code==='quota_exceeded'){ this.status='readonly'; this.reason='공유 저장소 용량이 가득 찼습니다. 운영자에게 알려 주세요. 기록은 이 브라우저에 계속 저장됩니다.'; }
+    else if(code==='unavailable'){ return; }
+    else { this.status='local'; this.reason='공유 저장소에 연결하지 못했습니다. 기록은 이 브라우저에 저장됩니다.'; }
+    this.notify();
+  },
+};
+
+/* 이 브라우저의 기록 묶음 */
+function gatherLocal(){
+  const drafts={}; for(const k of store.keys('draft.')){ const d=store.get(k,null); if(d) drafts[k.slice(6)]=d; }
+  const lab = store.get('lab', {});
+  return {prog:{mods:prog.mods||{}, quiz:prog.quiz||{}, cases:prog.cases||{}}, drafts, drill:store.get('drill',{}), labQuiz:(lab.quiz||{n:0,ok:0})};
+}
+/* 합친 기록을 이 브라우저에 반영(동기화 신호는 보내지 않는다) */
+function applyLocal(L){
+  const raw=(k,v)=>{ try{ localStorage.setItem('mmpi.'+k, JSON.stringify(v)); }catch(e){} };
+  prog = {mods:L.prog.mods, quiz:L.prog.quiz, cases:L.prog.cases}; raw('prog', prog);
+  for(const [id,d] of Object.entries(L.drafts)) raw('draft.'+id, d);
+  raw('drill', L.drill);
+  const lab = store.get('lab', null); if(lab){ lab.quiz = L.labQuiz; raw('lab', lab); } else raw('lab', {base:'', sex:'M', mix:{random:0,bias:0,over:0,under:0}, quiz:L.labQuiz});
+  if(typeof labState!=='undefined' && labState) labState.quiz = L.labQuiz;
+}
+
+async function initSync(){
+  try{
+    const [db,user] = window.claude?.use ? await Promise.all([window.claude.use('db'), window.claude.use('user')]) : [null,null];
+    if(!db || !user){ Sync.status='local'; Sync.reason='이 화면에서는 공유 저장소를 쓸 수 없습니다(로그인하지 않았거나 claude.ai 밖에서 열었습니다). 기록은 이 브라우저에 저장됩니다.'; Sync.notify(); return; }
+    Sync.db=db; Sync.user=user; Sync.uid = await user.id(); Sync.admin = await user.canEdit();
+    const canWrite = await user.can('data.write');   // null = 플랫폼이 알려 주지 않음 → 쓰기를 시도해 보고 거부되면 판단
+    if(canWrite===false && !Sync.admin){ Sync.fail({code:'invalid_argument'}); try{ const a = await db.doc('class/assignments').get(); Sync.assignments = a.exists ? (a.data().items||[]) : []; }catch(e){} return; }
+    if(!Sync.uid){ Sync.status='local'; Sync.reason='이 문서에서 사용자 정보를 받을 수 없어 기록을 이 브라우저에만 저장합니다.'; Sync.notify(); return; }
+    let remote=null;
+    try{ const snap = await db.doc(`data/users/${Sync.uid}/progress`).get(); if(snap.exists) remote = snap.data().local || null; }
+    catch(e){ Sync.fail(e); return; }
+    const merged = CLASSDATA.mergeLocal(gatherLocal(), remote);
+    const changedHere = !CLASSDATA.same(merged, gatherLocal());
+    applyLocal(merged);
+    Sync.lastProgress = remote;
+    Sync.status='synced'; Sync.reason='학습 기록이 계정에 저장되어 다른 기기에서도 이어집니다.'; Sync.notify();
+    await Sync.push();
+    try{ const a = await db.doc('class/assignments').get(); Sync.assignments = a.exists ? (a.data().items||[]) : []; }catch(e){}
+    const r=(location.hash||'#home').slice(1);
+    if(changedHere || ['home','class','cases'].includes(r)) route();
+  }catch(e){ Sync.status='local'; Sync.reason='공유 저장소에 연결하지 못했습니다. 기록은 이 브라우저에 저장됩니다.'; Sync.notify(); }
+}
+
 
 /* ── Claude(sample) ── */
 let samplePromise = null;
@@ -93,7 +165,7 @@ function scoreTable(p, ver){
 }
 
 /* ── 라우터 ── */
-const routes = {home:viewHome, theory:viewTheory, scales:viewScales, codes:viewCodes, analyzer:viewAnalyzer, cases:viewCases, quiz:viewQuiz, mentor:viewMentor, compare:viewCompare, lab:viewLab, stability:viewStability};
+const routes = {home:viewHome, theory:viewTheory, scales:viewScales, codes:viewCodes, analyzer:viewAnalyzer, cases:viewCases, quiz:viewQuiz, mentor:viewMentor, compare:viewCompare, lab:viewLab, stability:viewStability, class:viewClass};
 function route(){
   const h = (location.hash||'#home').slice(1);
   let r = h, arg=null;
@@ -403,7 +475,7 @@ function viewCases(id){
   if(id==='#teen') setTimeout(()=>{ const t=document.getElementById('teen'); t&&t.scrollIntoView(); },0);
   app.innerHTML = `<div class="stack"><div><div class="eyebrow">사례 실습</div><h1 style="margin-top:6px">가상 사례 ${CASES.length}개</h1><p class="lede" style="margin-top:8px">배경과 점수만 보고 직접 해석을 작성하세요. 제출하면 핵심 포인트로 자가 점검을 하고, AI 슈퍼바이저에게 영역별 피드백을 받은 뒤 모범 해석과 비교합니다. 사례 제목만으로 코드타입을 짐작하지 않도록 코드는 제출 후에 공개됩니다.</p></div>
   ${[1,2,3,'A'].map(lv=>`<section class="stack" style="gap:10px" ${lv==='A'?'id="teen"':''}><h3>${lv==='A'?'청소년 사례 (MMPI-A)':['','기초','중급','고급'][lv]+' 사례 (MMPI-2)'}</h3>${lv==='A'?'<p class="note">8단계 모듈과 성인 vs 청소년 비교를 먼저 학습하세요. 같은 척도라도 청소년에게는 기준과 의미가 다릅니다.</p>':''}<div class="casegrid">${CASES.filter(c=>lv==='A'?c.version==='A':(c.version!=='A'&&c.level===lv)).map(c=>{ const d=prog.cases[c.id];
-    return `<a class="case-card" href="#case-${c.id}"><div class="row" style="justify-content:space-between"><span class="eyebrow">사례 ${+c.id.slice(1)}</span>${d?`<span class="chip ok">제출 · ${d.score}%</span>`:'<span class="chip">미제출</span>'}</div><h3 style="font-size:17px">${esc(c.title)}</h3><div class="demo">${esc(c.demo)}</div><div class="row" style="gap:6px">${c.version==='A'?'<span class="chip warn">MMPI-A</span>':''}<span class="chip">${MMPI.SETTINGS[c.setting]}</span>${d?`<span class="chip acc">${esc(c.code)}</span>`:''}</div></a>`; }).join('')}</div></section>`).join('')}</div>`;
+    return `<a class="case-card" href="#case-${c.id}"><div class="row" style="justify-content:space-between"><span class="eyebrow">사례 ${+c.id.slice(1)}</span>${d?`<span class="chip ok">제출 · ${d.score}%</span>`:'<span class="chip">미제출</span>'}</div><h3 style="font-size:17px">${esc(c.title)}</h3><div class="demo">${esc(c.demo)}</div><div class="row" style="gap:6px">${(()=>{ const a=Sync.assignments.find(x=>x.caseId===c.id); return a?`<span class="chip acc">과제${a.due?' · '+esc(a.due):''}</span>`:''; })()}${c.version==='A'?'<span class="chip warn">MMPI-A</span>':''}<span class="chip">${MMPI.SETTINGS[c.setting]}</span>${d?`<span class="chip acc">${esc(c.code)}</span>`:''}</div></a>`; }).join('')}</div></section>`).join('')}</div>`;
 }
 function viewCase(id){
   const c = CASES.find(x=>x.id===id); if(!c){ location.hash='#cases'; return; }
@@ -428,7 +500,7 @@ function viewCase(id){
   </div>`;
   const allText = ()=> FIELDS.map(([k])=>$('#a-'+k).value).join('\n');
   let t=null;
-  app.querySelectorAll('textarea[data-k]').forEach(ta=>ta.addEventListener('input', ()=>{ const d={}; FIELDS.forEach(([k])=>d[k]=$('#a-'+k).value); store.set('draft.'+c.id, d); clearTimeout(t); $('#saved').textContent='저장됨'; t=setTimeout(()=>$('#saved').textContent='',1200); }));
+  app.querySelectorAll('textarea[data-k]').forEach(ta=>ta.addEventListener('input', ()=>{ const d={}; FIELDS.forEach(([k])=>d[k]=$('#a-'+k).value); d._at=Date.now(); store.set('draft.'+c.id, d); clearTimeout(t); $('#saved').textContent='저장됨'; t=setTimeout(()=>$('#saved').textContent='',1200); }));
   const check = ()=>{
     const txt = norm(allText());
     const res = c.keyPoints.map(k=>({...k, hit:k.kw.some(w=>txt.includes(norm(w)))}));
@@ -712,5 +784,110 @@ function viewStability(){
   drawChart(); run(); curve(); rcOut();
 }
 
+/* ════════ 우리 반 ════════ */
+const fmtDate = ms => { if(!ms) return '-'; const d=new Date(ms); return `${d.getMonth()+1}월 ${d.getDate()}일`; };
+const caseName = id => { const c=CASES.find(x=>x.id===id); return c ? `사례 ${+id.slice(1)} · ${c.title}` : id; };
+function viewClass(){
+  const C = CLASSDATA, mine = prog;
+  const statusBox = ()=>{
+    const s = Sync.status;
+    const title = s==='synced' ? '계정에 동기화되고 있습니다' : s==='readonly' ? '읽기 전용으로 연결되었습니다' : s==='connecting' ? '공유 저장소에 연결하고 있습니다' : '이 브라우저에만 저장되고 있습니다';
+    return `<div class="panel" style="border-left:3px solid ${s==='synced'?'var(--ok)':s==='readonly'?'var(--warn)':'var(--line)'}"><h3 style="font-size:16px">${title}</h3><p class="note" style="margin:6px 0 0">${esc(Sync.reason||'')}</p></div>`;
+  };
+  app.innerHTML = `<div class="stack"><div><div class="eyebrow">클래스 모드</div><h1 style="margin-top:6px">우리 반</h1>
+    <p class="lede" style="margin-top:8px">같은 문서를 쓰는 학우들의 학습 현황을 모아 봅니다. 학생에게는 반 전체의 집계만 보이고, 개인 성적과 답안은 다른 학생에게 보이지 않습니다. 반 통계는 제출한 사람이 ${C.MIN_N}명 이상인 항목만 표시합니다.</p></div>
+    ${statusBox()}
+    <div id="cl-admin"></div>
+    <div id="cl-assign"></div>
+    <div id="cl-stats"></div>
+  </div>`;
+  if(Sync.status!=='synced' && Sync.status!=='readonly'){
+    $('#cl-stats').innerHTML = `<div class="panel flat note">${Sync.status==='connecting'?'연결되면 반 통계를 불러옵니다.':'공유 저장소를 쓸 수 없어 반 통계를 볼 수 없습니다. 개인 학습 기능은 모두 그대로 쓸 수 있습니다.'}</div>`;
+    return;
+  }
+  const alive = ()=> document.getElementById('cl-stats');
+  const load = async ()=>{
+    let summary=null;
+    try{ const s = await Sync.db.doc('class/summary').get(); summary = s.exists ? s.data() : null; }catch(e){}
+    try{ const a = await Sync.db.doc('class/assignments').get(); Sync.assignments = a.exists ? (a.data().items||[]) : []; }catch(e){}
+    if(Sync.admin) summary = await adminPanel(summary) || summary;
+    if(!alive()) return;
+    drawAssignments(); drawStats(summary);
+  };
+
+  function drawAssignments(){
+    const items = Sync.assignments.slice().sort((a,b)=>(a.due||'').localeCompare(b.due||''));
+    $('#cl-assign').innerHTML = `<section class="panel stack" style="gap:8px"><h2>과제</h2>${items.length ? `<div class="stack" style="gap:6px">${items.map(a=>{ const d=mine.cases[a.caseId]; return `<a class="case-card" href="#case-${esc(a.caseId)}" style="flex-direction:row; justify-content:space-between; align-items:center; padding:12px 14px"><span><b>${esc(caseName(a.caseId))}</b>${a.note?`<span class="note"> · ${esc(a.note)}</span>`:''}</span><span class="row" style="gap:6px">${a.due?`<span class="chip">마감 ${esc(a.due)}</span>`:''}${d?`<span class="chip ok">제출 · ${d.score}%</span>`:'<span class="chip warn">미제출</span>'}</span></a>`; }).join('')}</div>` : '<p class="note" style="margin:0">아직 등록된 과제가 없습니다.</p>'}</section>`;
+  }
+
+  function drawStats(sm){
+    if(!sm || !sm.students){ $('#cl-stats').innerHTML = `<div class="panel flat note">아직 반 통계가 없습니다. 운영자가 우리 반 화면을 열면 통계가 계산됩니다.</div>`; return; }
+    const n = sm.students, vis = C.visibleStat;
+    const rows = CASES.map(c=>{ const s=sm.cases[c.id]||{n:0}; const m=mine.cases[c.id];
+      return `<tr><td><a href="#case-${c.id}">${esc(caseName(c.id))}</a></td><td class="num">${s.n||0}</td><td class="num">${vis(s)?s.mean+'%':'<span class="note">-</span>'}</td><td class="num">${m?`<b style="color:${vis(s)&&m.score<s.mean?'var(--warn)':'var(--ok)'}">${m.score}%</b>`:'<span class="note">미제출</span>'}</td></tr>`; }).join('');
+    const weak = C.weakestKeyPoints(sm, CASES, 5);
+    const hardQ = Object.entries(sm.quiz||{}).filter(([,q])=>q.n>=C.MIN_N).sort((a,b)=>a[1].rate-b[1].rate).slice(0,5);
+    $('#cl-stats').innerHTML = `<section class="stack" style="gap:14px">
+      <div class="grid3">
+        <div class="panel"><div class="eyebrow">참여 학생</div><div class="num" style="font-size:28px; font-weight:600">${n}명</div></div>
+        <div class="panel"><div class="eyebrow">평균 이론 진도</div><div class="num" style="font-size:28px; font-weight:600">${sm.progress.mods!==null?Math.round(sm.progress.mods*100)+'%':'-'}</div><div class="note">나: ${Math.round(Object.keys(mine.mods).length/MODULES.length*100)}%</div></div>
+        <div class="panel"><div class="eyebrow">평균 사례 제출</div><div class="num" style="font-size:28px; font-weight:600">${sm.progress.cases!==null?Math.round(sm.progress.cases*100)+'%':'-'}</div><div class="note">나: ${Math.round(Object.keys(mine.cases).length/CASES.length*100)}%</div></div>
+      </div>
+      ${n<C.MIN_N?`<div class="panel flat note">참여 학생이 ${C.MIN_N}명 이상이 되면 사례별 평균과 반이 놓친 포인트가 표시됩니다.</div>`:''}
+      <section class="panel stack" style="gap:8px"><h2>반이 가장 많이 놓친 핵심 포인트</h2>${weak.length?`<ul class="kp">${weak.map(w=>`<li class="miss" style="grid-template-columns:52px 86px minmax(0,1fr)"><span class="mk num">${Math.round(w.rate*100)}%</span><span class="dm">${esc(w.domain)}</span><span>${esc(w.point)} <a class="note" href="#case-${w.caseId}">사례 ${+w.caseId.slice(1)}</a></span></li>`).join('')}</ul><p class="note" style="margin:0">퍼센트는 그 포인트를 답안에 언급한 학생의 비율입니다.</p>`:'<p class="note" style="margin:0">표시할 만큼 제출된 사례가 아직 없습니다.</p>'}</section>
+      <section class="panel stack" style="gap:8px"><h2>사례별 반 평균과 내 점수</h2><div class="tblwrap"><table class="tbl"><tr><th>사례</th><th>제출</th><th>반 평균</th><th>나</th></tr>${rows}</table></div><p class="note" style="margin:0">점수는 자가 점검의 핵심 포인트 비율입니다. 반 평균보다 낮은 내 점수는 주황색으로 표시합니다.</p></section>
+      <section class="panel stack" style="gap:8px"><h2>반이 가장 어려워한 퀴즈</h2>${hardQ.length?`<ul class="kp">${hardQ.map(([i,q])=>{ const my=mine.quiz[i]; return `<li class="${my?'hit':'miss'}" style="grid-template-columns:52px minmax(0,1fr)"><span class="mk num">${Math.round(q.rate*100)}%</span><span>${esc(QUIZ[i].q)} <span class="note">· 나: ${my===undefined?'안 풂':my?'정답':'오답'}</span></span></li>`; }).join('')}</ul><a class="btn sm" href="#quiz" style="align-self:flex-start">퀴즈 풀러 가기</a>`:'<p class="note" style="margin:0">표시할 만큼 응답이 쌓이지 않았습니다.</p>'}</section>
+      ${sm.lab&&sm.lab.n>=C.MIN_N*3?`<section class="panel"><h3 style="font-size:16px">응답 양식 맞히기 반 정답률</h3><p style="margin:6px 0 0"><b class="num">${Math.round(sm.lab.ok/sm.lab.n*100)}%</b> <span class="note">(${sm.lab.n}문항)</span></p></section>`:''}
+      <p class="note">통계 갱신: ${sm.updatedAt?new Date(sm.updatedAt).toLocaleString('ko-KR'):'-'}</p>
+    </section>`;
+  }
+
+  async function adminPanel(prevSummary){
+    let docs=[];
+    try{ const q = await Sync.db.collection('results').get(); docs = q.docs.filter(d=>d.exists).map(d=>({id:d.id, ...d.data()})); }
+    catch(e){ if(alive()) $('#cl-admin').innerHTML = `<div class="panel note">학생 결과를 불러오지 못했습니다(${esc(e.code||'오류')}).</div>`; return null; }
+    const summary = C.summarize(docs, CASES, QUIZ, MODULES);
+    const prev = prevSummary ? Object.assign({}, prevSummary) : null; if(prev) delete prev.updatedAt;
+    let written = prevSummary;
+    if(!C.same(summary, prev)){ try{ written = Object.assign({}, summary, {updatedAt:new Date().toISOString()}); await Sync.db.doc('class/summary').set(written); }catch(e){ written = prevSummary; } }
+    if(!alive()) return written;
+    const ids = docs.filter(C.resultActive).map(d=>d.id);
+    const ps = ids.length ? await Sync.user.profiles(ids) : {};
+    const people = docs.filter(C.resultActive).map(d=>({id:d.id, ...C.personStats(d, CASES, QUIZ, MODULES)})).sort((a,b)=>b.last-a.last);
+    const box = $('#cl-admin'); if(!box) return written;
+    box.innerHTML = `<section class="panel stack" style="gap:12px; border-color:var(--accent)">
+      <div class="row" style="justify-content:space-between"><h2>운영자 화면</h2><span class="chip acc">운영자에게만 보입니다</span></div>
+      <p class="note" style="margin:0">문서 소유자와 편집자만 이 화면과 학생별 결과를 볼 수 있습니다. 학생들은 아래쪽의 반 통계만 봅니다. 화면을 열 때마다 반 통계를 다시 계산해 학생들에게 공개합니다.</p>
+      <div class="tblwrap"><table class="tbl"><tr><th>학생</th><th>이론</th><th>사례</th><th>사례 평균</th><th>퀴즈 정답률</th><th>최근 활동</th></tr>
+        ${people.length?people.map(p=>`<tr><td data-uid="${esc(p.id)}"></td><td class="num">${p.mods}/${p.modsTotal}</td><td class="num">${p.cases}/${p.casesTotal}</td><td class="num">${p.avgCase===null?'-':p.avgCase+'%'}</td><td class="num">${p.quizRate===null?'-':Math.round(p.quizRate*100)+'% ('+p.quizN+')'}</td><td>${fmtDate(p.last)}</td></tr>`).join(''):'<tr><td colspan="6" class="note">아직 기록을 저장한 학생이 없습니다.</td></tr>'}
+      </table></div>
+      <div class="stack" style="gap:8px"><h3 style="font-size:16px">과제 관리</h3>
+        <div id="as-list" class="stack" style="gap:6px"></div>
+        <div class="row" style="gap:8px; align-items:flex-end">
+          <label class="f" style="flex:2; min-width:220px">사례<select id="as-case">${CASES.map(c=>`<option value="${c.id}">${esc(caseName(c.id))}</option>`).join('')}</select></label>
+          <label class="f" style="flex:1; min-width:140px">마감일<input type="date" id="as-due"></label>
+          <label class="f" style="flex:2; min-width:180px">메모(선택)<input type="text" id="as-note" maxlength="80" placeholder="예: 다음 수업 토론 사례"></label>
+          <button class="btn pri" id="as-add">과제 추가</button></div>
+        <p class="note" id="as-msg" style="margin:0"></p></div>
+      <details><summary style="cursor:pointer; font-weight:600">학우들과 함께 쓰는 방법</summary><ol style="padding-left:20px; font-size:14px; margin:8px 0 0">
+        <li>이 페이지 오른쪽 위의 공유 메뉴에서 학우들을 <b>기여자(Contributor)</b>로 초대합니다. 보기 전용(Viewer)이나 댓글 작성자로는 기록을 저장할 수 없습니다.</li>
+        <li>학우들이 같은 claude.ai 조직(학교의 Team·Enterprise·Education 플랜 등)에 속해 있어야 기여자로서 기록을 저장할 수 있습니다. 조직 밖의 사람은 읽기만 가능합니다.</li>
+        <li>편집자(Editor)로 초대하면 운영자 화면과 모든 학생의 결과를 볼 수 있으므로 조교나 지도교수에게만 주세요.</li>
+      </ol></details>
+    </section>`;
+    // 이름은 저장하지 않고, 볼 때마다 id로 조회한다
+    box.querySelectorAll('[data-uid]').forEach(td=>{ const p=ps[td.dataset.uid]; td.textContent = (p&&p.name) || '이름을 볼 수 없는 학생'; });
+    const drawList = ()=>{ const items=Sync.assignments; $('#as-list').innerHTML = items.length ? items.map((a,i)=>`<div class="row" style="justify-content:space-between; border:1px solid var(--line); border-radius:8px; padding:8px 12px"><span>${esc(caseName(a.caseId))}${a.due?` · 마감 ${esc(a.due)}`:''}${a.note?` · <span class="note">${esc(a.note)}</span>`:''}</span><button class="btn sm" data-del="${i}">삭제</button></div>`).join('') : '<p class="note" style="margin:0">등록된 과제가 없습니다.</p>'; };
+    const saveAssign = async items=>{ $('#as-msg').textContent='저장 중'; try{ await Sync.db.doc('class/assignments').set({items}); Sync.assignments=items; $('#as-msg').textContent='저장했습니다. 학생들의 우리 반·사례 화면에 표시됩니다.'; drawList(); drawAssignments(); }catch(e){ $('#as-msg').textContent='저장하지 못했습니다. 잠시 후 다시 시도하세요.'; } };
+    $('#as-add').onclick = ()=>{ const caseId=$('#as-case').value, due=$('#as-due').value, note=$('#as-note').value.trim(); if(Sync.assignments.some(a=>a.caseId===caseId)){ $('#as-msg').textContent='이미 과제로 등록된 사례입니다.'; return; } saveAssign([...Sync.assignments, {caseId, due, note, at:Date.now()}]); $('#as-note').value=''; };
+    $('#as-list').addEventListener('click', e=>{ const b=e.target.closest('[data-del]'); if(!b) return; saveAssign(Sync.assignments.filter((_,i)=>i!==+b.dataset.del)); });
+    drawList();
+    return written;
+  }
+
+  load();
+}
+
 route();
+initSync();
 })();
