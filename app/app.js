@@ -176,6 +176,20 @@ function chart(p, opt={}){
 
 const wrapTables = h => h.replace(/<table class="tbl">/g,'<div class="tblwrap"><table class="tbl">').replace(/<\/table>/g,'</table></div>');
 const rowsTable = (head, rows) => `<div class="tblwrap"><table class="tbl"><tr>${head.map(x=>`<th>${x}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map((x,i)=>`<td${i===0?' style="font-weight:600"':''}>${esc(x)}</td>`).join('')}</tr>`).join('')}</table></div>`;
+/* ── 연구 근거 공통 ── */
+const REF = id => (window.REFS||{})[id];
+const cite = ids => [].concat(ids||[]).map(id=>{ const r=REF(id); return r ? `<a class="cite" href="#refs" data-ref="${id}" title="${esc(r.apa)}">${esc(r.short)}</a>` : ''; }).join('');
+const refLink = r => r.doi ? `https://doi.org/${r.doi}` : (r.url||'');
+const evFor = (kind, id) => (window.EVIDENCE||[]).filter(t=>(t.links&&t.links[kind]||[]).includes(id));
+const evChips = (kind, id) => { const ts=evFor(kind,id); return ts.length ? `<div class="row" style="gap:6px; margin-top:8px"><span class="note">연구 근거</span>${ts.map(t=>`<a class="chip acc" href="#${t.id}">${esc(t.title)}</a>`).join('')}</div>` : ''; };
+const htmlTable = (head, rows) => `<div class="tblwrap"><table class="tbl"><tr>${head.map(x=>`<th>${x}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map((x,i)=>`<td${i===0?' style="font-weight:600"':''}>${x}</td>`).join('')}</tr>`).join('')}</table></div>`;
+function caseEvidenceHtml(id){
+  const xs = (window.CASE_EVIDENCE||{})[id]; if(!xs||!xs.length) return '';
+  return `<div class="panel stack" style="gap:6px"><div class="row" style="justify-content:space-between"><h2>근거 노트: 이 해석은 어떤 연구에 기대는가</h2><span class="chip">문헌 ${new Set(xs.flatMap(x=>x[1])).size}편</span></div>
+    <p class="note" style="margin:0">모범 해석의 핵심 판단마다 근거가 되는 연구와, 연구가 말해 주지 않는 한계를 함께 적었습니다. 인용을 누르면 문헌 정보로 갑니다.</p>
+    ${htmlTable(['해석 판단','근거','연구가 말하는 것과 한계'], xs.map(([claim, refs, note])=>[esc(claim), cite(refs), esc(note)]))}
+    ${evFor('cases', id).length?evChips('cases', id):''}</div>`;
+}
 function deepCaseHtml(id){
   const d = (window.CASE_DEEP||{})[id]; if(!d) return '';
   return `<div class="panel stack deep-case" style="gap:4px">
@@ -190,7 +204,7 @@ function deepCaseHtml(id){
     <h3>7. 결과 피드백 대본</h3>${rowsTable(['수준·대상','말하기 예시'], d.feedback)}
     <h3>8. 치료·개입 계획</h3>${rowsTable(['단계','목표','개입'], d.plan)}
     <h3>9. 슈퍼바이저 코멘트</h3><div class="expert" style="margin-top:0">${esc(d.supervisor)}</div>
-  </div>`;
+  </div>${caseEvidenceHtml(id)}`;
 }
 /* ── 점수표 ── */
 const GROUPS = [
@@ -210,13 +224,15 @@ function scoreTable(p, ver){
 }
 
 /* ── 라우터 ── */
-const routes = {home:viewHome, theory:viewTheory, scales:viewScales, codes:viewCodes, analyzer:viewAnalyzer, cases:viewCases, quiz:viewQuiz, mentor:viewMentor, compare:viewCompare, lab:viewLab, stability:viewStability, class:viewClass, research:viewResearch, reliability:viewReliability, 'ai-connect':viewAIConnect};
+const routes = {home:viewHome, theory:viewTheory, scales:viewScales, codes:viewCodes, analyzer:viewAnalyzer, cases:viewCases, quiz:viewQuiz, mentor:viewMentor, compare:viewCompare, lab:viewLab, stability:viewStability, class:viewClass, research:viewResearch, reliability:viewReliability, 'ai-connect':viewAIConnect, evidence:viewEvidence};
 function route(){
   const h = (location.hash||'#home').slice(1);
   let r = h, arg=null;
   if(h.startsWith('module-')){ r='theory'; arg=h.slice(7); }
   else if(h.startsWith('case-')){ r='cases'; arg=h.slice(5); }
   else if(h==='cases-teen'){ r='cases'; arg='#teen'; }
+  else if(h.startsWith('ev-')){ r='evidence'; arg=h; }
+  else if(h==='refs'){ r='evidence'; arg='#refs'; }
   if(!routes[r]) r='home';
   const tab = r==='stability' ? 'lab' : r==='reliability' ? 'research' : r;
   document.querySelectorAll('#tabs a').forEach(a=>a.classList.toggle('on', a.dataset.r===tab));
@@ -351,7 +367,7 @@ function viewScales(){
       ${s.hl?`<div class="note" style="margin-top:6px">하위척도</div><div class="bands">${s.hl.map(h=>`<div><span class="k">${h}</span><span><b>${esc(SUBSCALES[h].name)}</b> — ${esc(SUBSCALES[h].desc)}</span></div>`).join('')}</div>`:''}
       ${s.expert?`<div class="expert"><b>전문가 포인트</b> ${esc(s.expert)}</div>`:''}
       ${s.pitfalls&&s.pitfalls.length?`<div class="note" style="margin-top:8px">흔한 오류: ${s.pitfalls.map(esc).join(' / ')}</div>`:''}
-      ${scaleDeep(s)}</div></details>`).join('') || '<p class="note">검색 결과가 없습니다.</p>';
+      ${scaleDeep(s)}${ver!=='A'||s.shared?evChips('scales', s.id):evChips('scalesA', s.id)}</div></details>`).join('') || '<p class="note">검색 결과가 없습니다.</p>';
     const intro = (window.GROUP_INTRO||{})[g];
     $('#gintro').innerHTML = intro ? `<div class="panel" style="padding:14px 18px"><p style="margin:0">${esc(intro)}</p></div>` : '';
   };
@@ -1211,6 +1227,75 @@ function viewAIConnect(){
   $('#ac-prov').onclick = e=>{ const b=e.target.closest('button'); if(!b) return; prov=b.dataset.p; document.querySelectorAll('#ac-prov button').forEach(x=>x.classList.toggle('on', x===b)); form(); };
   form();
 }
+
+/* ════════ 연구 근거 ════════ */
+const KIND = {meta:'메타분석', empirical:'실증 연구', manual:'공식 매뉴얼', book:'해석서', review:'개관·논쟁', korean:'한국 자료'};
+function viewEvidence(arg){
+  const T = window.EVIDENCE||[], RF = window.REFS||{};
+  if(arg && arg.startsWith('ev-')) return viewEvidenceTopic(arg);
+  const tab = arg==='#refs' ? 'refs' : store.get('evTab','topics');
+  const nRef = Object.keys(RF).length, nMeta = Object.values(RF).filter(r=>r.kind==='meta').length;
+  app.innerHTML = `<div class="stack"><div><div class="eyebrow">연구 근거</div><h1 style="margin-top:6px">논문과 학술지로 읽는 MMPI</h1>
+    <p class="lede" style="margin-top:8px">해석서의 문장 뒤에 있는 연구를 쟁점별로 정리했습니다. 각 쟁점은 <b>핵심 질문 → 주요 연구 결과 → 수치로 보기 → 실무 적용 → 흔한 오해 → 논쟁 → 한국에서 쓸 때 → 세미나 토론</b> 순서입니다. 문헌 ${nRef}편(메타분석 ${nMeta}편)을 서지 정보와 DOI까지 확인해 실었습니다.</p></div>
+    <div class="seg" id="evseg"><button data-t="topics">연구 쟁점 ${T.length}</button><button data-t="refs">문헌 목록 ${nRef}</button><button data-t="videos">영상 자료</button></div>
+    <div id="evbody"></div></div>`;
+  const draw = t=>{ store.set('evTab', t); document.querySelectorAll('#evseg button').forEach(b=>b.classList.toggle('on', b.dataset.t===t));
+    const B = $('#evbody');
+    if(t==='topics'){
+      const groups = [...new Set(T.map(x=>x.area))];
+      B.innerHTML = groups.map(g=>`<section class="stack" style="gap:10px; margin-bottom:18px"><h2>${esc(g)}</h2><div class="grid2">${T.filter(x=>x.area===g).map(x=>`<a class="panel card-link" href="#${x.id}" style="display:block"><div class="row" style="justify-content:space-between; gap:6px"><b>${esc(x.title)}</b><span class="chip">${x.findings.length}개 결과 · 문헌 ${new Set(x.findings.flatMap(f=>f[1])).size}</span></div><p class="note" style="margin:6px 0 0">${esc(x.q)}</p></a>`).join('')}</div></section>`).join('');
+    } else if(t==='refs'){
+      let k='all', q='';
+      B.innerHTML = `<div class="row" style="justify-content:space-between"><div class="seg" id="rkseg">${[['all','전체'],...Object.entries(KIND)].filter(([kk])=>kk==='all'||Object.values(RF).some(r=>r.kind===kk)).map(([kk,n])=>`<button data-k="${kk}" class="${kk==='all'?'on':''}">${n}</button>`).join('')}</div><input type="search" id="rq" placeholder="저자, 연도, 주제 검색" style="max-width:260px"></div>
+        <p class="note">APA 7판 형식입니다. 인용을 누르면 복사됩니다. DOI는 원문 페이지로 연결됩니다(원문 열람 권한은 소속 도서관을 이용하세요).</p><div id="rlist" class="stack" style="gap:8px"></div>`;
+      const drawR = ()=>{ const ql=q.trim().toLowerCase();
+        const xs = Object.entries(RF).filter(([id,r])=>(k==='all'||r.kind===k) && (!ql || (r.apa+(r.note||'')).toLowerCase().includes(ql))).sort((a,b)=>a[1].apa.localeCompare(b[1].apa));
+        $('#rlist').innerHTML = xs.map(([id,r])=>{ const used = T.filter(x=>x.findings.some(f=>f[1].includes(id))); const L=refLink(r);
+          return `<div class="panel ref" id="ref-${id}" style="padding:12px 16px"><div class="row" style="justify-content:space-between; gap:8px; align-items:flex-start"><p class="apa" data-copy="${esc(r.apa)}" style="margin:0; cursor:copy">${esc(r.apa)}</p><span class="chip ${r.kind==='meta'?'acc':r.kind==='korean'?'warn':''}">${KIND[r.kind]||r.kind}</span></div>
+          ${r.note?`<p class="note" style="margin:6px 0 0">${esc(r.note)}</p>`:''}
+          <div class="row" style="gap:8px; margin-top:6px">${L?`<a href="${L}" target="_blank" rel="noopener" class="note">${r.doi?'doi:'+esc(r.doi):'원문 정보'}</a>`:''}${used.map(x=>`<a class="chip" href="#${x.id}">${esc(x.title)}</a>`).join('')}</div></div>`; }).join('') || '<p class="note">검색 결과가 없습니다.</p>';
+      };
+      $('#rkseg').onclick = e=>{ const b=e.target.closest('button'); if(!b) return; k=b.dataset.k; document.querySelectorAll('#rkseg button').forEach(x=>x.classList.toggle('on',x===b)); drawR(); };
+      $('#rq').oninput = e=>{ q=e.target.value; drawR(); };
+      $('#rlist').onclick = async e=>{ const p=e.target.closest('[data-copy]'); if(!p) return; try{ await navigator.clipboard.writeText(p.dataset.copy); p.style.background='var(--accent-soft)'; setTimeout(()=>p.style.background='',600); }catch(err){} };
+      drawR();
+      const want = sessionStorage.getItem('evRef'); if(want){ sessionStorage.removeItem('evRef'); const el=document.getElementById('ref-'+want); if(el){ el.scrollIntoView({block:'center'}); el.style.outline='2px solid var(--accent)'; } }
+    } else {
+      const V = window.VIDEOS||[];
+      B.innerHTML = `<p class="note">공식 기관과 저자가 공개한 강의만 골랐습니다. 링크는 정리 시점에 확인했지만 게시자가 내리거나 옮길 수 있습니다.</p>
+        <div class="grid2">${V.map(v=>`<a class="panel card-link" href="${v.url}" target="_blank" rel="noopener" style="display:block"><div class="row" style="justify-content:space-between; gap:6px"><b>${esc(v.title)}</b><span class="chip">${esc(v.lang)}${v.free?' · 무료':''}</span></div><p class="note" style="margin:6px 0 0">${esc(v.who)}${v.len?' · '+esc(v.len):''}</p><p style="margin:6px 0 0; font-size:14px">${esc(v.why)}</p></a>`).join('') || '<p class="note">등록된 영상이 없습니다.</p>'}</div>
+        ${(window.VIDEO_SCRIPTS||[]).length?`<h2 style="margin-top:20px">직접 만드는 짧은 강의 영상</h2><p class="note">CapCut 같은 편집 프로그램으로 바로 만들 수 있도록 장면별 화면 문구와 내레이션 대본을 정리했습니다.</p>${VIDEO_SCRIPTS.map(v=>`<details class="panel"><summary><b>${esc(v.title)}</b> <span class="note">${esc(v.len)} · ${v.scenes.length}장면</span></summary>${rowsTable(['장면','화면','내레이션'], v.scenes.map((s,i)=>[String(i+1), s[0], s[1]]))}</details>`).join('')}`:''}`;
+    }
+  };
+  $('#evseg').onclick = e=>{ const b=e.target.closest('button'); if(b) draw(b.dataset.t); };
+  draw(tab);
+}
+function viewEvidenceTopic(id){
+  const T = window.EVIDENCE||[]; const i = T.findIndex(x=>x.id===id); const x = T[i];
+  if(!x){ location.hash='#evidence'; return; }
+  const refs = [...new Set(x.findings.flatMap(f=>f[1]).concat(x.extraRefs||[]))].map(r=>[r, REF(r)]).filter(([,r])=>r);
+  const L = x.links||{};
+  const linkRow = [
+    ...(L.scales||[]).filter(k=>S[k]).map(k=>`<a class="chip" href="#scales">${esc(S[k].abbr)} ${esc(S[k].name)}</a>`),
+    ...(L.modules||[]).map(m=>{ const M=MODULES.find(z=>z.id===m); return M?`<a class="chip" href="#module-${m}">${esc(M.title)}</a>`:''; }),
+    ...(L.cases||[]).map(c=>{ const C=CASES.find(z=>z.id===c); return C?`<a class="chip acc" href="#case-${c}">사례: ${esc(C.title)}</a>`:''; }),
+  ].join('');
+  app.innerHTML = `<div class="stack" style="max-width:920px"><div><div class="eyebrow"><a href="#evidence">연구 근거</a> · ${esc(x.area)}</div><h1 style="margin-top:6px">${esc(x.title)}</h1>
+    <p class="lede" style="margin-top:8px"><b>핵심 질문</b> ${esc(x.q)}</p></div>
+    <div class="panel"><h2>왜 실무에서 중요한가</h2><p style="margin-bottom:0">${esc(x.why)}</p></div>
+    <section class="panel stack" style="gap:8px"><h2>주요 연구 결과</h2><ol class="ev-find">${x.findings.map(([t,r])=>`<li><p style="margin:0">${esc(t)} ${cite(r)}</p></li>`).join('')}</ol></section>
+    ${x.numbers&&x.numbers.length?`<section class="panel"><h2>수치로 보기</h2>${htmlTable(['지표','수치','의미'], x.numbers.map(([a,b,c,r])=>[esc(a),esc(b),esc(c)+' '+cite(r)]))}</section>`:''}
+    <section class="panel"><h2>실무 적용</h2><ul>${x.practice.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></section>
+    ${x.myths&&x.myths.length?`<section class="panel"><h2>흔한 오해와 연구가 말하는 것</h2>${rowsTable(['흔한 오해','연구 결과'], x.myths)}</section>`:''}
+    ${x.debate?`<section class="panel"><h2>논쟁과 아직 모르는 것</h2><p style="margin-bottom:0">${esc(x.debate)}</p></section>`:''}
+    ${x.korea?`<section class="panel" style="border-left:3px solid var(--warn)"><h2>한국에서 쓸 때</h2><p style="margin-bottom:0">${esc(x.korea)}</p></section>`:''}
+    <section class="panel"><h2>세미나 토론 질문</h2><ol>${x.seminar.map(t=>`<li>${esc(t)}</li>`).join('')}</ol></section>
+    ${linkRow?`<div class="row" style="gap:6px"><span class="note">함께 보기</span>${linkRow}</div>`:''}
+    <section class="panel"><h2>이 쟁점의 문헌</h2><ul class="reflist">${refs.map(([id,r])=>{ const L=refLink(r); return `<li>${esc(r.apa)} ${L?`<a href="${L}" target="_blank" rel="noopener">${r.doi?'doi:'+esc(r.doi):'정보'}</a>`:''}</li>`; }).join('')}</ul></section>
+    <div class="row" style="justify-content:space-between">${i>0?`<a class="btn" href="#${T[i-1].id}">← ${esc(T[i-1].title)}</a>`:'<span></span>'}${i<T.length-1?`<a class="btn" href="#${T[i+1].id}">${esc(T[i+1].title)} →</a>`:''}</div>
+  </div>`;
+}
+document.addEventListener('click', e=>{ const a=e.target.closest('a.cite'); if(a) sessionStorage.setItem('evRef', a.dataset.ref); });
 
 route();
 initSync();

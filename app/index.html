@@ -55,6 +55,9 @@ main{max-width:1160px; margin:0 auto; padding-left:max(16px,env(safe-area-inset-
 .lede{color:var(--muted); max-width:68ch; font-size:15.5px}
 .stack{display:flex; flex-direction:column; gap:16px}
 .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+a.cite{display:inline-block; font-size:12px; padding:0 6px; margin:0 2px; border-radius:6px; background:var(--accent-soft); color:var(--accent); text-decoration:none; white-space:nowrap; vertical-align:1px}
+a.card-link{color:inherit; text-decoration:none} a.card-link:hover{border-color:var(--accent)}
+ol.ev-find li{margin-bottom:10px} ul.reflist li{margin-bottom:6px; font-size:14.5px}
 .grid2{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px}
 .grid3{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px}
 @media (max-width:860px){ .grid2,.grid3{grid-template-columns:minmax(0,1fr)} }
@@ -231,6 +234,7 @@ footer{border-top:1px solid var(--line); margin-top:40px; padding-top:16px; font
     <a href="#lab" data-r="lab">실험실</a>
     <a href="#cases" data-r="cases">사례 실습</a>
     <a href="#quiz" data-r="quiz">퀴즈</a>
+    <a href="#evidence" data-r="evidence">연구 근거</a>
     <a href="#research" data-r="research">학습 효과</a>
     <a href="#mentor" data-r="mentor">슈퍼바이저</a>
     <a href="#class" data-r="class">우리 반</a>
@@ -252,6 +256,7 @@ footer{border-top:1px solid var(--line); margin-top:40px; padding-top:16px; font
 <script src="data-deep-cases-3.js"></script>
 <script src="data-deep-cases-4.js"></script>
 <script src="data-assess.js"></script>
+<script src="data-evidence.js"></script>
 <script src="engine.js"></script>
 <script src="sim.js"></script>
 <script src="aiconnect.js"></script>
