@@ -149,6 +149,24 @@ function chart(p, opt={}){
   return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="MMPI-2 프로파일 차트">${g}</svg>`;
 }
 
+const wrapTables = h => h.replace(/<table class="tbl">/g,'<div class="tblwrap"><table class="tbl">').replace(/<\/table>/g,'</table></div>');
+const rowsTable = (head, rows) => `<div class="tblwrap"><table class="tbl"><tr>${head.map(x=>`<th>${x}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map((x,i)=>`<td${i===0?' style="font-weight:600"':''}>${esc(x)}</td>`).join('')}</tr>`).join('')}</table></div>`;
+function deepCaseHtml(id){
+  const d = (window.CASE_DEEP||{})[id]; if(!d) return '';
+  return `<div class="panel stack deep-case" style="gap:4px">
+    <div class="row" style="justify-content:space-between"><h2>전문가 심화 해설</h2><span class="chip acc">슈퍼비전 사례 회의</span></div>
+    <p class="note" style="margin:0">숙련된 임상가가 이 프로파일을 읽는 과정을 순서대로 펼쳤습니다. 자신의 해석과 단계별로 비교해 보세요.</p>
+    <h3>1. 첫 30초: 숙련가의 눈에 먼저 들어오는 것</h3><p>${esc(d.firstLook)}</p>
+    <h3>2. 척도별 정밀 분석</h3>${rowsTable(['척도','판단','의미와 근거'], d.walk)}
+    <h3>3. 가설 수렴표</h3><p class="note" style="margin:0 0 4px">각 가설을 지지하는 근거와 반대하는 근거를 함께 적는 습관이 확증 편향을 막습니다.</p>${rowsTable(['가설','지지 근거','반대·약화 근거','판단'], d.hypotheses)}
+    <h3>4. 감별 진단</h3><p class="note" style="margin:0 0 4px">MMPI만으로 진단하지 않습니다. 면담과 다른 자료로 확인할 지점을 함께 정리합니다.</p>${rowsTable(['후보','지지','반대·불확실','확인할 것'], d.differential)}
+    <h3>5. 면담에서 확인할 질문</h3><ol>${d.interview.map(q=>`<li>${esc(q)}</li>`).join('')}</ol>
+    <h3>6. 보고서 문단 예시</h3><blockquote class="report">${esc(d.report)}</blockquote>
+    <h3>7. 결과 피드백 대본</h3>${rowsTable(['수준·대상','말하기 예시'], d.feedback)}
+    <h3>8. 치료·개입 계획</h3>${rowsTable(['단계','목표','개입'], d.plan)}
+    <h3>9. 슈퍼바이저 코멘트</h3><div class="expert" style="margin-top:0">${esc(d.supervisor)}</div>
+  </div>`;
+}
 /* ── 점수표 ── */
 const GROUPS = [
   ['타당도',['CNS','VRIN','TRIN','F','Fb','Fp','FBS','L','K','S']],
@@ -263,6 +281,7 @@ function viewTheory(id){
       <div><a href="#theory" class="note">← 이론 목록</a></div>
       <div><div class="eyebrow">단계 ${m.level} · ${esc(lv.name)} · 약 ${m.min}분</div><h1 style="margin-top:6px; font-size:32px">${esc(m.title)}</h1></div>
       <div class="body">${m.html.replace(/<table class="tbl">/g,'<div class="tblwrap"><table class="tbl">').replace(/<\/table>/g,'</table></div>')}</div>
+      ${(window.MODULE_DEEP||{})[m.id] ? `<section class="deep body"><div class="eyebrow" style="color:var(--accent)">심화 · 대학원 수준</div>${wrapTables(MODULE_DEEP[m.id])}</section>` : ''}
       <div class="row" style="justify-content:space-between; border-top:1px solid var(--line); padding-top:16px">
         <button class="btn ${prog.mods[m.id]?'':'pri'}" id="done">${prog.mods[m.id]?'✓ 학습 완료됨':'학습 완료로 표시'}</button>
         <div class="row">${prev?`<a class="btn" href="#module-${prev.id}">← 이전</a>`:''}${next?`<a class="btn" href="#module-${next.id}">다음: ${esc(next.title)} →</a>`:`<a class="btn" href="#cases">사례 실습으로 →</a>`}</div>
@@ -282,12 +301,21 @@ function viewScales(){
   app.innerHTML = `<div class="stack"><div><div class="eyebrow">척도 사전</div><h1 style="margin-top:6px">척도별 의미와 전문가 해석</h1><p class="lede" style="margin-top:8px">상승 수준별 기술, 하위척도, 전문가 해석 포인트, 흔한 오류를 담았습니다. 척도를 누르면 펼쳐집니다. 청소년용(MMPI-A)을 고르면 청소년 고유 척도와 같은 척도의 청소년 해석 차이를 볼 수 있습니다.</p></div>
   <div class="seg" id="vseg"><button data-v="2" class="${ver!=='A'?'on':''}">MMPI-2 성인</button><button data-v="A" class="${ver==='A'?'on':''}">MMPI-A 청소년</button></div>
   <div class="row" style="justify-content:space-between"><div class="seg" id="seg"></div><input type="search" id="sq" placeholder="척도 검색 (예: Pd, 우울, A-sch)" style="max-width:280px"></div>
+  <div id="gintro"></div>
   <div class="stack" id="list" style="gap:8px"></div></div>`;
   const bandName = {invalid:'해석불가', caution:'주의', normal:'정상', low:'낮음', mod:'60~64', high:'높음', vhigh:'매우 높음'};
   const GN = {validity:'타당도',clinical:'임상',rc:'RC',content:'내용',supp:'보충',psy5:'PSY-5'};
   const listFor = ()=> ver==='A' ? SCALES_A.map(x=> x.ref ? Object.assign({}, S[x.ref], {aNote:x.aNote, shared:true}) : Object.assign({}, x, {only:!S[x.id]})) : SCALES;
   const drawSeg = ()=>{ const gs = G.filter(([k])=> k==='all' || listFor().some(s=>s.group===k)); if(!gs.some(([k])=>k===g)) g='all';
     $('#seg').innerHTML = gs.map(([k,n])=>`<button data-g="${k}" class="${k===g?'on':''}">${n}</button>`).join(''); };
+  const scaleDeep = sc=>{
+    const D = (window.SCALE_DEEP||{})[sc.id];
+    const useDeep = D && (ver!=='A' || sc.shared);   // 청소년 타당도 척도는 기준이 달라 성인 해설을 붙이지 않는다
+    if(useDeep) return `<details class="deep-scale"><summary>심화 해설 · 개발 배경, 문항 내용, 프로파일에서의 역할, 감별, 연구 근거</summary><dl class="facts" style="grid-template-columns:110px minmax(0,1fr); margin-top:8px">
+      <dt>개발 배경</dt><dd>${esc(D.dev)}</dd><dt>문항 내용</dt><dd>${esc(D.items)}</dd><dt>프로파일에서의 역할</dt><dd>${esc(D.role)}</dd><dt>감별과 해석 주의</dt><dd>${esc(D.diff)}</dd><dt>연구 근거</dt><dd>${esc(D.research)}</dd><dt>사례로 보기</dt><dd>${esc(D.vignette)}</dd></dl></details>`;
+    const dv = (window.SCALE_DEV||{})[sc.id];
+    return dv ? `<div class="note" style="margin-top:8px"><b>개발 배경</b> ${esc(dv)}</div>` : '';
+  };
   const draw = ()=>{
     const ql = q.trim().toLowerCase();
     const xs = listFor().filter(s=>(g==='all'||s.group===g) && (!ql || (s.abbr+s.id+s.name+s.measures).toLowerCase().includes(ql)));
@@ -296,7 +324,10 @@ function viewScales(){
       ${s.aNote?`<div class="expert" style="background:var(--warn-soft)"><b style="color:var(--warn)">청소년(MMPI-A)에서는</b> ${esc(s.aNote)}</div>`:''}
       ${s.hl?`<div class="note" style="margin-top:6px">하위척도</div><div class="bands">${s.hl.map(h=>`<div><span class="k">${h}</span><span><b>${esc(SUBSCALES[h].name)}</b> — ${esc(SUBSCALES[h].desc)}</span></div>`).join('')}</div>`:''}
       ${s.expert?`<div class="expert"><b>전문가 포인트</b> ${esc(s.expert)}</div>`:''}
-      ${s.pitfalls&&s.pitfalls.length?`<div class="note" style="margin-top:8px">흔한 오류: ${s.pitfalls.map(esc).join(' / ')}</div>`:''}</div></details>`).join('') || '<p class="note">검색 결과가 없습니다.</p>';
+      ${s.pitfalls&&s.pitfalls.length?`<div class="note" style="margin-top:8px">흔한 오류: ${s.pitfalls.map(esc).join(' / ')}</div>`:''}
+      ${scaleDeep(s)}</div></details>`).join('') || '<p class="note">검색 결과가 없습니다.</p>';
+    const intro = (window.GROUP_INTRO||{})[g];
+    $('#gintro').innerHTML = intro ? `<div class="panel" style="padding:14px 18px"><p style="margin:0">${esc(intro)}</p></div>` : '';
   };
   $('#vseg').onclick = e=>{ const b=e.target.closest('button'); if(!b) return; ver=b.dataset.v; store.set('scaleVer',ver); document.querySelectorAll('#vseg button').forEach(x=>x.classList.toggle('on',x===b)); drawSeg(); draw(); };
   $('#seg').onclick = e=>{ const b=e.target.closest('button'); if(!b) return; g=b.dataset.g; store.set('scaleGroup',g); document.querySelectorAll('#seg button').forEach(x=>x.classList.toggle('on',x===b)); draw(); };
@@ -497,7 +528,7 @@ function viewCase(id){
       <div class="row" style="justify-content:space-between"><h2>나의 해석</h2><span class="note" id="saved"></span></div>
       <p class="note">척도 이름보다 행동과 경험의 언어로, 근거 척도를 괄호에 적어 쓰세요. 작성 내용은 이 브라우저에 자동 저장됩니다.</p>
       ${FIELDS.map(([k,t,h])=>`<label class="f">${t} <small>${h}</small><textarea id="a-${k}" data-k="${k}">${esc(drafts[k]||'')}</textarea></label>`).join('')}
-      <div class="row"><button class="btn pri" id="check">제출하고 자가 점검</button><button class="btn" id="coach" data-ai hidden>AI 슈퍼바이저 코칭</button><button class="btn" id="model">${submitted?'모범 해석 보기':'모범 해석 (제출 후 공개)'}</button><a class="btn" id="toaz" href="#analyzer" ${submitted?'':'hidden'}>분석기에서 열기</a></div>
+      <div class="row"><button class="btn pri" id="check">제출하고 자가 점검</button><button class="btn" id="coach" data-ai hidden>AI 슈퍼바이저 코칭</button><button class="btn" id="model">${submitted?'모범 해석과 심화 해설 보기':'모범 해석·심화 해설 (제출 후 공개)'}</button><a class="btn" id="toaz" href="#analyzer" ${submitted?'':'hidden'}>분석기에서 열기</a></div>
     </section>
     <div id="res" class="stack"></div><div id="coachout"></div><div id="modelout"></div>
   </div>`;
@@ -518,7 +549,7 @@ function viewCase(id){
   $('#check').onclick = ()=>{
     if(allText().trim().length<40){ $('#res').innerHTML='<div class="panel note">해석을 조금 더 작성한 뒤 제출하세요. 최소한 타당도와 코드타입은 적어 주세요.</div>'; return; }
     const score = check(); prog.cases[c.id]={score, at:Date.now()}; saveProg();
-    $('#model').textContent='모범 해석 보기'; $('#toaz').hidden=false;
+    $('#model').textContent='모범 해석과 심화 해설 보기'; $('#toaz').hidden=false;
     $('#toaz').onclick = ()=>{ azState=caseState(c); store.set('az',azState); };
     $('#res').scrollIntoView({behavior:'smooth', block:'start'});
   };
@@ -527,13 +558,13 @@ function viewCase(id){
     if(!prog.cases[c.id]){ $('#modelout').innerHTML='<div class="panel note">먼저 자신의 해석을 제출하세요. 모범 해석을 먼저 보면 학습 효과가 크게 줄어듭니다.</div>'; return; }
     const e=c.expert;
     $('#modelout').innerHTML = `<div class="panel stack" style="gap:6px"><div class="row" style="justify-content:space-between"><h2>모범 해석</h2><span class="chip acc">${esc(c.code)}</span></div>
-      ${FIELDS.map(([k,tl])=>e[k]?`<h4>${tl}</h4><p>${esc(e[k])}</p>`:'').join('')}</div>`;
+      ${FIELDS.map(([k,tl])=>e[k]?`<h4>${tl}</h4><p>${esc(e[k])}</p>`:'').join('')}</div>`+deepCaseHtml(c.id);
     $('#modelout').scrollIntoView({behavior:'smooth', block:'start'});
   };
   getSample().then(sample=>{ if(!sample) return; const b=$('#coach'); if(!b) return; b.hidden=false;
     b.onclick = ()=>{
       if(allText().trim().length<40){ $('#coachout').innerHTML='<div class="panel note">코칭을 받으려면 먼저 해석을 작성하세요.</div>'; return; }
-      if(!prog.cases[c.id]){ const s=check(); prog.cases[c.id]={score:s, at:Date.now()}; saveProg(); $('#model').textContent='모범 해석 보기'; $('#toaz').hidden=false; }
+      if(!prog.cases[c.id]){ const s=check(); prog.cases[c.id]={score:s, at:Date.now()}; saveProg(); $('#model').textContent='모범 해석과 심화 해설 보기'; $('#toaz').hidden=false; }
       const ans = FIELDS.map(([k,tl])=>`### ${tl}\n${$('#a-'+k).value.trim()||'(작성하지 않음)'}`).join('\n\n');
       const e = c.expert;
       const prompt = `당신은 MMPI-2와 MMPI-A 해석 경력 25년의 임상심리전문가이며 대학원 수련생을 지도하는 슈퍼바이저입니다. 이 사례의 검사는 ${c.version==='A'?'MMPI-A(청소년용: 청소년 규준, K 교정 없음, T 60~64 경계 범위, VRIN·TRIN 기준 75, Fp·RC 없음)이며, 수련생이 성인 기준이나 성인 해석을 잘못 적용했는지 특히 점검하세요':'MMPI-2(성인용)입니다'}. 따뜻하지만 기준이 엄격합니다. 아래 가상 사례에 대해 수련생이 작성한 해석을 평가하고 코칭하세요.
@@ -560,6 +591,12 @@ ${c.keyPoints.map((k,i)=>`${i+1}. (${k.domain}) ${k.point}`).join('\n')}
 
 [이 사례의 흔한 오류]
 ${c.pitfalls.join(' / ')}
+${(window.CASE_DEEP||{})[c.id] ? `
+[전문가 가설 수렴표 — 가설 | 지지 근거 | 반대 근거 | 판단]
+${CASE_DEEP[c.id].hypotheses.map(h=>h.join(' | ')).join('\n')}
+
+[슈퍼바이저 코멘트 — 수련생이 흔히 놓치는 지점]
+${CASE_DEEP[c.id].supervisor}` : ''}
 
 [수련생의 해석]
 ${ans}

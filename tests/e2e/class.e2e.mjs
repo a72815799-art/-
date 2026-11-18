@@ -66,7 +66,7 @@ let passed = 0; const ok = name => { passed++; console.log('  ✓', name); };
   const { page, ctx } = await open({ uid: 'u_a', admin: false, store }, '#case-c01');
   await page.waitForTimeout(300);
   assert.match(await page.inputValue('#a-code'), /7-2 코드/);
-  assert.match(await page.textContent('#model'), /모범 해석 보기/, '제출 상태도 복원되어야 한다');
+  assert.match(await page.textContent('#model'), /모범 해석과 심화 해설 보기/, '제출 상태도 복원되어야 한다');
   ok('다른 기기에서 답안과 제출 상태가 복원된다');
   await ctx.close();
 }

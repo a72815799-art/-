@@ -92,3 +92,38 @@ test('코드타입 키는 척도 번호를 오름차순으로 쓴다', () => {
     assert.equal(k, [...k].sort().join(''), `${k}는 정렬된 키여야 한다`);
   }
 });
+
+/* 심화 콘텐츠 완결성: 새 사례·모듈·척도를 추가할 때 심화 해설이 빠지지 않게 한다 */
+const { CASE_DEEP, MODULE_DEEP, SCALE_DEEP, SCALE_DEV, GROUP_INTRO } = app;
+const rowsOk = (rows, cols, min, where) => {
+  assert.ok(Array.isArray(rows) && rows.length >= min, `${where}: ${min}행 이상 필요`);
+  rows.forEach((r, i) => assert.equal(r.length, cols, `${where} ${i + 1}행은 ${cols}열이어야 한다`));
+};
+for (const c of CASES) {
+  test(`${c.id} 심화 해설`, () => {
+    const d = CASE_DEEP[c.id];
+    assert.ok(d, `${c.id}: CASE_DEEP 없음`);
+    assert.ok(d.firstLook.length > 100, '첫 30초');
+    rowsOk(d.walk, 3, 5, '척도별 분석');
+    rowsOk(d.hypotheses, 4, 3, '가설 수렴표');
+    rowsOk(d.differential, 4, 1, '감별 진단');
+    assert.ok(d.interview.length >= 2, '면담 질문');
+    assert.ok(d.report.length > 300, '보고서 문단');
+    rowsOk(d.feedback, 2, 1, '피드백');
+    rowsOk(d.plan, 3, 1, '개입 계획');
+    assert.ok(d.supervisor.length > 200, '슈퍼바이저 코멘트');
+  });
+}
+test('모든 이론 모듈에 심화 영역이 있다', () => {
+  for (const m of MODULES) assert.ok(MODULE_DEEP[m.id] && MODULE_DEEP[m.id].length > 400, `${m.id} 심화 없음`);
+});
+test('타당도·임상척도는 심화 해설 6항목, 나머지는 개발 배경이 있다', () => {
+  for (const s of SCALES) {
+    if (s.group === 'validity' || s.group === 'clinical') {
+      const d = SCALE_DEEP[s.id];
+      assert.ok(d, `${s.id} 심화 없음`);
+      for (const f of ['dev', 'items', 'role', 'diff', 'research', 'vignette']) assert.ok(d[f], `${s.id}.${f}`);
+    } else assert.ok(SCALE_DEV[s.id], `${s.id} 개발 배경 없음`);
+  }
+  for (const g of ['validity', 'clinical', 'rc', 'content', 'supp', 'psy5']) assert.ok(GROUP_INTRO[g], `군 개요 ${g}`);
+});
