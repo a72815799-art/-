@@ -27,5 +27,5 @@ jobs:
           node-version: 22
       - name: Playwright 설치
         run: npm install --no-save playwright@1.63.0 && npx playwright install --with-deps chromium
-      - name: 클래스 모드 브라우저 종단 테스트
+      - name: 브라우저 종단 테스트(클래스 모드, 학습 효과)
         run: npm run e2e

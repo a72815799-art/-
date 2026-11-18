@@ -9,7 +9,7 @@ const SCHEMA = 1;
 const MIN_N = 3;   // 학생에게 반 통계를 보여 주는 최소 제출 인원(개인 식별 방지)
 
 /* 로컬 기록 묶음: {prog:{mods,quiz,cases}, drafts:{caseId:{...,_at}}, drill:{i:bool}, labQuiz:{n,ok}} */
-function emptyLocal(){ return {prog:{mods:{}, quiz:{}, cases:{}}, drafts:{}, drill:{}, labQuiz:{n:0, ok:0}}; }
+function emptyLocal(){ return {prog:{mods:{}, quiz:{}, cases:{}, srs:{}, prepost:{}}, drafts:{}, drill:{}, labQuiz:{n:0, ok:0}}; }
 
 /* 두 기기의 기록을 합친다. 원칙: 아무것도 잃지 않는다.
    - 완료한 모듈: 합집합
@@ -24,6 +24,18 @@ function mergeLocal(a, b){
   const cases = Object.assign({}, b.prog?.cases);
   for (const [id, v] of Object.entries(a.prog?.cases || {})) if (!cases[id] || (v.at || 0) >= (cases[id].at || 0)) cases[id] = v;
   out.prog.cases = cases;
+  // 복습 카드: 더 최근에 복습한 쪽
+  const srs = Object.assign({}, b.prog?.srs);
+  for (const [i, v] of Object.entries(a.prog?.srs || {})) if (!srs[i] || (v.at || 0) >= (srs[i].at || 0)) srs[i] = v;
+  out.prog.srs = srs;
+  // 사전·사후: 사전은 먼저 본 것, 사후는 나중에 본 것, 동의는 가장 최근 의사
+  const pa = a.prog?.prepost || {}, pb = b.prog?.prepost || {}, pp = {};
+  const pre = [pa.pre, pb.pre].filter(Boolean).sort((x, y) => x.at - y.at)[0];
+  const post = [pa.post, pb.post].filter(Boolean).sort((x, y) => y.at - x.at)[0];
+  const consent = [pa.consent, pb.consent].filter(Boolean).sort((x, y) => y.at - x.at)[0];
+  if (pre) pp.pre = pre; if (post) pp.post = post; if (consent) pp.consent = consent;
+  if (pa.form || pb.form) pp.form = pre ? pre.form : (pa.form || pb.form);
+  out.prog.prepost = pp;
   const drafts = Object.assign({}, b.drafts);
   for (const [id, v] of Object.entries(a.drafts || {})) if (!drafts[id] || (v._at || 0) >= (drafts[id]._at || 0)) drafts[id] = v;
   out.drafts = drafts;
@@ -43,9 +55,9 @@ function keyPointHits(c, draft){
 /* 학습 활동이 하나라도 있는지(페이지만 열어 본 사람은 명단과 통계에 넣지 않는다) */
 function hasActivity(local){
   const L = local || {}; const p = L.prog || {};
-  return Object.keys(p.mods || {}).length + Object.keys(p.quiz || {}).length + Object.keys(p.cases || {}).length + Object.keys(L.drill || {}).length + ((L.labQuiz && L.labQuiz.n) || 0) > 0;
+  return Object.keys(p.mods || {}).length + Object.keys(p.quiz || {}).length + Object.keys(p.cases || {}).length + Object.keys(L.drill || {}).length + ((L.labQuiz && L.labQuiz.n) || 0) + (p.prepost && p.prepost.pre ? 1 : 0) > 0;
 }
-const resultActive = r => !!r && ((r.mods || []).length + Object.keys(r.quiz || {}).length + Object.keys(r.cases || {}).length + Object.keys(r.drill || {}).length + ((r.labQuiz && r.labQuiz.n) || 0)) > 0;
+const resultActive = r => !!r && ((r.mods || []).length + Object.keys(r.quiz || {}).length + Object.keys(r.cases || {}).length + Object.keys(r.drill || {}).length + ((r.labQuiz && r.labQuiz.n) || 0) + (r.prepost && r.prepost.pre ? 1 : 0)) > 0;
 
 /* 운영자에게 보내는 성적 요약. 답안 텍스트는 넣지 않는다. */
 function buildResults(local, CASES, QUIZ, MODULES){
@@ -58,7 +70,13 @@ function buildResults(local, CASES, QUIZ, MODULES){
   const quiz = {};
   for (const [i, ok] of Object.entries(L.prog.quiz)) if (QUIZ[i]) quiz[i] = ok ? 1 : 0;
   const mods = Object.keys(L.prog.mods).filter(id => MODULES.some(m => m.id === id)).sort();
-  return {v: SCHEMA, mods, quiz, cases, labQuiz: {n: L.labQuiz.n | 0, ok: L.labQuiz.ok | 0}, drill: Object.fromEntries(Object.entries(L.drill).map(([k, v]) => [k, v ? 1 : 0]))};
+  const P = L.prog.prepost || {};
+  const pick = x => x ? {form: x.form, pct: x.pct, domains: x.domains, at: x.at} : undefined;
+  const prepost = {}; if (P.pre) prepost.pre = pick(P.pre); if (P.post) prepost.post = pick(P.post);
+  const out = {v: SCHEMA, mods, quiz, cases, labQuiz: {n: L.labQuiz.n | 0, ok: L.labQuiz.ok | 0}, drill: Object.fromEntries(Object.entries(L.drill).map(([k, v]) => [k, v ? 1 : 0]))};
+  if (prepost.pre) out.prepost = prepost;
+  out.consent = !!(P.consent && P.consent.value);
+  return out;
 }
 
 /* 개인 진도 요약 (명단 표시용) */
@@ -93,8 +111,17 @@ function summarize(resultsList, CASES, QUIZ, MODULES){
   const lab = rs.reduce((a, r) => ({n: a.n + (r.labQuiz?.n || 0), ok: a.ok + (r.labQuiz?.ok || 0)}), {n: 0, ok: 0});
   const ps = rs.map(r => personStats(r, CASES, QUIZ, MODULES));
   const avg = xs => xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null;
+  const both = rs.filter(r => r.prepost && r.prepost.pre && r.prepost.post);
+  const LEARN = typeof window !== 'undefined' ? window.LEARN : null;
+  let prepost = {nPre: rs.filter(r => r.prepost && r.prepost.pre).length, nPaired: both.length};
+  if (LEARN && both.length >= 2) {
+    Object.assign(prepost, LEARN.paired(both.map(r => r.prepost.pre.pct), both.map(r => r.prepost.post.pct)));
+    const doms = {}; for (const r of both) for (const [d, v] of Object.entries(r.prepost.pre.domains || {})) {
+      const e = doms[d] || (doms[d] = {pre: [], post: []}); e.pre.push(v); e.post.push((r.prepost.post.domains || {})[d] ?? v); }
+    prepost.domains = Object.fromEntries(Object.entries(doms).map(([d, e]) => [d, {pre: Math.round(avgOf(e.pre)), post: Math.round(avgOf(e.post))}]));
+  }
   return {
-    v: SCHEMA, students: rs.length,
+    v: SCHEMA, students: rs.length, prepost,
     progress: {mods: avg(ps.map(p => p.mods / p.modsTotal)), cases: avg(ps.map(p => p.cases / p.casesTotal))},
     cases, quiz, lab,
   };
@@ -115,6 +142,22 @@ function weakestKeyPoints(summary, CASES, top = 3){
 
 /* 같은 내용인지(쓸데없는 쓰기를 막기 위해) */
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+const avgOf = xs => xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : 0;
 
-window.CLASSDATA = {SCHEMA, MIN_N, emptyLocal, hasActivity, resultActive, mergeLocal, keyPointHits, buildResults, personStats, summarize, visibleStat, weakestKeyPoints, same};
+/* 연구용 익명 데이터: 연구 활용에 동의한 학생만, 학생 id 대신 순번, 답안 텍스트 없음 */
+function researchRows(resultsList, CASES, QUIZ, MODULES, domains){
+  const rs = (resultsList || []).filter(r => r && r.v === SCHEMA && r.consent && resultActive(r));
+  const head = ['참여자','사전형','사전점수','사후점수','향상','정규화향상', ...domains.flatMap(d => ['사전_' + d, '사후_' + d]), '이론완료수','사례제출수','사례평균','퀴즈응답수','퀴즈정답률'];
+  const rows = rs.map((r, i) => {
+    const p = r.prepost || {}, pre = p.pre, post = p.post, ps = personStats(r, CASES, QUIZ, MODULES);
+    const g = pre && post && pre.pct < 100 ? Math.round((post.pct - pre.pct) / (100 - pre.pct) * 100) / 100 : '';
+    return ['P' + String(i + 1).padStart(2, '0'), pre ? pre.form : '', pre ? pre.pct : '', post ? post.pct : '', pre && post ? post.pct - pre.pct : '', g,
+      ...domains.flatMap(d => [pre ? (pre.domains || {})[d] ?? '' : '', post ? (post.domains || {})[d] ?? '' : '']),
+      ps.mods, ps.cases, ps.avgCase ?? '', ps.quizN, ps.quizRate === null ? '' : Math.round(ps.quizRate * 100)];
+  });
+  return {head, rows};
+}
+const toCSV = ({head, rows}) => '\ufeff' + [head, ...rows].map(r => r.map(x => { const v = String(x ?? ''); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }).join(',')).join('\n');
+
+window.CLASSDATA = {SCHEMA, MIN_N, emptyLocal, hasActivity, resultActive, researchRows, toCSV, mergeLocal, keyPointHits, buildResults, personStats, summarize, visibleStat, weakestKeyPoints, same};
 })();

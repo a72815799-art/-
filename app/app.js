@@ -13,7 +13,7 @@ const store = {
   set(k,v){ try{ localStorage.setItem('mmpi.'+k, JSON.stringify(v)); }catch(e){} if(/^(prog|draft\.|drill|lab$)/.test(k)) Sync.changed(); },
   keys(prefix){ try{ return Object.keys(localStorage).filter(k=>k.startsWith('mmpi.'+prefix)).map(k=>k.slice(5)); }catch(e){ return []; } }
 };
-let prog = store.get('prog', {mods:{}, quiz:{}, cases:{}});
+const prog = store.get('prog', {mods:{}, quiz:{}, cases:{}});
 const saveProg = ()=> store.set('prog', prog);
 
 /* ── 클래스 모드 동기화 (artifact db). 쓸 수 없으면 이 브라우저 저장만으로 계속 동작한다 ── */
@@ -51,12 +51,14 @@ const Sync = {
 function gatherLocal(){
   const drafts={}; for(const k of store.keys('draft.')){ const d=store.get(k,null); if(d) drafts[k.slice(6)]=d; }
   const lab = store.get('lab', {});
-  return {prog:{mods:prog.mods||{}, quiz:prog.quiz||{}, cases:prog.cases||{}}, drafts, drill:store.get('drill',{}), labQuiz:(lab.quiz||{n:0,ok:0})};
+  return {prog:{mods:prog.mods||{}, quiz:prog.quiz||{}, cases:prog.cases||{}, srs:prog.srs||{}, prepost:prog.prepost||{}}, drafts, drill:store.get('drill',{}), labQuiz:(lab.quiz||{n:0,ok:0})};
 }
 /* 합친 기록을 이 브라우저에 반영(동기화 신호는 보내지 않는다) */
 function applyLocal(L){
   const raw=(k,v)=>{ try{ localStorage.setItem('mmpi.'+k, JSON.stringify(v)); }catch(e){} };
-  prog = {mods:L.prog.mods, quiz:L.prog.quiz, cases:L.prog.cases}; raw('prog', prog);
+  // 화면들이 prog를 참조하고 있으므로 새 객체로 바꾸지 않고 내용만 교체한다
+  for(const k of Object.keys(prog)) delete prog[k];
+  Object.assign(prog, {mods:L.prog.mods, quiz:L.prog.quiz, cases:L.prog.cases, srs:L.prog.srs||{}, prepost:L.prog.prepost||{}}); raw('prog', prog);
   for(const [id,d] of Object.entries(L.drafts)) raw('draft.'+id, d);
   raw('drill', L.drill);
   const lab = store.get('lab', null); if(lab){ lab.quiz = L.labQuiz; raw('lab', lab); } else raw('lab', {base:'', sex:'M', mix:{random:0,bias:0,over:0,under:0}, quiz:L.labQuiz});
@@ -185,7 +187,7 @@ function scoreTable(p, ver){
 }
 
 /* ── 라우터 ── */
-const routes = {home:viewHome, theory:viewTheory, scales:viewScales, codes:viewCodes, analyzer:viewAnalyzer, cases:viewCases, quiz:viewQuiz, mentor:viewMentor, compare:viewCompare, lab:viewLab, stability:viewStability, class:viewClass};
+const routes = {home:viewHome, theory:viewTheory, scales:viewScales, codes:viewCodes, analyzer:viewAnalyzer, cases:viewCases, quiz:viewQuiz, mentor:viewMentor, compare:viewCompare, lab:viewLab, stability:viewStability, class:viewClass, research:viewResearch, reliability:viewReliability};
 function route(){
   const h = (location.hash||'#home').slice(1);
   let r = h, arg=null;
@@ -193,7 +195,7 @@ function route(){
   else if(h.startsWith('case-')){ r='cases'; arg=h.slice(5); }
   else if(h==='cases-teen'){ r='cases'; arg='#teen'; }
   if(!routes[r]) r='home';
-  const tab = r==='stability' ? 'lab' : r;
+  const tab = r==='stability' ? 'lab' : r==='reliability' ? 'research' : r;
   document.querySelectorAll('#tabs a').forEach(a=>a.classList.toggle('on', a.dataset.r===tab));
   app.innerHTML=''; routes[r](arg); window.scrollTo(0,0);
 }
@@ -241,6 +243,7 @@ function viewHome(){
         if(L.n===3) links += `<a href="#scales">척도 사전</a>`;
         if(L.n===4) links += `<a href="#codes">코드타입 사전</a><a href="#stability">코드타입 안정성 실험</a>`;
         if(L.n===6) links += `<a href="#analyzer">프로파일 분석기</a>`;
+        if(L.n===1) links += `<a href="#research">사전 평가</a>`;
         if(L.n===7){ const ad=CASES.filter(c=>c.version!=='A'); tot=ad.length; done=ad.filter(c=>prog.cases[c.id]).length; links = `<a href="#cases">성인 사례 ${ad.length}개</a><a href="#mentor">슈퍼바이저에게 질문</a>`; }
         if(L.n===8){ const ac=CASES.filter(c=>c.version==='A'); links += `<a href="#compare">성인 vs 청소년 비교</a><a href="#cases-teen">청소년 사례 ${ac.length}개</a>`; tot+=ac.length; done+=ac.filter(c=>prog.cases[c.id]).length; }
         const pct = tot? Math.round(done/tot*100):0;
@@ -626,23 +629,37 @@ ${ans}
 /* ════════ 퀴즈 ════════ */
 function viewQuiz(){
   let lv = store.get('quizLv', 0);
-  app.innerHTML = `<div class="stack" style="max-width:820px"><div><div class="eyebrow">퀴즈</div><h1 style="margin-top:6px">개념 확인 퀴즈</h1><p class="lede" style="margin-top:8px">${QUIZ.length}문항. 답을 고르면 바로 해설이 나옵니다. 가장 최근 답이 진도에 기록됩니다.</p></div>
-  <div class="row" style="justify-content:space-between"><div class="seg" id="qseg">${[[0,'전체'],...LEVELS.filter(L=>QUIZ.some(q=>q.lv===L.n)).map(L=>[L.n,`${L.n}단계`])].map(([k,n])=>`<button data-l="${k}" class="${k===lv?'on':''}">${n}</button>`).join('')}</div><span class="chip mono" id="qscore"></span></div>
+  const now = Date.now();
+  prog.srs = LEARN.seedFromQuiz(prog.srs||{}, prog.quiz, now);   // 예전에 틀린 문항을 복습 카드로
+  const dueN = ()=> LEARN.dueItems(prog.srs, Date.now()).length;
+  app.innerHTML = `<div class="stack" style="max-width:820px"><div><div class="eyebrow">퀴즈</div><h1 style="margin-top:6px">개념 확인 퀴즈</h1><p class="lede" style="margin-top:8px">${QUIZ.length}문항. 답을 고르면 바로 해설이 나옵니다. 틀린 문항은 간격 반복(SM-2) 일정에 따라 “오늘의 복습”에 다시 나옵니다. 맞힐수록 다음 복습까지의 간격이 1일, 6일, 약 2주로 늘어납니다.</p></div>
+  <div class="row" style="justify-content:space-between"><div class="seg" id="qseg"></div><span class="chip mono" id="qscore"></span></div>
   <div class="stack" id="qs" style="gap:12px"></div><button class="btn" id="qreset" style="align-self:flex-start">이 범위 기록 초기화</button></div>`;
+  const segs = ()=>{ const items=[['R',`오늘의 복습 (${dueN()})`],[0,'전체'],...LEVELS.filter(L=>QUIZ.some(q=>q.lv===L.n)).map(L=>[L.n,`${L.n}단계`])];
+    $('#qseg').innerHTML = items.map(([k,n])=>`<button data-l="${k}" class="${String(k)===String(lv)?'on':''}">${n}</button>`).join(''); };
+  const listNow = ()=> lv==='R' ? LEARN.dueItems(prog.srs, Date.now()).map(i=>({...QUIZ[i], i})) : QUIZ.map((q,i)=>({...q,i})).filter(q=>!lv||q.lv===lv);
+  const score = ()=>{ if(lv==='R'){ $('#qscore').textContent = `남은 복습 ${dueN()}`; return; } const list=listNow(); $('#qscore').textContent = `정답 ${list.filter(q=>prog.quiz[q.i]).length} / ${list.length}`; };
   const draw = ()=>{
-    const list = QUIZ.map((q,i)=>({...q,i})).filter(q=>!lv||q.lv===lv);
-    const ans = list.filter(q=>prog.quiz[q.i]!==undefined), right = ans.filter(q=>prog.quiz[q.i]);
-    $('#qscore').textContent = `정답 ${right.length} / ${list.length}`;
-    $('#qs').innerHTML = list.map((q,n)=>`<div class="q" data-i="${q.i}"><div class="row" style="justify-content:space-between"><span class="eyebrow">문항 ${n+1} · ${q.lv}단계</span>${prog.quiz[q.i]===undefined?'':prog.quiz[q.i]?'<span class="chip ok">정답</span>':'<span class="chip stop">오답</span>'}</div><p style="margin:6px 0 0; font-weight:600">${esc(q.q)}</p><div class="opts">${q.a.map((a,j)=>`<button data-j="${j}">${String.fromCharCode(9312+j)} ${esc(a)}</button>`).join('')}</div><div class="ex" hidden></div></div>`).join('');
+    segs(); score(); $('#qreset').hidden = lv==='R';
+    const list = listNow();
+    if(lv==='R' && !list.length){
+      const next = Object.values(prog.srs).map(c=>c.due).filter(d=>d>Date.now()).sort((a,b)=>a-b)[0];
+      $('#qs').innerHTML = `<div class="panel flat note">오늘 복습할 문항이 없습니다.${next?` 다음 복습은 ${new Date(next).toLocaleDateString('ko-KR')}입니다.`:' 퀴즈에서 틀린 문항이 생기면 여기에 나옵니다.'}</div>`; return;
+    }
+    $('#qs').innerHTML = list.map((q,n)=>{ const card=prog.srs[q.i];
+      return `<div class="q" data-i="${q.i}"><div class="row" style="justify-content:space-between"><span class="eyebrow">${lv==='R'?`복습 ${card&&card.reps?card.reps+1+'회차':'첫 복습'}`:`문항 ${n+1}`} · ${q.lv}단계</span>${lv==='R'||prog.quiz[q.i]===undefined?'':prog.quiz[q.i]?'<span class="chip ok">정답</span>':'<span class="chip stop">오답</span>'}</div><p style="margin:6px 0 0; font-weight:600">${esc(q.q)}</p><div class="opts">${q.a.map((a,j)=>`<button data-j="${j}">${String.fromCharCode(9312+j)} ${esc(a)}</button>`).join('')}</div><div class="ex" hidden></div></div>`; }).join('');
   };
-  $('#qs').addEventListener('click', e=>{ const b=e.target.closest('.opts button'); if(!b||b.disabled) return; const box=b.closest('.q'); const q=QUIZ[+box.dataset.i]; const j=+b.dataset.j;
+  $('#qs').addEventListener('click', e=>{ const b=e.target.closest('.opts button'); if(!b||b.disabled) return; const box=b.closest('.q'); const i=+box.dataset.i, q=QUIZ[i]; const j=+b.dataset.j, ok=j===q.c;
     box.querySelectorAll('.opts button').forEach((x,k)=>{ x.disabled=true; if(k===q.c) x.classList.add('right'); else if(k===j) x.classList.add('wrong'); });
-    const ex=box.querySelector('.ex'); ex.hidden=false; ex.innerHTML=`<b>${j===q.c?'정답입니다.':'오답입니다.'}</b> ${esc(q.e)}`;
-    prog.quiz[q.i] = j===q.c; saveProg();
-    const list = QUIZ.map((q,i)=>({...q,i})).filter(q=>!lv||q.lv===lv); $('#qscore').textContent = `정답 ${list.filter(q=>prog.quiz[q.i]).length} / ${list.length}`; });
-  $('#qseg').onclick = e=>{ const b=e.target.closest('button'); if(!b) return; lv=+b.dataset.l; store.set('quizLv',lv); document.querySelectorAll('#qseg button').forEach(x=>x.classList.toggle('on',x===b)); draw(); };
-  $('#qreset').onclick = ()=>{ QUIZ.forEach((q,i)=>{ if(!lv||q.lv===lv) delete prog.quiz[i]; }); saveProg(); draw(); };
-  draw();
+    prog.quiz[i] = ok;
+    const t = Date.now(), card = prog.srs[i];
+    if(lv==='R' || card || !ok) prog.srs[i] = LEARN.sm2(card, ok?4:1, t);
+    const nxt = prog.srs[i] ? Math.round((prog.srs[i].due - t)/LEARN.DAY) : null;
+    const ex=box.querySelector('.ex'); ex.hidden=false; ex.innerHTML=`<b>${ok?'정답입니다.':'오답입니다.'}</b> ${esc(q.e)}${nxt!==null?`<div class="note" style="margin-top:6px">다음 복습: ${nxt<=1?'내일':nxt+'일 뒤'}</div>`:''}`;
+    saveProg(); score(); segs(); });
+  $('#qseg').onclick = e=>{ const b=e.target.closest('button'); if(!b) return; lv = b.dataset.l==='R' ? 'R' : +b.dataset.l; store.set('quizLv',lv); draw(); };
+  $('#qreset').onclick = ()=>{ QUIZ.forEach((q,i)=>{ if(!lv||q.lv===lv){ delete prog.quiz[i]; delete prog.srs[i]; } }); saveProg(); draw(); };
+  saveProg(); draw();
 }
 
 /* ════════ 슈퍼바이저 질문 ════════ */
@@ -874,6 +891,7 @@ function viewClass(){
         <div class="panel"><div class="eyebrow">평균 사례 제출</div><div class="num" style="font-size:28px; font-weight:600">${sm.progress.cases!==null?Math.round(sm.progress.cases*100)+'%':'-'}</div><div class="note">나: ${Math.round(Object.keys(mine.cases).length/CASES.length*100)}%</div></div>
       </div>
       ${n<C.MIN_N?`<div class="panel flat note">참여 학생이 ${C.MIN_N}명 이상이 되면 사례별 평균과 반이 놓친 포인트가 표시됩니다.</div>`:''}
+      ${sm.prepost && sm.prepost.nPaired>=C.MIN_N ? `<section class="panel stack" style="gap:8px"><h2>우리 반 학습 효과 (사전 → 사후)</h2><p style="margin:0"><b class="num">${sm.prepost.preMean}% → ${sm.prepost.postMean}%</b> <span class="note">(${sm.prepost.nPaired}명, 평균 향상 ${sm.prepost.diff}점, 효과크기 dz ${sm.prepost.dz??'-'} ${LEARN.effectLabel(sm.prepost.dz)}, 정규화 향상도 ${sm.prepost.hake??'-'})</span></p>${sm.prepost.domains?`<div class="stack" style="gap:6px">${Object.entries(sm.prepost.domains).map(([d,v])=>barRow(d,v.pre,v.post)).join('')}</div>`:''}</section>` : ''}
       <section class="panel stack" style="gap:8px"><h2>반이 가장 많이 놓친 핵심 포인트</h2>${weak.length?`<ul class="kp">${weak.map(w=>`<li class="miss" style="grid-template-columns:52px 86px minmax(0,1fr)"><span class="mk num">${Math.round(w.rate*100)}%</span><span class="dm">${esc(w.domain)}</span><span>${esc(w.point)} <a class="note" href="#case-${w.caseId}">사례 ${+w.caseId.slice(1)}</a></span></li>`).join('')}</ul><p class="note" style="margin:0">퍼센트는 그 포인트를 답안에 언급한 학생의 비율입니다.</p>`:'<p class="note" style="margin:0">표시할 만큼 제출된 사례가 아직 없습니다.</p>'}</section>
       <section class="panel stack" style="gap:8px"><h2>사례별 반 평균과 내 점수</h2><div class="tblwrap"><table class="tbl"><tr><th>사례</th><th>제출</th><th>반 평균</th><th>나</th></tr>${rows}</table></div><p class="note" style="margin:0">점수는 자가 점검의 핵심 포인트 비율입니다. 반 평균보다 낮은 내 점수는 주황색으로 표시합니다.</p></section>
       <section class="panel stack" style="gap:8px"><h2>반이 가장 어려워한 퀴즈</h2>${hardQ.length?`<ul class="kp">${hardQ.map(([i,q])=>{ const my=mine.quiz[i]; return `<li class="${my?'hit':'miss'}" style="grid-template-columns:52px minmax(0,1fr)"><span class="mk num">${Math.round(q.rate*100)}%</span><span>${esc(QUIZ[i].q)} <span class="note">· 나: ${my===undefined?'안 풂':my?'정답':'오답'}</span></span></li>`; }).join('')}</ul><a class="btn sm" href="#quiz" style="align-self:flex-start">퀴즈 풀러 가기</a>`:'<p class="note" style="margin:0">표시할 만큼 응답이 쌓이지 않았습니다.</p>'}</section>
@@ -909,6 +927,10 @@ function viewClass(){
           <label class="f" style="flex:2; min-width:180px">메모(선택)<input type="text" id="as-note" maxlength="80" placeholder="예: 다음 수업 토론 사례"></label>
           <button class="btn pri" id="as-add">과제 추가</button></div>
         <p class="note" id="as-msg" style="margin:0"></p></div>
+      <div class="stack" style="gap:8px"><h3 style="font-size:16px">연구 데이터 (사전·사후)</h3>
+        ${(()=>{ const pp=summary.prepost||{}; return pp.nPaired>=2 ? `<div class="tblwrap"><table class="tbl"><tr><th>사전·사후 모두 응시</th><th>사전 평균</th><th>사후 평균</th><th>평균 차이 [95% CI]</th><th>효과크기 dz</th><th>t</th><th>정규화 향상도</th></tr><tr><td class="num">${pp.nPaired}명</td><td class="num">${pp.preMean}%</td><td class="num">${pp.postMean}%</td><td class="num">${pp.diff} ${pp.ci?`[${pp.ci[0]}, ${pp.ci[1]}]`:''}</td><td class="num">${pp.dz??'-'} (${LEARN.effectLabel(pp.dz)})</td><td class="num">${pp.t??'-'} (df ${pp.nPaired-1})</td><td class="num">${pp.hake??'-'}</td></tr></table></div>` : `<p class="note" style="margin:0">사전·사후를 모두 본 학생이 2명 이상이면 대응표본 통계가 표시됩니다(현재 ${pp.nPaired||0}명, 사전만 ${pp.nPre||0}명).</p>`; })()}
+        <div class="row"><button class="btn sm" id="rs-csv" hidden>익명 연구 데이터 CSV 저장</button><span class="note">연구 활용에 동의한 학생만, 이름·id·답안 없이 P01 같은 번호로 저장합니다(현재 동의 ${docs.filter(d=>d.consent&&C.resultActive(d)).length}명).</span></div>
+        <p class="note" style="margin:0">이 데이터를 학회나 논문으로 발표하려면 소속 기관의 연구윤리(IRB) 승인과 참여자 동의 절차가 필요할 수 있습니다. 반드시 지도교수와 먼저 상의하세요.</p></div>
       <details><summary style="cursor:pointer; font-weight:600">학우들과 함께 쓰는 방법</summary><ol style="padding-left:20px; font-size:14px; margin:8px 0 0">
         <li>이 페이지 오른쪽 위의 공유 메뉴에서 학우들을 <b>기여자(Contributor)</b>로 초대합니다. 보기 전용(Viewer)이나 댓글 작성자로는 기록을 저장할 수 없습니다.</li>
         <li>학우들이 같은 claude.ai 조직(학교의 Team·Enterprise·Education 플랜 등)에 속해 있어야 기여자로서 기록을 저장할 수 있습니다. 조직 밖의 사람은 읽기만 가능합니다.</li>
@@ -922,11 +944,202 @@ function viewClass(){
     $('#as-add').onclick = ()=>{ const caseId=$('#as-case').value, due=$('#as-due').value, note=$('#as-note').value.trim(); if(Sync.assignments.some(a=>a.caseId===caseId)){ $('#as-msg').textContent='이미 과제로 등록된 사례입니다.'; return; } saveAssign([...Sync.assignments, {caseId, due, note, at:Date.now()}]); $('#as-note').value=''; };
     $('#as-list').addEventListener('click', e=>{ const b=e.target.closest('[data-del]'); if(!b) return; saveAssign(Sync.assignments.filter((_,i)=>i!==+b.dataset.del)); });
     drawList();
+    getDownloads().then(dl=>{ const b=$('#rs-csv'); if(!dl||!b) return; b.hidden=false; b.onclick = async ()=>{
+      try{ await dl.save({filename:'mmpi-class-research-anonymous.csv', data:C.toCSV(C.researchRows(docs, CASES, QUIZ, MODULES, ASSESS.domains))}); }catch(e){} }; });
     return written;
   }
 
   load();
 }
+
+/* ════════ 학습 효과: 사전·사후 평가 / AI 채점 신뢰도 ════════ */
+const researchTabs = cur => `<div class="seg" style="margin-top:4px"><a class="btn sm ${cur==='research'?'pri':''}" href="#research">사전·사후 평가</a><a class="btn sm ${cur==='reliability'?'pri':''}" href="#reliability">AI 채점 신뢰도</a></div>`;
+/* 보기 순서 섞기(문항마다 고정된 순서): 정답 위치로 답을 짐작하지 못하게 한다 */
+function optOrder(seed, n){ const g = MMPILAB.rng(seed); const o=[...Array(n).keys()]; for(let i=n-1;i>0;i--){ const j=Math.floor(g()*(i+1)); [o[i],o[j]]=[o[j],o[i]]; } return o; }
+const barRow = (label, a, b) => `<div style="display:grid; grid-template-columns:minmax(0,150px) minmax(0,1fr) 92px; gap:10px; align-items:center; font-size:13.5px"><span>${esc(label)}</span><div class="stack" style="gap:3px"><div class="scorebar"><i style="width:${a}%; background:var(--muted)"></i></div>${b!==undefined?`<div class="scorebar"><i style="width:${b}%; background:var(--accent)"></i></div>`:''}</div><span class="num" style="text-align:right">${a}%${b!==undefined?` → <b>${b}%</b>`:''}</span></div>`;
+
+function viewResearch(){
+  const P = ()=> (prog.prepost = prog.prepost || {});   // 항상 현재 기록을 읽는다
+  const done = { mods:Object.keys(prog.mods).length, cases:Object.keys(prog.cases).length };
+  app.innerHTML = `<div class="stack" style="max-width:900px"><div><div class="eyebrow">학습 효과</div><h1 style="margin-top:6px">사전·사후 평가</h1>
+    <p class="lede" style="margin-top:8px">학습을 시작하기 전과 마친 뒤에 같은 수준의 프로파일 판단 문제를 풀어, 영역별로 얼마나 늘었는지 확인합니다. 두 시점에 서로 다른 평행형(A형·B형)을 무작위 순서로 배정해 같은 문제를 다시 푸는 효과를 막습니다. 16문항, 약 10분.</p>${researchTabs('research')}</div>
+    <div id="pp"></div>
+    <section class="panel stack" style="gap:8px"><h3 style="font-size:16px">연구 활용 동의</h3>
+      <label class="row" style="gap:10px; align-items:flex-start; flex-wrap:nowrap; cursor:pointer"><input type="checkbox" id="pp-consent" style="margin-top:5px; width:auto" ${P().consent&&P().consent.value?'checked':''}><span style="font-size:14.5px">내 사전·사후 점수와 학습 진도를 이름과 답안 없이 익명 번호로 수업 연구(학회 발표 등)에 활용하는 데 동의합니다. 언제든 체크를 해제해 철회할 수 있습니다.</span></label>
+      <p class="note" style="margin:0">동의하지 않아도 모든 기능을 똑같이 쓸 수 있습니다. 연구로 발표하려면 소속 기관의 연구윤리(IRB) 절차가 필요할 수 있습니다.</p></section>
+  </div>`;
+  $('#pp-consent').onchange = e=>{ P().consent = {value:e.target.checked, at:Date.now()}; saveProg(); };
+  const box = $('#pp');
+  const runForm = (stage)=>{
+    const form = stage==='pre' ? (P().form = P().form || (Math.random()<0.5?'A':'B')) : LEARN.otherForm(P().pre.form);
+    const items = ASSESS.forms[form]; const ans = Array(items.length).fill(null);
+    box.innerHTML = `<section class="stack" style="gap:12px"><div class="row" style="justify-content:space-between"><h2>${stage==='pre'?'사전':'사후'} 평가 · ${form}형</h2><span class="chip mono" id="pp-left">0 / ${items.length}</span></div>
+      <p class="note" style="margin:0">자료를 보지 말고 지금 아는 대로 답하세요. 정답과 해설은 사후 평가까지 마친 뒤에 공개됩니다.</p>
+      ${items.map((it,i)=>{ const o=optOrder((form==='A'?1000:2000)+i, it.a.length); return `<div class="q" data-i="${i}" style="padding:14px"><div class="eyebrow">${i+1} · ${esc(it.domain)}</div><p style="margin:6px 0 0; font-weight:600">${esc(it.q)}</p><div class="opts">${o.map(j=>`<button data-j="${j}">${esc(it.a[j])}</button>`).join('')}</div></div>`; }).join('')}
+      <button class="btn pri" id="pp-submit" disabled>제출</button></section>`;
+    box.addEventListener('click', e=>{ const b=e.target.closest('.opts button'); if(!b) return; const q=b.closest('.q'); const i=+q.dataset.i; ans[i]=+b.dataset.j;
+      q.querySelectorAll('.opts button').forEach(x=>x.classList.toggle('right', x===b));
+      const n=ans.filter(x=>x!==null).length; $('#pp-left').textContent=`${n} / ${items.length}`; $('#pp-submit').disabled = n<items.length; });
+    $('#pp-submit').onclick = ()=>{ const r = LEARN.scoreForm(items, ans); P()[stage] = {form, ...r, answers:ans, at:Date.now()}; saveProg(); window.scrollTo(0,0); draw(); };
+  };
+  const reveal = (stage)=>{ const R=P()[stage]; const items=ASSESS.forms[R.form];
+    return `<details><summary style="cursor:pointer; font-weight:600">${stage==='pre'?'사전':'사후'} 평가(${R.form}형) 정답과 해설 보기</summary><div class="stack" style="gap:6px; margin-top:8px">${items.map((it,i)=>{ const ok=R.answers[i]===it.c; return `<div class="q" style="padding:12px"><div class="row" style="justify-content:space-between"><span class="eyebrow">${i+1} · ${esc(it.domain)}</span><span class="chip ${ok?'ok':'stop'}">${ok?'정답':'오답'}</span></div><p style="margin:6px 0 4px; font-weight:600">${esc(it.q)}</p><p style="margin:0; font-size:14px">정답: <b>${esc(it.a[it.c])}</b>${ok?'':` <span class="note">(내 답: ${esc(it.a[R.answers[i]]??'-')})</span>`}</p></div>`; }).join('')}</div></details>`; };
+  const draw = ()=>{
+    if(!P().pre){
+      box.innerHTML = `<section class="panel stack" style="gap:10px"><h2>사전 평가를 아직 보지 않았습니다</h2>
+        <p style="margin:0">가능하면 <b>학습을 시작하기 전</b>에 보세요. 이미 공부를 시작했다면 지금 보고, 사후 평가는 커리큘럼을 마친 뒤에 보면 됩니다.</p>
+        <button class="btn pri" id="pp-start" style="align-self:flex-start">사전 평가 시작</button></section>`;
+      $('#pp-start').onclick = ()=>runForm('pre'); return;
+    }
+    const pre = P().pre, post = P().post;
+    if(!post){
+      const ready = done.mods >= MODULES.length*0.6 && done.cases >= 8;
+      box.innerHTML = `<section class="panel stack" style="gap:10px"><div class="row" style="justify-content:space-between"><h2>사전 평가 결과</h2><span class="chip mono">${pre.form}형 · ${pre.pct}%</span></div>
+        <div class="stack" style="gap:8px">${ASSESS.domains.map(d=>barRow(d, pre.domains[d]??0)).join('')}</div>
+        <p class="note" style="margin:0">사후 평가는 이론 모듈 60% 이상, 사례 8개 이상을 마친 뒤 보기를 권합니다. 지금 진도: 이론 ${done.mods}/${MODULES.length}, 사례 ${done.cases}/${CASES.length}.</p>
+        <div class="row"><button class="btn ${ready?'pri':''}" id="pp-post">${ready?'사후 평가 시작':'권장 학습량 전이지만 사후 평가 시작'}</button></div></section>`;
+      $('#pp-post').onclick = ()=>runForm('post'); return;
+    }
+    const gain = post.pct - pre.pct, g = LEARN.hake(pre.pct, post.pct);
+    const gTxt = g===null ? '-' : g.toFixed(2);
+    const gLabel = g===null ? '' : g >= 0.7 ? '높은 향상' : g >= 0.3 ? '중간 향상' : g > 0 ? '낮은 향상' : '향상 없음';
+    box.innerHTML = `<section class="panel stack" style="gap:12px"><div class="row" style="justify-content:space-between"><h2>사전 → 사후 비교</h2><span class="chip acc">${pre.form}형 → ${post.form}형</span></div>
+      <div class="grid3"><div class="panel"><div class="eyebrow">사전</div><div class="num" style="font-size:28px; font-weight:600">${pre.pct}%</div></div><div class="panel"><div class="eyebrow">사후</div><div class="num" style="font-size:28px; font-weight:600; color:var(--accent)">${post.pct}%</div><div class="note">${gain>=0?'+':''}${gain}점</div></div><div class="panel"><div class="eyebrow">정규화 향상도 g</div><div class="num" style="font-size:28px; font-weight:600">${gTxt}</div><div class="note">${gLabel}</div></div></div>
+      <div class="stack" style="gap:8px"><div class="note">영역별 (회색: 사전, 파랑: 사후)</div>${ASSESS.domains.map(d=>barRow(d, pre.domains[d]??0, post.domains[d]??0)).join('')}</div>
+      <p class="note" style="margin:0">정규화 향상도 g = (사후 − 사전) ÷ (100 − 사전). 사전 점수가 높아 더 오를 여지가 적은 사람과 낮은 사람의 향상을 공정하게 비교하려고 쓰는 지표(Hake, 1998)입니다. 한 사람의 16문항 결과는 오차가 크므로 영역별 차이는 경향으로만 보세요.</p>
+      ${reveal('pre')}${reveal('post')}
+      <div class="row"><button class="btn sm" id="pp-reset">평가 기록 지우기</button><span class="note" id="pp-rmsg"></span></div></section>`;
+    let armed=false; $('#pp-reset').onclick = e=>{ if(!armed){ armed=true; e.target.textContent='한 번 더 누르면 지웁니다'; return; } delete P().pre; delete P().post; delete P().form; saveProg(); draw(); };
+  };
+  draw();
+}
+
+/* AI 채점 신뢰도 */
+let relRuns = store.get('airel', []), relHuman = store.get('airel.human', {});
+function gradePrompt(c, answer){
+  const e = c.expert;
+  return `당신은 MMPI-2와 MMPI-A 해석을 지도하는 임상심리 수련 감독자입니다. 아래 루브릭으로 수련생 답안을 채점하세요. 설명 없이 JSON만 출력합니다. 교육용 가상 사례입니다.
+
+[사례] ${c.demo} / 장면: ${MMPI.SETTINGS[c.setting]} / 검사: ${c.version==='A'?'MMPI-A(청소년 규준)':'MMPI-2'}
+의뢰: ${c.referral}
+배경: ${c.background}
+
+[T점수]
+${MMPI.profileText(c.p, c.version)}
+
+[전문가 핵심 포인트]
+${c.keyPoints.map((k,i)=>`${i+1}. (${k.domain}) ${k.point}`).join('\n')}
+
+[전문가 모범 해석 요약]
+타당도: ${e.validity}
+코드: ${e.code}
+정교화: ${e.elaboration}
+진단: ${e.dx}
+위험: ${e.risk}
+치료: ${e.tx}
+
+[루브릭] 각 영역을 0~5 정수로 채점한다.
+0 = 언급 없음 또는 심각한 오류, 1 = 대부분 틀림, 2 = 일부 맞지만 중요한 누락이나 오류, 3 = 핵심은 맞으나 정교화 부족, 4 = 정확하고 대부분 정교함, 5 = 전문가 수준.
+영역: validity(타당도 판단), code(코드타입·상승도), elaboration(하위척도·RC로 본 정교화), integration(내용·보충·PSY-5 통합), context(배경·맥락 통합), diagnosis(진단적 추론: 확정하지 않고 감별), risk(위험 평가), treatment(치료 시사점), language(보고서 언어: 행동 언어, 확률적 표현, 낙인 회피)
+
+[수련생 답안]
+${FIELDS.map(([k,tl])=>`${tl}: ${(answer[k]||'').trim()||'(작성하지 않음)'}`).join('\n')}
+
+출력 형식(이 형식의 JSON 하나만): {"validity":0,"code":0,"elaboration":0,"integration":0,"context":0,"diagnosis":0,"risk":0,"treatment":0,"language":0}`;
+}
+function relAnswers(){
+  const mine = Object.keys(prog.cases).map(id=>{ const d=store.get('draft.'+id,null); const c=CASES.find(x=>x.id===id); return d && c ? {id:'me-'+id, caseId:id, level:null, label:`내 답안 · 사례 ${+id.slice(1)}`, a:d} : null; }).filter(Boolean);
+  return [...BENCHMARK, ...mine];
+}
+function relStats(){
+  const by = {}; for(const r of relRuns){ (by[r.aid] = by[r.aid] || []).push(r); }
+  const answers = relAnswers().filter(a=>by[a.id]);
+  const rows = answers.map(a=>{ const rs=by[a.id], tot=rs.map(r=>r.total); return {a, n:rs.length, mean:LEARN.round(LEARN.mean(tot),1), sd:LEARN.round(LEARN.sd(tot),1), min:Math.min(...tot), max:Math.max(...tot), totals:tot, runs:rs}; });
+  const icc = LEARN.icc1(rows.map(r=>r.totals));
+  const bench = rows.filter(r=>r.a.level);
+  const rho = bench.length>=3 ? LEARN.spearman(bench.map(r=>r.a.level), bench.map(r=>r.mean)) : null;
+  // 영역별 반복 채점의 평균 표준편차
+  const domSd = GRADE_DOMAINS.map(([k,n])=>{ const sds=rows.filter(r=>r.n>=2).map(r=>LEARN.sd(r.runs.map(x=>x.scores[k]))).filter(x=>x!==null); return [n, sds.length?LEARN.round(LEARN.mean(sds),2):null]; });
+  // 사람 채점과의 일치
+  const pairs=[], tA=[], tH=[];
+  for(const r of rows){ const h=relHuman[r.a.id]; if(!h || GRADE_DOMAINS.some(([k])=>h[k]===undefined||h[k]==='')) continue;
+    for(const [k] of GRADE_DOMAINS) pairs.push([Math.round(LEARN.mean(r.runs.map(x=>x.scores[k]))), +h[k]]);
+    tA.push(r.mean); tH.push(GRADE_DOMAINS.reduce((s,[k])=>s+(+h[k]),0)); }
+  const human = pairs.length ? {n:tA.length, qwk:LEARN.qwk(pairs.map(p=>p[0]), pairs.map(p=>p[1])), mae:LEARN.mae(tA,tH), r:LEARN.pearson(tA,tH)} : null;
+  return {rows, icc, rho, domSd, human};
+}
+function viewReliability(){
+  app.innerHTML = `<div class="stack" style="max-width:980px"><div><div class="eyebrow">학습 효과</div><h1 style="margin-top:6px">AI 채점 신뢰도 검증</h1>
+    <p class="lede" style="margin-top:8px">AI 슈퍼바이저의 채점을 믿어도 되는지 세 가지로 확인합니다. <b>일관성</b>: 같은 답안을 여러 번 채점해도 점수가 비슷한가(ICC). <b>변별력</b>: 우수·보통·미흡으로 설계한 답안을 그 순서대로 구분하는가(Spearman 순위상관). <b>타당성</b>: 교수·조교의 채점과 일치하는가(이차 가중 카파).</p>${researchTabs('reliability')}</div>
+    <div class="panel stack" id="rl-setup" style="gap:10px"></div>
+    <div id="rl-res" class="stack" style="gap:14px"></div></div>`;
+  const setup = $('#rl-setup');
+  const draw = ()=>{
+    const ans = relAnswers();
+    setup.innerHTML = `<h2>채점 실행</h2>
+      <div class="stack" style="gap:4px">${ans.map(a=>`<label class="row" style="gap:8px; flex-wrap:nowrap; cursor:pointer"><input type="checkbox" value="${a.id}" class="rl-pick" style="width:auto" ${a.level?'checked':''}><span>${esc(a.label)}${a.level?` <span class="chip">${['','미흡','보통','우수'][a.level]}으로 설계</span>`:''}</span></label>`).join('')}</div>
+      <div class="row" style="gap:10px; align-items:flex-end"><label class="f" style="width:150px">답안당 반복 횟수<select id="rl-k"><option>2</option><option selected>3</option><option>5</option></select></label>
+        <label class="f" style="width:200px">모델 등급<select id="rl-tier"><option value="default" selected>기본(빠름)</option><option value="complex">고급(코칭과 같음, 느림)</option></select></label>
+        <button class="btn pri" id="rl-run" data-ai>채점 시작</button><button class="btn" id="rl-stop" hidden>중지</button></div>
+      <p class="note" id="rl-msg" style="margin:0">채점 한 번마다 내 Claude 계정 사용량이 쓰입니다. 기준 답안 6개 × 3회 = 18번 호출합니다. 결과는 이 브라우저에 저장되어 나중에 이어서 분석할 수 있습니다.</p>`;
+    getSample().then(sample=>{
+      if(!sample){ $('#rl-run').disabled=true; $('#rl-msg').textContent='이 화면에서는 Claude를 사용할 수 없어 새 채점을 실행할 수 없습니다. 저장된 결과 분석과 사람 채점 입력은 할 수 있습니다.'; return; }
+      let ctl=null;
+      $('#rl-stop').onclick = ()=>{ ctl && ctl.abort(); };
+      $('#rl-run').onclick = async ()=>{
+        const picks = [...setup.querySelectorAll('.rl-pick:checked')].map(x=>x.value); const k=+$('#rl-k').value, tier=$('#rl-tier').value;
+        const list = relAnswers().filter(a=>picks.includes(a.id)); if(!list.length){ $('#rl-msg').textContent='채점할 답안을 하나 이상 고르세요.'; return; }
+        const total = list.length*k; let n=0, fail=0; $('#rl-run').disabled=true; $('#rl-stop').hidden=false;
+        for(const a of list){ const c=CASES.find(x=>x.id===a.caseId);
+          for(let rep=0; rep<k; rep++){
+            ctl = new AbortController(); $('#rl-msg').textContent=`채점 중 ${n+1} / ${total} · ${a.label}`;
+            try{
+              const out = await sample.json(gradePrompt(c, a.a), {modelTier:tier, cache:false, signal:ctl.signal});
+              const scores = Object.fromEntries(GRADE_DOMAINS.map(([key])=>[key, Math.max(0, Math.min(5, Math.round(Number(out && out[key]))||0))]));
+              relRuns.push({aid:a.id, rep, scores, total:Object.values(scores).reduce((s,x)=>s+x,0), tier, at:Date.now()}); store.set('airel', relRuns);
+            }catch(e){ if(e.code==='cancelled'){ $('#rl-msg').textContent=`중지했습니다. ${n}회 채점이 저장되었습니다.`; $('#rl-run').disabled=false; $('#rl-stop').hidden=true; drawRes(); return; }
+              fail++; if(['not_granted','sampling_disabled','rate_limited','session_expired'].includes(e.code)){ $('#rl-msg').textContent=errCopy(e.code); $('#rl-run').disabled=false; $('#rl-stop').hidden=true; drawRes(); return; } }
+            n++; drawRes();
+          } }
+        $('#rl-msg').textContent=`완료: ${n}회 채점${fail?`, 실패 ${fail}회(형식 오류 등)`:''}.`; $('#rl-run').disabled=false; $('#rl-stop').hidden=true; drawRes();
+      };
+    });
+  };
+  const drawRes = ()=>{
+    const st = relStats(); const res=$('#rl-res'); if(!res) return;
+    if(!st.rows.length){ res.innerHTML = `<div class="panel flat note">아직 채점 결과가 없습니다. 위에서 채점을 실행하세요.</div>`; return; }
+    const lv = l => l ? ['','미흡','보통','우수'][l] : '-';
+    const metrics = st => `
+      <div class="grid3">
+        <div class="panel"><div class="eyebrow">일관성 ICC(1,1)</div><div class="num" style="font-size:28px; font-weight:600">${st.icc?st.icc.single:'-'}</div><div class="note">${st.icc?`${LEARN.iccLabel(st.icc.single)} · 평균 ICC(1,${st.icc.k}) ${st.icc.average}`:'답안 2개 이상을 2회 이상 채점하면 계산'}</div></div>
+        <div class="panel"><div class="eyebrow">변별력 Spearman ρ</div><div class="num" style="font-size:28px; font-weight:600">${st.rho??'-'}</div><div class="note">${st.rho===null?'기준 답안 3개 이상 필요':'설계 수준과 AI 평균 총점의 순위 일치(1에 가까울수록 좋음)'}</div></div>
+        <div class="panel"><div class="eyebrow">사람 채점과 일치 κw</div><div class="num" style="font-size:28px; font-weight:600">${st.human?st.human.qwk??'-':'-'}</div><div class="note">${st.human?`${LEARN.kappaLabel(st.human.qwk)} · 총점 MAE ${st.human.mae}, r ${st.human.r??'-'} (답안 ${st.human.n}개)`:'아래에서 사람 채점을 입력하면 계산'}</div></div>
+      </div>
+      <section class="panel stack" style="gap:8px"><h2>답안별 결과 (총점 0~45)</h2><div class="tblwrap"><table class="tbl"><tr><th>답안</th><th>설계 수준</th><th>채점 횟수</th><th>평균</th><th>표준편차</th><th>범위</th></tr>
+        ${st.rows.map(r=>`<tr><td>${esc(r.a.label)}</td><td>${lv(r.a.level)}</td><td class="num">${r.n}</td><td class="num"><b>${r.mean}</b></td><td class="num">${r.sd??'-'}</td><td class="num">${r.min}~${r.max}</td></tr>`).join('')}</table></div>
+        <p class="note" style="margin:0">해석 기준: ICC 0.5 미만 낮음, 0.5~0.75 보통, 0.75~0.9 좋음, 0.9 이상 매우 좋음(Koo·Li, 2016). 가중 카파 0.6~0.8 상당한 일치, 0.8 이상 거의 완전한 일치(Landis·Koch, 1977). 답안 수와 반복 횟수가 적으면 지표의 신뢰구간이 넓으므로 결론은 신중하게 내리세요.</p></section>
+      <section class="panel stack" style="gap:8px"><h2>영역별 반복 채점의 흔들림</h2><p class="note" style="margin:0">같은 답안을 다시 채점했을 때 영역 점수(0~5)의 평균 표준편차입니다. 값이 클수록 AI가 그 영역을 일관되게 판단하지 못한다는 뜻입니다.</p>
+        ${rowsTable(['영역','평균 표준편차'], st.domSd.map(([n,v])=>[n, v===null?'-':String(v)]))}</section>`;
+    res.innerHTML = `<div id="rl-metrics" class="stack" style="gap:14px">${metrics(st)}</div>
+      <section class="panel stack" style="gap:8px"><h2>교수·조교 채점 입력</h2><p class="note" style="margin:0">같은 루브릭(0~5)으로 사람이 채점한 점수를 넣으면 AI와의 일치도를 계산합니다. 채점자는 AI 점수를 보기 전에 채점해야 합니다.</p>
+        <div class="stack" style="gap:8px">${st.rows.map(r=>`<details class="q" style="padding:10px 14px"><summary style="cursor:pointer; font-weight:600">${esc(r.a.label)} ${relHuman[r.a.id]?'<span class="chip ok">입력됨</span>':''}</summary>
+          <div class="ingrid" style="grid-template-columns:repeat(3,minmax(0,1fr)); margin-top:8px">${GRADE_DOMAINS.map(([k,n])=>`<label style="font-family:var(--f-body)">${esc(n)}<select data-aid="${r.a.id}" data-k="${k}"><option value="">-</option>${[0,1,2,3,4,5].map(v=>`<option ${relHuman[r.a.id]&&String(relHuman[r.a.id][k])===String(v)?'selected':''}>${v}</option>`).join('')}</select></label>`).join('')}</div>
+          <details style="margin-top:8px"><summary class="note" style="cursor:pointer">답안 보기</summary><div style="font-size:13.5px; margin-top:6px">${FIELDS.map(([k,tl])=>`<p style="margin:0 0 4px"><b>${tl}</b> ${esc(r.a.a[k]||'(없음)')}</p>`).join('')}</div></details></details>`).join('')}</div></section>
+      <div class="row"><button class="btn sm" id="rl-csv" hidden>결과 CSV 저장</button><button class="btn sm" id="rl-clear">채점 결과 모두 지우기</button></div>`;
+    // 사람 채점은 입력란을 다시 그리지 않고 지표만 갱신한다(펼친 패널이 닫히지 않게)
+    res.querySelectorAll('select[data-aid]').forEach(sel=> sel.onchange = ()=>{ const a=sel.dataset.aid; relHuman[a]=relHuman[a]||{}; relHuman[a][sel.dataset.k]= sel.value===''?'':+sel.value; store.set('airel.human', relHuman);
+      $('#rl-metrics').innerHTML = metrics(relStats()); const done = GRADE_DOMAINS.every(([k])=>relHuman[a][k]!==''&&relHuman[a][k]!==undefined); const sm=sel.closest('details').querySelector('summary');
+      if(done && !sm.querySelector('.chip')) sm.insertAdjacentHTML('beforeend',' <span class="chip ok">입력됨</span>'); });
+    let armed=false; $('#rl-clear').onclick = e=>{ if(!armed){ armed=true; e.target.textContent='한 번 더 누르면 지웁니다'; return; } relRuns=[]; store.set('airel', relRuns); drawRes(); };
+    getDownloads().then(dl=>{ const b=$('#rl-csv'); if(!dl||!b) return; b.hidden=false; b.onclick = async ()=>{
+      const head=['답안','설계수준','반복','모델등급',...GRADE_DOMAINS.map(([,n])=>n),'총점'];
+      const rows=relRuns.map(r=>{ const a=relAnswers().find(x=>x.id===r.aid); return [a?a.label:r.aid, a&&a.level?lv(a.level):'', r.rep+1, r.tier, ...GRADE_DOMAINS.map(([k])=>r.scores[k]), r.total]; });
+      try{ await dl.save({filename:'ai-grading-reliability.csv', data:CLASSDATA.toCSV({head, rows})}); }catch(e){} }; });
+  };
+  draw(); drawRes();
+}
+let dlPromise=null;
+function getDownloads(){ if(!dlPromise) dlPromise = (window.claude?.use ? window.claude.use('downloads') : Promise.resolve(null)).catch(()=>null); return dlPromise; }
 
 route();
 initSync();
