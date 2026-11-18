@@ -59,6 +59,7 @@ npm test               # 전체 테스트
 npm run check          # app/*.js 문법 검사
 npm run preview        # dist/index.html 생성 후 브라우저로 열기
 npm run golden:update  # 규칙을 의도적으로 바꾼 뒤 골든셋 갱신
+npm run bundle         # 카톡·메일로 보낼 단일 HTML 파일 생성 (dist/mmpi-academy-v<버전>.html)
 npm run e2e            # 브라우저 종단 테스트 (Playwright 필요: npm i --no-save playwright@1.63.0)
 ```
 
@@ -81,6 +82,8 @@ npm run e2e            # 브라우저 종단 테스트 (Playwright 필요: npm i
 ### 배포
 
 프로그램은 claude.ai Artifact로 배포됩니다. `app/` 폴더의 파일을 그대로 올리며, 플랫폼이 HTML 뼈대(doctype, head)를 붙이므로 `index.html`에는 본문만 있습니다. AI 기능(코칭, 통합 해석, 슈퍼바이저)은 claude.ai 안에서 열었을 때만 동작합니다.
+
+`npm run bundle`로 만든 단일 HTML 파일은 claude.ai 밖에서 열리는 오프라인 버전입니다. AI 기능과 클래스 모드는 꺼지고 첫 화면에 그 사실을 안내하며, 나머지 기능은 인터넷 없이 동작합니다. 기록은 그 브라우저에 저장됩니다.
 
 ### 클래스 모드의 저장 구조와 권한
 

@@ -1,6 +1,8 @@
 (function(){
 const $ = (s,el=document)=>el.querySelector(s);
 const app = $('#app');
+// claude.ai 뷰어 밖(HTML 파일로 열었을 때)에는 window.claude가 없다
+const STANDALONE = !window.claude;
 const esc = s => String(s??'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const S = {}; SCALES.forEach(s=>S[s.id]=s);
 const NUM = MMPI.NUM;
@@ -193,6 +195,7 @@ function viewHome(){
     [casesDone>=CASES.length && avgCase>=80, `사례 핵심 포인트 평균 80% 이상 (현재 ${avgCase}%)`],
   ];
   app.innerHTML = `
+  ${STANDALONE ? `<div class="panel" style="border-left:3px solid var(--warn); margin-bottom:24px"><h3 style="font-size:16px">오프라인 파일 버전입니다</h3><p class="note" style="margin:6px 0 0">이론, 사전, 분석기, 실험실, 사례 실습(자가 점검·모범 해석), 퀴즈를 모두 쓸 수 있습니다. AI 슈퍼바이저 코칭과 우리 반(기록 동기화·반 통계)은 claude.ai 링크 버전에서만 동작합니다. 학습 기록은 이 브라우저에 저장되므로 같은 기기, 같은 브라우저로 열어야 이어집니다.</p></div>` : ''}
   <section class="hero">
     <div>
       <div class="eyebrow">대학원 수련생을 위한 MMPI-2 해석 훈련</div>
