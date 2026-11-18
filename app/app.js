@@ -91,8 +91,31 @@ async function initSync(){
 
 /* ── AI 기능 ── */
 let samplePromise = null;
-function getSample(){ if(!samplePromise) samplePromise = (window.claude?.use ? window.claude.use('sample') : Promise.resolve(null)).catch(()=>null); return samplePromise; }
-const errCopy = c => ({not_granted:'AI 기능 사용이 허용되지 않았습니다. 이 기능은 이번 방문에서 숨깁니다.', rate_limited:'요청이 많습니다. 잠시 후 다시 시도하세요.', session_expired:'로그인이 만료되었습니다. 다시 로그인하세요.', refused:'이 요청에는 답할 수 없습니다. 내용을 바꿔 다시 시도하세요.', sampling_disabled:'이 계정에서는 AI 기능을 사용할 수 없습니다.', prompt_too_large:'입력이 너무 깁니다. 답안을 줄여 보세요.'}[c] || '연결에 문제가 있습니다. 다시 시도하세요.');
+const aiSettings = ()=> store.get('ai', {provider:'none', key:'', model:''});
+const externalAI = ()=>{ const a=aiSettings(); return STANDALONE && a.provider && a.provider!=='none' && a.key ? a : null; };
+function getSample(){
+  if(!samplePromise){
+    const ext = externalAI();
+    samplePromise = ext ? Promise.resolve(AICONNECT.makeAdapter({provider:ext.provider, model:ext.model, key:ext.key}))
+      : (window.claude?.use ? window.claude.use('sample') : Promise.resolve(null)).catch(()=>null);
+  }
+  return samplePromise;
+}
+/* 다른 AI 채팅창에 붙여 넣을 요청을 복사하고, 받은 답변을 붙여 넣으면 이 화면에 정리해 보여 준다 */
+async function copyPrompt(text, box, key){
+  let ok=false; try{ await navigator.clipboard.writeText(text); ok=true; }catch(e){}
+  const saved = store.get('paste.'+key, '');
+  box.innerHTML = `<div class="panel stack" style="gap:10px"><div class="row" style="justify-content:space-between"><h3 style="font-size:16px">다른 AI로 답변 받기</h3><span class="chip ${ok?'ok':'warn'}">${ok?'요청이 복사되었습니다':'아래 요청을 직접 복사하세요'}</span></div>
+    <ol style="padding-left:20px; margin:0; font-size:14.5px"><li>평소 쓰는 AI 채팅(ChatGPT, 제미나이 등)을 엽니다.</li><li>${ok?'복사된 요청을 그대로 붙여 넣고 보냅니다.':'아래 상자의 내용을 모두 선택해 복사한 뒤 붙여 넣고 보냅니다.'}</li><li>받은 답변을 아래 칸에 붙여 넣으면 이 화면에 정리해 보여 줍니다.</li></ol>
+    <details ${ok?'':'open'}><summary class="note" style="cursor:pointer">복사된 요청 보기</summary><textarea readonly class="mono" style="min-height:160px; font-size:12.5px; margin-top:6px">${esc(text)}</textarea></details>
+    <label class="f">AI 답변 붙여넣기<textarea class="paste-in" placeholder="AI의 답변을 여기에 붙여 넣으세요" style="min-height:120px">${esc(saved)}</textarea></label>
+    <div class="row"><button class="btn sm pri paste-show">답변 정리해서 보기</button><span class="note">붙여 넣은 답변은 이 브라우저에만 저장됩니다.</span></div>
+    <div class="md paste-out">${saved?md(saved):''}</div></div>`;
+  if(!ok){ const ta=box.querySelector('textarea[readonly]'); ta.focus(); ta.select(); }
+  box.querySelector('.paste-show').onclick = ()=>{ const v=box.querySelector('.paste-in').value; store.set('paste.'+key, v); box.querySelector('.paste-out').innerHTML = md(v); };
+  box.scrollIntoView({behavior:'smooth', block:'start'});
+}
+const errCopy = c => ({bad_key:'API 키가 올바르지 않거나 권한이 없습니다. AI 연결 설정에서 키를 확인하세요.', bad_model:'모델 이름을 찾을 수 없습니다. AI 연결 설정에서 모델 이름을 확인하세요.', network:'AI 서버에 연결하지 못했습니다. 인터넷 연결을 확인하세요.', invalid_json:'AI 답변의 형식을 읽지 못했습니다. 다시 시도하세요.', not_granted:'AI 기능 사용이 허용되지 않았습니다. 이 기능은 이번 방문에서 숨깁니다.', rate_limited:'요청이 많습니다. 잠시 후 다시 시도하세요.', session_expired:'로그인이 만료되었습니다. 다시 로그인하세요.', refused:'이 요청에는 답할 수 없습니다. 내용을 바꿔 다시 시도하세요.', sampling_disabled:'이 계정에서는 AI 기능을 사용할 수 없습니다.', prompt_too_large:'입력이 너무 깁니다. 답안을 줄여 보세요.'}[c] || '연결에 문제가 있습니다. 다시 시도하세요.');
 
 /* ── 간단한 마크다운 렌더러 ── */
 function md(src){
@@ -187,7 +210,7 @@ function scoreTable(p, ver){
 }
 
 /* ── 라우터 ── */
-const routes = {home:viewHome, theory:viewTheory, scales:viewScales, codes:viewCodes, analyzer:viewAnalyzer, cases:viewCases, quiz:viewQuiz, mentor:viewMentor, compare:viewCompare, lab:viewLab, stability:viewStability, class:viewClass, research:viewResearch, reliability:viewReliability};
+const routes = {home:viewHome, theory:viewTheory, scales:viewScales, codes:viewCodes, analyzer:viewAnalyzer, cases:viewCases, quiz:viewQuiz, mentor:viewMentor, compare:viewCompare, lab:viewLab, stability:viewStability, class:viewClass, research:viewResearch, reliability:viewReliability, 'ai-connect':viewAIConnect};
 function route(){
   const h = (location.hash||'#home').slice(1);
   let r = h, arg=null;
@@ -215,7 +238,7 @@ function viewHome(){
     [casesDone>=CASES.length && avgCase>=80, `사례 핵심 포인트 평균 80% 이상 (현재 ${avgCase}%)`],
   ];
   app.innerHTML = `
-  ${STANDALONE ? `<div class="panel" style="border-left:3px solid var(--warn); margin-bottom:24px"><h3 style="font-size:16px">오프라인 파일 버전입니다</h3><p class="note" style="margin:6px 0 0">이론, 사전, 분석기, 실험실, 사례 실습(자가 점검·모범 해석), 퀴즈를 모두 쓸 수 있습니다. AI 슈퍼바이저 코칭과 우리 반(기록 동기화·반 통계)은 공유 링크 버전에서만 동작합니다. 학습 기록은 이 브라우저에 저장되므로 같은 기기, 같은 브라우저로 열어야 이어집니다.</p></div>` : ''}
+  ${STANDALONE ? `<div class="panel" style="border-left:3px solid var(--warn); margin-bottom:24px"><h3 style="font-size:16px">오프라인 파일 버전입니다</h3><p class="note" style="margin:6px 0 0">이론, 사전, 분석기, 실험실, 사례 실습(자가 점검·모범 해석), 퀴즈를 모두 쓸 수 있습니다. AI 기능은 <a href="#ai-connect">AI 연결 설정</a>에서 개인 API 키(제미나이·GPT)를 넣거나, 각 화면의 “다른 AI용 요청 복사”로 쓸 수 있습니다. 우리 반(기록 동기화·반 통계)은 공유 링크 버전에서만 동작합니다. 학습 기록은 이 브라우저에 저장되므로 같은 기기, 같은 브라우저로 열어야 이어집니다.</p></div>` : ''}
   <section class="hero">
     <div>
       <div class="eyebrow">대학원 수련생을 위한 MMPI-2 해석 훈련</div>
@@ -421,7 +444,7 @@ function viewAnalyzer(){
     </aside>
     <section class="stack" style="min-width:0">
       <div class="panel chartwrap" style="padding:12px 10px 6px" id="chart"></div>
-      <div class="row" style="justify-content:space-between"><div class="row" id="sumchips"></div><div class="row"><button class="btn" id="copy">보고서 초안 복사</button><button class="btn pri" id="ai" hidden>AI 슈퍼바이저 통합 해석</button></div></div>
+      <div class="row" style="justify-content:space-between"><div class="row" id="sumchips"></div><div class="row"><button class="btn" id="copy">보고서 초안 복사</button><button class="btn" id="azcopy">다른 AI용 요청 복사</button><button class="btn pri" id="ai" hidden>AI 슈퍼바이저 통합 해석</button></div></div>
       <div id="aiout"></div>
       <div class="stack" id="steps" style="gap:12px"></div>
     </section>
@@ -450,8 +473,7 @@ function viewAnalyzer(){
     setTimeout(()=>e.target.textContent='보고서 초안 복사',1500);
   };
   run();
-  getSample().then(sample=>{ if(!sample) return; const b=$('#ai'); if(!b) return; b.hidden=false;
-    b.onclick = ()=>{
+  const azPrompt = ()=>{
       const r = azState.last; const c = CASES.find(x=>x.id===st.preset);
       const ctx = c? `사례 배경(가상): ${c.demo}. 의뢰: ${c.referral} 배경: ${c.background}` : '사례 배경 정보 없음(점수만 제공됨).';
       const eng = r.steps.map(s=>`${s.n}. ${s.title}: `+s.items.map(i=>i.text.replace(/<[^>]+>/g,'')).join(' / ')).join('\n');
@@ -477,9 +499,12 @@ ${eng}
 ## 전문가의 한 줄 사례 개념화
 ## 수련생을 위한 해석 포인트 (이 프로파일에서 초심자가 흔히 놓치거나 오해하는 것 3가지)
 규칙: 확률적 언어를 쓰고, 근거 척도를 괄호로 표시하세요. 검사 문항 내용은 인용하지 마세요. 타당도상 해석이 불가하면 그 이유와 권고만 쓰세요.`;
-      streamTo($('#aiout'), prompt, {modelTier:'complex', title:'AI 슈퍼바이저 통합 해석'});
-    };
+      return prompt;
+  };
+  getSample().then(sample=>{ if(!sample) return; const b=$('#ai'); if(!b) return; b.hidden=false;
+    b.onclick = ()=> streamTo($('#aiout'), azPrompt(), {modelTier:'complex', title:'AI 슈퍼바이저 통합 해석'});
   });
+  $('#azcopy').onclick = ()=> copyPrompt(azPrompt(), $('#aiout'), 'az');
 }
 
 /* 공용: 스트리밍 출력 */
@@ -531,7 +556,7 @@ function viewCase(id){
       <div class="row" style="justify-content:space-between"><h2>나의 해석</h2><span class="note" id="saved"></span></div>
       <p class="note">척도 이름보다 행동과 경험의 언어로, 근거 척도를 괄호에 적어 쓰세요. 작성 내용은 이 브라우저에 자동 저장됩니다.</p>
       ${FIELDS.map(([k,t,h])=>`<label class="f">${t} <small>${h}</small><textarea id="a-${k}" data-k="${k}">${esc(drafts[k]||'')}</textarea></label>`).join('')}
-      <div class="row"><button class="btn pri" id="check">제출하고 자가 점검</button><button class="btn" id="coach" data-ai hidden>AI 슈퍼바이저 코칭</button><button class="btn" id="model">${submitted?'모범 해석과 심화 해설 보기':'모범 해석·심화 해설 (제출 후 공개)'}</button><a class="btn" id="toaz" href="#analyzer" ${submitted?'':'hidden'}>분석기에서 열기</a></div>
+      <div class="row"><button class="btn pri" id="check">제출하고 자가 점검</button><button class="btn" id="coach" data-ai hidden>AI 슈퍼바이저 코칭</button><button class="btn" id="coachcopy">다른 AI용 코칭 요청 복사</button><button class="btn" id="model">${submitted?'모범 해석과 심화 해설 보기':'모범 해석·심화 해설 (제출 후 공개)'}</button><a class="btn" id="toaz" href="#analyzer" ${submitted?'':'hidden'}>분석기에서 열기</a></div>
     </section>
     <div id="res" class="stack"></div><div id="coachout"></div><div id="modelout"></div>
   </div>`;
@@ -564,10 +589,11 @@ function viewCase(id){
       ${FIELDS.map(([k,tl])=>e[k]?`<h4>${tl}</h4><p>${esc(e[k])}</p>`:'').join('')}</div>`+deepCaseHtml(c.id);
     $('#modelout').scrollIntoView({behavior:'smooth', block:'start'});
   };
-  getSample().then(sample=>{ if(!sample) return; const b=$('#coach'); if(!b) return; b.hidden=false;
-    b.onclick = ()=>{
-      if(allText().trim().length<40){ $('#coachout').innerHTML='<div class="panel note">코칭을 받으려면 먼저 해석을 작성하세요.</div>'; return; }
+  const ensureSubmitted = ()=>{
+      if(allText().trim().length<40){ $('#coachout').innerHTML='<div class="panel note">코칭을 받으려면 먼저 해석을 작성하세요.</div>'; return false; }
       if(!prog.cases[c.id]){ const s=check(); prog.cases[c.id]={score:s, at:Date.now()}; saveProg(); $('#model').textContent='모범 해석과 심화 해설 보기'; $('#toaz').hidden=false; }
+      return true; };
+  const coachPrompt = ()=>{
       const ans = FIELDS.map(([k,tl])=>`### ${tl}\n${$('#a-'+k).value.trim()||'(작성하지 않음)'}`).join('\n\n');
       const e = c.expert;
       const prompt = `당신은 MMPI-2와 MMPI-A 해석 경력 25년의 임상심리전문가이며 대학원 수련생을 지도하는 슈퍼바이저입니다. 이 사례의 검사는 ${c.version==='A'?'MMPI-A(청소년용: 청소년 규준, K 교정 없음, T 60~64 경계 범위, VRIN·TRIN 기준 75, Fp·RC 없음)이며, 수련생이 성인 기준이나 성인 해석을 잘못 적용했는지 특히 점검하세요':'MMPI-2(성인용)입니다'}. 따뜻하지만 기준이 엄격합니다. 아래 가상 사례에 대해 수련생이 작성한 해석을 평가하고 코칭하세요.
@@ -620,10 +646,12 @@ ${ans}
 (2~3개. 다음 모듈 중 해당하는 것을 이름으로 추천: ${MODULES.map(m=>m.title).join(', ')})
 
 규칙: 수련생이 쓰지 않은 내용을 썼다고 하지 마세요. 검사 문항 내용은 인용하지 마세요. 이 사례는 교육용 가상 자료입니다.`;
-      streamTo($('#coachout'), prompt, {modelTier:'complex', title:'슈퍼바이저 코칭', cache:false});
-      $('#coachout').scrollIntoView({behavior:'smooth', block:'start'});
-    };
+      return prompt;
+  };
+  getSample().then(sample=>{ if(!sample) return; const b=$('#coach'); if(!b) return; b.hidden=false;
+    b.onclick = ()=>{ if(!ensureSubmitted()) return; streamTo($('#coachout'), coachPrompt(), {modelTier:'complex', title:'슈퍼바이저 코칭', cache:false}); $('#coachout').scrollIntoView({behavior:'smooth', block:'start'}); };
   });
+  $('#coachcopy').onclick = ()=>{ if(!ensureSubmitted()) return; copyPrompt(coachPrompt(), $('#coachout'), 'coach.'+c.id); };
 }
 
 /* ════════ 퀴즈 ════════ */
@@ -666,16 +694,20 @@ function viewQuiz(){
 let turns = [];
 function viewMentor(){
   const SUG = ['F가 높을 때 과대보고와 실제 병리를 구분하는 순서를 알려 주세요','8번이 높은데 RC8이 정상이면 어떻게 해석하나요?','2-7 코드와 2-7-8 코드는 임상적으로 무엇이 다른가요?','4번 상승에서 Pd1과 Pd2를 왜 구분해야 하나요?','양육권 평가에서 방어적인 프로파일을 보고서에 어떻게 쓰나요?','MMPI-2 보고서에서 자살 위험은 어떻게 기술하나요?','MMPI-A와 MMPI-2의 타당도 기준은 왜 다른가요?','청소년에게 성인 규준을 쓰면 어떤 문제가 생기나요?','MMPI-A에서 IMM 척도는 어떻게 활용하나요?'];
-  app.innerHTML = `<div class="stack" style="max-width:860px"><div><div class="eyebrow">슈퍼바이저</div><h1 style="margin-top:6px">무엇이든 물어보세요</h1><p class="lede" style="margin-top:8px">경력 25년의 MMPI 슈퍼바이저 역할을 맡은 AI가 답합니다. 해석 원리, 감별, 보고서 문장 다듬기 등을 물어볼 수 있습니다. 실제 내담자의 식별 정보는 입력하지 마세요.</p></div>
+  app.innerHTML = `<div class="stack" style="max-width:860px"><div><div class="eyebrow">슈퍼바이저</div><h1 style="margin-top:6px">무엇이든 물어보세요</h1><p class="lede" style="margin-top:8px">경력 25년의 MMPI 슈퍼바이저 역할을 맡은 AI가 답합니다. AI 연결 방식은 <a href="#ai-connect">AI 연결 설정</a>에서 확인하세요. 해석 원리, 감별, 보고서 문장 다듬기 등을 물어볼 수 있습니다. 실제 내담자의 식별 정보는 입력하지 마세요.</p></div>
   <div class="chat" id="chat"></div>
   <div class="sugg" id="sugg">${SUG.map(s=>`<button>${esc(s)}</button>`).join('')}</div>
-  <form id="mf" class="stack" style="gap:8px"><textarea id="mq" placeholder="질문을 입력하세요" style="min-height:80px"></textarea><div class="row"><button class="btn pri" id="msend" type="submit">질문하기</button><button class="btn" type="button" id="mclear">대화 지우기</button><span class="note" id="mnote"></span></div></form></div>`;
+  <form id="mf" class="stack" style="gap:8px"><textarea id="mq" placeholder="질문을 입력하세요" style="min-height:80px"></textarea><div class="row"><button class="btn pri" id="msend" type="submit">질문하기</button><button class="btn" type="button" id="mclear">대화 지우기</button><button class="btn" type="button" id="mcopy">다른 AI용 요청 복사</button><span class="note" id="mnote"></span></div></form></div>`;
   const chatEl = $('#chat');
   const render = ()=>{ chatEl.innerHTML = turns.length? turns.map(t=>t.role==='user'?`<div class="msg u">${esc(t.content)}</div>`:`<div class="msg a md">${md(t.content)}</div>`).join('') : '<div class="panel flat note">아래 예시 질문을 누르거나 직접 질문하세요.</div>'; };
   render();
   const RULES = `당신은 MMPI-2, MMPI-2-RF, MMPI-3, MMPI-A, MMPI-A-RF 해석 경력 25년의 한국 임상심리전문가이며, 대학원 수련생을 지도하는 슈퍼바이저입니다. 한국어로 답합니다. Graham, Greene, Butcher, Ben-Porath, Friedman, Archer(청소년) 등 표준 문헌에 근거해 정확하게 답하고, 근거가 불확실하면 그렇다고 말합니다. 구체적인 척도, 절단점, 예시를 들되, 검사 문항 내용은 저작권 때문에 인용하지 않습니다. 수련생이 스스로 생각하도록 마지막에 확인 질문을 하나 던지세요. 실제 내담자 진단을 대신하지 않습니다. 답은 마크다운으로, 필요한 만큼만 길게 씁니다.`;
+  $('#mcopy').onclick = ()=>{ const q=$('#mq').value.trim(); if(!q){ $('#mnote').textContent='질문을 먼저 입력하세요.'; return; }
+    const hist = turns.slice(-6).map(t=>(t.role==='user'?'[이전 질문] ':'[이전 답변] ')+t.content).join('\n\n');
+    let box=$('#mpaste'); if(!box){ box=document.createElement('div'); box.id='mpaste'; $('#mf').after(box); }
+    copyPrompt(RULES+(hist?'\n\n'+hist:'')+'\n\n[질문]\n'+q, box, 'mentor'); };
   getSample().then(sample=>{
-    if(!sample){ $('#msend').disabled=true; $('#mnote').textContent='이 화면에서는 AI 기능을 사용할 수 없습니다.'; return; }
+    if(!sample){ $('#msend').disabled=true; $('#mnote').innerHTML='이 화면에서는 AI에 바로 질문할 수 없습니다. “다른 AI용 요청 복사”를 쓰거나 <a href="#ai-connect">AI 연결 설정</a>을 확인하세요.'; return; }
     let busy=false;
     const ask = q=>{
       if(busy||!q.trim()) return; busy=true; $('#msend').disabled=true; $('#mnote').textContent='';
@@ -1081,9 +1113,9 @@ function viewReliability(){
       <div class="row" style="gap:10px; align-items:flex-end"><label class="f" style="width:150px">답안당 반복 횟수<select id="rl-k"><option>2</option><option selected>3</option><option>5</option></select></label>
         <label class="f" style="width:200px">모델 등급<select id="rl-tier"><option value="default" selected>기본(빠름)</option><option value="complex">고급(코칭과 같음, 느림)</option></select></label>
         <button class="btn pri" id="rl-run" data-ai>채점 시작</button><button class="btn" id="rl-stop" hidden>중지</button></div>
-      <p class="note" id="rl-msg" style="margin:0">채점 한 번마다 내 계정의 AI 사용량이 쓰입니다. 기준 답안 6개 × 3회 = 18번 호출합니다. 결과는 이 브라우저에 저장되어 나중에 이어서 분석할 수 있습니다.</p>`;
+      <p class="note" id="rl-msg" style="margin:0">채점 한 번마다 연결된 AI의 사용량이 쓰입니다(개인 API 키라면 본인 계정에 청구). 기준 답안 6개 × 3회 = 18번 호출합니다. 결과는 이 브라우저에 저장되어 나중에 이어서 분석할 수 있습니다.</p>`;
     getSample().then(sample=>{
-      if(!sample){ $('#rl-run').disabled=true; $('#rl-msg').textContent='이 화면에서는 AI 기능을 사용할 수 없어 새 채점을 실행할 수 없습니다. 저장된 결과 분석과 사람 채점 입력은 할 수 있습니다.'; return; }
+      if(!sample){ $('#rl-run').disabled=true; $('#rl-msg').textContent='이 화면에서는 AI에 바로 연결할 수 없어 새 채점을 실행할 수 없습니다(오프라인 파일은 AI 연결 설정에서 개인 API 키를 넣으세요). 저장된 결과 분석과 사람 채점 입력은 할 수 있습니다.'; return; }
       let ctl=null;
       $('#rl-stop').onclick = ()=>{ ctl && ctl.abort(); };
       $('#rl-run').onclick = async ()=>{
@@ -1140,6 +1172,45 @@ function viewReliability(){
 }
 let dlPromise=null;
 function getDownloads(){ if(!dlPromise) dlPromise = (window.claude?.use ? window.claude.use('downloads') : Promise.resolve(null)).catch(()=>null); return dlPromise; }
+
+/* ════════ AI 연결 설정 ════════ */
+function viewAIConnect(){
+  const a = aiSettings(); const P = AICONNECT.PROVIDERS;
+  app.innerHTML = `<div class="stack" style="max-width:820px"><div><div class="eyebrow">설정</div><h1 style="margin-top:6px">AI 연결 설정</h1>
+    <p class="lede" style="margin-top:8px">AI 슈퍼바이저 코칭, 통합 해석, 질의응답, 채점 신뢰도 측정에 쓸 AI를 정합니다. 세 가지 방법이 있습니다.</p></div>
+    <div class="tblwrap"><table class="tbl"><tr><th>방법</th><th>쓸 수 있는 곳</th><th>필요한 것</th></tr>
+      <tr><td><b>기본 AI</b></td><td>공유 링크 버전</td><td>로그인만 하면 자동으로 연결됩니다</td></tr>
+      <tr><td><b>개인 API 키</b> (제미나이·GPT)</td><td>오프라인 HTML 파일</td><td>본인의 API 키. 사용량은 본인 계정에 청구됩니다</td></tr>
+      <tr><td><b>요청 복사</b></td><td>어디서나</td><td>아무 AI 채팅(무료 계정 포함). 각 화면의 “다른 AI용 요청 복사” 버튼</td></tr></table></div>
+    ${STANDALONE ? '' : `<div class="panel" style="border-left:3px solid var(--warn)"><p style="margin:0">지금은 <b>공유 링크 버전</b>이라 보안 정책상 외부 AI 서버에 직접 연결할 수 없습니다. 기본 AI를 쓰거나, 각 화면의 “다른 AI용 요청 복사”를 쓰세요. 개인 API 키는 오프라인 HTML 파일에서 설정할 수 있습니다.</p></div>`}
+    <section class="panel stack" style="gap:12px" ${STANDALONE?'':'hidden'}><h2>개인 API 키 연결</h2>
+      <div class="seg" id="ac-prov">${[['none','사용 안 함'],['gemini',P.gemini.name],['openai',P.openai.name]].map(([k,n])=>`<button type="button" data-p="${k}" class="${(a.provider||'none')===k?'on':''}">${esc(n)}</button>`).join('')}</div>
+      <div id="ac-form" class="stack" style="gap:10px"></div>
+      <div class="note"><b>꼭 읽어 주세요</b><ul style="padding-left:18px; margin:4px 0 0"><li>API 키는 이 브라우저에만 저장되며 학습 기록 동기화에도 포함되지 않습니다.</li><li>키를 입력한 컴퓨터를 다른 사람과 함께 쓴다면 사용 후 “키 지우기”를 누르세요. 키가 담긴 파일이나 화면을 공유하지 마세요.</li><li>AI 답변의 품질과 형식은 모델마다 다릅니다. 채점 신뢰도 화면으로 직접 확인해 보세요.</li><li>요청에는 사례 정보와 내 답안이 담겨 해당 AI 회사로 전송됩니다. 실제 내담자 정보는 넣지 마세요.</li></ul></div>
+    </section></div>`;
+  if(!STANDALONE) return;
+  let prov = a.provider || 'none';
+  const form = ()=>{
+    const f = $('#ac-form');
+    if(prov==='none'){ f.innerHTML = '<p class="note" style="margin:0">개인 API 키를 쓰지 않습니다. AI 기능은 “다른 AI용 요청 복사”로 쓸 수 있습니다.</p><div class="row"><button class="btn pri" id="ac-save">저장</button><span class="note" id="ac-msg"></span></div>'; }
+    else { const info = P[prov]; const cur = a.provider===prov ? a : {key:'', model:''};
+      f.innerHTML = `<p class="note" style="margin:0">${esc(info.keyHelp)} 발급 주소: <a href="${info.keyUrl}" target="_blank" rel="noopener">${info.keyUrl.replace('https://','')}</a></p>
+        <label class="f">API 키<input type="password" id="ac-key" autocomplete="off" value="${esc(cur.key||'')}" placeholder="키를 붙여 넣으세요"></label>
+        <label class="f">모델 이름<input type="text" id="ac-model" value="${esc(cur.model||info.defaultModel)}"><small>기본값은 ${esc(info.defaultModel)}입니다. 모델 이름은 회사 사정에 따라 바뀔 수 있으니, 연결 테스트가 실패하면 회사 문서에서 현재 모델 이름을 확인하세요.</small></label>
+        <div class="row"><button class="btn pri" id="ac-save">저장</button><button class="btn" id="ac-test">연결 테스트</button><button class="btn" id="ac-del">키 지우기</button><span class="note" id="ac-msg"></span></div>`; }
+    $('#ac-save').onclick = ()=>{ const v = prov==='none' ? {provider:'none', key:'', model:''} : {provider:prov, key:$('#ac-key').value.trim(), model:$('#ac-model').value.trim()};
+      if(prov!=='none' && !v.key){ $('#ac-msg').textContent='API 키를 입력하세요.'; return; }
+      store.set('ai', v); Object.assign(a, v); samplePromise=null; $('#ac-msg').textContent = prov==='none' ? '저장했습니다.' : `저장했습니다. 이제 AI 기능이 ${P[prov].name}로 동작합니다.`; };
+    const t=$('#ac-test'); if(t) t.onclick = async ()=>{ const key=$('#ac-key').value.trim(); if(!key){ $('#ac-msg').textContent='API 키를 입력하세요.'; return; }
+      $('#ac-msg').textContent='연결하는 중…'; t.disabled=true;
+      try{ const ad = AICONNECT.makeAdapter({provider:prov, model:$('#ac-model').value.trim(), key}); const r = await ad('연결 확인입니다. “연결되었습니다”라고만 한국어로 답하세요.'); $('#ac-msg').textContent = '연결 성공: ' + r.text.trim().slice(0,60); }
+      catch(e){ $('#ac-msg').textContent = '연결 실패: ' + errCopy(e.code) + (e.message?` (${String(e.message).slice(0,120)})`:''); }
+      t.disabled=false; };
+    const d=$('#ac-del'); if(d) d.onclick = ()=>{ store.set('ai', {provider:'none', key:'', model:''}); Object.assign(a, {provider:'none', key:'', model:''}); samplePromise=null; prov='none'; document.querySelectorAll('#ac-prov button').forEach(b=>b.classList.toggle('on', b.dataset.p==='none')); form(); $('#ac-msg').textContent='키를 지웠습니다.'; };
+  };
+  $('#ac-prov').onclick = e=>{ const b=e.target.closest('button'); if(!b) return; prov=b.dataset.p; document.querySelectorAll('#ac-prov button').forEach(x=>x.classList.toggle('on', x===b)); form(); };
+  form();
+}
 
 route();
 initSync();
