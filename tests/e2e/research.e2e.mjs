@@ -1,5 +1,5 @@
 // 학습 효과 화면 브라우저 종단 테스트: 사전·사후 평가, 오늘의 복습, AI 채점 신뢰도, 운영자 연구 데이터 내보내기.
-// claude.ai의 sample(AI)·db·user·downloads 기능을 모의 객체로 대신한다.
+// 호스팅 플랫폼의 sample(AI)·db·user·downloads 기능을 모의 객체로 대신한다.
 import { createRequire } from 'node:module';
 import assert from 'node:assert/strict';
 import { execSync } from 'node:child_process';

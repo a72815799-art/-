@@ -1,7 +1,7 @@
 (function(){
 const $ = (s,el=document)=>el.querySelector(s);
 const app = $('#app');
-// claude.ai 뷰어 밖(HTML 파일로 열었을 때)에는 window.claude가 없다
+// 공유 링크 뷰어 밖(HTML 파일로 열었을 때)에는 플랫폼 연결 객체가 없다
 const STANDALONE = !window.claude;
 const esc = s => String(s??'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const S = {}; SCALES.forEach(s=>S[s.id]=s);
@@ -68,7 +68,7 @@ function applyLocal(L){
 async function initSync(){
   try{
     const [db,user] = window.claude?.use ? await Promise.all([window.claude.use('db'), window.claude.use('user')]) : [null,null];
-    if(!db || !user){ Sync.status='local'; Sync.reason='이 화면에서는 공유 저장소를 쓸 수 없습니다(로그인하지 않았거나 claude.ai 밖에서 열었습니다). 기록은 이 브라우저에 저장됩니다.'; Sync.notify(); return; }
+    if(!db || !user){ Sync.status='local'; Sync.reason='이 화면에서는 공유 저장소를 쓸 수 없습니다(로그인하지 않았거나 공유 링크가 아닌 곳에서 열었습니다). 기록은 이 브라우저에 저장됩니다.'; Sync.notify(); return; }
     Sync.db=db; Sync.user=user; Sync.uid = await user.id(); Sync.admin = await user.canEdit();
     const canWrite = await user.can('data.write');   // null = 플랫폼이 알려 주지 않음 → 쓰기를 시도해 보고 거부되면 판단
     if(canWrite===false && !Sync.admin){ Sync.fail({code:'invalid_argument'}); try{ const a = await db.doc('class/assignments').get(); Sync.assignments = a.exists ? (a.data().items||[]) : []; }catch(e){} return; }
@@ -89,10 +89,10 @@ async function initSync(){
 }
 
 
-/* ── Claude(sample) ── */
+/* ── AI 기능 ── */
 let samplePromise = null;
 function getSample(){ if(!samplePromise) samplePromise = (window.claude?.use ? window.claude.use('sample') : Promise.resolve(null)).catch(()=>null); return samplePromise; }
-const errCopy = c => ({not_granted:'Claude 사용이 허용되지 않았습니다. 이 기능은 이번 방문에서 숨깁니다.', rate_limited:'요청이 많습니다. 잠시 후 다시 시도하세요.', session_expired:'로그인이 만료되었습니다. 다시 로그인하세요.', refused:'이 요청에는 답할 수 없습니다. 내용을 바꿔 다시 시도하세요.', sampling_disabled:'이 계정에서는 Claude를 사용할 수 없습니다.', prompt_too_large:'입력이 너무 깁니다. 답안을 줄여 보세요.'}[c] || '연결에 문제가 있습니다. 다시 시도하세요.');
+const errCopy = c => ({not_granted:'AI 기능 사용이 허용되지 않았습니다. 이 기능은 이번 방문에서 숨깁니다.', rate_limited:'요청이 많습니다. 잠시 후 다시 시도하세요.', session_expired:'로그인이 만료되었습니다. 다시 로그인하세요.', refused:'이 요청에는 답할 수 없습니다. 내용을 바꿔 다시 시도하세요.', sampling_disabled:'이 계정에서는 AI 기능을 사용할 수 없습니다.', prompt_too_large:'입력이 너무 깁니다. 답안을 줄여 보세요.'}[c] || '연결에 문제가 있습니다. 다시 시도하세요.');
 
 /* ── 간단한 마크다운 렌더러 ── */
 function md(src){
@@ -215,7 +215,7 @@ function viewHome(){
     [casesDone>=CASES.length && avgCase>=80, `사례 핵심 포인트 평균 80% 이상 (현재 ${avgCase}%)`],
   ];
   app.innerHTML = `
-  ${STANDALONE ? `<div class="panel" style="border-left:3px solid var(--warn); margin-bottom:24px"><h3 style="font-size:16px">오프라인 파일 버전입니다</h3><p class="note" style="margin:6px 0 0">이론, 사전, 분석기, 실험실, 사례 실습(자가 점검·모범 해석), 퀴즈를 모두 쓸 수 있습니다. AI 슈퍼바이저 코칭과 우리 반(기록 동기화·반 통계)은 claude.ai 링크 버전에서만 동작합니다. 학습 기록은 이 브라우저에 저장되므로 같은 기기, 같은 브라우저로 열어야 이어집니다.</p></div>` : ''}
+  ${STANDALONE ? `<div class="panel" style="border-left:3px solid var(--warn); margin-bottom:24px"><h3 style="font-size:16px">오프라인 파일 버전입니다</h3><p class="note" style="margin:6px 0 0">이론, 사전, 분석기, 실험실, 사례 실습(자가 점검·모범 해석), 퀴즈를 모두 쓸 수 있습니다. AI 슈퍼바이저 코칭과 우리 반(기록 동기화·반 통계)은 공유 링크 버전에서만 동작합니다. 학습 기록은 이 브라우저에 저장되므로 같은 기기, 같은 브라우저로 열어야 이어집니다.</p></div>` : ''}
   <section class="hero">
     <div>
       <div class="eyebrow">대학원 수련생을 위한 MMPI-2 해석 훈련</div>
@@ -485,7 +485,7 @@ ${eng}
 /* 공용: 스트리밍 출력 */
 function streamTo(box, input, opt={}){
   getSample().then(sample=>{
-    if(!sample){ box.innerHTML='<div class="panel note">이 화면에서는 Claude를 사용할 수 없습니다.</div>'; return; }
+    if(!sample){ box.innerHTML='<div class="panel note">이 화면에서는 AI 기능을 사용할 수 없습니다.</div>'; return; }
     const ctl = new AbortController();
     box.innerHTML = `<div class="panel stack" style="gap:8px"><div class="row" style="justify-content:space-between"><h3>${esc(opt.title||'슈퍼바이저 응답')}</h3><button class="btn sm" data-stop>중지</button></div><div class="md"><p class="thinking">슈퍼바이저가 검토하고 있습니다. 깊이 검토하므로 30초~1분 정도 걸릴 수 있습니다</p></div><p class="note" data-n></p></div>`;
     const out = box.querySelector('.md'), note = box.querySelector('[data-n]'), stop = box.querySelector('[data-stop]');
@@ -666,7 +666,7 @@ function viewQuiz(){
 let turns = [];
 function viewMentor(){
   const SUG = ['F가 높을 때 과대보고와 실제 병리를 구분하는 순서를 알려 주세요','8번이 높은데 RC8이 정상이면 어떻게 해석하나요?','2-7 코드와 2-7-8 코드는 임상적으로 무엇이 다른가요?','4번 상승에서 Pd1과 Pd2를 왜 구분해야 하나요?','양육권 평가에서 방어적인 프로파일을 보고서에 어떻게 쓰나요?','MMPI-2 보고서에서 자살 위험은 어떻게 기술하나요?','MMPI-A와 MMPI-2의 타당도 기준은 왜 다른가요?','청소년에게 성인 규준을 쓰면 어떤 문제가 생기나요?','MMPI-A에서 IMM 척도는 어떻게 활용하나요?'];
-  app.innerHTML = `<div class="stack" style="max-width:860px"><div><div class="eyebrow">슈퍼바이저</div><h1 style="margin-top:6px">무엇이든 물어보세요</h1><p class="lede" style="margin-top:8px">경력 25년의 MMPI 슈퍼바이저 역할을 맡은 Claude가 답합니다. 해석 원리, 감별, 보고서 문장 다듬기 등을 물어볼 수 있습니다. 실제 내담자의 식별 정보는 입력하지 마세요.</p></div>
+  app.innerHTML = `<div class="stack" style="max-width:860px"><div><div class="eyebrow">슈퍼바이저</div><h1 style="margin-top:6px">무엇이든 물어보세요</h1><p class="lede" style="margin-top:8px">경력 25년의 MMPI 슈퍼바이저 역할을 맡은 AI가 답합니다. 해석 원리, 감별, 보고서 문장 다듬기 등을 물어볼 수 있습니다. 실제 내담자의 식별 정보는 입력하지 마세요.</p></div>
   <div class="chat" id="chat"></div>
   <div class="sugg" id="sugg">${SUG.map(s=>`<button>${esc(s)}</button>`).join('')}</div>
   <form id="mf" class="stack" style="gap:8px"><textarea id="mq" placeholder="질문을 입력하세요" style="min-height:80px"></textarea><div class="row"><button class="btn pri" id="msend" type="submit">질문하기</button><button class="btn" type="button" id="mclear">대화 지우기</button><span class="note" id="mnote"></span></div></form></div>`;
@@ -675,7 +675,7 @@ function viewMentor(){
   render();
   const RULES = `당신은 MMPI-2, MMPI-2-RF, MMPI-3, MMPI-A, MMPI-A-RF 해석 경력 25년의 한국 임상심리전문가이며, 대학원 수련생을 지도하는 슈퍼바이저입니다. 한국어로 답합니다. Graham, Greene, Butcher, Ben-Porath, Friedman, Archer(청소년) 등 표준 문헌에 근거해 정확하게 답하고, 근거가 불확실하면 그렇다고 말합니다. 구체적인 척도, 절단점, 예시를 들되, 검사 문항 내용은 저작권 때문에 인용하지 않습니다. 수련생이 스스로 생각하도록 마지막에 확인 질문을 하나 던지세요. 실제 내담자 진단을 대신하지 않습니다. 답은 마크다운으로, 필요한 만큼만 길게 씁니다.`;
   getSample().then(sample=>{
-    if(!sample){ $('#msend').disabled=true; $('#mnote').textContent='이 화면에서는 Claude를 사용할 수 없습니다.'; return; }
+    if(!sample){ $('#msend').disabled=true; $('#mnote').textContent='이 화면에서는 AI 기능을 사용할 수 없습니다.'; return; }
     let busy=false;
     const ask = q=>{
       if(busy||!q.trim()) return; busy=true; $('#msend').disabled=true; $('#mnote').textContent='';
@@ -933,7 +933,7 @@ function viewClass(){
         <p class="note" style="margin:0">이 데이터를 학회나 논문으로 발표하려면 소속 기관의 연구윤리(IRB) 승인과 참여자 동의 절차가 필요할 수 있습니다. 반드시 지도교수와 먼저 상의하세요.</p></div>
       <details><summary style="cursor:pointer; font-weight:600">학우들과 함께 쓰는 방법</summary><ol style="padding-left:20px; font-size:14px; margin:8px 0 0">
         <li>이 페이지 오른쪽 위의 공유 메뉴에서 학우들을 <b>기여자(Contributor)</b>로 초대합니다. 보기 전용(Viewer)이나 댓글 작성자로는 기록을 저장할 수 없습니다.</li>
-        <li>학우들이 같은 claude.ai 조직(학교의 Team·Enterprise·Education 플랜 등)에 속해 있어야 기여자로서 기록을 저장할 수 있습니다. 조직 밖의 사람은 읽기만 가능합니다.</li>
+        <li>학우들이 같은 조직 계정(학교의 Team·Enterprise·Education 플랜 등)에 속해 있어야 기여자로서 기록을 저장할 수 있습니다. 조직 밖의 사람은 읽기만 가능합니다.</li>
         <li>편집자(Editor)로 초대하면 운영자 화면과 모든 학생의 결과를 볼 수 있으므로 조교나 지도교수에게만 주세요.</li>
       </ol></details>
     </section>`;
@@ -1081,9 +1081,9 @@ function viewReliability(){
       <div class="row" style="gap:10px; align-items:flex-end"><label class="f" style="width:150px">답안당 반복 횟수<select id="rl-k"><option>2</option><option selected>3</option><option>5</option></select></label>
         <label class="f" style="width:200px">모델 등급<select id="rl-tier"><option value="default" selected>기본(빠름)</option><option value="complex">고급(코칭과 같음, 느림)</option></select></label>
         <button class="btn pri" id="rl-run" data-ai>채점 시작</button><button class="btn" id="rl-stop" hidden>중지</button></div>
-      <p class="note" id="rl-msg" style="margin:0">채점 한 번마다 내 Claude 계정 사용량이 쓰입니다. 기준 답안 6개 × 3회 = 18번 호출합니다. 결과는 이 브라우저에 저장되어 나중에 이어서 분석할 수 있습니다.</p>`;
+      <p class="note" id="rl-msg" style="margin:0">채점 한 번마다 내 계정의 AI 사용량이 쓰입니다. 기준 답안 6개 × 3회 = 18번 호출합니다. 결과는 이 브라우저에 저장되어 나중에 이어서 분석할 수 있습니다.</p>`;
     getSample().then(sample=>{
-      if(!sample){ $('#rl-run').disabled=true; $('#rl-msg').textContent='이 화면에서는 Claude를 사용할 수 없어 새 채점을 실행할 수 없습니다. 저장된 결과 분석과 사람 채점 입력은 할 수 있습니다.'; return; }
+      if(!sample){ $('#rl-run').disabled=true; $('#rl-msg').textContent='이 화면에서는 AI 기능을 사용할 수 없어 새 채점을 실행할 수 없습니다. 저장된 결과 분석과 사람 채점 입력은 할 수 있습니다.'; return; }
       let ctl=null;
       $('#rl-stop').onclick = ()=>{ ctl && ctl.abort(); };
       $('#rl-run').onclick = async ()=>{

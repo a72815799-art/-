@@ -127,3 +127,13 @@ test('타당도·임상척도는 심화 해설 6항목, 나머지는 개발 배�
   }
   for (const g of ['validity', 'clinical', 'rc', 'content', 'supp', 'psy5']) assert.ok(GROUP_INTRO[g], `군 개요 ${g}`);
 });
+
+test('화면 문구와 주석에 개발 도구·플랫폼 이름이 없다(플랫폼 연결 코드 제외)', async () => {
+  const { readdirSync, readFileSync } = await import('node:fs');
+  for (const f of readdirSync(APP_DIR).filter(f => /\.(js|html)$/.test(f))) {
+    const src = readFileSync(join(APP_DIR, f), 'utf8')
+      .replace(/window\.claude/g, '')                          // 플랫폼 API 연결(공유 링크 버전에 필요)
+      .replace(/<meta name="claude:viewport-fit-sides"[^>]*>/, ''); // 플랫폼 레이아웃 메타(오프라인 파일에서는 제거됨)
+    assert.ok(!/claude|anthropic/i.test(src), `${f}에 플랫폼 이름이 있다`);
+  }
+});

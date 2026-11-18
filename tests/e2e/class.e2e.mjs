@@ -1,5 +1,5 @@
 // 클래스 모드 브라우저 종단 테스트 (Playwright 필요: npm run e2e).
-// claude.ai의 db·user 기능을 메모리 모의 객체로 대신해, 실제 화면에서 동기화·권한·통계가 동작하는지 확인한다.
+// 호스팅 플랫폼의 db·user 기능을 메모리 모의 객체로 대신해, 실제 화면에서 동기화·권한·통계가 동작하는지 확인한다.
 import { createRequire } from 'node:module';
 import assert from 'node:assert/strict';
 import { execSync } from 'node:child_process';
@@ -146,12 +146,12 @@ store['results/u_c'] = { v: 1, mods: [], quiz: { 0: 1 }, cases: { c01: { score: 
   await ctx.close();
 }
 
-// 8) 플랫폼 기능이 없으면(claude.ai 밖) 로컬 모드
+// 8) 플랫폼 기능이 없으면(공유 링크 밖) 로컬 모드
 {
   const ctx = await browser.newContext(); const page = await ctx.newPage();
   await page.goto(URL + '#class');
   await page.waitForFunction(() => /이 브라우저에만/.test(document.getElementById('sync').textContent));
-  ok('claude.ai 밖에서는 로컬 모드로 동작');
+  ok('공유 링크 밖에서는 로컬 모드로 동작');
   await ctx.close();
 }
 

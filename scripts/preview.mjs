@@ -14,4 +14,4 @@ writeFileSync(join(dist, 'index.html'),
   '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">' +
   '<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body>' +
   body + '</body></html>');
-console.log('dist/index.html 생성. 브라우저로 여세요 (AI 기능은 claude.ai 안에서만 동작합니다).');
+console.log('dist/index.html 생성. 브라우저로 여세요 (AI 기능은 공유 링크에서만 동작합니다).');

@@ -412,7 +412,7 @@ function analyzeA(p, ctx){
   return {steps,validity,vText,code,flags,stopClinical:false,under,over,version:'A'};
 }
 
-/* 프로파일을 Claude 프롬프트용 텍스트로 */
+/* 프로파일을 AI 프롬프트용 텍스트로 */
 function profileText(p, ver){
   if(ver==='A') return GROUPS_A.map(([g,ks])=>{ const xs=ks.filter(k=>has(p,k)).map(k=>`${LAB_A[k]||k}=${p[k]}${k==='TRIN'?(p.TRINdir||'T'):''}`); return xs.length? `${g}: ${xs.join(', ')}`:''; }).filter(Boolean).join('\n');
   const groups = [['타당도',['CNS','VRIN','TRIN','F','Fb','Fp','FBS','L','K','S']],['임상',['Hs','D','Hy','Pd','Mf','Pa','Pt','Sc','Ma','Si']],['RC',['RCd','RC1','RC2','RC3','RC4','RC6','RC7','RC8','RC9']],['내용',['ANX','FRS','OBS','DEP','HEA','BIZ','ANG','CYN','ASP','TPA','LSE','SOD','FAM','WRK','TRT']],['보충',['A','R','Es','Do','Re','Mt','PK','MDS','Ho','OH','MACR','AAS','APS','GM','GF']],['PSY-5',['AGGR','PSYC','DISC','NEGE','INTR']],['하위척도',Object.keys(window.SUBSCALES)]];
