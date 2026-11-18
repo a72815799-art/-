@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>MMPI 해석 수련실 사용 설명서</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+@page{size:A4; margin:18mm 16mm 18mm 16mm}
+*{box-sizing:border-box}
+body{font-family:'Noto Sans KR',sans-serif; color:#1d2733; font-size:10.4pt; line-height:1.72; margin:0}
+h1{font-size:21pt; color:#24476b; margin:0 0 14px; padding-bottom:8px; border-bottom:2px solid #24476b; break-before:page; font-weight:700}
+h2{font-size:14pt; margin:22px 0 8px; font-weight:700; break-after:avoid}
+h3{font-size:11.5pt; margin:16px 0 6px; font-weight:700; break-after:avoid}
+p{margin:6px 0 8px}
+ul,ol{margin:6px 0 10px; padding-left:22px} li{margin:2px 0}
+table{width:100%; border-collapse:collapse; margin:8px 0 14px; font-size:9.6pt; break-inside:auto}
+th{background:#eef2f7; text-align:left; font-weight:700; padding:7px 9px; border-bottom:1px solid #c9d3de}
+td{padding:7px 9px; border-bottom:1px solid #dfe5ec; vertical-align:top}
+tr{break-inside:avoid}
+td:first-child{white-space:nowrap}
+figure{margin:12px 0 16px; text-align:center; break-inside:avoid}
+figure img{width:100%; border:1px solid #d6dde5; border-radius:8px}
+figure.half img{width:62%}
+figure.phone img{width:34%}
+figcaption{color:#56636f; font-size:9.6pt; margin-top:6px}
+.tip{background:#eef3f9; border-left:4px solid #24476b; padding:10px 14px; margin:10px 0 14px; border-radius:0 6px 6px 0; break-inside:avoid}
+.tip b.t{display:block; margin-bottom:4px}
+.warn{background:#fbf5ea; border-left-color:#a86b12}
+.q{color:#2b5d8f}
+.cover{height:257mm; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center}
+.cover .brand{letter-spacing:.35em; color:#24476b; font-weight:700; font-size:15pt}
+.cover h1.t{font-size:30pt; border:0; margin:18px 0 10px; break-before:auto; color:#1d2733; line-height:1.35}
+.cover .sub{color:#56636f; font-size:12pt}
+.cover img{width:84%; margin:28px 0 22px; border:1px solid #d6dde5; border-radius:8px}
+.toc{break-before:page}
+.toc ol{font-size:11pt; line-height:2.1; padding-left:20px}
+.toc b{color:#24476b}
+.small{font-size:9pt; color:#56636f}
+.two{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+</style></head><body>
+
+<section class="cover">
+  <div class="brand">MMPI TRAINING ROOM</div>
+  <h1 class="t">MMPI 해석 수련실<br>사용 설명서</h1>
+  <div class="sub">MMPI-2·MMPI-A 프로파일을 숙련 임상가의 사고 순서대로 해석하도록 훈련하는 대학원생용 학습 프로그램</div>
+  <img src="img/02-dashboard.png" alt="내 학습 화면">
+  <div class="sub">버전 0.10 · 2026년 11월</div>
+</section>
+
+<section class="toc"><h1 style="break-before:auto">차례</h1>
+<ol>
+<li><b>시작하기</b> — 프로그램 구성, 준비할 것, 첫 주 학습 순서</li>
+<li><b>화면 구성과 커리큘럼</b> — 메뉴 14개, 커리큘럼, 이론 모듈</li>
+<li><b>내 학습</b> — 학습 기록 대시보드</li>
+<li><b>척도 사전·코드타입·성인 vs 청소년</b></li>
+<li><b>프로파일 분석기</b> — 8단계 해석, 보고서 초안, AI 통합 해석</li>
+<li><b>실험실</b> — 응답 양식 실험, 측정오차와 코드타입 안정성</li>
+<li><b>사례 실습</b> — 사례 20개, 작성, 자가 점검, AI 코칭, 모범 해석, 근거 노트</li>
+<li><b>퀴즈</b> — 단계별 퀴즈와 오늘의 복습</li>
+<li><b>연구 근거</b> — 연구 쟁점, 문헌 목록, 영상 자료</li>
+<li><b>학습 효과</b> — 사전·사후 평가, AI 채점 신뢰도</li>
+<li><b>슈퍼바이저와 AI 연결</b> — 질의응답, 요청 복사, 개인 API 키</li>
+<li><b>우리 반</b> — 함께 쓰기와 개인정보 보호</li>
+<li><b>학우들에게 공유하기</b></li>
+<li><b>콘텐츠 규모와 품질 관리</b></li>
+<li><b>개인정보와 주의사항</b></li>
+<li><b>자주 묻는 질문</b></li>
+<li><b>부록</b> — 사례 목록, 연구 쟁점 목록</li>
+</ol></section>
+
+<h1>1. 시작하기</h1>
+<h2>1.1 프로그램 구성</h2>
+<p>MMPI 해석 수련실은 두 가지 형태로 제공됩니다. 학습 내용은 같고, AI 기능과 기록 저장 방식만 다릅니다.</p>
+<table><tr><th style="width:16%">구분</th><th>공유 링크</th><th>오프라인 HTML 파일</th></tr>
+<tr><td>여는 방법</td><td>링크를 누르고 로그인</td><td>mmpi-academy-v0.10.0.html 파일 하나를 크롬·엣지·사파리로 열기</td></tr>
+<tr><td>인터넷</td><td>필요</td><td>필요 없음(AI를 쓸 때만 필요)</td></tr>
+<tr><td>AI 기능</td><td>기본 AI로 바로 동작</td><td>개인 API 키(제미나이·GPT)를 넣거나 “요청 복사”로 사용</td></tr>
+<tr><td>우리 반</td><td>사용 가능</td><td>사용할 수 없음</td></tr>
+<tr><td>기록 저장</td><td>브라우저에 저장, 우리 반에서는 계정으로 동기화</td><td>그 브라우저에만 저장</td></tr></table>
+<h2>1.2 준비할 것</h2>
+<ul><li><b>브라우저</b>: Chrome, Microsoft Edge 또는 Safari 최신 버전. PC 화면을 권장합니다(휴대폰도 동작).</li>
+<li><b>AI를 쓰려면</b>(선택): 공유 링크로 열거나, Google AI Studio·OpenAI 플랫폼의 개인 API 키를 준비합니다. 키가 없어도 “다른 AI용 요청 복사”로 평소 쓰는 AI 채팅을 활용할 수 있습니다.</li></ul>
+<h2>1.3 첫 주 추천 순서</h2>
+<ol><li><b>학습 효과</b>에서 사전 평가(16문항)를 봅니다. 지금 수준이 기록되어 나중에 사후 평가와 비교됩니다.</li>
+<li><b>커리큘럼</b> 1·2단계 모듈(MMPI의 역사, 점수 체계, 타당도 결정 나무)을 읽고 “학습 완료로 표시”를 누릅니다.</li>
+<li><b>척도 사전</b>에서 타당도 척도 10개를 훑어봅니다.</li>
+<li><b>사례 실습</b>에서 1단계 사례(예: 승진 후 잠 못 드는 과장, 7-2 코드)를 하나 풀고 모범 해석과 비교합니다.</li>
+<li><b>퀴즈</b> 1·2단계를 풉니다. 틀린 문항은 “오늘의 복습”에 자동으로 들어갑니다.</li>
+<li><b>내 학습</b>에서 “다음에 할 일”을 확인하고 그대로 이어갑니다.</li></ol>
+<div class="tip"><b class="t">학습 흐름</b>배우기(이론·사전) → 연습하기(분석기·실험실) → 사례 실습 → 피드백(자가 점검·AI 코칭·모범 해석·근거 노트) → 점검하기(퀴즈·내 학습·평가) → 다시 배우기. 내 학습 화면이 약한 영역을 찾아 다음 학습 거리를 추천해 이 순환을 이어 줍니다.</div>
+
+<h1>2. 화면 구성과 커리큘럼</h1>
+<h2>2.1 첫 화면(커리큘럼)</h2>
+<figure><img src="img/01-home.png"><figcaption>첫 화면. 위쪽 메뉴, 왼쪽 8단계 커리큘럼, 오른쪽 수료 기준과 공부하는 방법</figcaption></figure>
+<table><tr><th style="width:14%">위치</th><th style="width:20%">이름</th><th>설명</th></tr>
+<tr><td>맨 위</td><td>메뉴 14개</td><td>커리큘럼, 내 학습, 이론, 척도 사전, 코드타입, 성인 vs 청소년, 프로파일 분석기, 실험실, 사례 실습, 퀴즈, 연구 근거, 학습 효과, 슈퍼바이저, 우리 반</td></tr>
+<tr><td>오른쪽 위</td><td>저장 상태</td><td>기록이 어디에 저장되는지 표시(이 브라우저, 동기화됨 등)</td></tr>
+<tr><td>위쪽</td><td>시작 버튼</td><td>“1단계부터 시작” 등 바로가기 버튼</td></tr>
+<tr><td>왼쪽</td><td>8단계 커리큘럼</td><td>단계마다 목표, 모듈 링크, 관련 메뉴, 진도 막대(완료/전체)</td></tr>
+<tr><td>오른쪽</td><td>수료 기준</td><td>모듈 20개 완료, 퀴즈 정답률 85% 이상, 사례 20개 제출, 사례 핵심 포인트 평균 80% 이상. 충족하면 ✓로 바뀜</td></tr></table>
+<h2>2.2 8단계 커리큘럼</h2>
+<p>이론은 숙련 임상가가 프로파일을 읽는 순서를 따라 8단계 20개 모듈로 구성됩니다.</p>
+<table><tr><th style="width:7%">단계</th><th style="width:20%">주제</th><th>모듈</th><th style="width:30%">도달 목표</th></tr>
+<tr><td>1</td><td>기초</td><td>MMPI의 역사와 경험적 제작법, 점수 체계(원점수·K 교정·T점수)</td><td>검사가 만들어진 방식과 점수의 뜻을 설명한다</td></tr>
+<tr><td>2</td><td>타당도 판단</td><td>타당도 해석: 결정 나무</td><td>해석해도 되는 프로파일인지 판단한다</td></tr>
+<tr><td>3</td><td>임상척도와 하위척도</td><td>임상척도 1~0의 핵심</td><td>하위척도로 상승 이유를 정교화한다</td></tr>
+<tr><td>4</td><td>코드타입</td><td>코드타입 해석 원칙</td><td>코드를 결정하고 정의 수준을 고려한다</td></tr>
+<tr><td>5</td><td>RC·내용·보충·PSY-5</td><td>RC 척도와 의기소침, 내용척도, 보충척도와 PSY-5, MMPI-2-RF와 MMPI-3</td><td>임상척도 해석을 다른 척도군으로 검증한다</td></tr>
+<tr><td>6</td><td>통합 해석</td><td>전문가의 8단계, 장면별 해석, 흔한 오류, 보고서 작성, 결과 피드백, 재검사와 변화</td><td>모든 자료를 사례 개념화와 보고서로 통합한다</td></tr>
+<tr><td>7</td><td>사례 슈퍼비전</td><td>(사례 실습)</td><td>성인 사례 15개를 독립적으로 해석한다</td></tr>
+<tr><td>8</td><td>MMPI-A 청소년 해석</td><td>개관, 성인용과의 비교, 타당도와 임상척도, 내용·보충척도, 청소년 평가 실무</td><td>청소년 사례를 해석한다</td></tr></table>
+<h2>2.3 이론 모듈</h2>
+<figure><img src="img/05-module.png"><figcaption>이론 모듈 화면(코드타입 해석 원칙)</figcaption></figure>
+<ul><li>본문은 개념 정의 → 판단 기준 → 예시 → 흔한 오류 순서로 읽기 쉽게 정리했습니다.</li>
+<li>본문 아래 <b>심화 해설</b>은 대학원 수업 수준의 배경 설명과 임상 예시를 더합니다.</li>
+<li>다 읽으면 <b>학습 완료로 표시</b>를 눌러 진도에 반영합니다. 이전·다음 모듈로 바로 이동할 수 있습니다.</li></ul>
+
+<h1>3. 내 학습</h1>
+<p>내 학습은 지금까지의 공부를 한 화면에 모아 보여 주는 대시보드입니다. 모듈 완료, 퀴즈, 사례 제출, 평가, 연구 쟁점 읽기가 자동으로 기록되므로 따로 입력할 것이 없습니다.</p>
+<figure><img src="img/02-dashboard.png"><figcaption>내 학습: 요약 수치와 다음에 할 일 (예시 기록)</figcaption></figure>
+<table><tr><th style="width:22%">구성</th><th>설명</th></tr>
+<tr><td>요약 수치 6개</td><td>공부한 날과 연속 일수, 이론 모듈 완료 수, 사례 제출 수와 자가 점검 평균, 퀴즈 정답률과 복습할 문항 수, 사전→사후 평가 점수와 정규화 향상도, 읽은 연구 쟁점 수</td></tr>
+<tr><td>다음에 할 일</td><td>가장 약한 영역을 골라, 그 영역에서 아직 하지 않은 이론 모듈·사례·연구 쟁점과 오늘 복습할 퀴즈를 순서대로 추천합니다. 링크를 누르면 바로 이동합니다.</td></tr>
+<tr><td>요약 인쇄 · PDF 저장</td><td>메뉴와 버튼을 빼고 학습 기록만 담은 페이지를 인쇄하거나 PDF로 저장합니다.</td></tr></table>
+<figure><img src="img/03-dashboard-domains.png"><figcaption>영역별 숙달도. 가장 약한 영역에 “보완” 표시</figcaption></figure>
+<p><b>영역별 숙달도</b>는 7개 영역(기초 이론, 타당도 판단, 코드타입, 정교화, 내용·보충척도, 위험·보고서, 청소년)마다 모듈 완료, 퀴즈 정답률, 사례 자가 점검 점수, 최근 평가 점수, 읽은 연구 쟁점을 보여 줍니다. 종합 점수는 퀴즈·사례·평가 점수 중 있는 것의 평균입니다.</p>
+<figure><img src="img/04-dashboard-charts.png"><figcaption>사례 자가 점검 추이, 공부한 날 달력, 제출한 사례 목록</figcaption></figure>
+<ul><li><b>사례 자가 점검 추이</b>: 제출한 순서대로 점수가 오르는지 보는 선 그래프입니다. 점에 마우스를 올리면 사례 이름과 날짜가 나오고, “표로 보기”로 숫자를 볼 수 있습니다.</li>
+<li><b>공부한 날</b>: 최근 16주의 달력입니다. 칸이 진할수록 그날 활동이 많았습니다.</li>
+<li><b>제출한 사례</b>: 사례별 코드, 제출일, 자가 점검 점수. 이름을 누르면 사례로 이동합니다.</li></ul>
+
+<h1>4. 척도 사전 · 코드타입 · 성인 vs 청소년</h1>
+<h2>4.1 척도 사전</h2>
+<p>MMPI-2 척도 64개(타당도 10, 임상 10, RC 9, 내용 15, 보충 15, PSY-5 5)와 하위척도 31개, MMPI-A 척도 43개를 담았습니다.</p>
+<figure><img src="img/06-scales.png"><figcaption>척도 사전: 7번 척도(Pt)를 펼치고 심화 해설을 연 모습</figcaption></figure>
+<table><tr><th style="width:22%">요소</th><th>설명</th></tr>
+<tr><td>검사 선택</td><td>MMPI-2 성인 / MMPI-A 청소년. 청소년을 고르면 청소년 고유 척도와, 같은 척도라도 청소년에서 달라지는 해석이 표시됩니다.</td></tr>
+<tr><td>척도군 버튼과 검색</td><td>타당도·임상·RC·내용·보충·PSY-5로 거르거나, 약어·이름으로 검색(예: Pd, 우울, A-sch)</td></tr>
+<tr><td>상승 수준별 의미</td><td>낮음, 60~64, 65 이상, 매우 높음에서 각각 무엇을 뜻하는지</td></tr>
+<tr><td>하위척도·전문가 포인트·흔한 오류</td><td>Harris-Lingoes 하위척도, 숙련가가 주목하는 점, 초심자가 자주 하는 실수</td></tr>
+<tr><td>심화 해설</td><td>개발 배경, 문항 내용 영역, 프로파일 안에서의 역할, 감별과 해석 주의, 연구 근거, 짧은 사례</td></tr>
+<tr><td>연구 근거 연결</td><td>관련 연구 쟁점으로 바로 이동(예: F(P) → 정신과 증상 과대보고)</td></tr></table>
+<h2>4.2 코드타입</h2>
+<figure><img src="img/07-codes.png"><figcaption>코드타입: 2-7 코드를 연 모습</figcaption></figure>
+<p>성인 39개(단독 상승, 2점·3점 코드, 정상 범위 프로파일)와 청소년 10개를 다룹니다. 코드를 누르면 핵심 역동, 주요 특징, 감별할 진단, 치료 시사점, 순서의 의미(예: 2-7과 7-2의 차이), 전문가 포인트가 열립니다.</p>
+<h2>4.3 성인 vs 청소년</h2>
+<figure><img src="img/08-compare.png"><figcaption>성인용과 청소년용 비교</figcaption></figure>
+<ul><li><b>한눈에 비교</b>: 대상 연령, 문항 수(567 / 478), 규준, K 교정 유무, 해석 기준(T 65 / T 60~64 회색 지대) 등 8항목</li>
+<li><b>척도 대응표</b>: 같은 이름의 척도가 성인과 청소년에서 어떻게 다르게 해석되는지 15항목</li>
+<li><b>O/X 연습</b>: 차이를 확인하는 12문항</li></ul>
+
+<h1>5. 프로파일 분석기</h1>
+<p>T점수를 입력하면 규칙 기반 엔진이 숙련 임상가의 사고 순서대로 가설과 근거를 정리합니다. 결과는 “정답”이 아니라 가설 목록이며, 면담과 맥락으로 고르고 통합하는 것은 사용자의 몫입니다.</p>
+<figure><img src="img/09-analyzer.png"><figcaption>프로파일 분석기: 왼쪽 입력, 오른쪽 프로파일 차트</figcaption></figure>
+<table><tr><th style="width:14%">위치</th><th style="width:20%">이름</th><th>설명</th></tr>
+<tr><td>왼쪽 위</td><td>검사·사례·장면·성별</td><td>MMPI-2 또는 MMPI-A, 사례 불러오기(20개), 장면(외래·상담, 정신과 입원, 법정·감정, 양육권 평가, 의료·통증, 인사 선발, 대학 상담), 성별</td></tr>
+<tr><td>왼쪽</td><td>점수 입력</td><td>척도군별 T점수 칸. 빈칸은 입력하지 않은 척도로 처리. “모든 점수 지우기”로 초기화</td></tr>
+<tr><td>오른쪽 위</td><td>프로파일 차트</td><td>점수를 바꾸면 즉시 다시 그려짐. 65 이상은 빨간색 표시</td></tr>
+<tr><td>차트 아래</td><td>요약 칩과 버튼</td><td>타당도 판정, 코드, 주의 사항 요약. 보고서 초안 복사, 다른 AI용 요청 복사, AI 슈퍼바이저 통합 해석</td></tr></table>
+<figure><img src="img/10-analyzer-steps.png"><figcaption>8단계 해석 결과</figcaption></figure>
+<table><tr><th style="width:26%">단계</th><th>내용</th></tr>
+<tr><td>1. 맥락 확인</td><td>장면과 의뢰 사유에 따라 주의할 점(예: 양육권 평가는 방어가 흔함)</td></tr>
+<tr><td>2. 타당도 판단</td><td>무응답 → VRIN·TRIN → F 계열 → L·K·S 순서의 결정 나무. 해석 불가면 임상 해석을 보류</td></tr>
+<tr><td>3. 전체 상승도와 모양</td><td>임상척도 평균, 65 이상 척도 수, 신경증 3요소의 모양, Goldberg 지표(보조)</td></tr>
+<tr><td>4. 코드타입 결정</td><td>코드와 정의도(5점 기준)</td></tr>
+<tr><td>5. 척도별 의미와 정교화</td><td>하위척도로 상승 이유 확인, RC 척도로 의기소침과 고유 척도 구분</td></tr>
+<tr><td>6. 내용·보충척도와 PSY-5</td><td>가설을 확인하고 보완</td></tr>
+<tr><td>7. 위험 지표 점검</td><td>자살, 폭력, 물질 사용 등 면담으로 확인할 지점</td></tr>
+<tr><td>8. 치료 시사점</td><td>치료 동기, 관계 형성, 개입 방향</td></tr></table>
+<div class="tip"><b class="t">버튼 세 가지</b><b>보고서 초안 복사</b>는 8단계 결과를 보고서 형식 문장으로 복사합니다. <b>AI 슈퍼바이저 통합 해석</b>은 가설을 검증·선별해 하나의 해석으로 쓰고 초심자가 놓치기 쉬운 점 3가지를 덧붙입니다. <b>다른 AI용 요청 복사</b>는 같은 요청을 ChatGPT나 제미나이에 붙여 넣을 수 있게 복사합니다(11장).</div>
+
+<h1>6. 실험실</h1>
+<p>실험실은 타당도와 측정오차를 숫자로 체험하는 두 가지 시뮬레이션입니다.</p>
+<h2>6.1 응답 양식 실험실</h2>
+<figure><img src="img/11-lab.png"><figcaption>응답 양식 실험실: “과장 60%”를 섞은 모습. 점선은 왜곡 전 기준 프로파일</figcaption></figure>
+<ul><li>기준 프로파일을 고르고 무선 응답, 한쪽 쏠림(모두 “그렇다”/“아니다”), 과장, 좋게 보이기를 슬라이더로 섞습니다.</li>
+<li>척도 점수와 해석 엔진의 타당도 판정이 실시간으로 바뀝니다. “무선 30%”, “완전 무선”, “과장 60%” 같은 프리셋이 있습니다.</li>
+<li><b>응답 양식 맞히기</b>: 왜곡된 프로파일을 보고 원인을 맞히는 문제를 계속 낼 수 있습니다.</li></ul>
+<h2>6.2 측정오차와 코드타입 안정성</h2>
+<figure><img src="img/12-stability.png"><figcaption>재검사 2,000번 시뮬레이션 결과</figcaption></figure>
+<ul><li>각 척도에 측정오차만큼 잡음을 넣어 재검사를 2,000번 시뮬레이션하고, 같은 코드가 다시 나오는 비율을 보여 줍니다.</li>
+<li>재검사 신뢰도로 측정의 표준오차(SEM)를 바꿔 볼 수 있습니다.</li>
+<li><b>신뢰할 수 있는 변화 지수(RCI)</b>: 두 번 검사한 점수의 차이가 측정오차를 넘는 의미 있는 변화인지 계산합니다.</li></ul>
+<div class="tip"><b class="t">왜 필요한가</b>“5점 이상으로 정의된 코드만 믿으라”는 규칙과, 치료 전후 점수 변화를 해석할 때 측정오차를 먼저 생각해야 하는 이유를 직접 확인할 수 있습니다.</div>
+
+<h1>7. 사례 실습</h1>
+<p>사례 실습은 이 프로그램의 중심입니다. 가상 사례 20개(성인 15, 청소년 5)를 직접 해석하고 숙련 임상가의 해석과 단계별로 비교합니다. 흔한 코드타입뿐 아니라 타당도 문제, 장면별 함정, 청소년 특유의 문제를 골고루 담았습니다(부록 A).</p>
+<h2>7.1 사례 목록</h2>
+<figure><img src="img/13-cases.png"><figcaption>사례 목록: 난이도별 묶음, 제출 여부와 점수</figcaption></figure>
+<h2>7.2 사례 화면</h2>
+<figure><img src="img/14-case.png"><figcaption>사례 화면: 인적 사항, 의뢰 사유, 배경, 프로파일 차트, 전체 점수표</figcaption></figure>
+<h2>7.3 해석 작성과 자가 점검</h2>
+<figure><img src="img/15-case-write.png"><figcaption>해석을 7개 칸에 나눠 작성(자동 저장)</figcaption></figure>
+<table><tr><th style="width:28%">칸</th><th>쓸 내용</th></tr>
+<tr><td>1. 검사 태도와 타당도</td><td>무응답, VRIN·TRIN, F 계열, L·K·S를 순서대로 판단</td></tr>
+<tr><td>2. 코드타입과 상승도</td><td>코드, 정의 수준, 전체 상승도, 프로파일 모양</td></tr>
+<tr><td>3. 정교화</td><td>하위척도와 RC로 본 상승 이유, 내용·보충척도, PSY-5</td></tr>
+<tr><td>4. 진단적 고려</td><td>감별 진단(확정하지 말 것)</td></tr>
+<tr><td>5. 위험 요인</td><td>자살, 공격성, 물질, 정신증, 면담에서 확인할 것</td></tr>
+<tr><td>6. 치료 시사점</td><td>동기, 예후, 개입 방향, 치료 관계의 주의점</td></tr>
+<tr><td>7. 종합</td><td>두세 문장의 사례 개념화</td></tr></table>
+<figure><img src="img/16-case-check.png"><figcaption>제출하고 자가 점검: 핵심 포인트를 짚었는지 ✓/✗와 점수</figcaption></figure>
+<p><b>제출하고 자가 점검</b>을 누르면 사례마다 정해진 핵심 포인트를 짚었는지 보여 주고 점수(%)를 매깁니다. 키워드 대조 방식이라 코드는 “7-2”처럼 번호로, 척도는 “Pd2”, “RC8”처럼 약어로 쓰면 인식이 잘 됩니다.</p>
+<h2>7.4 AI 슈퍼바이저 코칭</h2>
+<figure><img src="img/17-case-coach.png"><figcaption>AI 슈퍼바이저 코칭 (예시 화면)</figcaption></figure>
+<p>내 해석을 9개 영역(각 0~5점, 총 45점)으로 채점하고, 잘한 점, 고쳐야 할 점과 고친 문장 예시, 전문가의 사고 순서, 다음에 읽을 모듈을 알려 줍니다. AI 버튼이 없는 환경에서는 <b>다른 AI용 코칭 요청 복사</b>를 씁니다(11장).</p>
+<h2>7.5 모범 해석과 심화 해설</h2>
+<p>제출 후에만 열립니다. 답을 먼저 보면 학습 효과가 크게 줄기 때문입니다.</p>
+<figure><img src="img/18-case-deep.png"><figcaption>전문가 심화 해설: 첫 30초, 척도별 정밀 분석</figcaption></figure>
+<figure><img src="img/19-case-deep2.png"><figcaption>가설 수렴표와 감별 진단, 면담 질문</figcaption></figure>
+<table><tr><th style="width:28%">심화 해설 구성</th><th>내용</th></tr>
+<tr><td>1. 첫 30초</td><td>숙련가의 눈에 먼저 들어오는 것과 세우는 첫 가설</td></tr>
+<tr><td>2. 척도별 정밀 분석</td><td>척도·점수·판단·의미와 근거</td></tr>
+<tr><td>3. 가설 수렴표</td><td>각 가설의 지지 근거와 반대 근거(확증 편향 방지)</td></tr>
+<tr><td>4. 감별 진단</td><td>후보, 지지, 반대, 확인할 것</td></tr>
+<tr><td>5~9</td><td>면담 질문, 보고서 문단 예시, 결과 피드백 대본, 치료·개입 계획, 슈퍼바이저 코멘트</td></tr></table>
+<h2>7.6 근거 노트</h2>
+<figure><img src="img/20-case-evidence.png"><figcaption>근거 노트: 해석 판단마다 근거 문헌과 그 연구의 한계</figcaption></figure>
+<p>모범 해석의 핵심 판단마다 근거가 되는 연구와, 그 연구가 말해 주지 않는 한계를 적었습니다. 예를 들어 사례 18의 7-8 코드는 정의도가 4점뿐이라, 측정오차 시뮬레이션 연구에 따르면 재검사에서 같은 코드가 나올 비율이 27~49%에 그친다는 점을 짚습니다. 인용을 누르면 문헌 목록으로 이동합니다.</p>
+
+<h1>8. 퀴즈</h1>
+<figure><img src="img/21-quiz.png"><figcaption>퀴즈: 단계 선택, 답을 고르면 바로 해설</figcaption></figure>
+<ul><li>57문항을 커리큘럼 단계별로 나눠 풀 수 있고, 답을 고르면 정답 여부와 해설이 바로 나옵니다.</li>
+<li>틀린 문항은 <b>오늘의 복습</b>에 들어갑니다. 간격 반복(SM-2) 방식으로, 맞히면 다음 복습이 1일 → 6일 → 점점 뒤로 미뤄지고, 틀리면 처음부터 다시 시작합니다.</li>
+<li>“이 범위 기록 초기화”로 고른 단계의 기록을 지울 수 있습니다.</li></ul>
+
+<h1>9. 연구 근거</h1>
+<p>해석서의 문장 뒤에 있는 논문과 학술지 연구를 쟁점별로 정리했습니다. “왜 그렇게 해석하는가”에 논문으로 답하는 것이 목표입니다.</p>
+<figure><img src="img/22-evidence.png"><figcaption>연구 쟁점 11개를 4개 영역으로 묶은 첫 화면</figcaption></figure>
+<h2>9.1 연구 쟁점</h2>
+<figure><img src="img/23-evidence-topic.png"><figcaption>쟁점 화면: 핵심 질문, 왜 중요한가, 주요 연구 결과(문장마다 인용)</figcaption></figure>
+<p>각 쟁점은 다음 순서로 구성됩니다.</p>
+<ol><li>핵심 질문과 왜 실무에서 중요한가</li><li>주요 연구 결과(문장마다 인용)</li><li>수치로 보기(효과크기, 표본 크기 등)</li><li>실무 적용</li><li>흔한 오해와 연구가 말하는 것</li><li>논쟁과 아직 모르는 것</li><li>한국에서 쓸 때</li><li>세미나 토론 질문</li></ol>
+<figure><img src="img/24-evidence-numbers.png"><figcaption>수치로 보기, 실무 적용, 흔한 오해</figcaption></figure>
+<h2>9.2 문헌 목록</h2>
+<figure><img src="img/25-refs.png"><figcaption>문헌 목록 69편: 종류별 필터와 검색</figcaption></figure>
+<ul><li>메타분석 12편, 실증 연구, 공식 매뉴얼, 해석서, 개관·논쟁, 한국 자료로 나눠 APA 7판 형식으로 실었습니다.</li>
+<li>서지를 누르면 복사되고, DOI를 누르면 원문 페이지로 갑니다. 각 문헌이 어느 쟁점에서 인용되는지도 표시됩니다.</li></ul>
+<h2>9.3 영상 자료</h2>
+<figure><img src="img/26-videos.png"><figcaption>공개 강의와 영상 자료</figcaption></figure>
+<p>미네소타대 출판부가 교육용으로 공개한 MMPI-2-RF 개발자(Ben-Porath·Tellegen) 대담 7부작, 출판사 웨비나, 한국청소년상담복지개발원의 한국어 자료를 모았습니다. 아래에는 직접 만드는 2분 강의 영상 3편(“F가 높으면 꾀병일까?”, “코드타입 5점 규칙의 진실”, “MMPI-A가 정상으로 나오는 이유”)의 장면별 대본이 있습니다.</p>
+
+<h1>10. 학습 효과</h1>
+<h2>10.1 사전·사후 평가</h2>
+<figure><img src="img/27-research.png"><figcaption>사전 → 사후 비교: 영역별 향상과 정규화 향상도 (예시 기록)</figcaption></figure>
+<ul><li>같은 난이도의 평행형 A·B(각 16문항)로 6개 영역(타당도 판단, 코드타입, 정교화, 내용·보충척도, 위험·보고서, 청소년)을 평가합니다. 퀴즈와 겹치는 문항은 없습니다.</li>
+<li>사전에 A형을 보면 사후에는 B형이 자동 배정되어, 같은 문항을 두 번 푸는 효과를 막습니다. 보기 순서도 섞입니다.</li>
+<li>사후 평가가 끝나면 영역별 비교와 <b>정규화 향상도</b>(얻을 수 있었던 향상 중 실제로 얻은 비율)를 보여 주고, 그때 정답과 해설을 공개합니다.</li>
+<li>연구 활용 동의는 선택이며 언제든 철회할 수 있습니다.</li></ul>
+<h2>10.2 AI 채점 신뢰도 검증</h2>
+<figure><img src="img/28-reliability.png"><figcaption>AI 채점 신뢰도: 반복 채점 결과 (예시 화면)</figcaption></figure>
+<p>AI 코칭 점수를 믿어도 되는지 직접 잽니다. 우수·보통·미흡 수준으로 설계한 기준 답안 6개(내 답안 추가 가능)를 여러 번 채점해 다음을 계산합니다.</p>
+<table><tr><th style="width:28%">지표</th><th>의미</th></tr>
+<tr><td>ICC(1,1), ICC(1,k)</td><td>같은 답안을 다시 채점해도 같은 점수가 나오는가(일관성)</td></tr>
+<tr><td>Spearman ρ</td><td>우수 &gt; 보통 &gt; 미흡 순서를 제대로 가르는가(변별력)</td></tr>
+<tr><td>영역별 흔들림</td><td>9개 채점 영역 중 어느 영역의 점수가 불안정한가</td></tr>
+<tr><td>이차 가중 카파, MAE, r</td><td>교수·조교가 매긴 점수와 AI 점수가 얼마나 일치하는가</td></tr></table>
+<p>결과는 CSV로 저장해 엑셀이나 통계 프로그램에서 다시 분석할 수 있습니다.</p>
+
+<h1>11. 슈퍼바이저와 AI 연결</h1>
+<h2>11.1 슈퍼바이저 질의응답</h2>
+<figure><img src="img/29-mentor.png"><figcaption>슈퍼바이저: MMPI에 관한 자유 질문 (예시 화면)</figcaption></figure>
+<p>경력 25년의 MMPI 슈퍼바이저 역할을 맡은 AI가 답합니다. 아래의 추천 질문을 누르거나 직접 입력합니다. 대화는 화면을 떠나면 지워지므로 필요한 내용은 복사해 두세요.</p>
+<h2>11.2 AI를 쓰는 세 가지 방법</h2>
+<table><tr><th style="width:16%">방법</th><th style="width:20%">쓸 수 있는 곳</th><th>필요한 것</th><th style="width:26%">비용</th></tr>
+<tr><td>기본 AI</td><td>공유 링크</td><td>로그인</td><td>보는 사람 본인 계정의 사용량</td></tr>
+<tr><td>개인 API 키</td><td>오프라인 HTML 파일</td><td>Google Gemini 또는 OpenAI GPT API 키</td><td>본인 계정에 사용량만큼 청구(Gemini는 무료 한도 있음)</td></tr>
+<tr><td>요청 복사</td><td>어디서나</td><td>아무 AI 채팅(무료 계정 포함)</td><td>쓰는 AI 채팅의 요금제대로</td></tr></table>
+<h2>11.3 요청 복사</h2>
+<figure><img src="img/34-copy-request.png"><figcaption>다른 AI용 요청 복사와 답변 붙여넣기</figcaption></figure>
+<ol><li>사례 실습·분석기·슈퍼바이저 화면에서 <b>다른 AI용 요청 복사</b>를 누릅니다. 사례, 내 답안, 채점 기준이 담긴 요청이 복사됩니다.</li>
+<li>ChatGPT나 제미나이 채팅창에 붙여 넣고 보냅니다.</li>
+<li>받은 답변을 <b>AI 답변 붙여넣기</b> 칸에 넣고 <b>답변 정리해서 보기</b>를 누르면 읽기 좋게 정리되고 저장됩니다.</li></ol>
+<h2>11.4 개인 API 키 연결(오프라인 파일)</h2>
+<figure><img src="img/33-ai-connect.png"><figcaption>AI 연결 설정</figcaption></figure>
+<ol><li>오프라인 파일 첫 화면 안내의 <b>AI 연결 설정</b>으로 들어갑니다.</li>
+<li>Google Gemini 또는 OpenAI GPT를 고르고 키를 붙여 넣습니다. Gemini 키는 Google AI Studio에서, GPT 키는 OpenAI 플랫폼에서 만듭니다. ChatGPT Plus 같은 구독과 API 키는 별개입니다.</li>
+<li><b>연결 테스트</b>로 확인한 뒤 <b>저장</b>합니다. 모델 이름은 바꿀 수 있습니다(기본값: gemini-2.5-flash, gpt-4o-mini).</li></ol>
+<div class="tip warn"><b class="t">키 관리</b>키는 그 브라우저에만 저장되고 기록 동기화에 포함되지 않습니다. 함께 쓰는 컴퓨터라면 사용 후 <b>키 지우기</b>를 누르세요. AI에 보내는 요청에는 사례 정보와 답안이 담기므로 실제 내담자 정보는 넣지 마세요.</div>
+
+<h1>12. 우리 반</h1>
+<p>우리 반은 같은 공유 링크를 쓰는 학우들의 학습 현황을 모아 보는 선택 기능입니다. 혼자 공부할 때는 쓰지 않아도 됩니다.</p>
+<figure><img src="img/30-class.png"><figcaption>우리 반: 반 학습 효과와 반이 놓친 핵심 포인트 (예시 화면)</figcaption></figure>
+<table><tr><th style="width:22%">화면</th><th>내용</th></tr>
+<tr><td>기록 동기화</td><td>내 진도와 답안을 로그인 계정에 저장해 다른 기기에서도 이어서 공부</td></tr>
+<tr><td>과제</td><td>운영자가 지정한 사례와 마감일. 사례 목록에 “과제” 표시</td></tr>
+<tr><td>반 통계</td><td>사례별 반 평균과 내 점수, 반이 가장 많이 놓친 핵심 포인트, 가장 어려워한 퀴즈, 응답 양식 맞히기 정답률</td></tr>
+<tr><td>반 학습 효과</td><td>사전→사후 평가의 반 평균 변화와 효과크기</td></tr></table>
+<figure><img src="img/31-class-admin.png"><figcaption>운영자 화면: 참여 현황, 과제 관리, 연구 데이터 (예시 화면)</figcaption></figure>
+<div class="tip"><b class="t">개인정보 보호 원칙</b>
+<ul style="margin:0"><li>내 답안과 기록은 본인만 봅니다. 다른 학생에게는 반 전체의 집계만 보입니다.</li>
+<li>반 통계는 제출한 사람이 3명 이상인 항목만 표시해 개인이 드러나지 않게 합니다.</li>
+<li>운영자에게는 점수 요약만 가고, 답안 원문과 문항별 선택은 가지 않습니다.</li>
+<li>연구 데이터 CSV에는 연구 활용에 동의한 사람만, 이름 대신 번호(P01, P02…)로 들어갑니다.</li></ul></div>
+
+<h1>13. 학우들에게 공유하기</h1>
+<p>가장 간단한 방법은 오프라인 HTML 파일을 카카오톡으로 보내는 것입니다. 계정이 필요 없고 인터넷 없이도 열립니다.</p>
+<table><tr><th style="width:14%">방법</th><th>보내는 법</th><th>받는 사람이 할 일</th><th style="width:28%">주의</th></tr>
+<tr><td>HTML 파일</td><td>카카오톡 채팅방에 파일 첨부</td><td>파일을 저장한 뒤 PC는 크롬·엣지로, 휴대폰은 “다른 앱으로 열기 → 브라우저”로 열기</td><td>카카오톡 안의 미리보기로는 일부 기능이 동작하지 않음. 기록은 각자 브라우저에 저장</td></tr>
+<tr><td>공유 링크</td><td>공유 메뉴에서 접근 권한을 연 뒤 링크 전송</td><td>링크를 열고 로그인</td><td>기본 AI와 우리 반 사용 가능. 권한을 열기 전에는 열 수 없음</td></tr></table>
+<p>함께 보낼 안내 문구 예시:</p>
+<div class="tip">MMPI-2·MMPI-A 해석 공부용 프로그램입니다. 파일을 저장한 뒤 크롬이나 엣지로 열어 주세요(휴대폰은 “다른 앱으로 열기”). 처음이면 ‘학습 효과’에서 사전 평가를 보고 ‘커리큘럼’ 1단계부터 시작하면 됩니다. 사용법은 함께 보낸 설명서를 참고하세요.</div>
+<figure class="half"><img src="img/32-offline-home.png"><figcaption>오프라인 파일의 첫 화면 안내</figcaption></figure>
+<p>새 버전의 HTML 파일을 받으면 이전 파일과 같은 이름·같은 위치에 덮어써야 기록이 이어집니다.</p>
+
+<h1>14. 콘텐츠 규모와 품질 관리</h1>
+<table><tr><th style="width:30%">자료</th><th>규모</th></tr>
+<tr><td>이론 모듈</td><td>8단계 20개, 모듈마다 심화 해설</td></tr>
+<tr><td>척도 해설</td><td>MMPI-2 64개 + 하위척도 31개, MMPI-A 43개, 핵심 20개 척도는 6항목 심화 해설</td></tr>
+<tr><td>코드타입</td><td>성인 39개, 청소년 10개</td></tr>
+<tr><td>가상 사례</td><td>20개(성인 15, 청소년 5), 사례마다 9부분 심화 해설과 근거 노트 3개 이상</td></tr>
+<tr><td>퀴즈 / 평가</td><td>퀴즈 57문항, 사전·사후 평행형 A·B 각 16문항</td></tr>
+<tr><td>AI 채점 검증용 기준 답안</td><td>6개(우수·보통·미흡)</td></tr>
+<tr><td>연구 근거</td><td>연구 쟁점 11개, 문헌 69편(메타분석 12)</td></tr>
+<tr><td>영상</td><td>공개 강의·자료 9건, 직접 만드는 강의 영상 대본 3편</td></tr></table>
+<h2>정확성을 지키는 방법</h2>
+<ul><li><b>해석 엔진 검증</b>: 분석기의 판정(타당도, 코드타입, 정의도)을 기준 프로파일 묶음과 대조하는 자동 테스트가 있습니다. 측정오차 시뮬레이션으로 단독 상승 판정 규칙의 오류를 찾아 해석서 기준에 맞게 고친 적도 있습니다.</li>
+<li><b>사례와 엔진의 일치</b>: 각 사례의 코드타입과 근거 노트에 적힌 정의도 수치가 실제 점수에서 계산되는 값과 같은지 자동으로 확인합니다.</li>
+<li><b>문헌 검증</b>: 저자, 연도, 제목, 학술지, 권·호, 쪽수, DOI를 Crossref와 PubMed 기록으로 대조했고, 본문의 수치는 초록에서 확인한 것만 실었습니다. 흔히 잘못 인용되는 제목과 저자 순서도 원 기록에 맞춰 바로잡았습니다.</li>
+<li><b>통계 검증</b>: ICC, 가중 카파, 대응표본 효과크기 등은 문헌의 공개 예제 값과 대조했습니다(예: Shrout·Fleiss, 1979의 ICC 예제).</li>
+<li><b>자동 테스트</b>: 기능 단위 테스트 215개와 실제 브라우저로 화면을 조작하는 종단 테스트 20개가 변경할 때마다 모두 통과해야 배포합니다.</li>
+<li><b>저작권</b>: MMPI 문항 원문은 하나도 싣지 않았습니다. 문항 내용은 영역을 설명하는 수준으로만 다루고, 모든 사례는 교육용으로 만든 가상 사례입니다.</li></ul>
+
+<h1>15. 개인정보와 주의사항</h1>
+<ul><li>이 프로그램은 <b>학습용</b>입니다. 실제 내담자의 진단, 보고서, 법적 판단에 그대로 쓰지 마세요.</li>
+<li><b>규준</b>: 분석기는 입력한 T점수를 그대로 해석합니다. 한국 성인·청소년은 한국판 규준으로 채점한 점수를 넣어야 하며, 외국 연구의 절단점은 미국 규준 기준입니다.</li>
+<li><b>규칙 기반 엔진의 한계</b>: 점수에 나타나지 않는 맥락(면담, 기록, 행동 관찰)은 반영하지 못합니다.</li>
+<li><b>자가 점검</b>: 키워드 대조 방식이라 해석의 질을 모두 반영하지 않습니다.</li>
+<li><b>AI</b>: AI도 틀릴 수 있습니다. 수치나 절단점이 매뉴얼과 다르면 매뉴얼을 따르고, 의문은 지도교수나 슈퍼바이저에게 확인하세요.</li>
+<li><b>한국 문헌</b>: 한국판 매뉴얼과 학회지 논문은 인용 논문을 통해 서지를 확인했으므로, 표본 크기 같은 세부 사항은 원문으로 확인하세요.</li>
+<li><b>개인정보</b>: 실제 내담자의 이름, 생년월일, 기관명 등을 입력하지 마세요. AI 기능에 입력한 내용은 외부 AI 서비스로 전송됩니다.</li>
+<li><b>검사 자격</b>: MMPI 실시와 해석은 자격을 갖춘 전문가의 지도 아래에서 해야 합니다. 이 프로그램은 그 수련을 돕는 보조 도구입니다.</li></ul>
+
+<h1>16. 자주 묻는 질문</h1>
+<table><tr><th style="width:30%">질문</th><th>답</th></tr>
+<tr><td>AI 버튼이 보이지 않아요</td><td>오프라인 파일에서는 AI 연결 설정에 개인 API 키를 넣어야 보입니다. 키가 없으면 “다른 AI용 요청 복사”를 쓰세요. 공유 링크에서 처음 나오는 허용 창을 거절했다면 페이지를 새로 고치세요.</td></tr>
+<tr><td>연결 테스트가 실패해요</td><td>“API 키가 올바르지 않습니다”면 키를 다시 복사하고, “모델 이름을 찾을 수 없습니다”면 회사 문서에서 현재 모델 이름을 확인해 바꿉니다.</td></tr>
+<tr><td>기록이 사라졌어요</td><td>기록은 브라우저에 저장됩니다. 다른 브라우저·기기에서 열었거나, 방문 기록을 지웠거나, 오프라인 파일을 다른 위치에서 열었는지 확인하세요.</td></tr>
+<tr><td>모범 해석이 열리지 않아요</td><td>해석을 작성하고 “제출하고 자가 점검”을 누른 뒤에 열립니다.</td></tr>
+<tr><td>썼는데 ✗가 나와요</td><td>키워드 대조 방식이라 표현이 다르면 놓친 것으로 표시됩니다. 코드는 번호로, 척도는 약어로 쓰세요.</td></tr>
+<tr><td>내 학습 화면이 비어 있어요</td><td>모듈을 완료로 표시하거나, 퀴즈를 풀거나, 사례를 제출하면 채워집니다.</td></tr>
+<tr><td>휴대폰에서도 되나요</td><td>됩니다. 다만 사례 해석 작성과 프로파일 차트는 PC 화면이 편합니다.</td></tr></table>
+<figure class="phone"><img src="img/35-mobile.png"><figcaption>휴대폰 화면(내 학습)</figcaption></figure>
+
+<h1>17. 부록</h1>
+<h2>A. 사례 목록</h2>
+<table><tr><th style="width:6%">번호</th><th>사례</th><th style="width:10%">검사</th><th style="width:22%">핵심 패턴</th><th style="width:13%">장면</th><th style="width:8%">난이도</th></tr>
+<tr><td>1</td><td>승진 후 잠 못 드는 과장</td><td>MMPI-2</td><td>7-2</td><td>외래·상담</td><td>1</td></tr>
+<tr><td>2</td><td>검사 결과가 모두 정상이라는 통증 환자</td><td>MMPI-2</td><td>3-1 (전환 V)</td><td>의료·통증</td><td>1</td></tr>
+<tr><td>3</td><td>법원 명령으로 온 22세</td><td>MMPI-2</td><td>4-9</td><td>법정·감정</td><td>2</td></tr>
+<tr><td>4</td><td>감시당한다고 느끼는 입원 환자</td><td>MMPI-2</td><td>6-8</td><td>정신과 입원</td><td>2</td></tr>
+<tr><td>5</td><td>산재 후 장해 판정 평가</td><td>MMPI-2</td><td>과대보고</td><td>법정·감정</td><td>3</td></tr>
+<tr><td>6</td><td>양육권 소송 중인 어머니</td><td>MMPI-2</td><td>과소보고 + 경도 상승</td><td>양육권 평가</td><td>2</td></tr>
+<tr><td>7</td><td>음주운전 후 별거한 영업팀장</td><td>MMPI-2</td><td>4-2-7</td><td>외래·상담</td><td>2</td></tr>
+<tr><td>8</td><td>관계마다 배신당한다는 직장인</td><td>MMPI-2</td><td>4-6 (여성, 5번 낮음)</td><td>외래·상담</td><td>3</td></tr>
+<tr><td>9</td><td>사흘째 잠을 자지 않는 사업 구상가</td><td>MMPI-2</td><td>9 단독 상승</td><td>외래·상담</td><td>2</td></tr>
+<tr><td>10</td><td>기숙사에서 나오지 않는 대학생</td><td>MMPI-2</td><td>8-7-2</td><td>대학 상담</td><td>3</td></tr>
+<tr><td>11</td><td>공기업 경력직 지원자</td><td>MMPI-2</td><td>정상 범위(인사 선발)</td><td>인사 선발</td><td>1</td></tr>
+<tr><td>12</td><td>심장 수술 후 의욕을 잃은 은퇴자</td><td>MMPI-2</td><td>2-1-3</td><td>의료·통증</td><td>2</td></tr>
+<tr><td>13</td><td>학교를 그만두겠다는 15세</td><td>MMPI-A</td><td>4-9</td><td>외래·상담</td><td>2</td></tr>
+<tr><td>14</td><td>손목에 상처가 있는 16세</td><td>MMPI-A</td><td>2-4</td><td>외래·상담</td><td>3</td></tr>
+<tr><td>15</td><td>검사를 15분 만에 끝낸 14세</td><td>MMPI-A</td><td>무선반응</td><td>외래·상담</td><td>1</td></tr>
+<tr><td>16</td><td>혼잣말이 늘어난 17세</td><td>MMPI-A</td><td>8-6</td><td>정신과 입원</td><td>3</td></tr>
+<tr><td>17</td><td>조용하던 이웃의 폭행</td><td>MMPI-2</td><td>3-4 (과잉통제형 적대감)</td><td>법정·감정</td><td>3</td></tr>
+<tr><td>18</td><td>잠들 때 전남편의 목소리가 들린다는 여성</td><td>MMPI-2</td><td>7-8 (외상 후)</td><td>외래·상담</td><td>3</td></tr>
+<tr><td>19</td><td>모든 문항에 “그렇다”가 많은 70대</td><td>MMPI-2</td><td>고정반응(TRIN-T)</td><td>의료·통증</td><td>1</td></tr>
+<tr><td>20</td><td>완벽한 성적, 줄어드는 체중</td><td>MMPI-A</td><td>방어 + 경계 범위</td><td>외래·상담</td><td>2</td></tr></table>
+<h2>B. 연구 쟁점 목록</h2>
+<table><tr><th style="width:20%">영역</th><th style="width:34%">연구 쟁점</th><th>핵심 질문</th></tr>
+<tr><td>타당도와 반응 왜곡</td><td>정신과 증상 과대보고</td><td>F가 높을 때 실제 중증 병리와 가장을 무엇으로 가르는가</td></tr>
+<tr><td>타당도와 반응 왜곡</td><td>신체·인지 증상 과대보고와 FBS 논쟁</td><td>FBS 상승은 과장인가, 실제 신체 호소인가</td></tr>
+<tr><td>타당도와 반응 왜곡</td><td>과소보고와 방어</td><td>양육권·인사 장면의 방어는 어디까지 정상인가</td></tr>
+<tr><td>타당도와 반응 왜곡</td><td>비내용 반응</td><td>무선·고정 반응은 프로파일을 얼마나 망가뜨리는가</td></tr>
+<tr><td>코드타입과 측정</td><td>코드타입 정의도와 측정오차</td><td>“5점 규칙”의 근거는 무엇인가</td></tr>
+<tr><td>코드타입과 측정</td><td>코드타입 기술의 근거와 한계</td><td>해석서의 코드 기술은 얼마나 정확한가</td></tr>
+<tr><td>척도 체계의 발전</td><td>RC 척도와 의기소침</td><td>여러 척도 동반 상승은 여러 문제인가, 공통 고통인가</td></tr>
+<tr><td>척도 체계의 발전</td><td>내용척도와 PSY-5</td><td>임상척도에 무엇을 더하는가</td></tr>
+<tr><td>척도 체계의 발전</td><td>MMPI-2-RF와 MMPI-3</td><td>무엇이 달라졌고 무엇이 그대로인가</td></tr>
+<tr><td>청소년과 문화</td><td>MMPI-A 정상 범위 문제와 회색 지대</td><td>힘든 청소년인데 왜 60 아래로 나오는가</td></tr>
+<tr><td>청소년과 문화</td><td>문화와 규준</td><td>왜 한국판 규준이어야 하는가</td></tr></table>
+<p class="small">화면의 학습 기록, AI 코칭·슈퍼바이저 답변, 우리 반 통계는 설명을 위해 넣은 예시입니다.</p>
+</body></html>
