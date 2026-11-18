@@ -1,6 +1,6 @@
 {
   "name": "mmpi-academy",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "private": true,
   "description": "MMPI-2·MMPI-A 해석 수련 프로그램",
   "type": "module",
@@ -9,8 +9,9 @@
     "check": "for f in app/*.js; do node --check \"$f\" || exit 1; done",
     "golden:update": "node scripts/update-golden.mjs",
     "preview": "node scripts/preview.mjs",
-    "e2e": "node tests/e2e/class.e2e.mjs && node tests/e2e/research.e2e.mjs && node tests/e2e/aiconnect.e2e.mjs",
-    "bundle": "node scripts/bundle.mjs"
+    "e2e": "node tests/e2e/class.e2e.mjs && node tests/e2e/research.e2e.mjs && node tests/e2e/aiconnect.e2e.mjs && node tests/e2e/evidence.e2e.mjs",
+    "bundle": "node scripts/bundle.mjs",
+    "video-kit": "node scripts/video-kit.mjs"
   },
   "engines": {
     "node": ">=20"
