@@ -123,3 +123,40 @@ describe('클래스 데이터: 사전·사후와 연구 데이터', () => {
     const csv = C.toCSV(out); assert.ok(csv.startsWith('﻿참여자,'), '엑셀 한글 깨짐 방지 BOM');
   });
 });
+
+describe('학습 대시보드 계산', () => {
+  test('영역 정의의 모듈·사례·쟁점·평가 영역이 모두 존재한다', () => {
+    const mods = new Set(MODULES.map(m => m.id)), cs = new Set(CASES.map(c => c.id)), ev = new Set(app.EVIDENCE.map(t => t.id));
+    for (const d of L.DOMAIN_MAP) {
+      d.mods.forEach(m => assert.ok(mods.has(m), m)); d.cases.forEach(c => assert.ok(cs.has(c), c)); d.ev.forEach(e => assert.ok(ev.has(e), e));
+      if (d.assess) assert.ok(ASSESS.domains.includes(d.assess), d.assess);
+      assert.ok(QUIZ.some(q => d.lv.includes(q.lv)), `${d.k}: 퀴즈 단계`);
+    }
+    const allMods = new Set(L.DOMAIN_MAP.flatMap(d => d.mods)); MODULES.forEach(m => assert.ok(allMods.has(m.id), `${m.id}가 어느 영역에도 없다`));
+  });
+  test('기록이 없으면 점수는 모두 null', () => {
+    const s = plain(L.domainStats({mods:{}, quiz:{}, cases:{}}, QUIZ, {}));
+    assert.ok(s.every(d => d.score === null && d.coverage === 0));
+  });
+  test('퀴즈·사례·평가 점수의 평균이 종합 점수, 가장 낮은 영역이 보완 영역', () => {
+    const qi = QUIZ.findIndex(q => q.lv === 2), qj = QUIZ.findIndex((q, i) => q.lv === 2 && i > qi);
+    const prog = {mods:{m03:true}, quiz:{[qi]:true, [qj]:false}, cases:{c05:{score:80, at:1}}, prepost:{pre:{pct:50, domains:{'타당도 판단':20, '코드타입':90}}}};
+    const s = plain(L.domainStats(prog, QUIZ, {'ev-fbs':1}));
+    const v = s.find(d => d.k === '타당도 판단');
+    assert.equal(v.quiz.pct, 50); assert.equal(v.cases.pct, 80); assert.equal(v.assess, 20); assert.equal(v.score, 50);
+    assert.deepEqual(v.mods, [1, 1]); assert.deepEqual(v.ev, [1, 4]);
+    assert.equal(L.weakest(s).k, '타당도 판단');
+    const n = plain(L.nextSteps('타당도 판단', prog, {'ev-fbs':1}));
+    assert.equal(n.module, null); assert.equal(n.case, 'c06'); assert.equal(n.ev, 'ev-overreport');
+  });
+  test('사후 평가가 있으면 사후 점수를 쓴다', () => {
+    const s = plain(L.domainStats({prepost:{pre:{domains:{'코드타입':10}}, post:{domains:{'코드타입':70}}}}, QUIZ, {}));
+    assert.equal(s.find(d => d.k === '코드타입').assess, 70);
+  });
+  test('연속 일수: 오늘 안 했어도 어제까지 이어지면 유지, 끊기면 0', () => {
+    const D = L.DAY, now = new Date(2026, 10, 18, 12).getTime(), d = k => L.ymd(now - k * D);
+    assert.deepEqual(plain(L.streak([d(0), d(1), d(2), d(5)], now)), {total: 4, current: 3});
+    assert.deepEqual(plain(L.streak([d(1), d(2)], now)), {total: 2, current: 2});
+    assert.deepEqual(plain(L.streak([d(3)], now)), {total: 1, current: 0});
+  });
+});

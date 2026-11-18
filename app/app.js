@@ -14,7 +14,8 @@ const store = {
   keys(prefix){ try{ return Object.keys(localStorage).filter(k=>k.startsWith('mmpi.'+prefix)).map(k=>k.slice(5)); }catch(e){ return []; } }
 };
 const prog = store.get('prog', {mods:{}, quiz:{}, cases:{}});
-const saveProg = ()=> store.set('prog', prog);
+const logAct = ()=>{ const a=store.get('activity',{}); const d=LEARN.ymd(Date.now()); a[d]=(a[d]||0)+1; store.set('activity',a); };
+const saveProg = ()=>{ store.set('prog', prog); logAct(); };
 
 /* ── 클래스 모드 동기화 (artifact db). 쓸 수 없으면 이 브라우저 저장만으로 계속 동작한다 ── */
 const Sync = {
@@ -224,7 +225,7 @@ function scoreTable(p, ver){
 }
 
 /* ── 라우터 ── */
-const routes = {home:viewHome, theory:viewTheory, scales:viewScales, codes:viewCodes, analyzer:viewAnalyzer, cases:viewCases, quiz:viewQuiz, mentor:viewMentor, compare:viewCompare, lab:viewLab, stability:viewStability, class:viewClass, research:viewResearch, reliability:viewReliability, 'ai-connect':viewAIConnect, evidence:viewEvidence};
+const routes = {home:viewHome, theory:viewTheory, scales:viewScales, codes:viewCodes, analyzer:viewAnalyzer, cases:viewCases, quiz:viewQuiz, mentor:viewMentor, compare:viewCompare, lab:viewLab, stability:viewStability, class:viewClass, research:viewResearch, reliability:viewReliability, 'ai-connect':viewAIConnect, evidence:viewEvidence, dashboard:viewDashboard};
 function route(){
   const h = (location.hash||'#home').slice(1);
   let r = h, arg=null;
@@ -1273,6 +1274,7 @@ function viewEvidence(arg){
 function viewEvidenceTopic(id){
   const T = window.EVIDENCE||[]; const i = T.findIndex(x=>x.id===id); const x = T[i];
   if(!x){ location.hash='#evidence'; return; }
+  { const r=store.get('evRead',{}); if(!r[id]){ r[id]=Date.now(); store.set('evRead',r); logAct(); } }
   const refs = [...new Set(x.findings.flatMap(f=>f[1]).concat(x.extraRefs||[]))].map(r=>[r, REF(r)]).filter(([,r])=>r);
   const L = x.links||{};
   const linkRow = [
@@ -1296,6 +1298,109 @@ function viewEvidenceTopic(id){
   </div>`;
 }
 document.addEventListener('click', e=>{ const a=e.target.closest('a.cite'); if(a) sessionStorage.setItem('evRef', a.dataset.ref); });
+
+/* ════════ 내 학습(대시보드) ════════ */
+function viewDashboard(){
+  const evRead = store.get('evRead',{}), act = store.get('activity',{});
+  const P = prog, now = Date.now();
+  // 활동한 날: 활동 기록 + 사례 제출·평가 응시 시각(기록 기능 이전의 학습도 포함)
+  const dayCount = Object.assign({}, act);
+  const addDay = t=>{ if(t){ const d=LEARN.ymd(t); dayCount[d]=(dayCount[d]||0)+1; } };
+  Object.values(P.cases||{}).forEach(c=>addDay(c.at));
+  const pp = P.prepost||{}; addDay(pp.pre&&pp.pre.at); addDay(pp.post&&pp.post.at);
+  Object.values(evRead).forEach(addDay);
+  const st = LEARN.streak(Object.keys(dayCount), now);
+  const stats = LEARN.domainStats(P, QUIZ, evRead);
+  const nMods = Object.keys(P.mods||{}).filter(k=>P.mods[k]).length;
+  const cases = Object.entries(P.cases||{}).map(([id,v])=>Object.assign({id}, v)).filter(c=>CASES.some(x=>x.id===c.id)).sort((a,b)=>a.at-b.at);
+  const qa = Object.values(P.quiz||{}); const qok = qa.filter(Boolean).length;
+  const due = LEARN.dueItems(P.srs||{}, now).length;
+  const nEv = (window.EVIDENCE||[]).filter(t=>evRead[t.id]).length;
+  const any = nMods || cases.length || qa.length || pp.pre || nEv;
+  const weak = any ? LEARN.weakest(stats) : null;
+  const next = weak ? LEARN.nextSteps(weak.k, P, evRead) : null;
+  const avg = xs => xs.length ? Math.round(xs.reduce((a,b)=>a+b,0)/xs.length) : null;
+  const caseAvg = avg(cases.map(c=>c.score));
+  const tile = (label, val, sub) => `<div class="panel stat"><div class="note">${label}</div><div class="num big">${val}</div><div class="note">${sub||'&nbsp;'}</div></div>`;
+  const ppTxt = pp.pre && pp.post ? `${pp.pre.pct} → ${pp.post.pct}` : pp.pre ? `${pp.pre.pct}` : '–';
+  const ppSub = pp.pre && pp.post ? `향상도 g = ${LEARN.hake(pp.pre.pct, pp.post.pct)??'–'}` : pp.pre ? '사전 평가만 응시' : '<a href="#research">사전 평가 보기</a>';
+  const M = id => MODULES.find(m=>m.id===id), C = id => CASES.find(c=>c.id===id), T = id => (window.EVIDENCE||[]).find(t=>t.id===id);
+
+  app.innerHTML = `<div class="stack dash"><div class="row" style="justify-content:space-between; align-items:flex-end"><div><div class="eyebrow">내 학습</div><h1 style="margin-top:6px">학습 기록 한눈에 보기</h1>
+      <p class="lede" style="margin-top:8px">모듈, 퀴즈, 사례 실습, 사전·사후 평가, 연구 근거에서 쌓인 기록을 영역별로 모았습니다. 기록은 이 브라우저에 저장됩니다.</p></div>
+      <button class="btn no-print" id="dprint">요약 인쇄 · PDF 저장</button></div>
+    ${any ? '' : `<div class="panel" style="border-left:3px solid var(--accent)"><h2>아직 기록이 없습니다</h2><p style="margin-bottom:0">처음이라면 <a href="#research">사전 평가</a>로 현재 수준을 재고, <a href="#module-m01">모듈 1</a>부터 시작해 보세요. 모듈을 마치거나 퀴즈를 풀거나 사례를 제출하면 이 화면이 채워집니다.</p></div>`}
+    <div class="grid3 tiles">
+      ${tile('공부한 날', `${st.total}일`, st.current>1?`${st.current}일 연속`:st.current===1?'오늘(또는 어제) 공부함':'')}
+      ${tile('이론 모듈', `${nMods} / ${MODULES.length}`, `${Math.round(nMods/MODULES.length*100)}% 완료`)}
+      ${tile('사례 실습', `${cases.length} / ${CASES.length}`, caseAvg!==null?`자가 점검 평균 ${caseAvg}%`:'')}
+      ${tile('퀴즈', qa.length?`${Math.round(qok/qa.length*100)}%`:'–', qa.length?`${qa.length}문항 중 ${qok}문항 정답${due?` · 복습 ${due}개`:''}`:'')}
+      ${tile('사전 → 사후 평가', ppTxt, ppSub)}
+      ${tile('연구 쟁점', `${nEv} / ${(window.EVIDENCE||[]).length}`, '읽은 쟁점')}
+    </div>
+    ${weak ? `<section class="panel stack" style="gap:8px; border-left:3px solid var(--accent)"><div class="row" style="justify-content:space-between"><h2>다음에 할 일</h2><span class="chip acc">보완 영역 · ${esc(weak.k)}</span></div>
+      <p class="note" style="margin:0">${weak.score!==null?`이 영역의 종합 점수가 ${weak.score}점으로 가장 낮습니다.`:'아직 가장 적게 다룬 영역입니다.'} 아래 순서로 보완해 보세요.</p>
+      <ol style="margin:4px 0 0">${[
+        next.module && M(next.module) ? `<li>이론: <a href="#module-${next.module}">${esc(M(next.module).title)}</a></li>` : '',
+        next.case && C(next.case) ? `<li>사례 실습: <a href="#case-${next.case}">${esc(C(next.case).title)}</a> <span class="note">(${esc(C(next.case).code)})</span></li>` : '',
+        next.ev && T(next.ev) ? `<li>연구 근거: <a href="#${next.ev}">${esc(T(next.ev).title)}</a></li>` : '',
+        due ? `<li>퀴즈: <a href="#quiz">오늘의 복습 ${due}문항</a></li>` : '',
+      ].join('') || '<li>이 영역의 학습 거리를 모두 마쳤습니다. 퀴즈와 사례를 다시 풀어 점수를 올려 보세요.</li>'}</ol></section>` : ''}
+    <section class="panel"><div class="row" style="justify-content:space-between"><h2>영역별 숙달도</h2><span class="note">종합 = 퀴즈 정답률 · 사례 자가 점검 · 최근 평가 점수의 평균</span></div>
+      <div class="tblwrap"><table class="tbl dom"><tr><th>영역</th><th style="min-width:180px">종합</th><th>모듈 완료</th><th>퀴즈 <span class="note">정답률·푼 수</span></th><th>사례 <span class="note">점검·푼 수</span></th><th>최근 평가</th><th>읽은 쟁점</th></tr>
+      ${stats.map(d=>`<tr${weak&&d.k===weak.k?' class="weak"':''}><td style="font-weight:600">${esc(d.k)}${weak&&d.k===weak.k?' <span class="chip">보완</span>':''}</td>
+        <td><div class="hbar" title="${esc(d.k)} 종합 ${d.score??'기록 없음'}"><span style="width:${d.score??0}%"></span></div><span class="num">${d.score??'–'}</span></td>
+        <td class="num">${d.mods[0]}/${d.mods[1]}</td><td class="num">${d.quiz.pct!==null?d.quiz.pct+'%':'–'}<span class="note"> ${d.quiz.n}/${d.quiz.total}</span></td>
+        <td class="num">${d.cases.pct!==null?d.cases.pct+'%':'–'}<span class="note"> ${d.cases.n}/${d.cases.total}</span></td><td class="num">${d.assess!==null?d.assess+'%':'–'}</td><td class="num">${d.ev[1]?d.ev[0]+'/'+d.ev[1]:'–'}</td></tr>`).join('')}</table></div></section>
+    <div class="grid2">
+      <section class="panel"><h2>사례 자가 점검 추이</h2><p class="note" style="margin:2px 0 8px">제출한 순서대로, 핵심 포인트를 짚은 비율(%)</p><div id="dtrend"></div></section>
+      <section class="panel"><h2>공부한 날</h2><p class="note" style="margin:2px 0 8px">최근 16주. 칸이 진할수록 그날 활동이 많았습니다.</p><div id="dheat"></div></section>
+    </div>
+    ${cases.length?`<section class="panel"><h2>제출한 사례</h2>${htmlTable(['사례','코드','제출일','자가 점검'], cases.slice().reverse().map(c=>{ const x=C(c.id); return [`<a href="#case-${c.id}">${esc(x.title)}</a>`, esc(x.code), esc(LEARN.ymd(c.at)), `<span class="num">${c.score}%</span>`]; }))}</section>`:''}
+    <p class="note">자가 점검 점수는 키워드 대조 방식이라 해석의 질을 모두 반영하지는 않습니다. 해석 논리의 질은 AI 코칭이나 모범 해석과의 비교로 확인하세요.</p>
+  </div><div class="dtip" id="dtip" hidden></div>`;
+  $('#dprint').onclick = ()=> window.print();
+  drawTrend($('#dtrend'), cases.map(c=>({v:c.score, label:C(c.id).title, d:LEARN.ymd(c.at)})));
+  drawHeat($('#dheat'), dayCount, now);
+}
+/* 툴팁 */
+function dtip(e, html){ const t=$('#dtip'); if(!t) return; if(!html){ t.hidden=true; return; } t.innerHTML=html; t.hidden=false;
+  const x=Math.min(e.clientX+14, window.innerWidth-t.offsetWidth-8), y=e.clientY+14; t.style.left=x+'px'; t.style.top=y+'px'; }
+/* 사례 점수 추이: 한 계열 선 그래프(2px 선, 8px 표식, 0~100 고정 축) */
+function drawTrend(el, pts){
+  if(pts.length<2){ el.innerHTML = `<p class="note" style="margin:24px 0">${pts.length?'사례를 하나 더 제출하면 추이가 그려집니다.':'제출한 사례가 없습니다.'}</p>`; return; }
+  const W=560, H=220, L=34, Rp=14, T=12, B=26, iw=W-L-Rp, ih=H-T-B;
+  const x = i => L + (pts.length===1 ? iw/2 : i*iw/(pts.length-1)), y = v => T + ih - v/100*ih;
+  const grid = [0,50,100].map(v=>`<line x1="${L}" x2="${W-Rp}" y1="${y(v)}" y2="${y(v)}" class="g"/><text x="${L-6}" y="${y(v)+4}" text-anchor="end" class="ax">${v}</text>`).join('');
+  const path = pts.map((p,i)=>`${i?'L':'M'}${x(i).toFixed(1)},${y(p.v).toFixed(1)}`).join(' ');
+  const last = pts[pts.length-1];
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" class="dchart" role="img" aria-label="사례 자가 점검 점수 추이, ${pts.length}건, 마지막 ${last.v}%">${grid}
+    <text x="${L}" y="${H-6}" class="ax">1번째</text><text x="${W-Rp}" y="${H-6}" text-anchor="end" class="ax">${pts.length}번째</text>
+    <path d="${path}" class="ln"/>${pts.map((p,i)=>`<circle cx="${x(i)}" cy="${y(p.v)}" r="4" class="pt"/>`).join('')}
+    <text x="${x(pts.length-1)-8}" y="${y(last.v)-10}" text-anchor="end" class="lbl">${last.v}%</text>
+    ${pts.map((p,i)=>`<rect x="${x(i)-12}" y="${T}" width="24" height="${ih}" fill="transparent" data-i="${i}"/>`).join('')}</svg>
+    <details class="no-print" style="margin-top:6px"><summary class="note">표로 보기</summary>${htmlTable(['순서','사례','제출일','점수'], pts.map((p,i)=>[String(i+1), esc(p.label), esc(p.d), p.v+'%']))}</details>`;
+  el.querySelectorAll('rect[data-i]').forEach(r=>{ const p=pts[+r.dataset.i];
+    r.addEventListener('mousemove', e=>dtip(e, `<b>${esc(p.label)}</b><br>${esc(p.d)} · <span class="num">${p.v}%</span>`)); r.addEventListener('mouseleave', e=>dtip(e,'')); });
+}
+/* 공부한 날: 16주 × 7일 달력. 한 색상의 진하기 4단계(순차형) */
+function drawHeat(el, counts, now){
+  const weeks=16, cell=13, gap=3, D=LEARN.DAY;
+  const end = new Date(now); const dow = (end.getDay()+6)%7;           // 월요일 시작
+  const start = now - (dow + (weeks-1)*7)*D;
+  const lvl = n => !n ? 0 : n<=2 ? 1 : n<=5 ? 2 : n<=10 ? 3 : 4;
+  let cells=''; const labels=[];
+  for(let w=0; w<weeks; w++) for(let d=0; d<7; d++){
+    const t = start + (w*7+d)*D; if(t>now) continue; const k=LEARN.ymd(t); const n=counts[k]||0;
+    cells += `<rect x="${24+w*(cell+gap)}" y="${d*(cell+gap)}" width="${cell}" height="${cell}" rx="2" class="h${lvl(n)}" data-k="${k}" data-n="${n}"/>`;
+    if(d===0 && new Date(t).getDate()<=7) labels.push(`<text x="${24+w*(cell+gap)}" y="${7*(cell+gap)+12}" class="ax">${new Date(t).getMonth()+1}월</text>`);
+  }
+  const W = 24+weeks*(cell+gap), H = 7*(cell+gap)+18;
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" class="dchart heat" role="img" aria-label="최근 16주 공부한 날 ${Object.keys(counts).length}일">
+    ${['월','','수','','금','',''].map((s,i)=>s?`<text x="0" y="${i*(cell+gap)+10}" class="ax">${s}</text>`:'').join('')}${cells}${labels.join('')}</svg>
+    <div class="row note" style="gap:6px; justify-content:flex-end; margin-top:6px">적음 ${[0,1,2,3,4].map(i=>`<svg width="12" height="12"><rect width="12" height="12" rx="2" class="h${i}"/></svg>`).join('')} 많음</div>`;
+  el.querySelectorAll('rect[data-k]').forEach(r=>{ r.addEventListener('mousemove', e=>dtip(e, `${r.dataset.k}<br>활동 <span class="num">${r.dataset.n}</span>회`)); r.addEventListener('mouseleave', e=>dtip(e,'')); });
+}
 
 route();
 initSync();

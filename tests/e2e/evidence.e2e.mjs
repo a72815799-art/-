@@ -45,6 +45,17 @@ await page.click('details.scale-card >> nth=0');
 assert.match(await page.textContent('details.scale-card >> nth=0'), /연구 근거/);
 ok('척도 사전의 연구 근거 연결');
 
+await page.goto(URL + '#module-m03'); await page.waitForTimeout(200);
+await page.click('#done');
+await page.goto(URL + '#dashboard'); await page.waitForTimeout(300);
+const tiles = await page.textContent('.tiles');
+assert.match(tiles, /1 \/ 20/, '모듈 1개, 사례 1개');
+assert.match(tiles, /1 \/ 11/, '읽은 쟁점 1개');
+assert.ok(await page.$('#dtrend'), '추이 영역');
+assert.ok(await page.$$eval('#dheat rect.h1, #dheat rect.h2, #dheat rect.h3, #dheat rect.h4', r => r.length) >= 1, '오늘 활동이 달력에 표시');
+assert.match(await page.textContent('.dash'), /다음에 할 일/);
+ok('내 학습: 기록 요약, 활동 달력, 다음에 할 일');
+
 assert.deepEqual(errors, []);
 await browser.close();
 console.log(`연구 근거 종단 테스트 ${passed}개 통과`);

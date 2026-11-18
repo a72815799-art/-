@@ -94,5 +94,54 @@ function qwk(a, b, lo = 0, hi = 5){
 }
 const kappaLabel = k => k === null ? '-' : k < 0.2 ? '약함' : k < 0.4 ? '보통 이하' : k < 0.6 ? '보통' : k < 0.8 ? '상당함' : '거의 완전';   // Landis & Koch(1977)
 
-window.LEARN = {DAY, mean, sd, round, sm2, seedFromQuiz, dueItems, scoreForm, otherForm, hake, paired, effectLabel, icc1, iccLabel, ranks, pearson, spearman, mae, qwk, kappaLabel, tcrit};
+/* ── 학습 대시보드: 영역별 숙달도, 활동 일수, 추천 ── */
+const DOMAIN_MAP = [
+  {k:'기초 이론', mods:['m01','m02'], lv:[1], cases:[], ev:[]},
+  {k:'타당도 판단', mods:['m03'], lv:[2], cases:['c05','c06','c11','c15','c19','c20'], ev:['ev-overreport','ev-fbs','ev-underreport','ev-noncontent'], assess:'타당도 판단'},
+  {k:'코드타입', mods:['m04','m05'], lv:[3,4], cases:['c01','c02','c03','c04','c07','c08','c09','c17'], ev:['ev-codedef','ev-cookbook'], assess:'코드타입'},
+  {k:'정교화(하위척도·RC)', mods:['m06','m17'], lv:[5], cases:['c10','c12','c18'], ev:['ev-rc','ev-rf3'], assess:'정교화(하위척도·RC)'},
+  {k:'내용·보충척도', mods:['m07','m08'], lv:[5], cases:['c03','c07','c17'], ev:['ev-content'], assess:'내용·보충척도'},
+  {k:'위험·보고서', mods:['m09','m10','m11','m18','m19','m20'], lv:[6], cases:['c14','c12','c05'], ev:['ev-culture'], assess:'위험·보고서'},
+  {k:'청소년(MMPI-A)', mods:['m12','m13','m14','m15','m16'], lv:[8], cases:['c13','c14','c15','c16','c20'], ev:['ev-adolescent'], assess:'청소년(MMPI-A)'},
+];
+/* 영역별 기록. score는 있는 지표(퀴즈 정답률, 사례 평균, 평가 점수)의 평균이며, 지표가 하나도 없으면 null */
+function domainStats(prog, quiz, evRead){
+  const P = prog || {}, Q = quiz || [], E = evRead || {};
+  const pp = P.prepost || {}; const latest = pp.post || pp.pre || null;
+  return DOMAIN_MAP.map(d => {
+    const modsDone = d.mods.filter(m => (P.mods || {})[m]).length;
+    const qi = Q.map((q, i) => [q, i]).filter(([q]) => d.lv.includes(q.lv)).map(([, i]) => i);
+    const qa = qi.filter(i => (P.quiz || {})[i] !== undefined); const qok = qa.filter(i => P.quiz[i]).length;
+    const cs = d.cases.map(c => (P.cases || {})[c]).filter(Boolean);
+    const quizPct = qa.length ? Math.round(qok / qa.length * 100) : null;
+    const casePct = cs.length ? Math.round(mean(cs.map(c => c.score))) : null;
+    const assessPct = latest && d.assess && latest.domains && latest.domains[d.assess] !== undefined ? latest.domains[d.assess] : null;
+    const parts = [quizPct, casePct, assessPct].filter(x => x !== null);
+    return {k: d.k, mods: [modsDone, d.mods.length], quiz: {n: qa.length, total: qi.length, pct: quizPct}, cases: {n: cs.length, total: d.cases.length, pct: casePct},
+      assess: assessPct, ev: [d.ev.filter(e => E[e]).length, d.ev.length], score: parts.length ? Math.round(mean(parts)) : null,
+      coverage: Math.round((modsDone + cs.length + d.ev.filter(e => E[e]).length) / Math.max(1, d.mods.length + d.cases.length + d.ev.length) * 100)};
+  });
+}
+/* 보완할 영역: 점수가 있으면 가장 낮은 점수, 없으면 가장 덜 다룬 영역(기초는 끝났으면 제외) */
+function weakest(stats){
+  const scored = stats.filter(s => s.score !== null);
+  if (scored.length) return scored.slice().sort((a, b) => a.score - b.score || a.coverage - b.coverage)[0];
+  return stats.slice().sort((a, b) => a.coverage - b.coverage)[0];
+}
+/* 영역의 다음 학습 거리: 아직 안 한 모듈, 사례, 연구 쟁점 중 첫 번째 */
+function nextSteps(domainKey, prog, evRead){
+  const d = DOMAIN_MAP.find(x => x.k === domainKey); if (!d) return {};
+  const P = prog || {}, E = evRead || {};
+  return {module: d.mods.find(m => !(P.mods || {})[m]) || null, case: d.cases.find(c => !(P.cases || {})[c]) || null, ev: d.ev.find(e => !E[e]) || null};
+}
+/* 활동한 날(YYYY-MM-DD 집합)에서 총 일수와 오늘(또는 어제)까지 이어진 연속 일수 */
+const ymd = t => { const d = new Date(t); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
+function streak(days, now){
+  const set = new Set(days); let n = 0; let t = now;
+  if (!set.has(ymd(t))) t -= DAY;            // 오늘 아직 안 했어도 어제까지 이어졌으면 유지
+  while (set.has(ymd(t))) { n++; t -= DAY; }
+  return {total: set.size, current: n};
+}
+
+window.LEARN = {DOMAIN_MAP, domainStats, weakest, nextSteps, ymd, streak, DAY, mean, sd, round, sm2, seedFromQuiz, dueItems, scoreForm, otherForm, hake, paired, effectLabel, icc1, iccLabel, ranks, pearson, spearman, mae, qwk, kappaLabel, tcrit};
 })();
