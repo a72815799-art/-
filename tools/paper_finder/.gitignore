@@ -1,0 +1,6 @@
+.env
+sites.yaml
+cookies/
+papers/
+__pycache__/
+.browser_profile/
