@@ -40,6 +40,15 @@ UA = "Mozilla/5.0 (paper-finder; research use)"
 MODEL = os.environ.get("PAPER_FINDER_MODEL", "claude-opus-5-5")
 
 
+def _safe_console():
+    """Windows 콘솔(cp949/cp1252)에서 한글·기호 출력 때문에 멈추지 않도록."""
+    for s in (sys.stdout, sys.stderr):
+        try:
+            s.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+
+
 # ----------------------------------------------------------------------------
 # 데이터 구조
 # ----------------------------------------------------------------------------
@@ -429,6 +438,7 @@ CONFIRM = lambda msg: input(f"{msg}  (완료 후 Enter) ")
 
 
 def main(argv=None):
+    _safe_console()
     ap = argparse.ArgumentParser(description="논문 검색·다운로드·요약")
     ap.add_argument("query", nargs="?", help="검색어 (예: \"diffusion model medical imaging\")")
     ap.add_argument("-o", "--out", default="./papers", help="저장 폴더")

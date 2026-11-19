@@ -19,6 +19,15 @@ from pathlib import Path
 from urllib.parse import urlparse, parse_qs
 
 APP_NAME = "PaperFinder"
+
+
+def _safe_console():
+    """Windows 콘솔(cp949/cp1252)에서 한글·기호 출력 때문에 멈추지 않도록."""
+    for s in (sys.stdout, sys.stderr):
+        try:
+            s.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
 KEYRING_SERVICE = "PaperFinder"
 SECRET_FIELDS = ("dku_pw", "riss_pw", "api_key")
 
@@ -352,6 +361,7 @@ def selftest() -> int:
 
 
 def main():
+    _safe_console()
     if "--selftest" in sys.argv:
         sys.exit(selftest())
     port = free_port()
