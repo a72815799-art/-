@@ -33,12 +33,41 @@ class BrowserSession:
         self._pw = sync_playwright().start()
         kw = dict(user_data_dir=str(profile_dir), headless=headless, accept_downloads=True,
                   locale="ko-KR", viewport={"width": 1280, "height": 900})
-        exe = os.environ.get("PAPER_FINDER_CHROMIUM")
-        if exe:
-            kw["executable_path"] = exe
-        self.ctx = self._pw.chromium.launch_persistent_context(**kw)
+        self.ctx = None
+        errors = []
+        for opt in self._launch_options():
+            try:
+                self.ctx = self._pw.chromium.launch_persistent_context(**kw, **opt)
+                break
+            except Exception as e:
+                errors.append(f"{opt or 'chromium'}: {str(e).splitlines()[0][:120]}")
+        if self.ctx is None:
+            self._pw.stop()
+            raise RuntimeError("브라우저를 시작하지 못했습니다. Microsoft Edge 또는 Chrome 이 설치되어 있는지 확인하세요.\n"
+                               + "\n".join(errors))
         self.ctx.set_default_timeout(30000)
         self.use_dku_proxy = False
+
+    @staticmethod
+    def _launch_options() -> list[dict]:
+        """사용할 브라우저 후보: 지정 경로 → (실행파일이면) PC의 Edge/Chrome → 내장 Chromium."""
+        exe = os.environ.get("PAPER_FINDER_CHROMIUM")
+        if exe:
+            return [{"executable_path": exe}]
+        ch = os.environ.get("PAPER_FINDER_CHANNEL")
+        if ch:
+            return [{"channel": ch}]
+        import sys
+        system = [{"channel": "msedge"}, {"channel": "chrome"}]
+        return system + [{}] if getattr(sys, "frozen", False) else [{}] + system
+
+    def open_page(self, url: str):
+        page = self._page()
+        try:
+            page.goto(url, wait_until="domcontentloaded")
+        except Exception as e:
+            print(f"    페이지 열기 실패: {e.__class__.__name__}")
+        page.bring_to_front()
 
     def close(self):
         try:

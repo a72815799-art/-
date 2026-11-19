@@ -2,6 +2,18 @@
 
 검색어와 조건을 주면 **RISS(학위논문·국내학술)**, OpenAlex, Semantic Scholar(필요하면 arXiv)에서 논문을 찾습니다. 그다음 **단국대학교 도서관 교외접속 + RISS 기관인증**으로 원문 PDF를 받아 지정 폴더에 저장하고, **Claude로 한국어 요약**(`.summary.md`)을 만듭니다. 전체 목록은 `INDEX.md`·`results.json`에 저장됩니다.
 
+## 0. 가장 쉬운 방법: 화면 프로그램 (PaperFinder.exe)
+1. GitHub 저장소의 **Actions → "논문 찾기 도우미 - Windows 실행파일"** 최신 실행에서 `PaperFinder-windows`를 내려받아 압축을 풉니다.
+2. `PaperFinder.exe`를 더블클릭합니다. (Windows 보호 창이 뜨면 **추가 정보 → 실행**)
+3. 브라우저에 입력 화면이 열리면 **로그인 정보**(단국대 학번/비밀번호, RISS 계정, 그 밖의 사이트 주소, Claude API 키)와 **검색 조건**을 입력하고 **시작**을 누릅니다.
+4. 로그인 → 검색 → PDF 저장 → 요약이 자동으로 진행되고, 끝나면 결과 표에서 PDF와 요약을 바로 열 수 있습니다.
+
+- 원문 다운로드에는 PC의 Microsoft Edge(또는 Chrome)를 사용합니다. 따로 설치할 것은 없습니다.
+- 아이디와 검색 조건은 자동 저장됩니다. 비밀번호와 API 키는 "이 PC에 저장"을 체크했을 때만 Windows 자격 증명 관리자에 저장됩니다.
+- Python이 설치되어 있다면 `python app.py`로 같은 화면을 띄울 수 있습니다.
+
+아래는 명령줄로 직접 실행하는 방법입니다.
+
 ## 1. 설치 (처음 한 번)
 ```bash
 pip install -r requirements.txt

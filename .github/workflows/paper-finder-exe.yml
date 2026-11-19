@@ -1,0 +1,56 @@
+name: 논문 찾기 도우미 - Windows 실행파일
+
+on:
+  push:
+    paths:
+      - 'tools/paper_finder/**'
+      - '.github/workflows/paper-finder-exe.yml'
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: tools/paper_finder
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 패키지 설치
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt keyring pyinstaller
+      - name: 실행파일 만들기
+        run: >
+          pyinstaller --noconfirm --onefile --name PaperFinder
+          --add-data "ui.html;."
+          --collect-all playwright
+          --collect-submodules keyring
+          --hidden-import paper_finder --hidden-import riss --hidden-import browser_dl
+          app.py
+      - name: 실행파일 점검 (Edge 실행 · RISS 접속)
+        env:
+          PAPER_FINDER_CHANNEL: msedge
+        run: .\dist\PaperFinder.exe --selftest
+      - name: 사용법 파일 추가
+        shell: pwsh
+        run: |
+          @"
+          논문 찾기 도우미 (PaperFinder.exe)
+
+          1. PaperFinder.exe 를 원하는 폴더에 두고 더블클릭하세요.
+             (Windows 보호 창이 뜨면 [추가 정보] → [실행])
+          2. 검은 창이 뜨고 잠시 후 브라우저에 입력 화면이 열립니다.
+             검은 창은 프로그램 본체이니 작업이 끝날 때까지 닫지 마세요.
+          3. 단국대 학번/비밀번호, 검색어 등을 입력하고 [시작]을 누르세요.
+          4. 원문 다운로드는 PC에 설치된 Microsoft Edge(또는 Chrome)를 사용합니다.
+          "@ | Out-File -Encoding utf8 dist\사용법.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PaperFinder-windows
+          path: |
+            tools/paper_finder/dist/PaperFinder.exe
+            tools/paper_finder/dist/사용법.txt
+          retention-days: 90

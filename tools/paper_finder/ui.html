@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>논문 찾기 도우미</title>
+<style>
+  :root {
+    --bg: #f5f6f8; --card: #ffffff; --ink: #1d2230; --muted: #667085; --line: #e3e6eb;
+    --accent: #1f5eff; --accent-ink: #ffffff; --ok: #12805c; --warn: #b54708; --bad: #c01048;
+    --log-bg: #0f1420; --log-ink: #d7dde8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #11141b; --card: #191d27; --ink: #e8ebf1; --muted: #98a2b3; --line: #2a3040;
+      --accent: #5b8cff; --accent-ink: #0b1020; --log-bg: #0a0d14; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.5 "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif; }
+  header { padding: 22px 24px 8px; max-width: 1040px; margin: 0 auto; }
+  header h1 { margin: 0; font-size: 22px; }
+  header p { margin: 4px 0 0; color: var(--muted); }
+  main { max-width: 1040px; margin: 0 auto; padding: 12px 24px 40px; display: grid; gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+  .card h2 { margin: 0 0 12px; font-size: 16px; display: flex; gap: 8px; align-items: center; }
+  .step { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%;
+    background: var(--accent); color: var(--accent-ink); font-size: 12px; font-weight: 700; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 16px; }
+  label.f { display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
+  input[type=text], input[type=password], input[type=number], select, textarea {
+    width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px;
+    background: var(--bg); color: var(--ink); font: inherit; }
+  textarea { min-height: 58px; resize: vertical; }
+  .chk { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+  .chk label { display: flex; gap: 6px; align-items: center; cursor: pointer; }
+  .sub { border-top: 1px dashed var(--line); margin-top: 14px; padding-top: 14px; }
+  .sub:first-of-type { border: 0; margin: 0; padding: 0; }
+  .sub > .head { display: flex; gap: 8px; align-items: center; font-weight: 600; margin-bottom: 8px; }
+  .hint { color: var(--muted); font-size: 12.5px; margin: 6px 0 0; }
+  .row { display: flex; gap: 8px; }
+  .row > :first-child { flex: 1; }
+  button { font: inherit; border-radius: 8px; border: 1px solid var(--line); background: var(--card);
+    color: var(--ink); padding: 8px 14px; cursor: pointer; }
+  button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent);
+    font-weight: 700; padding: 12px 22px; font-size: 16px; }
+  button:disabled { opacity: .55; cursor: not-allowed; }
+  .actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  #msg { color: var(--bad); }
+  .banner { display: none; background: #fff4e5; color: #7a3e00; border: 1px solid #f5c47a; border-radius: 10px;
+    padding: 12px 14px; gap: 12px; align-items: center; justify-content: space-between; }
+  .banner.show { display: flex; }
+  @media (prefers-color-scheme: dark) { .banner { background: #2b2111; color: #f7d8a8; border-color: #6a4d1f; } }
+  #log { background: var(--log-bg); color: var(--log-ink); border-radius: 10px; padding: 12px 14px; height: 300px;
+    overflow: auto; font: 12.5px/1.55 Consolas, "D2Coding", monospace; white-space: pre-wrap; margin: 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12.5px; }
+  td a { color: var(--accent); }
+  .tag { font-size: 11.5px; color: var(--muted); }
+  .yes { color: var(--ok); font-weight: 600; } .no { color: var(--muted); }
+  .linkbtn { border: 0; background: none; color: var(--accent); padding: 0; text-decoration: underline; }
+  dialog { max-width: 820px; width: 92vw; border: 1px solid var(--line); border-radius: 12px; padding: 0;
+    background: var(--card); color: var(--ink); }
+  dialog .bar { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px;
+    border-bottom: 1px solid var(--line); }
+  dialog pre { margin: 0; padding: 16px; max-height: 70vh; overflow: auto; white-space: pre-wrap;
+    font: 14px/1.65 "Malgun Gothic", "Noto Sans KR", sans-serif; }
+  @media (max-width: 600px) { header, main { padding-left: 16px; padding-right: 16px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>논문 찾기 도우미</h1>
+  <p>로그인 정보와 검색 조건을 입력하고 <b>시작</b>을 누르면 로그인 → 검색 → PDF 저장 → 요약까지 한 번에 진행합니다.</p>
+</header>
+<main>
+  <section class="card">
+    <h2><span class="step">1</span> 로그인 정보</h2>
+
+    <div class="sub">
+      <div class="head"><label><input type="checkbox" id="use_dku"> 단국대학교 도서관 (교외접속 · RISS 기관인증)</label></div>
+      <div class="grid">
+        <label class="f">학번/교번 (8자리)<input type="text" id="dku_id" autocomplete="username" maxlength="8"></label>
+        <label class="f">포털 비밀번호<input type="password" id="dku_pw" autocomplete="current-password"></label>
+      </div>
+      <p class="hint">본인확인 등 추가 인증이 뜨면 함께 열리는 브라우저 창에서 직접 처리하세요. 한 번 로그인하면 다음부터 유지됩니다.</p>
+    </div>
+
+    <div class="sub">
+      <div class="head"><label><input type="checkbox" id="use_riss"> RISS 개인 계정 (선택)</label></div>
+      <div class="grid">
+        <label class="f">RISS 아이디<input type="text" id="riss_id"></label>
+        <label class="f">RISS 비밀번호<input type="password" id="riss_pw"></label>
+      </div>
+    </div>
+
+    <div class="sub">
+      <div class="head">그 밖에 로그인할 사이트 (선택)</div>
+      <label class="f">사이트 주소를 한 줄에 하나씩 (예: https://www.dbpia.co.kr)
+        <textarea id="manual_urls" placeholder="https://www.dbpia.co.kr&#10;https://kiss.kstudy.com"></textarea></label>
+      <p class="hint">시작하면 해당 사이트가 브라우저에 열립니다. 직접 로그인한 뒤 이 화면의 <b>로그인 완료</b>를 누르면 그 로그인 상태로 원문을 받습니다.</p>
+    </div>
+
+    <div class="sub">
+      <div class="head">요약용 Claude API 키</div>
+      <label class="f">API 키 (sk-ant-…) — 요약을 하지 않으려면 비워 두세요
+        <input type="password" id="api_key" autocomplete="off"></label>
+    </div>
+
+    <div class="sub">
+      <label><input type="checkbox" id="remember_secrets"> 비밀번호·API 키를 이 PC에 저장 (Windows 자격 증명 관리자 사용)</label>
+      <p class="hint" id="kr_hint">아이디와 검색 조건은 자동 저장됩니다. 비밀번호는 체크했을 때만 저장됩니다.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="step">2</span> 검색 조건</h2>
+    <div class="grid">
+      <label class="f" style="grid-column: 1 / -1">검색어<input type="text" id="query" placeholder="예: MMPI-2-RF 우울"></label>
+    </div>
+    <div class="sub">
+      <div class="head">검색할 사이트</div>
+      <div class="chk">
+        <label><input type="checkbox" id="src_riss" checked> RISS</label>
+        <label><input type="checkbox" id="riss_thesis" checked> └ 학위논문</label>
+        <label><input type="checkbox" id="riss_kor" checked> └ 국내학술</label>
+        <label><input type="checkbox" id="riss_over"> └ 해외학술</label>
+        <label><input type="checkbox" id="src_openalex"> OpenAlex (해외)</label>
+        <label><input type="checkbox" id="src_semanticscholar"> Semantic Scholar (해외)</label>
+        <label><input type="checkbox" id="src_arxiv"> arXiv</label>
+      </div>
+    </div>
+    <div class="sub grid">
+      <label class="f">논문 수<input type="number" id="num" min="1" max="100" value="10"></label>
+      <label class="f">시작 연도<input type="number" id="year_from" placeholder="예: 2018"></label>
+      <label class="f">끝 연도<input type="number" id="year_to" placeholder="비우면 최신까지"></label>
+      <label class="f">정렬
+        <select id="sort"><option value="relevance">관련도순</option><option value="year">최신순</option>
+          <option value="citations">인용수순(해외)</option></select></label>
+      <label class="f">반드시 포함할 단어 (쉼표 구분)<input type="text" id="must" placeholder="예: 청소년"></label>
+      <label class="f">제외할 단어 (쉼표 구분)<input type="text" id="exclude" placeholder="예: 아동"></label>
+    </div>
+    <div class="sub grid">
+      <label class="f" style="grid-column: 1 / -1">저장 폴더
+        <span class="row"><input type="text" id="out_dir"><button type="button" id="pick">찾아보기</button></span></label>
+      <label class="f" style="grid-column: 1 / -1">요약할 때 중점 관점 (선택)
+        <input type="text" id="focus" placeholder="예: 연구 대상, 척도별 결과 수치, 임상적 시사점"></label>
+    </div>
+    <div class="sub chk">
+      <label><input type="checkbox" id="do_summary" checked> PDF 요약 만들기</label>
+      <label><input type="checkbox" id="oa_only"> 무료 원문만</label>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="step">3</span> 실행</h2>
+    <div class="actions">
+      <button class="primary" id="start">시작</button>
+      <button id="openDir">결과 폴더 열기</button>
+      <span id="msg"></span>
+    </div>
+    <div class="banner" id="banner" style="margin-top:14px">
+      <span id="bannerText"></span><button class="primary" id="confirm" style="padding:8px 16px;font-size:15px">로그인 완료</button>
+    </div>
+    <pre id="log" style="margin-top:14px">대기 중…</pre>
+  </section>
+
+  <section class="card" id="resultsCard" hidden>
+    <h2><span class="step">4</span> 결과</h2>
+    <table><thead><tr><th>#</th><th>논문</th><th>PDF</th><th>요약</th></tr></thead><tbody id="rows"></tbody></table>
+  </section>
+</main>
+
+<dialog id="dlg"><div class="bar"><b id="dlgTitle">요약</b><button id="dlgClose">닫기</button></div><pre id="dlgBody"></pre></dialog>
+
+<script>
+const TOKEN = "__TOKEN__";
+const $ = id => document.getElementById(id);
+const FIELDS = ["use_dku","dku_id","dku_pw","use_riss","riss_id","riss_pw","manual_urls","api_key","remember_secrets",
+  "query","src_riss","riss_thesis","riss_kor","riss_over","src_openalex","src_semanticscholar","src_arxiv",
+  "num","year_from","year_to","sort","must","exclude","out_dir","focus","do_summary","oa_only"];
+
+async function api(path, body) {
+  const opt = { headers: { "X-Token": TOKEN } };
+  if (body !== undefined) { opt.method = "POST"; opt.body = JSON.stringify(body); opt.headers["Content-Type"] = "application/json"; }
+  const r = await fetch(path, opt);
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.error || r.statusText);
+  return j;
+}
+function form() {
+  const f = {};
+  for (const k of FIELDS) { const el = $(k); f[k] = el.type === "checkbox" ? el.checked : el.value; }
+  return f;
+}
+function fill(st) {
+  for (const k of FIELDS) {
+    if (!(k in st)) continue;
+    const el = $(k);
+    if (el.type === "checkbox") el.checked = !!st[k]; else el.value = st[k] ?? "";
+  }
+  if (!st.keyring_available) {
+    $("remember_secrets").disabled = true;
+    $("kr_hint").textContent = "이 PC에서는 비밀번호 저장 기능을 쓸 수 없어 매번 입력해야 합니다.";
+  }
+}
+let since = 0, timer = null;
+function esc(s) { return String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+function renderResults(rows) {
+  $("resultsCard").hidden = !rows.length;
+  $("rows").innerHTML = rows.map((r, i) => `<tr><td>${i + 1}</td>
+    <td><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a><br>
+      <span class="tag">${esc(r.source)} · ${esc(r.year || "")} · ${esc(r.venue || "")}</span></td>
+    <td>${r.pdf ? `<button class="linkbtn" data-file="${esc(r.pdf)}">열기</button>` : '<span class="no">없음</span>'}</td>
+    <td>${r.summary ? `<button class="linkbtn" data-sum="${esc(r.summary)}">보기</button>` : '<span class="no">-</span>'}</td></tr>`).join("");
+}
+async function poll() {
+  try {
+    const s = await api(`/api/status?since=${since}`);
+    if (s.lines.length) {
+      const log = $("log");
+      if (since === 0) log.textContent = "";
+      log.textContent += s.lines.join("\n") + "\n";
+      log.scrollTop = log.scrollHeight;
+      since = s.next;
+    }
+    $("banner").classList.toggle("show", !!s.waiting);
+    $("bannerText").textContent = s.waiting || "";
+    if (!s.running) {
+      clearInterval(timer); timer = null;
+      $("start").disabled = false; $("start").textContent = "시작";
+      renderResults(s.results || []);
+    }
+  } catch (e) { $("msg").textContent = "프로그램과 연결이 끊겼습니다. 프로그램 창이 열려 있는지 확인하세요."; }
+}
+$("start").onclick = async () => {
+  $("msg").textContent = "";
+  try {
+    await api("/api/start", form());
+    since = 0; $("log").textContent = "시작합니다…"; $("resultsCard").hidden = true;
+    $("start").disabled = true; $("start").textContent = "실행 중…";
+    timer = setInterval(poll, 1000);
+  } catch (e) { $("msg").textContent = e.message; }
+};
+$("confirm").onclick = () => api("/api/confirm", {}).catch(e => $("msg").textContent = e.message);
+$("openDir").onclick = () => api("/api/open-folder", { dir: $("out_dir").value }).catch(e => $("msg").textContent = e.message);
+$("pick").onclick = async () => { const r = await api("/api/pick-folder", { dir: $("out_dir").value }); if (r.dir) $("out_dir").value = r.dir; };
+$("rows").onclick = async (ev) => {
+  const b = ev.target.closest("button"); if (!b) return;
+  if (b.dataset.file) api("/api/open-file", { name: b.dataset.file }).catch(e => alert(e.message));
+  if (b.dataset.sum) {
+    const r = await api(`/api/summary?name=${encodeURIComponent(b.dataset.sum)}`);
+    $("dlgTitle").textContent = b.dataset.sum.replace(/\.summary\.md$/, "");
+    $("dlgBody").textContent = r.text; $("dlg").showModal();
+  }
+};
+$("dlgClose").onclick = () => $("dlg").close();
+$("src_riss").onchange = () => ["riss_thesis","riss_kor","riss_over"].forEach(k => $(k).disabled = !$("src_riss").checked);
+api("/api/settings").then(fill).then(() => $("src_riss").onchange()).then(poll).catch(() => {});
+</script>
+</body>
+</html>

@@ -424,7 +424,11 @@ def write_index(papers: list[Paper], out_dir: Path, query: str):
     (out_dir / "INDEX.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def main():
+# 사용자 확인 대기 함수 (명령줄: Enter 입력 / 화면 앱: 확인 버튼으로 교체됨)
+CONFIRM = lambda msg: input(f"{msg}  (완료 후 Enter) ")
+
+
+def main(argv=None):
     ap = argparse.ArgumentParser(description="논문 검색·다운로드·요약")
     ap.add_argument("query", nargs="?", help="검색어 (예: \"diffusion model medical imaging\")")
     ap.add_argument("-o", "--out", default="./papers", help="저장 폴더")
@@ -452,7 +456,9 @@ def main():
     ap.add_argument("--sites", default=str(Path(__file__).with_name("sites.yaml")),
                     help="로그인 사이트 설정 파일")
     ap.add_argument("--summarize-only", metavar="FOLDER", help="폴더 안 PDF들만 요약")
-    a = ap.parse_args()
+    ap.add_argument("--manual-login", action="append", default=[], metavar="URL",
+                    help="브라우저로 열어 직접 로그인할 사이트 주소 (여러 번 지정 가능)")
+    a = ap.parse_args(argv)
 
     if a.summarize_only:
         folder = Path(a.summarize_only)
@@ -467,7 +473,7 @@ def main():
 
     logins = [x.strip().lower() for x in a.login.split(",") if x.strip()]
     browser = None
-    if a.browser or logins or a.login_only:
+    if a.browser or logins or a.login_only or a.manual_login:
         try:
             from browser_dl import BrowserSession
         except ImportError:
@@ -479,6 +485,10 @@ def main():
                 browser.login_riss_organ()
         if "riss" in logins:
             browser.login_riss_personal(os.environ.get("RISS_ID", ""), os.environ.get("RISS_PW", ""))
+        for url in a.manual_login:
+            print(f"    [직접 로그인] {url}")
+            browser.open_page(url)
+            CONFIRM(f"브라우저 창에서 {urlparse(url).netloc} 로그인을 마쳐 주세요.")
     try:
         run_search(a, ap, browser)
     finally:
