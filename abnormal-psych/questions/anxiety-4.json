@@ -1,1744 +1,1769 @@
 [
-  {
-    "id": "ANX-L1-016",
-    "domain": "anxiety",
-    "disorder": "social_anxiety",
-    "related": [],
-    "level": 1,
-    "type": "ox",
-    "polarity": "correct",
-    "case": null,
-    "stem": "다음 진술이 옳으면 O, 틀리면 X를 고르시오. DSM-5에서 아동의 사회불안장애는 성인과의 상호작용뿐 아니라 또래 관계 상황에서도 불안이 나타나야 진단할 수 있다.",
-    "options": [
-      {
-        "key": "O",
-        "text": "O (옳다)",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "정답. 옳은 진술이다. 아동이 어른 앞에서만 수줍어하는 것은 발달적으로 흔하므로, DSM-5는 또래 상황에서도 불안이 나타날 것을 요구하여 정상적인 수줍음과 구별한다."
-      },
-      {
-        "key": "X",
-        "text": "X (틀리다)",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "오답. 이 진술은 옳다. 아동이 어른 앞에서만 수줍어하는 것은 발달적으로 흔하므로, DSM-5는 또래 상황에서도 불안이 나타날 것을 요구하여 정상적인 수줍음과 구별한다."
-      }
-    ],
-    "answer": [
-      "O"
-    ],
-    "explanation": "아동이 어른 앞에서만 수줍어하는 것은 발달적으로 흔하므로, DSM-5는 또래 상황에서도 불안이 나타날 것을 요구하여 정상적인 수줍음과 구별한다.",
-    "theory": "DSM-5 사회불안장애 아동 기준",
-    "concept": "사회불안-아동 또래 기준",
-    "sources": [
-      {
-        "source_name": "NCBI Bookshelf(SAMHSA DSM-5 변경 표) 및 StatPearls",
-        "ref": "https://www.ncbi.nlm.nih.gov/books/NBK519712/table/ch3.t12/",
-        "unit": "Social Anxiety Disorder",
-        "basis": "아동의 불안은 성인과의 상호작용뿐 아니라 또래 상황에서도 나타나야 하고, 기간은 대체로 6개월 이상이며, 공포가 대중 앞에서 말하거나 수행하는 상황에 국한되면 수행 시 한정 명시자를 붙임",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "출처확인",
+ {
+  "id": "ANX-L1-016",
+  "domain": "anxiety",
+  "disorder": "social_anxiety",
+  "related": [],
+  "level": 1,
+  "type": "ox",
+  "polarity": "correct",
+  "case": null,
+  "stem": "다음 진술이 옳으면 O, 틀리면 X를 고르시오. DSM-5에서 아동의 사회불안장애는 성인과의 상호작용뿐 아니라 또래 관계 상황에서도 불안이 나타나야 진단할 수 있다.",
+  "options": [
+   {
+    "key": "O",
+    "text": "O (옳다)",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "정답. 옳은 진술이다. 아동이 어른 앞에서만 수줍어하는 것은 발달적으로 흔하므로, DSM-5는 또래 상황에서도 불안이 나타날 것을 요구하여 정상적인 수줍음과 구별한다."
+   },
+   {
+    "key": "X",
+    "text": "X (틀리다)",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "오답. 이 진술은 옳다. 아동이 어른 앞에서만 수줍어하는 것은 발달적으로 흔하므로, DSM-5는 또래 상황에서도 불안이 나타날 것을 요구하여 정상적인 수줍음과 구별한다."
+   }
+  ],
+  "answer": [
+   "O"
+  ],
+  "explanation": "아동이 어른 앞에서만 수줍어하는 것은 발달적으로 흔하므로, DSM-5는 또래 상황에서도 불안이 나타날 것을 요구하여 정상적인 수줍음과 구별한다.",
+  "theory": "DSM-5 사회불안장애 아동 기준",
+  "concept": "사회불안-아동 또래 기준",
+  "sources": [
+   {
+    "source_name": "NCBI Bookshelf(SAMHSA DSM-5 변경 표) 및 StatPearls",
+    "ref": "https://www.ncbi.nlm.nih.gov/books/NBK519712/table/ch3.t12/",
+    "unit": "Social Anxiety Disorder",
+    "basis": "아동의 불안은 성인과의 상호작용뿐 아니라 또래 상황에서도 나타나야 하고, 기간은 대체로 6개월 이상이며, 공포가 대중 앞에서 말하거나 수행하는 상황에 국한되면 수행 시 한정 명시자를 붙임",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L1-017",
-    "domain": "anxiety",
-    "disorder": "panic",
-    "related": [],
-    "level": 1,
-    "type": "ox",
-    "polarity": "correct",
-    "case": null,
-    "stem": "다음 진술이 옳으면 O, 틀리면 X를 고르시오. Clark의 인지모형에서 공황발작을 일으키는 파국적 오해석의 대상은 주로 정상적인 불안 반응과는 무관한 드문 신체감각이다.",
-    "options": [
-      {
-        "key": "O",
-        "text": "O (옳다)",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "오답. 이 진술은 틀렸다. Clark은 오해석되는 감각이 주로 두근거림, 숨참, 어지러움처럼 정상적인 불안 반응에 포함되는 감각이라고 보았다. 바로 이 때문에 불안이 감각을 키우고 감각이 다시 불안을 키우는 악순환이 생긴다."
-      },
-      {
-        "key": "X",
-        "text": "X (틀리다)",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "정답. 틀린 진술이다. Clark은 오해석되는 감각이 주로 두근거림, 숨참, 어지러움처럼 정상적인 불안 반응에 포함되는 감각이라고 보았다. 바로 이 때문에 불안이 감각을 키우고 감각이 다시 불안을 키우는 악순환이 생긴다."
-      }
-    ],
-    "answer": [
-      "X"
-    ],
-    "explanation": "Clark은 오해석되는 감각이 주로 두근거림, 숨참, 어지러움처럼 정상적인 불안 반응에 포함되는 감각이라고 보았다. 바로 이 때문에 불안이 감각을 키우고 감각이 다시 불안을 키우는 악순환이 생긴다.",
-    "theory": "Clark 공황 인지모형",
-    "concept": "공황-오해석 대상 감각",
-    "sources": [
-      {
-        "source_name": "옥스퍼드대학교 연구저장소(Clark, 1986, Behaviour Research and Therapy 초록) 및 PMC 논문",
-        "ref": "https://ora.ox.ac.uk/objects/uuid:96416d34-2558-4cef-9622-401c7b11490a",
-        "unit": "Clark 공황 인지모형",
-        "basis": "공황발작은 두근거림, 숨참, 어지러움 등 주로 정상적 불안 반응의 신체감각을 파국적으로 오해석한 결과이며, 공황 유발 물질에 대한 반응은 감각을 파국적으로 해석하는 사람에게서 두드러짐. 확장 모형에서 안전행동은 위협 신념의 반증을 막음",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "출처확인",
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L1-017",
+  "domain": "anxiety",
+  "disorder": "panic",
+  "related": [],
+  "level": 1,
+  "type": "ox",
+  "polarity": "correct",
+  "case": null,
+  "stem": "다음 진술이 옳으면 O, 틀리면 X를 고르시오. Clark의 인지모형에서 공황발작을 일으키는 파국적 오해석의 대상은 주로 정상적인 불안 반응과는 무관한 드문 신체감각이다.",
+  "options": [
+   {
+    "key": "O",
+    "text": "O (옳다)",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "오답. 이 진술은 틀렸다. Clark은 오해석되는 감각이 주로 두근거림, 숨참, 어지러움처럼 정상적인 불안 반응에 포함되는 감각이라고 보았다. 바로 이 때문에 불안이 감각을 키우고 감각이 다시 불안을 키우는 악순환이 생긴다."
+   },
+   {
+    "key": "X",
+    "text": "X (틀리다)",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "정답. 틀린 진술이다. Clark은 오해석되는 감각이 주로 두근거림, 숨참, 어지러움처럼 정상적인 불안 반응에 포함되는 감각이라고 보았다. 바로 이 때문에 불안이 감각을 키우고 감각이 다시 불안을 키우는 악순환이 생긴다."
+   }
+  ],
+  "answer": [
+   "X"
+  ],
+  "explanation": "Clark은 오해석되는 감각이 주로 두근거림, 숨참, 어지러움처럼 정상적인 불안 반응에 포함되는 감각이라고 보았다. 바로 이 때문에 불안이 감각을 키우고 감각이 다시 불안을 키우는 악순환이 생긴다.",
+  "theory": "Clark 공황 인지모형",
+  "concept": "공황-오해석 대상 감각",
+  "sources": [
+   {
+    "source_name": "옥스퍼드대학교 연구저장소(Clark, 1986, Behaviour Research and Therapy 초록) 및 PMC 논문",
+    "ref": "https://ora.ox.ac.uk/objects/uuid:96416d34-2558-4cef-9622-401c7b11490a",
+    "unit": "Clark 공황 인지모형",
+    "basis": "공황발작은 두근거림, 숨참, 어지러움 등 주로 정상적 불안 반응의 신체감각을 파국적으로 오해석한 결과이며, 공황 유발 물질에 대한 반응은 감각을 파국적으로 해석하는 사람에게서 두드러짐. 확장 모형에서 안전행동은 위협 신념의 반증을 막음",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L1-018",
-    "domain": "anxiety",
-    "disorder": "agoraphobia",
-    "related": [],
-    "level": 1,
-    "type": "ox",
-    "polarity": "correct",
-    "case": null,
-    "stem": "다음 진술이 옳으면 O, 틀리면 X를 고르시오. DSM-5에서 광장공포증의 공포, 불안, 회피는 전형적으로 6개월 이상 지속되어야 한다.",
-    "options": [
-      {
-        "key": "O",
-        "text": "O (옳다)",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "정답. 옳은 진술이다. 광장공포증은 특정공포증, 사회불안장애와 마찬가지로 전형적으로 6개월 이상의 지속을 요구한다. 1개월은 공황장애 기준 B의 기간이므로 혼동하지 않아야 한다."
-      },
-      {
-        "key": "X",
-        "text": "X (틀리다)",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "오답. 이 진술은 옳다. 광장공포증은 특정공포증, 사회불안장애와 마찬가지로 전형적으로 6개월 이상의 지속을 요구한다. 1개월은 공황장애 기준 B의 기간이므로 혼동하지 않아야 한다."
-      }
-    ],
-    "answer": [
-      "O"
-    ],
-    "explanation": "광장공포증은 특정공포증, 사회불안장애와 마찬가지로 전형적으로 6개월 이상의 지속을 요구한다. 1개월은 공황장애 기준 B의 기간이므로 혼동하지 않아야 한다.",
-    "theory": "DSM-5 광장공포증 진단기준",
-    "concept": "광장공포-지속기간",
-    "sources": [
-      {
-        "source_name": "NCBI StatPearls",
-        "ref": "https://www.ncbi.nlm.nih.gov/books/NBK554387/",
-        "unit": "Agoraphobia",
-        "basis": "대중교통, 열린 공간, 닫힌 공간, 줄서기나 군중, 집 밖에 혼자 있기의 5가지 상황 중 2가지 이상에서 현저한 공포, 6개월 이상 지속, DSM-5 이후 공황장애와 독립적으로 진단",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "출처확인",
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L1-018",
+  "domain": "anxiety",
+  "disorder": "agoraphobia",
+  "related": [],
+  "level": 1,
+  "type": "ox",
+  "polarity": "correct",
+  "case": null,
+  "stem": "다음 진술이 옳으면 O, 틀리면 X를 고르시오. DSM-5에서 광장공포증의 공포, 불안, 회피는 전형적으로 6개월 이상 지속되어야 한다.",
+  "options": [
+   {
+    "key": "O",
+    "text": "O (옳다)",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "정답. 옳은 진술이다. 광장공포증은 특정공포증, 사회불안장애와 마찬가지로 전형적으로 6개월 이상의 지속을 요구한다. 1개월은 공황장애 기준 B의 기간이므로 혼동하지 않아야 한다."
+   },
+   {
+    "key": "X",
+    "text": "X (틀리다)",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "오답. 이 진술은 옳다. 광장공포증은 특정공포증, 사회불안장애와 마찬가지로 전형적으로 6개월 이상의 지속을 요구한다. 1개월은 공황장애 기준 B의 기간이므로 혼동하지 않아야 한다."
+   }
+  ],
+  "answer": [
+   "O"
+  ],
+  "explanation": "광장공포증은 특정공포증, 사회불안장애와 마찬가지로 전형적으로 6개월 이상의 지속을 요구한다. 1개월은 공황장애 기준 B의 기간이므로 혼동하지 않아야 한다.",
+  "theory": "DSM-5 광장공포증 진단기준",
+  "concept": "광장공포-지속기간",
+  "sources": [
+   {
+    "source_name": "NCBI StatPearls",
+    "ref": "https://www.ncbi.nlm.nih.gov/books/NBK554387/",
+    "unit": "Agoraphobia",
+    "basis": "대중교통, 열린 공간, 닫힌 공간, 줄서기나 군중, 집 밖에 혼자 있기의 5가지 상황 중 2가지 이상에서 현저한 공포, 6개월 이상 지속, DSM-5 이후 공황장애와 독립적으로 진단",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L1-019",
-    "domain": "anxiety",
-    "disorder": "separation_anxiety",
-    "related": [],
-    "level": 1,
-    "type": "ox",
-    "polarity": "correct",
-    "case": null,
-    "stem": "다음 진술이 옳으면 O, 틀리면 X를 고르시오. 정상 발달에서도 분리불안은 대략 생후 6~12개월 무렵에 나타날 수 있으므로, 분리불안장애는 분리에 대한 불안이 발달 수준에 비해 부적절하고 과도한 경우에만 진단한다.",
-    "options": [
-      {
-        "key": "O",
-        "text": "O (옳다)",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "정답. 옳은 진술이다. 애착이 형성되는 영아기의 분리불안은 정상적인 발달 현상이다. DSM-5 기준 A도 분리불안이 발달적으로 부적절하고 과도할 것을 요구한다."
-      },
-      {
-        "key": "X",
-        "text": "X (틀리다)",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "오답. 이 진술은 옳다. 애착이 형성되는 영아기의 분리불안은 정상적인 발달 현상이다. DSM-5 기준 A도 분리불안이 발달적으로 부적절하고 과도할 것을 요구한다."
-      }
-    ],
-    "answer": [
-      "O"
-    ],
-    "explanation": "애착이 형성되는 영아기의 분리불안은 정상적인 발달 현상이다. DSM-5 기준 A도 분리불안이 발달적으로 부적절하고 과도할 것을 요구한다.",
-    "theory": "분리불안의 발달적 맥락",
-    "concept": "분리불안-정상 발달과 구분",
-    "sources": [
-      {
-        "source_name": "NCBI Bookshelf(StatPearls 및 SAMHSA DSM-5 변경 표)",
-        "ref": "https://www.ncbi.nlm.nih.gov/books/NBK560793/",
-        "unit": "Separation Anxiety Disorder",
-        "basis": "DSM-5에서 성인기에 처음 진단되는 경우까지 포함하도록 확대되었고 18세 이전 발병 요건이 삭제되었으며, 발달상 정상적인 분리불안은 대개 생후 6~12개월 무렵 나타남. 성인 기간 기준은 대체로 6개월",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "출처확인",
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L1-019",
+  "domain": "anxiety",
+  "disorder": "separation_anxiety",
+  "related": [],
+  "level": 1,
+  "type": "ox",
+  "polarity": "correct",
+  "case": null,
+  "stem": "다음 진술이 옳으면 O, 틀리면 X를 고르시오. 정상 발달에서도 분리불안은 대략 생후 6~12개월 무렵에 나타날 수 있으므로, 분리불안장애는 분리에 대한 불안이 발달 수준에 비해 부적절하고 과도한 경우에만 진단한다.",
+  "options": [
+   {
+    "key": "O",
+    "text": "O (옳다)",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "정답. 옳은 진술이다. 애착이 형성되는 영아기의 분리불안은 정상적인 발달 현상이다. DSM-5 기준 A도 분리불안이 발달적으로 부적절하고 과도할 것을 요구한다."
+   },
+   {
+    "key": "X",
+    "text": "X (틀리다)",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "오답. 이 진술은 옳다. 애착이 형성되는 영아기의 분리불안은 정상적인 발달 현상이다. DSM-5 기준 A도 분리불안이 발달적으로 부적절하고 과도할 것을 요구한다."
+   }
+  ],
+  "answer": [
+   "O"
+  ],
+  "explanation": "애착이 형성되는 영아기의 분리불안은 정상적인 발달 현상이다. DSM-5 기준 A도 분리불안이 발달적으로 부적절하고 과도할 것을 요구한다.",
+  "theory": "분리불안의 발달적 맥락",
+  "concept": "분리불안-정상 발달과 구분",
+  "sources": [
+   {
+    "source_name": "NCBI Bookshelf(StatPearls 및 SAMHSA DSM-5 변경 표)",
+    "ref": "https://www.ncbi.nlm.nih.gov/books/NBK560793/",
+    "unit": "Separation Anxiety Disorder",
+    "basis": "DSM-5에서 성인기에 처음 진단되는 경우까지 포함하도록 확대되었고 18세 이전 발병 요건이 삭제되었으며, 발달상 정상적인 분리불안은 대개 생후 6~12개월 무렵 나타남. 성인 기간 기준은 대체로 6개월",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L1-020",
-    "domain": "anxiety",
-    "disorder": "gad",
-    "related": [],
-    "level": 1,
-    "type": "ox",
-    "polarity": "correct",
-    "case": null,
-    "stem": "다음 진술이 옳으면 O, 틀리면 X를 고르시오. Dugas의 모형에서 불확실성 불내성이 높은 사람은 불확실한 상황 자체를 위협적으로 평가하며, 이것이 걱정에 대한 긍정적 신념과 인지적 회피 등으로 이어진다.",
-    "options": [
-      {
-        "key": "O",
-        "text": "O (옳다)",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "정답. 옳은 진술이다. Dugas와 동료들은 불확실성 불내성을 핵심 요인으로 보고, 걱정에 대한 긍정적 신념, 부정적 문제 지향, 인지적 회피를 함께 범불안장애의 유지 요인으로 제시했다."
-      },
-      {
-        "key": "X",
-        "text": "X (틀리다)",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "오답. 이 진술은 옳다. Dugas와 동료들은 불확실성 불내성을 핵심 요인으로 보고, 걱정에 대한 긍정적 신념, 부정적 문제 지향, 인지적 회피를 함께 범불안장애의 유지 요인으로 제시했다."
-      }
-    ],
-    "answer": [
-      "O"
-    ],
-    "explanation": "Dugas와 동료들은 불확실성 불내성을 핵심 요인으로 보고, 걱정에 대한 긍정적 신념, 부정적 문제 지향, 인지적 회피를 함께 범불안장애의 유지 요인으로 제시했다.",
-    "theory": "Dugas 불확실성 불내성 모형",
-    "concept": "범불안-불확실성 불내성",
-    "sources": [
-      {
-        "source_name": "Behavioural and Cognitive Psychotherapy 게재 논문(케임브리지대학교 출판부)",
-        "ref": "https://www.cambridge.org/core/journals/behavioural-and-cognitive-psychotherapy/article/what-if-we-have-too-many-models-of-worry-and-gad/4E9E75ACD27DBAF0D9A11774E0C6673F",
-        "unit": "범불안장애의 걱정 모형 비교",
-        "basis": "Wells 메타인지 모형은 1유형 걱정과 걱정에 대한 걱정인 2유형 걱정, 걱정에 대한 긍정적·부정적 메타신념을 구분하고 부정적 메타신념을 핵심 유지요인으로 봄. Dugas 모형은 불확실성 불내성이 걱정에 대한 긍정적 신념, 부정적 문제 지향, 인지적 회피로 이어진다고 봄",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "출처확인",
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L1-020",
+  "domain": "anxiety",
+  "disorder": "gad",
+  "related": [],
+  "level": 1,
+  "type": "ox",
+  "polarity": "correct",
+  "case": null,
+  "stem": "다음 진술이 옳으면 O, 틀리면 X를 고르시오. Dugas의 모형에서 불확실성 불내성이 높은 사람은 불확실한 상황 자체를 위협적으로 평가하며, 이것이 걱정에 대한 긍정적 신념과 인지적 회피 등으로 이어진다.",
+  "options": [
+   {
+    "key": "O",
+    "text": "O (옳다)",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "정답. 옳은 진술이다. Dugas와 동료들은 불확실성 불내성을 핵심 요인으로 보고, 걱정에 대한 긍정적 신념, 부정적 문제 지향, 인지적 회피를 함께 범불안장애의 유지 요인으로 제시했다."
+   },
+   {
+    "key": "X",
+    "text": "X (틀리다)",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "오답. 이 진술은 옳다. Dugas와 동료들은 불확실성 불내성을 핵심 요인으로 보고, 걱정에 대한 긍정적 신념, 부정적 문제 지향, 인지적 회피를 함께 범불안장애의 유지 요인으로 제시했다."
+   }
+  ],
+  "answer": [
+   "O"
+  ],
+  "explanation": "Dugas와 동료들은 불확실성 불내성을 핵심 요인으로 보고, 걱정에 대한 긍정적 신념, 부정적 문제 지향, 인지적 회피를 함께 범불안장애의 유지 요인으로 제시했다.",
+  "theory": "Dugas 불확실성 불내성 모형",
+  "concept": "범불안-불확실성 불내성",
+  "sources": [
+   {
+    "source_name": "Behavioural and Cognitive Psychotherapy 게재 논문(케임브리지대학교 출판부)",
+    "ref": "https://www.cambridge.org/core/journals/behavioural-and-cognitive-psychotherapy/article/what-if-we-have-too-many-models-of-worry-and-gad/4E9E75ACD27DBAF0D9A11774E0C6673F",
+    "unit": "범불안장애의 걱정 모형 비교",
+    "basis": "Wells 메타인지 모형은 1유형 걱정과 걱정에 대한 걱정인 2유형 걱정, 걱정에 대한 긍정적·부정적 메타신념을 구분하고 부정적 메타신념을 핵심 유지요인으로 봄. Dugas 모형은 불확실성 불내성이 걱정에 대한 긍정적 신념, 부정적 문제 지향, 인지적 회피로 이어진다고 봄",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L2-020",
-    "domain": "anxiety",
-    "disorder": "specific_phobia",
-    "related": [],
-    "level": 2,
-    "type": "single",
-    "polarity": "incorrect",
-    "case": null,
-    "stem": "DSM-5 특정공포증 진단기준에 관한 설명으로 옳지 않은 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "특정 대상이나 상황에 대한 현저한 공포나 불안이 있다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 진술이다. 기준 A의 내용이다."
-      },
-      {
-        "key": "2",
-        "text": "공포 대상과 마주쳐도 공포가 가끔씩만 나타나는 경우에도 핵심 기준을 충족한다.",
-        "is_true": false,
-        "in_answer": true,
-        "explanation": "옳지 않으므로 정답이다. 공포 대상이나 상황은 거의 항상 즉각적인 공포나 불안을 일으켜야 한다."
-      },
-      {
-        "key": "3",
-        "text": "공포 대상이나 상황을 적극적으로 회피하거나 강한 공포와 불안 속에서 견딘다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 진술이다. 회피나 고통스러운 인내가 기준에 포함된다."
-      },
-      {
-        "key": "4",
-        "text": "공포는 실제 위험과 사회문화적 맥락에 비해 과도하며 이는 임상가가 판단한다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 진술이다. DSM-5는 환자 자신의 인식 요건 대신 임상가의 판단을 사용한다."
-      },
-      {
-        "key": "5",
-        "text": "아동의 공포는 울음, 떼쓰기, 얼어붙기, 매달리기로 표현될 수 있다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 진술이다. 아동은 공포를 말보다 행동으로 표현하는 경우가 많다."
-      }
-    ],
-    "answer": [
-      "2"
-    ],
-    "explanation": "특정공포증은 대상에 대한 현저한 공포, 거의 항상 즉각적인 공포 유발, 회피나 고통스러운 인내, 실제 위험 대비 과도성, 대체로 6개월 지속, 고통이나 기능 손상을 요구한다.",
-    "theory": "DSM-5 특정공포증 진단기준",
-    "concept": "특정공포-진단기준",
-    "sources": [
-      {
-        "source_name": "NCBI Bookshelf(SAMHSA DSM-5 표) 및 펜실베이니아대학교 불안치료연구센터 자료",
-        "ref": "https://www.ncbi.nlm.nih.gov/books/NBK519704/table/ch3.t11/",
-        "unit": "Specific Phobia",
-        "basis": "동물형, 자연환경형, 혈액-주사-손상형, 상황형과 기타형으로 구분하고 대체로 6개월 이상 지속. 혈액-주사-손상형은 심박과 혈압이 잠시 상승한 뒤 떨어지는 혈관미주신경성 실신 반응이 흔하며 성차가 다른 유형보다 작음",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
-        "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
-        "unit": "특정공포증 기준 A~D",
-        "basis": "거의 항상 즉각 유발, 회피, 과도성, 아동의 표현",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L2-020",
+  "domain": "anxiety",
+  "disorder": "specific_phobia",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "incorrect",
+  "case": null,
+  "stem": "DSM-5 특정공포증 진단기준에 관한 설명으로 옳지 않은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "특정 대상이나 상황에 대한 현저한 공포나 불안이 있다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 진술이다. 기준 A의 내용이다."
+   },
+   {
+    "key": "2",
+    "text": "공포 대상과 마주쳐도 공포가 가끔씩만 나타나는 경우에도 핵심 기준을 충족한다.",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "옳지 않으므로 정답이다. 공포 대상이나 상황은 거의 항상 즉각적인 공포나 불안을 일으켜야 한다."
+   },
+   {
+    "key": "3",
+    "text": "공포 대상이나 상황을 적극적으로 회피하거나 강한 공포와 불안 속에서 견딘다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 진술이다. 회피나 고통스러운 인내가 기준에 포함된다."
+   },
+   {
+    "key": "4",
+    "text": "공포는 실제 위험과 사회문화적 맥락에 비해 과도하며 이는 임상가가 판단한다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 진술이다. DSM-5는 환자 자신의 인식 요건 대신 임상가의 판단을 사용한다."
+   },
+   {
+    "key": "5",
+    "text": "아동의 공포는 울음, 떼쓰기, 얼어붙기, 매달리기로 표현될 수 있다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 진술이다. 아동은 공포를 말보다 행동으로 표현하는 경우가 많다."
+   }
+  ],
+  "answer": [
+   "2"
+  ],
+  "explanation": "특정공포증은 대상에 대한 현저한 공포, 거의 항상 즉각적인 공포 유발, 회피나 고통스러운 인내, 실제 위험 대비 과도성, 대체로 6개월 지속, 고통이나 기능 손상을 요구한다.",
+  "theory": "DSM-5 특정공포증 진단기준",
+  "concept": "특정공포-진단기준",
+  "sources": [
+   {
+    "source_name": "NCBI Bookshelf(SAMHSA DSM-5 표) 및 펜실베이니아대학교 불안치료연구센터 자료",
+    "ref": "https://www.ncbi.nlm.nih.gov/books/NBK519704/table/ch3.t11/",
+    "unit": "Specific Phobia",
+    "basis": "동물형, 자연환경형, 혈액-주사-손상형, 상황형과 기타형으로 구분하고 대체로 6개월 이상 지속. 혈액-주사-손상형은 심박과 혈압이 잠시 상승한 뒤 떨어지는 혈관미주신경성 실신 반응이 흔하며 성차가 다른 유형보다 작음",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L2-021",
-    "domain": "anxiety",
-    "disorder": "anxiety_overview",
-    "related": [],
-    "level": 2,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "Mowrer의 2요인 이론에 대한 비판으로 적절한 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "회피가 부적 강화된다는 주장은 조작적 조건형성과 무관하다는 비판을 받았다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 회피의 부적 강화는 조작적 조건형성의 원리이며, 이는 2요인 이론의 한 축으로 비판 대상이 아니라 이론의 구성요소다."
-      },
-      {
-        "key": "2",
-        "text": "이 이론은 공포의 습득을 설명할 때 고전적 조건형성을 전혀 사용하지 않는다는 비판을 받았다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 2요인 이론은 공포의 습득을 고전적 조건형성으로 설명한다."
-      },
-      {
-        "key": "3",
-        "text": "많은 공포증 환자가 직접적인 외상적 조건형성 경험을 기억하지 못하며, 공포가 대리학습이나 정보 전달로도 습득될 수 있다는 점이 한계로 지적되었다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 이 비판이 Rachman의 3경로 이론으로 이어졌다."
-      },
-      {
-        "key": "4",
-        "text": "모든 자극이 동등하게 공포 대상이 될 수 있다는 점을 지나치게 강조하여 Seligman의 지지를 받았다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. Seligman은 오히려 등가성 가정을 비판하고 준비성 개념을 제시했다."
-      },
-      {
-        "key": "5",
-        "text": "회피가 지속되면 공포가 빠르게 소거된다는 예측이 경험적으로 확인되었다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 2요인 이론은 회피가 소거를 막는다고 본다. 오히려 실험에서 공포 지표가 약해진 뒤에도 회피가 오래 지속되는 현상이 이 이론의 한계로 지적되었다."
-      }
-    ],
-    "answer": [
-      "3"
-    ],
-    "explanation": "2요인 이론은 공포 습득과 회피 유지를 설명하지만, 직접 조건형성 경험이 없는 공포증과 공포 대상의 편중, 공포 없이 지속되는 회피를 설명하지 못한다는 비판을 받았다.",
-    "theory": "Mowrer 2요인 이론 비판",
-    "concept": "개관-2요인 이론 비판",
-    "sources": [
-      {
-        "source_name": "PubMed Central(PMC) 게재 논문",
-        "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4170822",
-        "unit": "Rachman(1977) 공포 습득 3경로",
-        "basis": "직접 조건형성, 대리학습(타인 관찰), 정보 전달의 세 경로로 공포가 습득될 수 있음",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "Seligman, M. E. P. (1971). Phobias and preparedness. Behavior Therapy, 2, 307-320 (검색 요약)",
-        "ref": "https://www.bohrium.com/paper-details/phobias-and-preparedness/812079801815793665-7258",
-        "unit": "Seligman 준비성 이론",
-        "basis": "공포증은 비임의적 대상에 편중되고 소거에 강하게 저항하며, 준비된 학습은 선택적이고 1회 시행으로도 습득되며 비교적 비인지적임",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   },
+   {
+    "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
+    "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
+    "unit": "특정공포증 기준 A~D",
+    "basis": "거의 항상 즉각 유발, 회피, 과도성, 아동의 표현",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L2-022",
-    "domain": "anxiety",
-    "disorder": "anxiety_overview",
-    "related": [],
-    "level": 2,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "노출 기법과 그 설명의 연결로 옳은 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "심상 노출: 공포 상황에 실제로 들어가 직접 대면하는 방식이다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 실제 상황에서 직접 대면하는 것은 실제 노출이다."
-      },
-      {
-        "key": "2",
-        "text": "실제 노출: 공포 장면을 마음속으로 생생하게 떠올리는 방식이다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 마음속으로 떠올리는 것은 심상 노출이다."
-      },
-      {
-        "key": "3",
-        "text": "가상현실 노출: 실제 자극 없이 치료자의 언어적 설명만으로 진행하는 방식이다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 가상현실 노출은 컴퓨터로 구현한 시각적·청각적 가상 환경을 이용하여 비행이나 높이 같은 상황을 경험하게 한다."
-      },
-      {
-        "key": "4",
-        "text": "반응 방지: 노출 중 불안이 증가하면 즉시 상황을 떠나도록 허용하는 절차다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 반응 방지는 노출 중 회피나 강박행동 같은 안전 반응을 하지 않도록 막는 절차다."
-      },
-      {
-        "key": "5",
-        "text": "내부감각 노출: 과호흡, 제자리 돌기, 빨대로 숨쉬기 등으로 두려운 신체감각을 의도적으로 유발한다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 공황장애 치료에서 신체감각과 공포의 연합을 약화시키기 위해 쓰인다."
-      }
-    ],
-    "answer": [
-      "5"
-    ],
-    "explanation": "노출에는 실제 노출, 심상 노출, 내부감각 노출, 가상현실 노출이 있으며 반응 방지는 노출 중 안전행동을 막는 절차다.",
-    "theory": "노출치료 기법",
-    "concept": "개관-노출 기법 종류",
-    "sources": [
-      {
-        "source_name": "Barlow, D. H., & Craske, M. G. Mastery of Your Anxiety and Panic. Oxford University Press",
-        "ref": "Oxford University Press",
-        "unit": "내부감각 노출",
-        "basis": "과호흡, 회전, 빨대 호흡 등으로 감각 유발",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L2-021",
+  "domain": "anxiety",
+  "disorder": "anxiety_overview",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "Mowrer의 2요인 이론에 대한 비판으로 적절한 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "회피가 부적 강화된다는 주장은 조작적 조건형성과 무관하다는 비판을 받았다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 회피의 부적 강화는 조작적 조건형성의 원리이며, 이는 2요인 이론의 한 축으로 비판 대상이 아니라 이론의 구성요소다."
+   },
+   {
+    "key": "2",
+    "text": "이 이론은 공포의 습득을 설명할 때 고전적 조건형성을 전혀 사용하지 않는다는 비판을 받았다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 2요인 이론은 공포의 습득을 고전적 조건형성으로 설명한다."
+   },
+   {
+    "key": "3",
+    "text": "많은 공포증 환자가 직접적인 외상적 조건형성 경험을 기억하지 못하며, 공포가 대리학습이나 정보 전달로도 습득될 수 있다는 점이 한계로 지적되었다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 이 비판이 Rachman의 3경로 이론으로 이어졌다."
+   },
+   {
+    "key": "4",
+    "text": "모든 자극이 동등하게 공포 대상이 될 수 있다는 점을 지나치게 강조하여 Seligman의 지지를 받았다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. Seligman은 오히려 등가성 가정을 비판하고 준비성 개념을 제시했다."
+   },
+   {
+    "key": "5",
+    "text": "회피가 지속되면 공포가 빠르게 소거된다는 예측이 경험적으로 확인되었다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 2요인 이론은 회피가 소거를 막는다고 본다. 오히려 실험에서 공포 지표가 약해진 뒤에도 회피가 오래 지속되는 현상이 이 이론의 한계로 지적되었다."
+   }
+  ],
+  "answer": [
+   "3"
+  ],
+  "explanation": "2요인 이론은 공포 습득과 회피 유지를 설명하지만, 직접 조건형성 경험이 없는 공포증과 공포 대상의 편중, 공포 없이 지속되는 회피를 설명하지 못한다는 비판을 받았다.",
+  "theory": "Mowrer 2요인 이론 비판",
+  "concept": "개관-2요인 이론 비판",
+  "sources": [
+   {
+    "source_name": "PubMed Central(PMC) 게재 논문",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4170822",
+    "unit": "Rachman(1977) 공포 습득 3경로",
+    "basis": "직접 조건형성, 대리학습(타인 관찰), 정보 전달의 세 경로로 공포가 습득될 수 있음",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L2-023",
-    "domain": "anxiety",
-    "disorder": "social_anxiety",
-    "related": [],
-    "level": 2,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "사회불안장애의 치료에 관한 설명으로 가장 적절한 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "벤조디아제핀이 장기적인 일차 치료로 가장 강하게 권고된다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 벤조디아제핀은 의존 위험 때문에 장기 일차 치료로 권고되지 않는다."
-      },
-      {
-        "key": "2",
-        "text": "SSRI나 SNRI가 일차 약물로 쓰이며 인지행동치료도 근거기반 치료로 권고된다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 약물치료와 인지행동치료가 모두 효과가 확인되었으며, 인지행동치료는 치료 종료 후 효과 유지가 상대적으로 좋다는 보고가 있다."
-      },
-      {
-        "key": "3",
-        "text": "사회기술 훈련은 사회불안장애 치료에 근거가 전혀 없다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 사회기술 훈련은 기술 결함이 있는 경우 인지행동치료의 보조 요소로 쓰인다."
-      },
-      {
-        "key": "4",
-        "text": "노출치료는 사회불안장애에는 효과가 없어 사용되지 않는다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 두려운 사회적 상황에 대한 노출은 사회불안 인지행동치료의 핵심 요소다."
-      },
-      {
-        "key": "5",
-        "text": "정신분석적 치료만이 효과가 입증된 유일한 치료다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 가장 강한 근거를 가진 것은 인지행동치료와 SSRI나 SNRI 약물치료다."
-      }
-    ],
-    "answer": [
-      "2"
-    ],
-    "explanation": "사회불안장애의 근거기반 치료는 인지행동치료와 SSRI나 SNRI다. 노출, 인지 재구성, 안전행동 제거가 인지행동치료의 핵심이다.",
-    "theory": "사회불안장애 치료",
-    "concept": "사회불안-치료",
-    "sources": [
-      {
-        "source_name": "National Institute for Health and Care Excellence. Social anxiety disorder: recognition, assessment and treatment (CG159)",
-        "ref": "https://www.nice.org.uk/guidance/cg159",
-        "unit": "사회불안장애 치료 지침",
-        "basis": "인지행동치료 우선, SSRI 약물치료",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   },
+   {
+    "source_name": "Seligman, M. E. P. (1971). Phobias and preparedness. Behavior Therapy, 2, 307-320 (검색 요약)",
+    "ref": "https://www.bohrium.com/paper-details/phobias-and-preparedness/812079801815793665-7258",
+    "unit": "Seligman 준비성 이론",
+    "basis": "공포증은 비임의적 대상에 편중되고 소거에 강하게 저항하며, 준비된 학습은 선택적이고 1회 시행으로도 습득되며 비교적 비인지적임",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L2-024",
-    "domain": "anxiety",
-    "disorder": "anxiety_overview",
-    "related": [],
-    "level": 2,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "공포와 불안의 구분에 관한 설명으로 옳은 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "공포는 현재 임박한 위협에 대한 정서 반응으로 투쟁 또는 도피를 위한 자율신경 각성과 관련되고, 불안은 미래의 위협에 대한 예상으로 근육 긴장, 경계, 조심스러운 회피와 관련된다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. DSM-5 불안장애 장의 서론은 공포와 불안을 이렇게 구분하며, 두 반응이 겹치기도 한다고 설명한다."
-      },
-      {
-        "key": "2",
-        "text": "공포는 미래의 위협에 대한 예상이고 불안은 현재 임박한 위협에 대한 반응이다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 설명이 거꾸로 되어 있다."
-      },
-      {
-        "key": "3",
-        "text": "불안은 언제나 병적인 반응이고 공포는 언제나 정상적인 반응이다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 공포와 불안 모두 적응적 기능이 있으며, 과도하거나 지속적일 때 장애가 된다."
-      },
-      {
-        "key": "4",
-        "text": "공포는 인지적 평가가 전혀 개입하지 않는 순수한 반사 반응이다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 공포에도 위협에 대한 평가가 개입하며 인지이론은 이 평가 과정을 강조한다."
-      },
-      {
-        "key": "5",
-        "text": "DSM-5 불안장애는 공포가 아니라 불안만을 특징으로 하는 장애들이다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. DSM-5 불안장애는 과도한 공포와 불안, 그리고 관련 행동 장해를 공유하는 장애들이다."
-      }
-    ],
-    "answer": [
-      "1"
-    ],
-    "explanation": "공포는 현재의 임박한 위협, 불안은 미래의 위협에 대한 반응이다. DSM-5 불안장애는 과도한 공포와 불안 및 관련 행동 장해를 공통 특징으로 한다.",
-    "theory": "공포와 불안의 구분",
-    "concept": "개관-공포와 불안",
-    "sources": [
-      {
-        "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
-        "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
-        "unit": "불안장애 장 서론",
-        "basis": "공포는 임박한 위협, 불안은 미래 위협에 대한 예상",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L2-022",
+  "domain": "anxiety",
+  "disorder": "anxiety_overview",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "노출 기법과 그 설명의 연결로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "심상 노출: 공포 상황에 실제로 들어가 직접 대면하는 방식이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 실제 상황에서 직접 대면하는 것은 실제 노출이다."
+   },
+   {
+    "key": "2",
+    "text": "실제 노출: 공포 장면을 마음속으로 생생하게 떠올리는 방식이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 마음속으로 떠올리는 것은 심상 노출이다."
+   },
+   {
+    "key": "3",
+    "text": "가상현실 노출: 실제 자극 없이 치료자의 언어적 설명만으로 진행하는 방식이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 가상현실 노출은 컴퓨터로 구현한 시각적·청각적 가상 환경을 이용하여 비행이나 높이 같은 상황을 경험하게 한다."
+   },
+   {
+    "key": "4",
+    "text": "반응 방지: 노출 중 불안이 증가하면 즉시 상황을 떠나도록 허용하는 절차다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 반응 방지는 노출 중 회피나 강박행동 같은 안전 반응을 하지 않도록 막는 절차다."
+   },
+   {
+    "key": "5",
+    "text": "내부감각 노출: 과호흡, 제자리 돌기, 빨대로 숨쉬기 등으로 두려운 신체감각을 의도적으로 유발한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 공황장애 치료에서 신체감각과 공포의 연합을 약화시키기 위해 쓰인다."
+   }
+  ],
+  "answer": [
+   "5"
+  ],
+  "explanation": "노출에는 실제 노출, 심상 노출, 내부감각 노출, 가상현실 노출이 있으며 반응 방지는 노출 중 안전행동을 막는 절차다.",
+  "theory": "노출치료 기법",
+  "concept": "개관-노출 기법 종류",
+  "sources": [
+   {
+    "source_name": "Barlow, D. H., & Craske, M. G. Mastery of Your Anxiety and Panic. Oxford University Press",
+    "ref": "Oxford University Press",
+    "unit": "내부감각 노출",
+    "basis": "과호흡, 회전, 빨대 호흡 등으로 감각 유발",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L2-025",
-    "domain": "anxiety",
-    "disorder": "specific_phobia",
-    "related": [],
-    "level": 2,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "Freud의 꼬마 한스 사례 해석으로 옳은 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "Freud는 한스가 말이 쓰러지는 장면을 목격한 경험을 공포의 핵심 원인으로 보고 이를 조건형성으로 설명했다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 말이 쓰러지는 장면을 조건형성 사건으로 재해석한 것은 Wolpe와 Rachman의 행동주의적 비판이다. Freud는 이를 무의식적 갈등의 계기 정도로 보았다."
-      },
-      {
-        "key": "2",
-        "text": "Freud는 한스의 공포를 애착대상과의 분리에 대한 불안으로 보고 Bowlby의 애착이론으로 설명했다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. Bowlby의 애착이론은 Freud 이후에 제시된 이론이다."
-      },
-      {
-        "key": "3",
-        "text": "Freud는 공포 대상의 회피가 공포 감소로 부적 강화된다고 설명했다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 회피의 부적 강화는 Mowrer의 2요인 이론과 같은 학습이론의 설명이다."
-      },
-      {
-        "key": "4",
-        "text": "한스의 말 공포는 오이디푸스 갈등에서 비롯된 아버지에 대한 거세 불안과 적대감이 말이라는 대상으로 전치된 것이다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. Freud는 한스의 말 공포를 아버지에 대한 두려움이 전치된 결과로 해석했다."
-      },
-      {
-        "key": "5",
-        "text": "Freud는 공포증을 뇌 기능의 생물학적 이상으로 보고 약물치료를 권했다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. Freud는 공포증을 무의식적 갈등과 방어의 산물로 보았다."
-      }
-    ],
-    "answer": [
-      "4"
-    ],
-    "explanation": "Freud는 꼬마 한스의 말 공포를 오이디푸스 갈등에서 비롯된 거세 불안의 전치로 해석했고, Wolpe와 Rachman은 이를 조건형성으로 재해석하며 정신분석적 설명을 비판했다.",
-    "theory": "Freud 꼬마 한스 사례",
-    "concept": "특정공포-정신분석적 해석",
-    "sources": [
-      {
-        "source_name": "Freud, S. (1909). Analysis of a phobia in a five-year-old boy; Wolpe, J., & Rachman, S. (1960). Psychoanalytic evidence: A critique based on Freud's case of Little Hans. Journal of Nervous and Mental Disease, 131, 135-148",
-        "ref": "Journal of Nervous and Mental Disease, 131, 135-148",
-        "unit": "꼬마 한스",
-        "basis": "전치 해석과 행동주의적 재해석",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L2-023",
+  "domain": "anxiety",
+  "disorder": "social_anxiety",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "사회불안장애의 치료에 관한 설명으로 가장 적절한 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "벤조디아제핀이 장기적인 일차 치료로 가장 강하게 권고된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 벤조디아제핀은 의존 위험 때문에 장기 일차 치료로 권고되지 않는다."
+   },
+   {
+    "key": "2",
+    "text": "SSRI나 SNRI가 일차 약물로 쓰이며 인지행동치료도 근거기반 치료로 권고된다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 약물치료와 인지행동치료가 모두 효과가 확인되었으며, 인지행동치료는 치료 종료 후 효과 유지가 상대적으로 좋다는 보고가 있다."
+   },
+   {
+    "key": "3",
+    "text": "사회기술 훈련은 사회불안장애 치료에 근거가 전혀 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 사회기술 훈련은 기술 결함이 있는 경우 인지행동치료의 보조 요소로 쓰인다."
+   },
+   {
+    "key": "4",
+    "text": "노출치료는 사회불안장애에는 효과가 없어 사용되지 않는다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 두려운 사회적 상황에 대한 노출은 사회불안 인지행동치료의 핵심 요소다."
+   },
+   {
+    "key": "5",
+    "text": "정신분석적 치료만이 효과가 입증된 유일한 치료다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 가장 강한 근거를 가진 것은 인지행동치료와 SSRI나 SNRI 약물치료다."
+   }
+  ],
+  "answer": [
+   "2"
+  ],
+  "explanation": "사회불안장애의 근거기반 치료는 인지행동치료와 SSRI나 SNRI다. 노출, 인지 재구성, 안전행동 제거가 인지행동치료의 핵심이다.",
+  "theory": "사회불안장애 치료",
+  "concept": "사회불안-치료",
+  "sources": [
+   {
+    "source_name": "National Institute for Health and Care Excellence. Social anxiety disorder: recognition, assessment and treatment (CG159)",
+    "ref": "https://www.nice.org.uk/guidance/cg159",
+    "unit": "사회불안장애 치료 지침",
+    "basis": "인지행동치료 우선, SSRI 약물치료",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L3-016",
-    "domain": "anxiety",
-    "disorder": "separation_anxiety",
-    "related": [],
-    "level": 3,
-    "type": "multi",
-    "polarity": "correct",
-    "case": null,
-    "stem": "등교를 거부하는 아동을 평가할 때의 판단으로 옳은 것을 모두 고르시오.",
-    "options": [
-      {
-        "key": "1",
-        "text": "등교 거부는 진단명이 아니라 행동이므로 원인에 따라 분리불안장애, 사회불안장애, 특정공포증, 우울장애 등 여러 가능성을 평가해야 한다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 같은 행동이라도 그 기능과 두려움의 초점에 따라 진단이 달라진다."
-      },
-      {
-        "key": "2",
-        "text": "등교를 거부하는 아동은 모두 분리불안장애로 진단한다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 분리불안장애는 등교 거부의 흔한 원인 중 하나일 뿐이다."
-      },
-      {
-        "key": "3",
-        "text": "학교 가는 날 아침에 나타나는 복통이나 두통은 꾀병으로 단정하고 무시한다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 신체 증상 호소는 불안의 표현일 수 있으며 의학적 원인도 확인해야 한다."
-      },
-      {
-        "key": "4",
-        "text": "집에 있으면 괜찮고 부모와 떨어지는 것 자체를 힘들어한다면 분리불안장애를 시사한다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 두려움의 초점이 애착대상과의 분리라면 분리불안장애를 고려한다."
-      },
-      {
-        "key": "5",
-        "text": "또래 앞에서 발표하거나 평가받는 것이 두려워 학교를 피한다면 사회불안장애를 시사한다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 두려움의 초점이 사회적 평가라면 사회불안장애를 고려한다."
-      }
-    ],
-    "answer": [
-      "1",
-      "4",
-      "5"
-    ],
-    "explanation": "등교 거부는 증상이지 진단이 아니다. 분리, 사회적 평가, 특정 대상, 우울 등 두려움과 회피의 초점을 평가하여 진단한다.",
-    "theory": "등교 거부의 감별",
-    "concept": "분리불안-등교거부 감별",
-    "sources": [
-      {
-        "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
-        "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
-        "unit": "분리불안장애 감별진단",
-        "basis": "등교 거부의 다양한 원인",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L2-024",
+  "domain": "anxiety",
+  "disorder": "anxiety_overview",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "공포와 불안의 구분에 관한 설명으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "공포는 현재 임박한 위협에 대한 정서 반응으로 투쟁 또는 도피를 위한 자율신경 각성과 관련되고, 불안은 미래의 위협에 대한 예상으로 근육 긴장, 경계, 조심스러운 회피와 관련된다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. DSM-5 불안장애 장의 서론은 공포와 불안을 이렇게 구분하며, 두 반응이 겹치기도 한다고 설명한다."
+   },
+   {
+    "key": "2",
+    "text": "공포는 미래의 위협에 대한 예상이고 불안은 현재 임박한 위협에 대한 반응이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 설명이 거꾸로 되어 있다."
+   },
+   {
+    "key": "3",
+    "text": "불안은 언제나 병적인 반응이고 공포는 언제나 정상적인 반응이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 공포와 불안 모두 적응적 기능이 있으며, 과도하거나 지속적일 때 장애가 된다."
+   },
+   {
+    "key": "4",
+    "text": "공포는 인지적 평가가 전혀 개입하지 않는 순수한 반사 반응이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 공포에도 위협에 대한 평가가 개입하며 인지이론은 이 평가 과정을 강조한다."
+   },
+   {
+    "key": "5",
+    "text": "DSM-5 불안장애는 공포가 아니라 불안만을 특징으로 하는 장애들이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. DSM-5 불안장애는 과도한 공포와 불안, 그리고 관련 행동 장해를 공유하는 장애들이다."
+   }
+  ],
+  "answer": [
+   "1"
+  ],
+  "explanation": "공포는 현재의 임박한 위협, 불안은 미래의 위협에 대한 반응이다. DSM-5 불안장애는 과도한 공포와 불안 및 관련 행동 장해를 공통 특징으로 한다.",
+  "theory": "공포와 불안의 구분",
+  "concept": "개관-공포와 불안",
+  "sources": [
+   {
+    "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
+    "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
+    "unit": "불안장애 장 서론",
+    "basis": "공포는 임박한 위협, 불안은 미래 위협에 대한 예상",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L3-017",
-    "domain": "anxiety",
-    "disorder": "panic",
-    "related": [],
-    "level": 3,
-    "type": "single",
-    "polarity": "incorrect",
-    "case": null,
-    "stem": "공황발작이 예기치 않은 것인지 판단하는 데 관한 설명으로 옳지 않은 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "예기치 않은 공황발작은 발작 당시 명백한 단서나 촉발요인이 없는 발작이다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 진술이다. 공황장애 진단에는 이러한 예기치 않은 발작이 반복되어야 한다."
-      },
-      {
-        "key": "2",
-        "text": "차분한 상태에서나 잠에서 깨어나면서 일어나는 발작도 예기치 않은 발작에 해당할 수 있다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 진술이다. 야간 공황발작은 예기치 않은 발작의 한 형태다."
-      },
-      {
-        "key": "3",
-        "text": "문화에 따라 발작을 특정 원인에 귀인하는 경우가 있으므로, 예상된 발작인지 판단할 때 문화적 맥락을 고려해야 한다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 진술이다. DSM-5는 문화적 해석이 발작의 예상 여부 판단에 영향을 줄 수 있음을 언급한다."
-      },
-      {
-        "key": "4",
-        "text": "예기치 않은 발작이 한 번도 없었더라도 예상된 발작만 반복된다면 공황장애로 진단할 수 있다.",
-        "is_true": false,
-        "in_answer": true,
-        "explanation": "옳지 않으므로 정답이다. 공황장애는 반복적이고 예기치 않은 발작을 요구한다. 예상된 발작만 있다면 해당 장애에 공황발작 동반 명시자를 붙인다."
-      },
-      {
-        "key": "5",
-        "text": "공포 대상에 노출된 직후 일어나는 발작은 예상된 발작으로 분류된다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 진술이다. 거미 공포증 환자가 거미를 보고 일으키는 발작이 대표적인 예다."
-      }
-    ],
-    "answer": [
-      "4"
-    ],
-    "explanation": "공황장애 진단의 핵심은 반복적이고 예기치 않은 발작이다. 예상된 발작만 있다면 다른 장애에 공황발작 명시자를 붙이며, 문화적 맥락도 판단에 고려한다.",
-    "theory": "예기치 않은 공황발작과 예상된 공황발작",
-    "concept": "공황-예기치않은 발작 판단",
-    "sources": [
-      {
-        "source_name": "MSD 매뉴얼 전문가판",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/anxiety-and-stressor-related-disorders/panic-attacks-and-panic-disorder",
-        "unit": "공황발작 및 공황장애",
-        "basis": "공황장애는 반복적이고 예기치 않은 공황발작과 그 이후 1개월 이상의 추가 발작 걱정 또는 부적응적 행동 변화로 진단하며, 공황발작은 13개 증상 중 4개 이상을 포함하고, 갑상선기능항진증이나 급성 관상동맥증후군 같은 의학적 상태와 물질 사용 또는 금단을 배제해야 한다",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
-        "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
-        "unit": "공황발작 명시자와 문화적 고려",
-        "basis": "예상된 발작과 예기치 않은 발작의 구분",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L2-025",
+  "domain": "anxiety",
+  "disorder": "specific_phobia",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "Freud의 꼬마 한스 사례 해석으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "Freud는 한스가 말이 쓰러지는 장면을 목격한 경험을 공포의 핵심 원인으로 보고 이를 조건형성으로 설명했다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 말이 쓰러지는 장면을 조건형성 사건으로 재해석한 것은 Wolpe와 Rachman의 행동주의적 비판이다. Freud는 이를 무의식적 갈등의 계기 정도로 보았다."
+   },
+   {
+    "key": "2",
+    "text": "Freud는 한스의 공포를 애착대상과의 분리에 대한 불안으로 보고 Bowlby의 애착이론으로 설명했다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. Bowlby의 애착이론은 Freud 이후에 제시된 이론이다."
+   },
+   {
+    "key": "3",
+    "text": "Freud는 공포 대상의 회피가 공포 감소로 부적 강화된다고 설명했다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 회피의 부적 강화는 Mowrer의 2요인 이론과 같은 학습이론의 설명이다."
+   },
+   {
+    "key": "4",
+    "text": "한스의 말 공포는 오이디푸스 갈등에서 비롯된 아버지에 대한 거세 불안과 적대감이 말이라는 대상으로 전치된 것이다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. Freud는 한스의 말 공포를 아버지에 대한 두려움이 전치된 결과로 해석했다."
+   },
+   {
+    "key": "5",
+    "text": "Freud는 공포증을 뇌 기능의 생물학적 이상으로 보고 약물치료를 권했다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. Freud는 공포증을 무의식적 갈등과 방어의 산물로 보았다."
+   }
+  ],
+  "answer": [
+   "4"
+  ],
+  "explanation": "Freud는 꼬마 한스의 말 공포를 오이디푸스 갈등에서 비롯된 거세 불안의 전치로 해석했고, Wolpe와 Rachman은 이를 조건형성으로 재해석하며 정신분석적 설명을 비판했다.",
+  "theory": "Freud 꼬마 한스 사례",
+  "concept": "특정공포-정신분석적 해석",
+  "sources": [
+   {
+    "source_name": "Freud, S. (1909). Analysis of a phobia in a five-year-old boy; Wolpe, J., & Rachman, S. (1960). Psychoanalytic evidence: A critique based on Freud's case of Little Hans. Journal of Nervous and Mental Disease, 131, 135-148",
+    "ref": "Journal of Nervous and Mental Disease, 131, 135-148",
+    "unit": "꼬마 한스",
+    "basis": "전치 해석과 행동주의적 재해석",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L3-018",
-    "domain": "anxiety",
-    "disorder": "anxiety_overview",
-    "related": [],
-    "level": 3,
-    "type": "multi",
-    "polarity": "correct",
-    "case": null,
-    "stem": "불안 증상의 원인을 감별하는 데 관한 설명으로 옳은 것을 모두 고르시오.",
-    "options": [
-      {
-        "key": "1",
-        "text": "갑상선기능항진증이나 갈색세포종 같은 의학적 상태의 직접적 생리 효과로 불안이 생겼다면 다른 의학적 상태로 인한 불안장애를 고려한다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 내분비 질환, 심폐 질환 등은 불안을 일으킬 수 있는 대표적 의학적 상태다."
-      },
-      {
-        "key": "2",
-        "text": "알코올이나 벤조디아제핀의 금단 중에 생긴 불안은 물질 또는 약물 유발 불안장애로 고려할 수 있다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 중독뿐 아니라 금단도 불안을 유발할 수 있다."
-      },
-      {
-        "key": "3",
-        "text": "불안 증상이 물질 사용 이전부터 있었거나 중단 후에도 상당 기간 지속되었다면 독립적인 불안장애일 가능성이 높아진다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. DSM-5는 금단이나 중독이 끝난 뒤 약 1개월 같은 상당 기간 증상이 지속되면 독립적 장애를 시사한다고 본다."
-      },
-      {
-        "key": "4",
-        "text": "물질 중독 중에만 나타난 불안이라도 증상이 심하면 독립적인 공황장애로 진단하는 것이 원칙이다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 물질 중독이나 금단 중에만 나타났다면 증상의 심각도와 관계없이 물질 유발 불안장애를 먼저 고려한다."
-      },
-      {
-        "key": "5",
-        "text": "다른 의학적 상태로 인한 불안장애로 진단하려면 병력, 신체검사, 검사 소견에서 불안이 그 상태의 직접적 생리 결과라는 근거가 있어야 한다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 의학적 상태가 단순히 동반된 것이 아니라 불안의 원인이라는 근거가 필요하다."
-      }
-    ],
-    "answer": [
-      "1",
-      "2",
-      "3",
-      "5"
-    ],
-    "explanation": "불안 증상은 의학적 상태나 물질의 직접 효과로 생길 수 있다. 시간적 관계, 생리적 근거, 중단 후 지속 여부를 평가하여 독립적 불안장애와 구별한다.",
-    "theory": "물질/약물 유발 불안장애, 다른 의학적 상태로 인한 불안장애",
-    "concept": "개관-기질적 원인 감별",
-    "sources": [
-      {
-        "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
-        "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
-        "unit": "물질/약물치료로 유발된 불안장애, 다른 의학적 상태로 인한 불안장애",
-        "basis": "시간적 관계, 중단 후 약 1개월 이상 지속 시 독립적 장애 시사",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L3-016",
+  "domain": "anxiety",
+  "disorder": "separation_anxiety",
+  "related": [],
+  "level": 3,
+  "type": "multi",
+  "polarity": "correct",
+  "case": null,
+  "stem": "등교를 거부하는 아동을 평가할 때의 판단으로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "등교 거부는 진단명이 아니라 행동이므로 원인에 따라 분리불안장애, 사회불안장애, 특정공포증, 우울장애 등 여러 가능성을 평가해야 한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 같은 행동이라도 그 기능과 두려움의 초점에 따라 진단이 달라진다."
+   },
+   {
+    "key": "2",
+    "text": "등교를 거부하는 아동은 모두 분리불안장애로 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 분리불안장애는 등교 거부의 흔한 원인 중 하나일 뿐이다."
+   },
+   {
+    "key": "3",
+    "text": "학교 가는 날 아침에 나타나는 복통이나 두통은 꾀병으로 단정하고 무시한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 신체 증상 호소는 불안의 표현일 수 있으며 의학적 원인도 확인해야 한다."
+   },
+   {
+    "key": "4",
+    "text": "집에 있으면 괜찮고 부모와 떨어지는 것 자체를 힘들어한다면 분리불안장애를 시사한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 두려움의 초점이 애착대상과의 분리라면 분리불안장애를 고려한다."
+   },
+   {
+    "key": "5",
+    "text": "또래 앞에서 발표하거나 평가받는 것이 두려워 학교를 피한다면 사회불안장애를 시사한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 두려움의 초점이 사회적 평가라면 사회불안장애를 고려한다."
+   }
+  ],
+  "answer": [
+   "1",
+   "4",
+   "5"
+  ],
+  "explanation": "등교 거부는 증상이지 진단이 아니다. 분리, 사회적 평가, 특정 대상, 우울 등 두려움과 회피의 초점을 평가하여 진단한다.",
+  "theory": "등교 거부의 감별",
+  "concept": "분리불안-등교거부 감별",
+  "sources": [
+   {
+    "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
+    "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
+    "unit": "분리불안장애 감별진단",
+    "basis": "등교 거부의 다양한 원인",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L3-019",
-    "domain": "anxiety",
-    "disorder": "gad",
-    "related": [],
-    "level": 3,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "범불안장애의 걱정과 우울증의 반추를 구분하는 설명으로 가장 적절한 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "걱정은 주로 과거의 상실과 실패를 반복해서 곱씹는 것이고, 반추는 미래의 위협을 예상하는 것이다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 설명이 거꾸로 되어 있다."
-      },
-      {
-        "key": "2",
-        "text": "걱정은 주로 앞으로 일어날지 모르는 위협에 대한 만약에 형식의 사고이고, 반추는 과거 사건이나 현재 기분 상태의 원인과 의미를 반복해서 되새기는 사고다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 시간적 초점과 내용이 두 반복적 사고를 구분하는 기준이 된다. 다만 두 과정은 반복적 부정적 사고라는 공통점이 있다."
-      },
-      {
-        "key": "3",
-        "text": "반추는 문제 해결을 지향하므로 우울 증상을 줄이는 적응적 기능을 한다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 반추는 문제 해결보다 수동적 곱씹기에 가까워 우울을 지속시키는 요인으로 알려져 있다."
-      },
-      {
-        "key": "4",
-        "text": "걱정과 반추는 한 사람에게 동시에 나타날 수 없다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 범불안장애와 우울장애의 공존이 흔하듯이 두 과정은 함께 나타날 수 있다."
-      },
-      {
-        "key": "5",
-        "text": "걱정의 내용이 현실적인 주제라면 범불안장애로 진단할 수 없다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 범불안장애의 걱정은 대개 일상적이고 현실적인 주제이며, 문제는 그 정도와 빈도, 통제 곤란이다."
-      }
-    ],
-    "answer": [
-      "2"
-    ],
-    "explanation": "걱정은 미래 지향적이고 반추는 과거와 현재 지향적이다. 범불안장애의 걱정 주제는 현실적이어도 과도하고 통제하기 어렵다는 점이 핵심이다.",
-    "theory": "걱정과 반추",
-    "concept": "범불안-걱정과 반추 감별",
-    "sources": [
-      {
-        "source_name": "Nolen-Hoeksema, S. (2000). The role of rumination in depressive disorders and mixed anxiety/depressive symptoms. Journal of Abnormal Psychology, 109, 504-511",
-        "ref": "Journal of Abnormal Psychology, 109, 504-511",
-        "unit": "반추",
-        "basis": "반추와 걱정의 구분과 공통점",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L3-017",
+  "domain": "anxiety",
+  "disorder": "panic",
+  "related": [],
+  "level": 3,
+  "type": "single",
+  "polarity": "incorrect",
+  "case": null,
+  "stem": "공황발작이 예기치 않은 것인지 판단하는 데 관한 설명으로 옳지 않은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "예기치 않은 공황발작은 발작 당시 명백한 단서나 촉발요인이 없는 발작이다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 진술이다. 공황장애 진단에는 이러한 예기치 않은 발작이 반복되어야 한다."
+   },
+   {
+    "key": "2",
+    "text": "차분한 상태에서나 잠에서 깨어나면서 일어나는 발작도 예기치 않은 발작에 해당할 수 있다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 진술이다. 야간 공황발작은 예기치 않은 발작의 한 형태다."
+   },
+   {
+    "key": "3",
+    "text": "문화에 따라 발작을 특정 원인에 귀인하는 경우가 있으므로, 예상된 발작인지 판단할 때 문화적 맥락을 고려해야 한다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 진술이다. DSM-5는 문화적 해석이 발작의 예상 여부 판단에 영향을 줄 수 있음을 언급한다."
+   },
+   {
+    "key": "4",
+    "text": "예기치 않은 발작이 한 번도 없었더라도 예상된 발작만 반복된다면 공황장애로 진단할 수 있다.",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "옳지 않으므로 정답이다. 공황장애는 반복적이고 예기치 않은 발작을 요구한다. 예상된 발작만 있다면 해당 장애에 공황발작 동반 명시자를 붙인다."
+   },
+   {
+    "key": "5",
+    "text": "공포 대상에 노출된 직후 일어나는 발작은 예상된 발작으로 분류된다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 진술이다. 거미 공포증 환자가 거미를 보고 일으키는 발작이 대표적인 예다."
+   }
+  ],
+  "answer": [
+   "4"
+  ],
+  "explanation": "공황장애 진단의 핵심은 반복적이고 예기치 않은 발작이다. 예상된 발작만 있다면 다른 장애에 공황발작 명시자를 붙이며, 문화적 맥락도 판단에 고려한다.",
+  "theory": "예기치 않은 공황발작과 예상된 공황발작",
+  "concept": "공황-예기치않은 발작 판단",
+  "sources": [
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/anxiety-and-stressor-related-disorders/panic-attacks-and-panic-disorder",
+    "unit": "공황발작 및 공황장애",
+    "basis": "공황장애는 반복적이고 예기치 않은 공황발작과 그 이후 1개월 이상의 추가 발작 걱정 또는 부적응적 행동 변화로 진단하며, 공황발작은 13개 증상 중 4개 이상을 포함하고, 갑상선기능항진증이나 급성 관상동맥증후군 같은 의학적 상태와 물질 사용 또는 금단을 배제해야 한다",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L3-020",
-    "domain": "anxiety",
-    "disorder": "specific_phobia",
-    "related": [],
-    "level": 3,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "비행기 탑승을 피하는 사람들에 대한 감별로 옳은 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "기내에서 공황 증상이 생기면 도망칠 수 없다는 걱정 때문에 비행기뿐 아니라 영화관, 대중교통, 군중도 피한다면 특정공포증 상황형이 가장 적절하다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 여러 상황 군에 걸쳐 탈출 곤란을 두려워하므로 광장공포증을 고려해야 한다."
-      },
-      {
-        "key": "2",
-        "text": "기내에서 다른 승객들이 자신의 떨림을 보고 이상하게 생각할까 봐 탑승을 피한다면 광장공포증이 가장 적절하다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 두려움의 초점이 타인의 부정적 평가이므로 사회불안장애를 고려해야 한다."
-      },
-      {
-        "key": "3",
-        "text": "비행기 추락에 대한 두려움 때문에 탑승을 피하고 다른 상황에서는 어려움이 없다면 특정공포증 상황형이 가장 적절하다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 두려움이 비행기라는 한 상황과 추락이라는 위험에 국한되어 있다."
-      },
-      {
-        "key": "4",
-        "text": "비행기 사고에서 살아남은 뒤 악몽, 침투적 기억, 과각성과 함께 탑승을 피한다면 특정공포증만 진단하는 것이 원칙이다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 외상 사건 이후 침투, 회피, 과각성 증상이 함께 있다면 외상후 스트레스장애를 고려해야 한다."
-      },
-      {
-        "key": "5",
-        "text": "기내에서 구토할까 봐 두려워 탑승을 피한다면 혈액-주사-손상형 특정공포증에 해당한다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 구토에 대한 공포는 특정공포증 기타형에 해당한다."
-      }
-    ],
-    "answer": [
-      "3"
-    ],
-    "explanation": "같은 비행기 회피라도 두려움의 내용이 추락이면 특정공포증, 여러 상황의 탈출 곤란이면 광장공포증, 타인의 평가면 사회불안장애, 외상 후 증상군이면 외상후 스트레스장애다.",
-    "theory": "회피 동기에 따른 감별",
-    "concept": "특정공포-비행 회피 감별",
-    "sources": [
-      {
-        "source_name": "NCBI Bookshelf(SAMHSA DSM-5 표) 및 펜실베이니아대학교 불안치료연구센터 자료",
-        "ref": "https://www.ncbi.nlm.nih.gov/books/NBK519704/table/ch3.t11/",
-        "unit": "Specific Phobia",
-        "basis": "동물형, 자연환경형, 혈액-주사-손상형, 상황형과 기타형으로 구분하고 대체로 6개월 이상 지속. 혈액-주사-손상형은 심박과 혈압이 잠시 상승한 뒤 떨어지는 혈관미주신경성 실신 반응이 흔하며 성차가 다른 유형보다 작음",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
-        "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
-        "unit": "특정공포증 감별진단",
-        "basis": "광장공포증, 사회불안장애, 외상후 스트레스장애",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   },
+   {
+    "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
+    "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
+    "unit": "공황발작 명시자와 문화적 고려",
+    "basis": "예상된 발작과 예기치 않은 발작의 구분",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L4-016",
-    "domain": "anxiety",
-    "disorder": "social_anxiety",
-    "related": [],
-    "level": 4,
-    "type": "single",
-    "polarity": "incorrect",
-    "case": "26세 S씨는 사람들 앞에서 말할 때 얼굴이 붉어지는 것을 숨기려고 회식이나 모임 전에 소주를 몇 잔 미리 마신다. 술을 마시면 덜 긴장된다고 느끼지만 최근 1년 사이 음주량이 크게 늘었다. 중학생 때부터 낯선 사람과 대화하거나 식당에서 주문하는 것도 어려웠고, 남들이 자신을 이상하게 볼 것이라고 확신한다.",
-    "stem": "S씨에 대한 판단으로 옳지 않은 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "타인의 부정적 평가에 대한 두려움이 청소년기부터 여러 사회적 상황에서 지속되어 사회불안장애의 가능성이 높다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 판단이다. 발병 시기와 두려움의 초점 모두 사회불안장애의 전형적 양상이다."
-      },
-      {
-        "key": "2",
-        "text": "모임 전 음주는 불안을 줄이려는 안전행동이자 자가치료로 볼 수 있으며, 물질사용장애의 공존 여부를 평가해야 한다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 판단이다. 사회불안장애는 알코올사용장애와 공존이 흔하다."
-      },
-      {
-        "key": "3",
-        "text": "청소년기에 시작되었다는 점은 사회불안장애의 전형적인 발병 시기와 일치한다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 판단이다. 사회불안장애는 청소년기에 시작되는 경우가 많다."
-      },
-      {
-        "key": "4",
-        "text": "음주에 의존하면 술 없이도 사회적 상황을 견딜 수 있다는 것을 경험할 기회가 막혀 불안이 유지될 수 있다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 판단이다. 안전행동은 부정적 신념의 반증을 막는다."
-      },
-      {
-        "key": "5",
-        "text": "음주가 불안을 줄여 주므로 치료 초기에는 노출 직전 음주를 허용하는 것이 노출 효과를 높인다.",
-        "is_true": false,
-        "in_answer": true,
-        "explanation": "옳지 않으므로 정답이다. 음주는 안전행동이자 물질 문제의 위험 요인이므로 노출 중 허용하면 학습을 방해하고 음주 문제를 악화시킬 수 있다."
-      }
-    ],
-    "answer": [
-      "5"
-    ],
-    "explanation": "S씨의 음주는 사회불안을 일시적으로 줄이는 안전행동이자 자가치료다. 치료에서는 음주 문제를 함께 평가하고 안전행동 없이 노출을 진행해야 한다.",
-    "theory": "사회불안장애와 물질사용의 공존",
-    "concept": "사회불안-음주 안전행동 사례",
-    "sources": [
-      {
-        "source_name": "PubMed(Clinical Psychology Review 2002 개관) 및 Clark & Wells(1995)",
-        "ref": "https://pubmed.ncbi.nlm.nih.gov/12238248/",
-        "unit": "Clark과 Wells의 사회불안 인지모형",
-        "basis": "자기초점적 주의와 관찰자 관점 자기심상, 안전행동, 예기적 처리와 사후 처리가 사회불안을 유지하며, 자기초점적 주의는 외부 피드백 관찰을 방해함",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
-        "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
-        "unit": "사회불안장애 공존 질환",
-        "basis": "물질사용장애와 공존 흔함",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L3-018",
+  "domain": "anxiety",
+  "disorder": "anxiety_overview",
+  "related": [],
+  "level": 3,
+  "type": "multi",
+  "polarity": "correct",
+  "case": null,
+  "stem": "불안 증상의 원인을 감별하는 데 관한 설명으로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "갑상선기능항진증이나 갈색세포종 같은 의학적 상태의 직접적 생리 효과로 불안이 생겼다면 다른 의학적 상태로 인한 불안장애를 고려한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 내분비 질환, 심폐 질환 등은 불안을 일으킬 수 있는 대표적 의학적 상태다."
+   },
+   {
+    "key": "2",
+    "text": "알코올이나 벤조디아제핀의 금단 중에 생긴 불안은 물질 또는 약물 유발 불안장애로 고려할 수 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 중독뿐 아니라 금단도 불안을 유발할 수 있다."
+   },
+   {
+    "key": "3",
+    "text": "불안 증상이 물질 사용 이전부터 있었거나 중단 후에도 상당 기간 지속되었다면 독립적인 불안장애일 가능성이 높아진다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. DSM-5는 금단이나 중독이 끝난 뒤 약 1개월 같은 상당 기간 증상이 지속되면 독립적 장애를 시사한다고 본다."
+   },
+   {
+    "key": "4",
+    "text": "물질 중독 중에만 나타난 불안이라도 증상이 심하면 독립적인 공황장애로 진단하는 것이 원칙이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 물질 중독이나 금단 중에만 나타났다면 증상의 심각도와 관계없이 물질 유발 불안장애를 먼저 고려한다."
+   },
+   {
+    "key": "5",
+    "text": "다른 의학적 상태로 인한 불안장애로 진단하려면 병력, 신체검사, 검사 소견에서 불안이 그 상태의 직접적 생리 결과라는 근거가 있어야 한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 의학적 상태가 단순히 동반된 것이 아니라 불안의 원인이라는 근거가 필요하다."
+   }
+  ],
+  "answer": [
+   "1",
+   "2",
+   "3",
+   "5"
+  ],
+  "explanation": "불안 증상은 의학적 상태나 물질의 직접 효과로 생길 수 있다. 시간적 관계, 생리적 근거, 중단 후 지속 여부를 평가하여 독립적 불안장애와 구별한다.",
+  "theory": "물질/약물 유발 불안장애, 다른 의학적 상태로 인한 불안장애",
+  "concept": "개관-기질적 원인 감별",
+  "sources": [
+   {
+    "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
+    "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
+    "unit": "물질/약물치료로 유발된 불안장애, 다른 의학적 상태로 인한 불안장애",
+    "basis": "시간적 관계, 중단 후 약 1개월 이상 지속 시 독립적 장애 시사",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L4-017",
-    "domain": "anxiety",
-    "disorder": "gad",
-    "related": [],
-    "level": 4,
-    "type": "multi",
-    "polarity": "correct",
-    "case": "42세 T씨는 매일 밤 잠자리에 누우면 회사가 구조조정을 하면 어쩌지, 그러면 대출은 어떻게 갚지 같은 생각을 마치 혼잣말을 되뇌듯 이어 간다. 그는 걱정을 하는 동안에는 오히려 끔찍한 장면이 떠오르지 않아 덜 무섭다고 느낀다. 치료자가 최악의 장면을 생생하게 상상해 보라고 하자 몹시 불안해하며 차라리 걱정하는 게 낫다고 말했다.",
-    "stem": "T씨의 걱정을 설명하는 이론과 개입으로 옳은 것을 모두 고르시오.",
-    "options": [
-      {
-        "key": "1",
-        "text": "T씨가 걱정을 하는 동안 덜 무섭다고 느끼는 것은 Borkovec의 이론과 모순된다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 걱정이 위협 심상과 신체적 각성을 줄여 덜 무섭게 느끼게 한다는 것이 바로 Borkovec 이론의 예측이다."
-      },
-      {
-        "key": "2",
-        "text": "Borkovec의 이론으로 보면 T씨는 언어적 걱정으로 위협 심상을 회피하고 있으며, 그로 인한 신체적 불안 감소가 걱정을 부적 강화한다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. T씨의 진술은 걱정의 회피 기능을 잘 보여 준다."
-      },
-      {
-        "key": "3",
-        "text": "Borkovec에 따르면 T씨의 걱정은 주로 생생한 심상 형태로 이루어진다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. T씨는 혼잣말을 되뇌듯 걱정하며, Borkovec은 걱정이 주로 언어적 사고라고 본다."
-      },
-      {
-        "key": "4",
-        "text": "걱정은 공포의 정서처리를 막아 위협의 의미가 수정되지 않고 유지되게 한다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 공포 구조가 충분히 활성화되지 않으면 교정 정보가 통합되지 못한다."
-      },
-      {
-        "key": "5",
-        "text": "최악의 장면을 생생하게 떠올리고 머무르게 하는 걱정 노출은 회피되어 온 정서처리를 촉진하는 개입이다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 걱정 노출은 언어적 걱정으로 회피하던 심상에 직접 노출시켜 습관화와 정서처리를 돕는다."
-      }
-    ],
-    "answer": [
-      "2",
-      "4",
-      "5"
-    ],
-    "explanation": "T씨의 걱정은 언어적 사고로 위협 심상을 회피하는 기능을 하며 신체적 불안 감소로 부적 강화된다. 걱정 노출은 회피된 심상에 직접 노출시킨다.",
-    "theory": "Borkovec 걱정의 회피이론",
-    "concept": "범불안-회피이론 사례",
-    "sources": [
-      {
-        "source_name": "켄트대학교 연구저장소 및 PMC 게재 논문",
-        "ref": "https://kar.kent.ac.uk/id/document/3203",
-        "unit": "Borkovec 걱정의 회피이론",
-        "basis": "걱정은 주로 언어적 사고이며 위협 심상을 줄이고 신체적 각성을 둔화시켜 부적 강화되고 정서처리를 방해함. Newman과 Llera의 대비회피 모형은 걱정이 오히려 각성을 높이고 유지한다고 봄",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "출처확인",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L3-019",
+  "domain": "anxiety",
+  "disorder": "gad",
+  "related": [],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "범불안장애의 걱정과 우울증의 반추를 구분하는 설명으로 가장 적절한 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "걱정은 주로 과거의 상실과 실패를 반복해서 곱씹는 것이고, 반추는 미래의 위협을 예상하는 것이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 설명이 거꾸로 되어 있다."
+   },
+   {
+    "key": "2",
+    "text": "걱정은 주로 앞으로 일어날지 모르는 위협에 대한 만약에 형식의 사고이고, 반추는 과거 사건이나 현재 기분 상태의 원인과 의미를 반복해서 되새기는 사고다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 시간적 초점과 내용이 두 반복적 사고를 구분하는 기준이 된다. 다만 두 과정은 반복적 부정적 사고라는 공통점이 있다."
+   },
+   {
+    "key": "3",
+    "text": "반추는 문제 해결을 지향하므로 우울 증상을 줄이는 적응적 기능을 한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 반추는 문제 해결보다 수동적 곱씹기에 가까워 우울을 지속시키는 요인으로 알려져 있다."
+   },
+   {
+    "key": "4",
+    "text": "걱정과 반추는 한 사람에게 동시에 나타날 수 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 범불안장애와 우울장애의 공존이 흔하듯이 두 과정은 함께 나타날 수 있다."
+   },
+   {
+    "key": "5",
+    "text": "걱정의 내용이 현실적인 주제라면 범불안장애로 진단할 수 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 범불안장애의 걱정은 대개 일상적이고 현실적인 주제이며, 문제는 그 정도와 빈도, 통제 곤란이다."
+   }
+  ],
+  "answer": [
+   "2"
+  ],
+  "explanation": "걱정은 미래 지향적이고 반추는 과거와 현재 지향적이다. 범불안장애의 걱정 주제는 현실적이어도 과도하고 통제하기 어렵다는 점이 핵심이다.",
+  "theory": "걱정과 반추",
+  "concept": "범불안-걱정과 반추 감별",
+  "sources": [
+   {
+    "source_name": "Nolen-Hoeksema, S. (2000). The role of rumination in depressive disorders and mixed anxiety/depressive symptoms. Journal of Abnormal Psychology, 109, 504-511",
+    "ref": "Journal of Abnormal Psychology, 109, 504-511",
+    "unit": "반추",
+    "basis": "반추와 걱정의 구분과 공통점",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L4-018",
-    "domain": "anxiety",
-    "disorder": "separation_anxiety",
-    "related": [],
-    "level": 4,
-    "type": "multi",
-    "polarity": "correct",
-    "case": "35세 U씨는 결혼 후 남편이 출장을 가면 사고가 나서 돌아오지 못할 것이라는 생각에 하루에도 수십 번 전화를 걸고, 남편이 받지 않으면 극심한 공포에 휩싸인다. 남편이 출장을 갈 때마다 두통과 구토가 생기고, 남편 없이 혼자 자지 못해 친정에 가서 잔다. 이런 양상은 1년 이상 지속되었고 직장 생활에도 지장을 주고 있다. 어린 시절 부모와 떨어질 때 특별히 힘들었는지는 기억하지 못한다.",
-    "stem": "U씨에 대한 판단으로 옳은 것을 모두 고르시오.",
-    "options": [
-      {
-        "key": "1",
-        "text": "애착대상의 안전에 대한 걱정, 분리 시 신체 증상, 혼자 자기 거부 등이 6개월 이상 지속되어 성인 분리불안장애를 고려할 수 있다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 3가지 이상의 증상과 성인 기간 기준, 기능 손상이 확인된다."
-      },
-      {
-        "key": "2",
-        "text": "아동기의 분리불안 병력이 확인되지 않으므로 분리불안장애로 진단할 수 없다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. DSM-5는 성인기 첫 발병을 인정하므로 아동기 병력은 필수가 아니다."
-      },
-      {
-        "key": "3",
-        "text": "의존성 성격장애와 감별해야 하는데, 의존성 성격장애는 돌봄을 받으려는 광범위한 욕구와 결정 곤란이 특징이고 분리불안장애는 애착대상의 안전과 분리에 초점이 있다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 두려움의 범위와 초점이 감별의 핵심이다."
-      },
-      {
-        "key": "4",
-        "text": "걱정의 내용이 남편의 사고이므로 범불안장애가 더 적합하다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 걱정이 애착대상과의 분리 및 그의 안전에 집중되어 있고 여러 영역으로 퍼져 있지 않으므로 분리불안장애가 더 잘 설명한다."
-      },
-      {
-        "key": "5",
-        "text": "반복적인 확인 전화는 분리 관련 불안을 일시적으로 줄이는 안심추구 행동으로, 치료에서 점진적으로 줄여 갈 표적이 될 수 있다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 안심추구는 단기적으로 불안을 줄이지만 장기적으로 불안을 유지시킨다."
-      }
-    ],
-    "answer": [
-      "1",
-      "3",
-      "5"
-    ],
-    "explanation": "U씨는 성인 분리불안장애의 전형적 사례다. 아동기 병력은 필수가 아니며, 의존성 성격장애나 범불안장애와는 두려움의 초점과 범위로 감별한다.",
-    "theory": "DSM-5 성인 분리불안장애",
-    "concept": "분리불안-성인 사례",
-    "sources": [
-      {
-        "source_name": "Cleveland Clinic",
-        "ref": "https://my.clevelandclinic.org/health/diseases/separation-anxiety-disorder",
-        "unit": "Separation Anxiety Disorder",
-        "basis": "8가지 증상 중 3가지 이상, 아동은 최소 4주, 성인은 6개월 이상 지속, 임상적으로 의미 있는 고통이나 기능 손상",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "NCBI Bookshelf(StatPearls 및 SAMHSA DSM-5 변경 표)",
-        "ref": "https://www.ncbi.nlm.nih.gov/books/NBK560793/",
-        "unit": "Separation Anxiety Disorder",
-        "basis": "DSM-5에서 성인기에 처음 진단되는 경우까지 포함하도록 확대되었고 18세 이전 발병 요건이 삭제되었으며, 발달상 정상적인 분리불안은 대개 생후 6~12개월 무렵 나타남. 성인 기간 기준은 대체로 6개월",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "출처확인",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L3-020",
+  "domain": "anxiety",
+  "disorder": "specific_phobia",
+  "related": [],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "비행기 탑승을 피하는 사람들에 대한 감별로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "기내에서 공황 증상이 생기면 도망칠 수 없다는 걱정 때문에 비행기뿐 아니라 영화관, 대중교통, 군중도 피한다면 특정공포증 상황형이 가장 적절하다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 여러 상황 군에 걸쳐 탈출 곤란을 두려워하므로 광장공포증을 고려해야 한다."
+   },
+   {
+    "key": "2",
+    "text": "기내에서 다른 승객들이 자신의 떨림을 보고 이상하게 생각할까 봐 탑승을 피한다면 광장공포증이 가장 적절하다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 두려움의 초점이 타인의 부정적 평가이므로 사회불안장애를 고려해야 한다."
+   },
+   {
+    "key": "3",
+    "text": "비행기 추락에 대한 두려움 때문에 탑승을 피하고 다른 상황에서는 어려움이 없다면 특정공포증 상황형이 가장 적절하다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 두려움이 비행기라는 한 상황과 추락이라는 위험에 국한되어 있다."
+   },
+   {
+    "key": "4",
+    "text": "비행기 사고에서 살아남은 뒤 악몽, 침투적 기억, 과각성과 함께 탑승을 피한다면 특정공포증만 진단하는 것이 원칙이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 외상 사건 이후 침투, 회피, 과각성 증상이 함께 있다면 외상후 스트레스장애를 고려해야 한다."
+   },
+   {
+    "key": "5",
+    "text": "기내에서 구토할까 봐 두려워 탑승을 피한다면 혈액-주사-손상형 특정공포증에 해당한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 구토에 대한 공포는 특정공포증 기타형에 해당한다."
+   }
+  ],
+  "answer": [
+   "3"
+  ],
+  "explanation": "같은 비행기 회피라도 두려움의 내용이 추락이면 특정공포증, 여러 상황의 탈출 곤란이면 광장공포증, 타인의 평가면 사회불안장애, 외상 후 증상군이면 외상후 스트레스장애다.",
+  "theory": "회피 동기에 따른 감별",
+  "concept": "특정공포-비행 회피 감별",
+  "sources": [
+   {
+    "source_name": "NCBI Bookshelf(SAMHSA DSM-5 표) 및 펜실베이니아대학교 불안치료연구센터 자료",
+    "ref": "https://www.ncbi.nlm.nih.gov/books/NBK519704/table/ch3.t11/",
+    "unit": "Specific Phobia",
+    "basis": "동물형, 자연환경형, 혈액-주사-손상형, 상황형과 기타형으로 구분하고 대체로 6개월 이상 지속. 혈액-주사-손상형은 심박과 혈압이 잠시 상승한 뒤 떨어지는 혈관미주신경성 실신 반응이 흔하며 성차가 다른 유형보다 작음",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L4-019",
-    "domain": "anxiety",
-    "disorder": "specific_phobia",
-    "related": [],
-    "level": 4,
-    "type": "single",
-    "polarity": "correct",
-    "case": "4세 V양은 최근 2주 동안 밤마다 괴물이 나올 것 같다며 불을 켜 달라고 하고 부모 방에 오려 한다. 낮에는 유치원에서 잘 지내며 친구들과도 활발히 논다. 부모는 이것이 공포증인지 걱정하며 상담을 요청했다.",
-    "stem": "V양에 대한 판단으로 가장 적절한 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "어둠에 대한 두려움이므로 특정공포증 자연환경형으로 바로 진단한다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 지속기간이 2주로 짧고 기능 손상도 미미하여 특정공포증 기준을 충족하지 않는다."
-      },
-      {
-        "key": "2",
-        "text": "밤에 부모 방에 오려 하므로 분리불안장애로 확정한다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 낮에 유치원에서 잘 지내며 분리 자체에 대한 고통이 뚜렷하지 않고, 아동 기간 기준인 4주도 충족하지 않는다."
-      },
-      {
-        "key": "3",
-        "text": "공포를 표현할 때마다 무시하거나 혼내어 공포 반응을 소거시킨다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 처벌이나 무시는 불안을 높이고 아동의 정서 표현을 위축시킬 수 있다."
-      },
-      {
-        "key": "4",
-        "text": "어둠이나 상상 속 존재에 대한 공포는 학령전기에 흔한 발달적 공포이며, 기간이 짧고 기능 손상이 미미하므로 장애로 진단할 근거가 부족하다. 경과를 관찰하며 부모에게 대처 방법을 안내한다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 발달적으로 흔한 공포와 장애를 구분하고, 정보가 부족할 때는 진단을 유보하며 지켜보는 것이 적절하다."
-      },
-      {
-        "key": "5",
-        "text": "불을 켜 주는 것은 공포를 강화하므로 절대 금지하고 홍수법으로 어두운 방에 혼자 두어야 한다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 학령전기 아동의 정상적 공포에 홍수법을 적용하는 것은 부적절하며 오히려 공포를 키울 수 있다."
-      }
-    ],
-    "answer": [
-      "4"
-    ],
-    "explanation": "아동기에는 어둠, 상상 속 존재, 동물 등에 대한 공포가 흔하다. 기간과 정도, 기능 손상을 기준으로 장애와 정상 발달을 구분한다.",
-    "theory": "아동기 발달적 공포",
-    "concept": "특정공포-발달적 공포 구분",
-    "sources": [
-      {
-        "source_name": "NCBI Bookshelf(SAMHSA DSM-5 표) 및 펜실베이니아대학교 불안치료연구센터 자료",
-        "ref": "https://www.ncbi.nlm.nih.gov/books/NBK519704/table/ch3.t11/",
-        "unit": "Specific Phobia",
-        "basis": "동물형, 자연환경형, 혈액-주사-손상형, 상황형과 기타형으로 구분하고 대체로 6개월 이상 지속. 혈액-주사-손상형은 심박과 혈압이 잠시 상승한 뒤 떨어지는 혈관미주신경성 실신 반응이 흔하며 성차가 다른 유형보다 작음",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
-        "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
-        "unit": "특정공포증 발달과 경과",
-        "basis": "아동기 일시적 공포는 흔함, 6개월 기준이 일시적 공포를 구별",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   },
+   {
+    "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
+    "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
+    "unit": "특정공포증 감별진단",
+    "basis": "광장공포증, 사회불안장애, 외상후 스트레스장애",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L4-020",
-    "domain": "anxiety",
-    "disorder": "gad",
-    "related": [],
-    "level": 4,
-    "type": "multi",
-    "polarity": "incorrect",
-    "case": "27세 W씨는 가스 밸브를 잠갔는지 의심이 들면 집을 나섰다가도 되돌아가 열 번 넘게 확인한다. 확인하지 않으면 불이 나서 이웃이 다칠 것 같은 생각이 들어 견딜 수 없다고 한다. 그 외에도 업무 마감, 건강, 경제 문제를 걱정하지만, 그런 걱정은 누구나 하는 정도이고 생활에 큰 지장은 없다고 말한다.",
-    "stem": "W씨에 대한 진단적 판단으로 옳지 않은 것을 모두 고르시오.",
-    "options": [
-      {
-        "key": "1",
-        "text": "가스 밸브에 대한 침투적 의심과 반복적 확인 행동이 있으므로 강박장애 가능성을 우선 평가해야 한다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 판단이다. 침투적 강박사고와 이를 중화하는 강박행동의 조합이다."
-      },
-      {
-        "key": "2",
-        "text": "반복적인 확인 행동은 걱정과 관련되어 있으므로 범불안장애로 가장 잘 설명된다.",
-        "is_true": false,
-        "in_answer": true,
-        "explanation": "옳지 않은 판단이다. 범불안장애의 걱정에는 의례적 중화 행동이 일반적으로 따르지 않으며, 확인 행동은 강박장애의 특징이다."
-      },
-      {
-        "key": "3",
-        "text": "다른 걱정들이 과도하거나 통제하기 어렵거나 고통을 주지 않는다면 범불안장애를 추가로 진단할 근거는 부족하다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 판단이다. 일상적인 수준의 걱정은 범불안장애 기준을 충족하지 않는다."
-      },
-      {
-        "key": "4",
-        "text": "이웃이 다칠 것이라는 생각은 Salkovskis가 강조한 팽창된 책임감의 관점에서 이해할 수 있다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 판단이다. Salkovskis는 침투사고를 해로움에 대한 책임으로 해석하는 것이 강박행동을 유발한다고 보았다."
-      },
-      {
-        "key": "5",
-        "text": "확인 행동은 불안을 높이기만 하므로 부적 강화와는 관련이 없다.",
-        "is_true": false,
-        "in_answer": true,
-        "explanation": "옳지 않은 판단이다. 확인 행동은 단기적으로 불안을 줄여 부적 강화되며, 이것이 강박행동을 유지시킨다."
-      }
-    ],
-    "answer": [
-      "2",
-      "5"
-    ],
-    "explanation": "W씨의 핵심 문제는 침투적 의심과 확인 강박행동이므로 강박장애를 우선 고려한다. 일상적 수준의 걱정으로는 범불안장애를 진단하지 않는다.",
-    "theory": "범불안장애와 강박장애 감별, Salkovskis 책임감 이론",
-    "concept": "범불안-강박장애 감별 사례",
-    "sources": [
-      {
-        "source_name": "Salkovskis, P. M. (1985). Obsessional-compulsive problems: A cognitive-behavioural analysis. Behaviour Research and Therapy, 23, 571-583",
-        "ref": "Behaviour Research and Therapy, 23, 571-583",
-        "unit": "책임감 이론",
-        "basis": "침투사고에 대한 책임 해석이 중화 행동 유발",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L4-016",
+  "domain": "anxiety",
+  "disorder": "social_anxiety",
+  "related": [],
+  "level": 4,
+  "type": "single",
+  "polarity": "incorrect",
+  "case": "26세 S씨는 사람들 앞에서 말할 때 얼굴이 붉어지는 것을 숨기려고 회식이나 모임 전에 소주를 몇 잔 미리 마신다. 술을 마시면 덜 긴장된다고 느끼지만 최근 1년 사이 음주량이 크게 늘었다. 중학생 때부터 낯선 사람과 대화하거나 식당에서 주문하는 것도 어려웠고, 남들이 자신을 이상하게 볼 것이라고 확신한다.",
+  "stem": "S씨에 대한 판단으로 옳지 않은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "타인의 부정적 평가에 대한 두려움이 청소년기부터 여러 사회적 상황에서 지속되어 사회불안장애의 가능성이 높다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 판단이다. 발병 시기와 두려움의 초점 모두 사회불안장애의 전형적 양상이다."
+   },
+   {
+    "key": "2",
+    "text": "모임 전 음주는 불안을 줄이려는 안전행동이자 자가치료로 볼 수 있으며, 물질사용장애의 공존 여부를 평가해야 한다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 판단이다. 사회불안장애는 알코올사용장애와 공존이 흔하다."
+   },
+   {
+    "key": "3",
+    "text": "청소년기에 시작되었다는 점은 사회불안장애의 전형적인 발병 시기와 일치한다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 판단이다. 사회불안장애는 청소년기에 시작되는 경우가 많다."
+   },
+   {
+    "key": "4",
+    "text": "음주에 의존하면 술 없이도 사회적 상황을 견딜 수 있다는 것을 경험할 기회가 막혀 불안이 유지될 수 있다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 판단이다. 안전행동은 부정적 신념의 반증을 막는다."
+   },
+   {
+    "key": "5",
+    "text": "음주가 불안을 줄여 주므로 치료 초기에는 노출 직전 음주를 허용하는 것이 노출 효과를 높인다.",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "옳지 않으므로 정답이다. 음주는 안전행동이자 물질 문제의 위험 요인이므로 노출 중 허용하면 학습을 방해하고 음주 문제를 악화시킬 수 있다."
+   }
+  ],
+  "answer": [
+   "5"
+  ],
+  "explanation": "S씨의 음주는 사회불안을 일시적으로 줄이는 안전행동이자 자가치료다. 치료에서는 음주 문제를 함께 평가하고 안전행동 없이 노출을 진행해야 한다.",
+  "theory": "사회불안장애와 물질사용의 공존",
+  "concept": "사회불안-음주 안전행동 사례",
+  "sources": [
+   {
+    "source_name": "PubMed(Clinical Psychology Review 2002 개관) 및 Clark & Wells(1995)",
+    "ref": "https://pubmed.ncbi.nlm.nih.gov/12238248/",
+    "unit": "Clark과 Wells의 사회불안 인지모형",
+    "basis": "자기초점적 주의와 관찰자 관점 자기심상, 안전행동, 예기적 처리와 사후 처리가 사회불안을 유지하며, 자기초점적 주의는 외부 피드백 관찰을 방해함",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L5-004",
-    "domain": "anxiety",
-    "disorder": "agoraphobia",
-    "related": [],
-    "level": 5,
-    "type": "multi",
-    "polarity": "correct",
-    "case": "32세 F씨는 2년 전 지하철에서 갑자기 숨이 막히고 어지러운 발작을 처음 겪었다. 이후 버스, 지하철, 대형마트, 영화관에 혼자 가지 못하고 가족이 동행할 때만 외출한다. 최근 1년간은 발작이 거의 없었지만 또 쓰러지면 아무도 못 도와줄 것이라는 생각에 회피는 계속되고 있다. 직장 회의에서 발언하는 것도 힘들어하는데, 본인은 회의 중에 발작이 오면 끝이라고 설명한다. 어릴 때는 개를 무서워했지만 지금은 개를 길러도 괜찮다.",
-    "stem": "F씨에 대한 진단적 판단으로 옳은 것을 모두 고르시오.",
-    "options": [
-      {
-        "key": "1",
-        "text": "최근 1년간 발작이 거의 없었으므로 광장공포증 진단은 철회해야 한다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 광장공포증은 공황발작의 현재 유무와 독립적으로 진단되며, 회피와 공포가 지속되고 있다."
-      },
-      {
-        "key": "2",
-        "text": "두 가지 이상의 상황 군에서 공포와 회피가 있고 동반자가 필요하며 6개월 이상 지속되어 광장공포증 기준에 부합한다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 대중교통과 닫힌 공간 등 여러 상황 군에 걸쳐 있다."
-      },
-      {
-        "key": "3",
-        "text": "회의 발언이 어려운 이유가 부정적 평가보다 발작에 대한 두려움이므로 사회불안장애를 별도로 진단할 근거는 약하다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 두려움의 초점이 평가가 아니라 발작이므로 광장공포증이나 공황 관련 두려움으로 설명된다."
-      },
-      {
-        "key": "4",
-        "text": "공황장애의 진단기준은 현재 정보만으로 확정적으로 충족된다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 반복적인 예기치 않은 발작과 그 이후 1개월 이상의 걱정이나 행동 변화에 대한 정보가 충분하지 않고, 최근 1년간은 발작이 거의 없었다. 공황장애 병력은 추가 평가가 필요하다."
-      },
-      {
-        "key": "5",
-        "text": "어릴 때의 개 공포는 현재 기준을 충족하지 않으므로 현재 특정공포증 진단의 근거가 되지 않는다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 과거의 공포는 현재 진단의 근거가 아니며 발달적으로 사라지는 공포도 흔하다."
-      }
-    ],
-    "answer": [
-      "2",
-      "3",
-      "5"
-    ],
-    "explanation": "F씨는 광장공포증 기준에 부합하며 이는 현재 공황발작 여부와 독립적이다. 회의 회피는 두려움의 초점이 발작이므로 사회불안장애 근거가 약하고, 공황장애는 추가 정보가 필요하다.",
-    "theory": "광장공포증, 공황장애, 사회불안장애, 특정공포증 복합 감별",
-    "concept": "광장공포-복수장애 감별 사례",
-    "sources": [
-      {
-        "source_name": "NCBI StatPearls",
-        "ref": "https://www.ncbi.nlm.nih.gov/books/NBK554387/",
-        "unit": "Agoraphobia",
-        "basis": "대중교통, 열린 공간, 닫힌 공간, 줄서기나 군중, 집 밖에 혼자 있기의 5가지 상황 중 2가지 이상에서 현저한 공포, 6개월 이상 지속, DSM-5 이후 공황장애와 독립적으로 진단",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "MSD 매뉴얼 전문가판",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/anxiety-and-stressor-related-disorders/panic-attacks-and-panic-disorder",
-        "unit": "공황발작 및 공황장애",
-        "basis": "공황장애는 반복적이고 예기치 않은 공황발작과 그 이후 1개월 이상의 추가 발작 걱정 또는 부적응적 행동 변화로 진단하며, 공황발작은 13개 증상 중 4개 이상을 포함하고, 갑상선기능항진증이나 급성 관상동맥증후군 같은 의학적 상태와 물질 사용 또는 금단을 배제해야 한다",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "출처확인",
+   },
+   {
+    "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
+    "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
+    "unit": "사회불안장애 공존 질환",
+    "basis": "물질사용장애와 공존 흔함",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L5-013",
-    "domain": "anxiety",
-    "disorder": "anxiety_overview",
-    "related": [],
-    "level": 5,
-    "type": "multi",
-    "polarity": "correct",
-    "case": null,
-    "stem": "DSM-IV에서 DSM-5로 바뀌면서 나타난 불안장애 관련 변화로 옳은 것을 모두 고르시오.",
-    "options": [
-      {
-        "key": "1",
-        "text": "분리불안장애와 선택적 무언증이 유아기·아동기·청소년기에 처음 진단되는 장애 범주에서 불안장애 장으로 이동했다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 두 장애 모두 불안이 핵심이라는 점이 반영되었다."
-      },
-      {
-        "key": "2",
-        "text": "사회불안장애에 일반화형 명시자가 새로 추가되었다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 일반화형 명시자는 DSM-5에서 삭제되었고 대신 수행 시 한정 명시자가 새로 생겼다."
-      },
-      {
-        "key": "3",
-        "text": "광장공포증이 공황장애와 독립된 진단이 되었다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. DSM-IV의 광장공포증을 동반한 공황장애 체계가 폐지되었다."
-      },
-      {
-        "key": "4",
-        "text": "강박장애와 외상후 스트레스장애가 불안장애 범주에 새로 편입되었다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 반대로 두 장애는 불안장애에서 분리되어 각각 독립된 장이 되었다."
-      },
-      {
-        "key": "5",
-        "text": "특정공포증과 사회불안장애에서 성인이 공포의 과도함을 스스로 인식해야 한다는 요건이 삭제되고, 6개월 기간 기준이 전 연령으로 확대되었다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 임상가가 과도성을 판단하고, 일시적 공포를 거르기 위해 기간 기준을 모든 연령에 적용했다."
-      }
-    ],
-    "answer": [
-      "1",
-      "3",
-      "5"
-    ],
-    "explanation": "DSM-5는 분리불안장애와 선택적 무언증을 불안장애로 옮기고, 공황장애와 광장공포증을 분리했으며, 병식 요건 삭제와 기간 기준 확대, 사회불안장애 명시자 변경을 도입했다. DSM-5-TR에서는 불안장애 진단기준의 큰 구조적 변화는 없는 것으로 알려져 있으나 세부 문구 수정은 원문으로 확인이 필요하다.",
-    "theory": "DSM-IV와 DSM-5 불안장애 비교",
-    "concept": "개관-DSM 판 변화",
-    "sources": [
-      {
-        "source_name": "레이던대학교 학술저장소(DSM-5 및 ICD-11 선택적 무언증 기준 비교 표)",
-        "ref": "https://scholarlypublications.universiteitleiden.nl/access/item%3A3256468/view",
-        "unit": "선택적 무언증 진단기준",
-        "basis": "말이 기대되는 특정 사회적 상황에서 일관되게 말하지 못하며, 지속기간은 최소 1개월이고 입학 후 첫 1개월에 국한되지 않아야 함. DSM-5에서 불안장애로 분류",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "NCBI StatPearls",
-        "ref": "https://www.ncbi.nlm.nih.gov/books/NBK554387/",
-        "unit": "Agoraphobia",
-        "basis": "대중교통, 열린 공간, 닫힌 공간, 줄서기나 군중, 집 밖에 혼자 있기의 5가지 상황 중 2가지 이상에서 현저한 공포, 6개월 이상 지속, DSM-5 이후 공황장애와 독립적으로 진단",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "NCBI Bookshelf(StatPearls 및 SAMHSA DSM-5 변경 표)",
-        "ref": "https://www.ncbi.nlm.nih.gov/books/NBK560793/",
-        "unit": "Separation Anxiety Disorder",
-        "basis": "DSM-5에서 성인기에 처음 진단되는 경우까지 포함하도록 확대되었고 18세 이전 발병 요건이 삭제되었으며, 발달상 정상적인 분리불안은 대개 생후 6~12개월 무렵 나타남. 성인 기간 기준은 대체로 6개월",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
-        "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
-        "unit": "DSM-5 불안장애 주요 변화",
-        "basis": "병식 요건 삭제, 기간 기준 확대, 명시자 변경",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L4-017",
+  "domain": "anxiety",
+  "disorder": "gad",
+  "related": [],
+  "level": 4,
+  "type": "multi",
+  "polarity": "correct",
+  "case": "42세 T씨는 매일 밤 잠자리에 누우면 회사가 구조조정을 하면 어쩌지, 그러면 대출은 어떻게 갚지 같은 생각을 마치 혼잣말을 되뇌듯 이어 간다. 그는 걱정을 하는 동안에는 오히려 끔찍한 장면이 떠오르지 않아 덜 무섭다고 느낀다. 치료자가 최악의 장면을 생생하게 상상해 보라고 하자 몹시 불안해하며 차라리 걱정하는 게 낫다고 말했다.",
+  "stem": "T씨의 걱정을 설명하는 이론과 개입으로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "T씨가 걱정을 하는 동안 덜 무섭다고 느끼는 것은 Borkovec의 이론과 모순된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 걱정이 위협 심상과 신체적 각성을 줄여 덜 무섭게 느끼게 한다는 것이 바로 Borkovec 이론의 예측이다."
+   },
+   {
+    "key": "2",
+    "text": "Borkovec의 이론으로 보면 T씨는 언어적 걱정으로 위협 심상을 회피하고 있으며, 그로 인한 신체적 불안 감소가 걱정을 부적 강화한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. T씨의 진술은 걱정의 회피 기능을 잘 보여 준다."
+   },
+   {
+    "key": "3",
+    "text": "Borkovec에 따르면 T씨의 걱정은 주로 생생한 심상 형태로 이루어진다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. T씨는 혼잣말을 되뇌듯 걱정하며, Borkovec은 걱정이 주로 언어적 사고라고 본다."
+   },
+   {
+    "key": "4",
+    "text": "걱정은 공포의 정서처리를 막아 위협의 의미가 수정되지 않고 유지되게 한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 공포 구조가 충분히 활성화되지 않으면 교정 정보가 통합되지 못한다."
+   },
+   {
+    "key": "5",
+    "text": "최악의 장면을 생생하게 떠올리고 머무르게 하는 걱정 노출은 회피되어 온 정서처리를 촉진하는 개입이다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 걱정 노출은 언어적 걱정으로 회피하던 심상에 직접 노출시켜 습관화와 정서처리를 돕는다."
+   }
+  ],
+  "answer": [
+   "2",
+   "4",
+   "5"
+  ],
+  "explanation": "T씨의 걱정은 언어적 사고로 위협 심상을 회피하는 기능을 하며 신체적 불안 감소로 부적 강화된다. 걱정 노출은 회피된 심상에 직접 노출시킨다.",
+  "theory": "Borkovec 걱정의 회피이론",
+  "concept": "범불안-회피이론 사례",
+  "sources": [
+   {
+    "source_name": "켄트대학교 연구저장소 및 PMC 게재 논문",
+    "ref": "https://kar.kent.ac.uk/id/document/3203",
+    "unit": "Borkovec 걱정의 회피이론",
+    "basis": "걱정은 주로 언어적 사고이며 위협 심상을 줄이고 신체적 각성을 둔화시켜 부적 강화되고 정서처리를 방해함. Newman과 Llera의 대비회피 모형은 걱정이 오히려 각성을 높이고 유지한다고 봄",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L5-014",
-    "domain": "anxiety",
-    "disorder": "social_anxiety",
-    "related": [],
-    "level": 5,
-    "type": "multi",
-    "polarity": "correct",
-    "case": "24세 X씨는 고등학생 때부터 수업 중 발표, 처음 만나는 사람과의 대화, 단체 식사를 피해 왔다. 그는 자신이 말하면 다들 바보 같다고 생각할 것이라고 확신하지만, 친한 친구 두 명과는 편하게 농담을 주고받는다. 취업 면접을 세 번 연속 포기한 뒤로 최근 3주 동안은 거의 매일 우울하고 잠이 많아졌으며 자신을 아무 데도 쓸모없는 사람이라고 말한다. 부모에 따르면 어린 시절 언어 발달, 눈맞춤, 놀이 발달에는 문제가 없었다.",
-    "stem": "X씨에 대한 판단으로 옳은 것을 모두 고르시오.",
-    "options": [
-      {
-        "key": "1",
-        "text": "친한 친구 두 명이 있으므로 사회불안장애 진단은 배제된다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 사회불안장애 환자도 친숙한 사람과는 편하게 지내는 경우가 많으며, 진단은 낯선 사람이나 평가 상황에서의 공포로 판단한다."
-      },
-      {
-        "key": "2",
-        "text": "청소년기부터 지속된 여러 사회적 상황에서의 부정적 평가에 대한 공포와 회피는 사회불안장애 가능성을 시사한다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 발병 시기, 두려움의 초점, 상황의 범위가 모두 부합한다."
-      },
-      {
-        "key": "3",
-        "text": "현재 정보만으로 사회불안장애 대신 회피성 성격장애를 확정 진단해야 한다.",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "틀렸다. 회피성 성격장애는 전반적 부적절감과 거절 민감성이 광범위한 패턴으로 확인되어야 하며, 현재 정보로는 확정할 수 없다. 두 장애는 공존할 수도 있다."
-      },
-      {
-        "key": "4",
-        "text": "정상적인 발달력과 친한 친구와의 상호적 관계를 고려하면 자폐스펙트럼장애의 가능성은 낮다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 사회적 의사소통의 전반적 결함이 없다는 점이 감별 근거다."
-      },
-      {
-        "key": "5",
-        "text": "최근 3주간의 우울 기분, 과다수면, 무가치감은 주요우울삽화 가능성을 시사하므로 우울장애의 공존을 평가해야 한다.",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "옳다. 2주 이상 지속된 우울 증상이 있고, 사회불안장애는 우울장애와 공존이 흔하다."
-      }
-    ],
-    "answer": [
-      "2",
-      "4",
-      "5"
-    ],
-    "explanation": "X씨는 사회불안장애 가능성이 높고 자폐스펙트럼장애 가능성은 낮으며, 최근의 우울 증상은 공존 우울장애로 평가해야 한다. 회피성 성격장애는 정보가 더 필요하다.",
-    "theory": "사회불안장애 복합 감별",
-    "concept": "사회불안-복수장애 감별 사례",
-    "sources": [
-      {
-        "source_name": "NCBI Bookshelf(SAMHSA DSM-5 변경 표) 및 StatPearls",
-        "ref": "https://www.ncbi.nlm.nih.gov/books/NBK519712/table/ch3.t12/",
-        "unit": "Social Anxiety Disorder",
-        "basis": "아동의 불안은 성인과의 상호작용뿐 아니라 또래 상황에서도 나타나야 하고, 기간은 대체로 6개월 이상이며, 공포가 대중 앞에서 말하거나 수행하는 상황에 국한되면 수행 시 한정 명시자를 붙임",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
-        "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
-        "unit": "사회불안장애 감별과 공존",
-        "basis": "회피성 성격장애, 자폐스펙트럼장애, 우울장애",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L4-018",
+  "domain": "anxiety",
+  "disorder": "separation_anxiety",
+  "related": [],
+  "level": 4,
+  "type": "multi",
+  "polarity": "correct",
+  "case": "35세 U씨는 결혼 후 남편이 출장을 가면 사고가 나서 돌아오지 못할 것이라는 생각에 하루에도 수십 번 전화를 걸고, 남편이 받지 않으면 극심한 공포에 휩싸인다. 남편이 출장을 갈 때마다 두통과 구토가 생기고, 남편 없이 혼자 자지 못해 친정에 가서 잔다. 이런 양상은 1년 이상 지속되었고 직장 생활에도 지장을 주고 있다. 어린 시절 부모와 떨어질 때 특별히 힘들었는지는 기억하지 못한다.",
+  "stem": "U씨에 대한 판단으로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "애착대상의 안전에 대한 걱정, 분리 시 신체 증상, 혼자 자기 거부 등이 6개월 이상 지속되어 성인 분리불안장애를 고려할 수 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 3가지 이상의 증상과 성인 기간 기준, 기능 손상이 확인된다."
+   },
+   {
+    "key": "2",
+    "text": "아동기의 분리불안 병력이 확인되지 않으므로 분리불안장애로 진단할 수 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. DSM-5는 성인기 첫 발병을 인정하므로 아동기 병력은 필수가 아니다."
+   },
+   {
+    "key": "3",
+    "text": "의존성 성격장애와 감별해야 하는데, 의존성 성격장애는 돌봄을 받으려는 광범위한 욕구와 결정 곤란이 특징이고 분리불안장애는 애착대상의 안전과 분리에 초점이 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 두려움의 범위와 초점이 감별의 핵심이다."
+   },
+   {
+    "key": "4",
+    "text": "걱정의 내용이 남편의 사고이므로 범불안장애가 더 적합하다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 걱정이 애착대상과의 분리 및 그의 안전에 집중되어 있고 여러 영역으로 퍼져 있지 않으므로 분리불안장애가 더 잘 설명한다."
+   },
+   {
+    "key": "5",
+    "text": "반복적인 확인 전화는 분리 관련 불안을 일시적으로 줄이는 안심추구 행동으로, 치료에서 점진적으로 줄여 갈 표적이 될 수 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 안심추구는 단기적으로 불안을 줄이지만 장기적으로 불안을 유지시킨다."
+   }
+  ],
+  "answer": [
+   "1",
+   "3",
+   "5"
+  ],
+  "explanation": "U씨는 성인 분리불안장애의 전형적 사례다. 아동기 병력은 필수가 아니며, 의존성 성격장애나 범불안장애와는 두려움의 초점과 범위로 감별한다.",
+  "theory": "DSM-5 성인 분리불안장애",
+  "concept": "분리불안-성인 사례",
+  "sources": [
+   {
+    "source_name": "Cleveland Clinic",
+    "ref": "https://my.clevelandclinic.org/health/diseases/separation-anxiety-disorder",
+    "unit": "Separation Anxiety Disorder",
+    "basis": "8가지 증상 중 3가지 이상, 아동은 최소 4주, 성인은 6개월 이상 지속, 임상적으로 의미 있는 고통이나 기능 손상",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "ANX-L5-015",
-    "domain": "anxiety",
-    "disorder": "specific_phobia",
-    "related": [],
-    "level": 5,
-    "type": "multi",
-    "polarity": "incorrect",
-    "case": null,
-    "stem": "공포증에 대한 이론적 관점의 비교로 옳지 않은 것을 모두 고르시오.",
-    "options": [
-      {
-        "key": "1",
-        "text": "행동주의 치료로 공포 증상만 제거하면 다른 증상이 대신 나타나는 증상 대체가 필연적으로 일어난다는 것이 행동주의자들의 핵심 주장이다.",
-        "is_true": false,
-        "in_answer": true,
-        "explanation": "옳지 않은 진술이다. 증상 대체는 정신분석 쪽에서 행동치료를 비판하며 제기한 예측이며, 행동주의자들은 이를 부정했고 경험적 연구도 이를 일관되게 지지하지 않았다."
-      },
-      {
-        "key": "2",
-        "text": "정신분석적 관점에서 공포 대상은 무의식적 갈등이 전치된 상징으로 이해된다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 진술이다. 꼬마 한스 사례가 대표적이다."
-      },
-      {
-        "key": "3",
-        "text": "정신분석적 관점은 불안을 현실적 위험에 대한 적응적 반응으로만 보아 불안장애의 무의식적 원인을 부정한다.",
-        "is_true": false,
-        "in_answer": true,
-        "explanation": "옳지 않은 진술이다. 정신분석은 신경증적 불안의 원천을 무의식적 갈등에서 찾는다."
-      },
-      {
-        "key": "4",
-        "text": "인지적 관점은 위험의 과대평가와 대처 능력의 과소평가가 공포를 유지시킨다고 본다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 진술이다. Beck의 인지이론이 대표적이다."
-      },
-      {
-        "key": "5",
-        "text": "생물학적 관점에서는 편도체 중심의 공포 회로 과민성과 낯선 상황에서 위축되는 기질인 행동억제를 공포증의 취약성으로 설명한다.",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "옳은 진술이다. Kagan의 행동억제 기질은 이후 불안장애의 위험요인으로 보고되었다."
-      }
-    ],
-    "answer": [
-      "1",
-      "3"
-    ],
-    "explanation": "정신분석은 무의식적 갈등과 전치, 행동주의는 조건형성과 회피, 인지 관점은 위험 평가, 생물학적 관점은 공포 회로와 기질을 강조한다. 증상 대체는 정신분석 측의 비판이었다.",
-    "theory": "공포증 이론의 비교",
-    "concept": "특정공포-이론 관점 비교",
-    "sources": [
-      {
-        "source_name": "Kagan, J., Reznick, J. S., & Snidman, N. (1988). Biological bases of childhood shyness. Science, 240, 167-171",
-        "ref": "Science, 240, 167-171",
-        "unit": "행동억제 기질",
-        "basis": "낯선 상황에서 위축되는 기질",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "Beck, A. T., Emery, G., & Greenberg, R. L. (1985). Anxiety Disorders and Phobias: A Cognitive Perspective. Basic Books",
-        "ref": "Basic Books",
-        "unit": "불안의 인지모형",
-        "basis": "위험 과대평가와 대처 과소평가",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   },
+   {
+    "source_name": "NCBI Bookshelf(StatPearls 및 SAMHSA DSM-5 변경 표)",
+    "ref": "https://www.ncbi.nlm.nih.gov/books/NBK560793/",
+    "unit": "Separation Anxiety Disorder",
+    "basis": "DSM-5에서 성인기에 처음 진단되는 경우까지 포함하도록 확대되었고 18세 이전 발병 요건이 삭제되었으며, 발달상 정상적인 분리불안은 대개 생후 6~12개월 무렵 나타남. 성인 기간 기준은 대체로 6개월",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  }
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L4-019",
+  "domain": "anxiety",
+  "disorder": "specific_phobia",
+  "related": [],
+  "level": 4,
+  "type": "single",
+  "polarity": "correct",
+  "case": "4세 V양은 최근 2주 동안 밤마다 괴물이 나올 것 같다며 불을 켜 달라고 하고 부모 방에 오려 한다. 낮에는 유치원에서 잘 지내며 친구들과도 활발히 논다. 부모는 이것이 공포증인지 걱정하며 상담을 요청했다.",
+  "stem": "V양에 대한 판단으로 가장 적절한 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "어둠에 대한 두려움이므로 특정공포증 자연환경형으로 바로 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 지속기간이 2주로 짧고 기능 손상도 미미하여 특정공포증 기준을 충족하지 않는다."
+   },
+   {
+    "key": "2",
+    "text": "밤에 부모 방에 오려 하므로 분리불안장애로 확정한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 낮에 유치원에서 잘 지내며 분리 자체에 대한 고통이 뚜렷하지 않고, 아동 기간 기준인 4주도 충족하지 않는다."
+   },
+   {
+    "key": "3",
+    "text": "공포를 표현할 때마다 무시하거나 혼내어 공포 반응을 소거시킨다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 처벌이나 무시는 불안을 높이고 아동의 정서 표현을 위축시킬 수 있다."
+   },
+   {
+    "key": "4",
+    "text": "어둠이나 상상 속 존재에 대한 공포는 학령전기에 흔한 발달적 공포이며, 기간이 짧고 기능 손상이 미미하므로 장애로 진단할 근거가 부족하다. 경과를 관찰하며 부모에게 대처 방법을 안내한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 발달적으로 흔한 공포와 장애를 구분하고, 정보가 부족할 때는 진단을 유보하며 지켜보는 것이 적절하다."
+   },
+   {
+    "key": "5",
+    "text": "불을 켜 주는 것은 공포를 강화하므로 절대 금지하고 홍수법으로 어두운 방에 혼자 두어야 한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 학령전기 아동의 정상적 공포에 홍수법을 적용하는 것은 부적절하며 오히려 공포를 키울 수 있다."
+   }
+  ],
+  "answer": [
+   "4"
+  ],
+  "explanation": "아동기에는 어둠, 상상 속 존재, 동물 등에 대한 공포가 흔하다. 기간과 정도, 기능 손상을 기준으로 장애와 정상 발달을 구분한다.",
+  "theory": "아동기 발달적 공포",
+  "concept": "특정공포-발달적 공포 구분",
+  "sources": [
+   {
+    "source_name": "NCBI Bookshelf(SAMHSA DSM-5 표) 및 펜실베이니아대학교 불안치료연구센터 자료",
+    "ref": "https://www.ncbi.nlm.nih.gov/books/NBK519704/table/ch3.t11/",
+    "unit": "Specific Phobia",
+    "basis": "동물형, 자연환경형, 혈액-주사-손상형, 상황형과 기타형으로 구분하고 대체로 6개월 이상 지속. 혈액-주사-손상형은 심박과 혈압이 잠시 상승한 뒤 떨어지는 혈관미주신경성 실신 반응이 흔하며 성차가 다른 유형보다 작음",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
+    "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
+    "unit": "특정공포증 발달과 경과",
+    "basis": "아동기 일시적 공포는 흔함, 6개월 기준이 일시적 공포를 구별",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L4-020",
+  "domain": "anxiety",
+  "disorder": "gad",
+  "related": [],
+  "level": 4,
+  "type": "multi",
+  "polarity": "incorrect",
+  "case": "27세 W씨는 가스 밸브를 잠갔는지 의심이 들면 집을 나섰다가도 되돌아가 열 번 넘게 확인한다. 확인하지 않으면 불이 나서 이웃이 다칠 것 같은 생각이 들어 견딜 수 없다고 한다. 그 외에도 업무 마감, 건강, 경제 문제를 걱정하지만, 그런 걱정은 누구나 하는 정도이고 생활에 큰 지장은 없다고 말한다.",
+  "stem": "W씨에 대한 진단적 판단으로 옳지 않은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "가스 밸브에 대한 침투적 의심과 반복적 확인 행동이 있으므로 강박장애 가능성을 우선 평가해야 한다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 판단이다. 침투적 강박사고와 이를 중화하는 강박행동의 조합이다."
+   },
+   {
+    "key": "2",
+    "text": "반복적인 확인 행동은 걱정과 관련되어 있으므로 범불안장애로 가장 잘 설명된다.",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "옳지 않은 판단이다. 범불안장애의 걱정에는 의례적 중화 행동이 일반적으로 따르지 않으며, 확인 행동은 강박장애의 특징이다."
+   },
+   {
+    "key": "3",
+    "text": "다른 걱정들이 과도하거나 통제하기 어렵거나 고통을 주지 않는다면 범불안장애를 추가로 진단할 근거는 부족하다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 판단이다. 일상적인 수준의 걱정은 범불안장애 기준을 충족하지 않는다."
+   },
+   {
+    "key": "4",
+    "text": "이웃이 다칠 것이라는 생각은 Salkovskis가 강조한 팽창된 책임감의 관점에서 이해할 수 있다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 판단이다. Salkovskis는 침투사고를 해로움에 대한 책임으로 해석하는 것이 강박행동을 유발한다고 보았다."
+   },
+   {
+    "key": "5",
+    "text": "확인 행동은 불안을 높이기만 하므로 부적 강화와는 관련이 없다.",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "옳지 않은 판단이다. 확인 행동은 단기적으로 불안을 줄여 부적 강화되며, 이것이 강박행동을 유지시킨다."
+   }
+  ],
+  "answer": [
+   "2",
+   "5"
+  ],
+  "explanation": "W씨의 핵심 문제는 침투적 의심과 확인 강박행동이므로 강박장애를 우선 고려한다. 일상적 수준의 걱정으로는 범불안장애를 진단하지 않는다.",
+  "theory": "범불안장애와 강박장애 감별, Salkovskis 책임감 이론",
+  "concept": "범불안-강박장애 감별 사례",
+  "sources": [
+   {
+    "source_name": "Salkovskis, P. M. (1985). Obsessional-compulsive problems: A cognitive-behavioural analysis. Behaviour Research and Therapy, 23, 571-583",
+    "ref": "Behaviour Research and Therapy, 23, 571-583",
+    "unit": "책임감 이론",
+    "basis": "침투사고에 대한 책임 해석이 중화 행동 유발",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L5-004",
+  "domain": "anxiety",
+  "disorder": "agoraphobia",
+  "related": [],
+  "level": 5,
+  "type": "multi",
+  "polarity": "correct",
+  "case": "32세 F씨는 2년 전 지하철에서 갑자기 숨이 막히고 어지러운 발작을 처음 겪었다. 이후 버스, 지하철, 대형마트, 영화관에 혼자 가지 못하고 가족이 동행할 때만 외출한다. 최근 1년간은 발작이 거의 없었지만 또 쓰러지면 아무도 못 도와줄 것이라는 생각에 회피는 계속되고 있다. 직장 회의에서 발언하는 것도 힘들어하는데, 본인은 회의 중에 발작이 오면 끝이라고 설명한다. 어릴 때는 개를 무서워했지만 지금은 개를 길러도 괜찮다.",
+  "stem": "F씨에 대한 진단적 판단으로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "최근 1년간 발작이 거의 없었으므로 광장공포증 진단은 철회해야 한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 광장공포증은 공황발작의 현재 유무와 독립적으로 진단되며, 회피와 공포가 지속되고 있다."
+   },
+   {
+    "key": "2",
+    "text": "두 가지 이상의 상황 군에서 공포와 회피가 있고 동반자가 필요하며 6개월 이상 지속되어 광장공포증 기준에 부합한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 대중교통과 닫힌 공간 등 여러 상황 군에 걸쳐 있다."
+   },
+   {
+    "key": "3",
+    "text": "회의 발언이 어려운 이유가 부정적 평가보다 발작에 대한 두려움이므로 사회불안장애를 별도로 진단할 근거는 약하다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 두려움의 초점이 평가가 아니라 발작이므로 광장공포증이나 공황 관련 두려움으로 설명된다."
+   },
+   {
+    "key": "4",
+    "text": "공황장애의 진단기준은 현재 정보만으로 확정적으로 충족된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 반복적인 예기치 않은 발작과 그 이후 1개월 이상의 걱정이나 행동 변화에 대한 정보가 충분하지 않고, 최근 1년간은 발작이 거의 없었다. 공황장애 병력은 추가 평가가 필요하다."
+   },
+   {
+    "key": "5",
+    "text": "어릴 때의 개 공포는 현재 기준을 충족하지 않으므로 현재 특정공포증 진단의 근거가 되지 않는다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 과거의 공포는 현재 진단의 근거가 아니며 발달적으로 사라지는 공포도 흔하다."
+   }
+  ],
+  "answer": [
+   "2",
+   "3",
+   "5"
+  ],
+  "explanation": "F씨는 광장공포증 기준에 부합하며 이는 현재 공황발작 여부와 독립적이다. 회의 회피는 두려움의 초점이 발작이므로 사회불안장애 근거가 약하고, 공황장애는 추가 정보가 필요하다.",
+  "theory": "광장공포증, 공황장애, 사회불안장애, 특정공포증 복합 감별",
+  "concept": "광장공포-복수장애 감별 사례",
+  "sources": [
+   {
+    "source_name": "NCBI StatPearls",
+    "ref": "https://www.ncbi.nlm.nih.gov/books/NBK554387/",
+    "unit": "Agoraphobia",
+    "basis": "대중교통, 열린 공간, 닫힌 공간, 줄서기나 군중, 집 밖에 혼자 있기의 5가지 상황 중 2가지 이상에서 현저한 공포, 6개월 이상 지속, DSM-5 이후 공황장애와 독립적으로 진단",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/anxiety-and-stressor-related-disorders/panic-attacks-and-panic-disorder",
+    "unit": "공황발작 및 공황장애",
+    "basis": "공황장애는 반복적이고 예기치 않은 공황발작과 그 이후 1개월 이상의 추가 발작 걱정 또는 부적응적 행동 변화로 진단하며, 공황발작은 13개 증상 중 4개 이상을 포함하고, 갑상선기능항진증이나 급성 관상동맥증후군 같은 의학적 상태와 물질 사용 또는 금단을 배제해야 한다",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L5-013",
+  "domain": "anxiety",
+  "disorder": "anxiety_overview",
+  "related": [],
+  "level": 5,
+  "type": "multi",
+  "polarity": "correct",
+  "case": null,
+  "stem": "DSM-IV에서 DSM-5로 바뀌면서 나타난 불안장애 관련 변화로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "분리불안장애와 선택적 무언증이 유아기·아동기·청소년기에 처음 진단되는 장애 범주에서 불안장애 장으로 이동했다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 두 장애 모두 불안이 핵심이라는 점이 반영되었다."
+   },
+   {
+    "key": "2",
+    "text": "사회불안장애에 일반화형 명시자가 새로 추가되었다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 일반화형 명시자는 DSM-5에서 삭제되었고 대신 수행 시 한정 명시자가 새로 생겼다."
+   },
+   {
+    "key": "3",
+    "text": "광장공포증이 공황장애와 독립된 진단이 되었다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. DSM-IV의 광장공포증을 동반한 공황장애 체계가 폐지되었다."
+   },
+   {
+    "key": "4",
+    "text": "강박장애와 외상후 스트레스장애가 불안장애 범주에 새로 편입되었다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 반대로 두 장애는 불안장애에서 분리되어 각각 독립된 장이 되었다."
+   },
+   {
+    "key": "5",
+    "text": "특정공포증과 사회불안장애에서 성인이 공포의 과도함을 스스로 인식해야 한다는 요건이 삭제되고, 6개월 기간 기준이 전 연령으로 확대되었다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 임상가가 과도성을 판단하고, 일시적 공포를 거르기 위해 기간 기준을 모든 연령에 적용했다."
+   }
+  ],
+  "answer": [
+   "1",
+   "3",
+   "5"
+  ],
+  "explanation": "DSM-5는 분리불안장애와 선택적 무언증을 불안장애로 옮기고, 공황장애와 광장공포증을 분리했으며, 병식 요건 삭제와 기간 기준 확대, 사회불안장애 명시자 변경을 도입했다. DSM-5-TR에서는 불안장애 진단기준의 큰 구조적 변화는 없는 것으로 알려져 있으나 세부 문구 수정은 원문으로 확인이 필요하다.",
+  "theory": "DSM-IV와 DSM-5 불안장애 비교",
+  "concept": "개관-DSM 판 변화",
+  "sources": [
+   {
+    "source_name": "레이던대학교 학술저장소(DSM-5 및 ICD-11 선택적 무언증 기준 비교 표)",
+    "ref": "https://scholarlypublications.universiteitleiden.nl/access/item%3A3256468/view",
+    "unit": "선택적 무언증 진단기준",
+    "basis": "말이 기대되는 특정 사회적 상황에서 일관되게 말하지 못하며, 지속기간은 최소 1개월이고 입학 후 첫 1개월에 국한되지 않아야 함. DSM-5에서 불안장애로 분류",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "NCBI StatPearls",
+    "ref": "https://www.ncbi.nlm.nih.gov/books/NBK554387/",
+    "unit": "Agoraphobia",
+    "basis": "대중교통, 열린 공간, 닫힌 공간, 줄서기나 군중, 집 밖에 혼자 있기의 5가지 상황 중 2가지 이상에서 현저한 공포, 6개월 이상 지속, DSM-5 이후 공황장애와 독립적으로 진단",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "NCBI Bookshelf(StatPearls 및 SAMHSA DSM-5 변경 표)",
+    "ref": "https://www.ncbi.nlm.nih.gov/books/NBK560793/",
+    "unit": "Separation Anxiety Disorder",
+    "basis": "DSM-5에서 성인기에 처음 진단되는 경우까지 포함하도록 확대되었고 18세 이전 발병 요건이 삭제되었으며, 발달상 정상적인 분리불안은 대개 생후 6~12개월 무렵 나타남. 성인 기간 기준은 대체로 6개월",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
+    "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
+    "unit": "DSM-5 불안장애 주요 변화",
+    "basis": "병식 요건 삭제, 기간 기준 확대, 명시자 변경",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L5-014",
+  "domain": "anxiety",
+  "disorder": "social_anxiety",
+  "related": [],
+  "level": 5,
+  "type": "multi",
+  "polarity": "correct",
+  "case": "24세 X씨는 고등학생 때부터 수업 중 발표, 처음 만나는 사람과의 대화, 단체 식사를 피해 왔다. 그는 자신이 말하면 다들 바보 같다고 생각할 것이라고 확신하지만, 친한 친구 두 명과는 편하게 농담을 주고받는다. 취업 면접을 세 번 연속 포기한 뒤로 최근 3주 동안은 거의 매일 우울하고 잠이 많아졌으며 자신을 아무 데도 쓸모없는 사람이라고 말한다. 부모에 따르면 어린 시절 언어 발달, 눈맞춤, 놀이 발달에는 문제가 없었다.",
+  "stem": "X씨에 대한 판단으로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "친한 친구 두 명이 있으므로 사회불안장애 진단은 배제된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 사회불안장애 환자도 친숙한 사람과는 편하게 지내는 경우가 많으며, 진단은 낯선 사람이나 평가 상황에서의 공포로 판단한다."
+   },
+   {
+    "key": "2",
+    "text": "청소년기부터 지속된 여러 사회적 상황에서의 부정적 평가에 대한 공포와 회피는 사회불안장애 가능성을 시사한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 발병 시기, 두려움의 초점, 상황의 범위가 모두 부합한다."
+   },
+   {
+    "key": "3",
+    "text": "현재 정보만으로 사회불안장애 대신 회피성 성격장애를 확정 진단해야 한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀렸다. 회피성 성격장애는 전반적 부적절감과 거절 민감성이 광범위한 패턴으로 확인되어야 하며, 현재 정보로는 확정할 수 없다. 두 장애는 공존할 수도 있다."
+   },
+   {
+    "key": "4",
+    "text": "정상적인 발달력과 친한 친구와의 상호적 관계를 고려하면 자폐스펙트럼장애의 가능성은 낮다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 사회적 의사소통의 전반적 결함이 없다는 점이 감별 근거다."
+   },
+   {
+    "key": "5",
+    "text": "최근 3주간의 우울 기분, 과다수면, 무가치감은 주요우울삽화 가능성을 시사하므로 우울장애의 공존을 평가해야 한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 2주 이상 지속된 우울 증상이 있고, 사회불안장애는 우울장애와 공존이 흔하다."
+   }
+  ],
+  "answer": [
+   "2",
+   "4",
+   "5"
+  ],
+  "explanation": "X씨는 사회불안장애 가능성이 높고 자폐스펙트럼장애 가능성은 낮으며, 최근의 우울 증상은 공존 우울장애로 평가해야 한다. 회피성 성격장애는 정보가 더 필요하다.",
+  "theory": "사회불안장애 복합 감별",
+  "concept": "사회불안-복수장애 감별 사례",
+  "sources": [
+   {
+    "source_name": "NCBI Bookshelf(SAMHSA DSM-5 변경 표) 및 StatPearls",
+    "ref": "https://www.ncbi.nlm.nih.gov/books/NBK519712/table/ch3.t12/",
+    "unit": "Social Anxiety Disorder",
+    "basis": "아동의 불안은 성인과의 상호작용뿐 아니라 또래 상황에서도 나타나야 하고, 기간은 대체로 6개월 이상이며, 공포가 대중 앞에서 말하거나 수행하는 상황에 국한되면 수행 시 한정 명시자를 붙임",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "American Psychiatric Association. DSM-5 (2013) 및 DSM-5-TR (2022)",
+    "ref": "American Psychiatric Association. Diagnostic and Statistical Manual of Mental Disorders, 5th ed. / 5th ed. text revision",
+    "unit": "사회불안장애 감별과 공존",
+    "basis": "회피성 성격장애, 자폐스펙트럼장애, 우울장애",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "ANX-L5-015",
+  "domain": "anxiety",
+  "disorder": "specific_phobia",
+  "related": [],
+  "level": 5,
+  "type": "multi",
+  "polarity": "incorrect",
+  "case": null,
+  "stem": "공포증에 대한 이론적 관점의 비교로 옳지 않은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "행동주의 치료로 공포 증상만 제거하면 다른 증상이 대신 나타나는 증상 대체가 필연적으로 일어난다는 것이 행동주의자들의 핵심 주장이다.",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "옳지 않은 진술이다. 증상 대체는 정신분석 쪽에서 행동치료를 비판하며 제기한 예측이며, 행동주의자들은 이를 부정했고 경험적 연구도 이를 일관되게 지지하지 않았다."
+   },
+   {
+    "key": "2",
+    "text": "정신분석적 관점에서 공포 대상은 무의식적 갈등이 전치된 상징으로 이해된다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 진술이다. 꼬마 한스 사례가 대표적이다."
+   },
+   {
+    "key": "3",
+    "text": "정신분석적 관점은 불안을 현실적 위험에 대한 적응적 반응으로만 보아 불안장애의 무의식적 원인을 부정한다.",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "옳지 않은 진술이다. 정신분석은 신경증적 불안의 원천을 무의식적 갈등에서 찾는다."
+   },
+   {
+    "key": "4",
+    "text": "인지적 관점은 위험의 과대평가와 대처 능력의 과소평가가 공포를 유지시킨다고 본다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 진술이다. Beck의 인지이론이 대표적이다."
+   },
+   {
+    "key": "5",
+    "text": "생물학적 관점에서는 편도체 중심의 공포 회로 과민성과 낯선 상황에서 위축되는 기질인 행동억제를 공포증의 취약성으로 설명한다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 진술이다. Kagan의 행동억제 기질은 이후 불안장애의 위험요인으로 보고되었다."
+   }
+  ],
+  "answer": [
+   "1",
+   "3"
+  ],
+  "explanation": "정신분석은 무의식적 갈등과 전치, 행동주의는 조건형성과 회피, 인지 관점은 위험 평가, 생물학적 관점은 공포 회로와 기질을 강조한다. 증상 대체는 정신분석 측의 비판이었다.",
+  "theory": "공포증 이론의 비교",
+  "concept": "특정공포-이론 관점 비교",
+  "sources": [
+   {
+    "source_name": "Kagan, J., Reznick, J. S., & Snidman, N. (1988). Biological bases of childhood shyness. Science, 240, 167-171",
+    "ref": "Science, 240, 167-171",
+    "unit": "행동억제 기질",
+    "basis": "낯선 상황에서 위축되는 기질",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "Beck, A. T., Emery, G., & Greenberg, R. L. (1985). Anxiety Disorders and Phobias: A Cognitive Perspective. Basic Books",
+    "ref": "Basic Books",
+    "unit": "불안의 인지모형",
+    "basis": "위험 과대평가와 대처 과소평가",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ }
 ]

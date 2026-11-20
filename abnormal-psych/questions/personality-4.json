@@ -1,1929 +1,1954 @@
 [
-  {
-    "id": "PD-L1-016",
-    "domain": "personality",
-    "disorder": "antisocial",
-    "related": [],
-    "level": 1,
-    "type": "ox",
-    "polarity": "correct",
-    "case": null,
-    "stem": "Hare의 사이코패시 체크리스트 개정판은 20개 문항을 각각 0점, 1점, 2점으로 평정하며 총점 범위는 0점에서 40점이다.",
-    "options": [
-      {
-        "key": "O",
-        "text": "O, 옳다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "정답입니다. PCL-R은 면담과 기록 검토를 바탕으로 20문항을 3점 척도로 평정한다. 전통적으로 대인관계 정서 요인과 생활양식 반사회성 요인의 두 요인 구조로 설명되며, 북미 연구에서는 30점을 흔히 절단점으로 사용한다."
-      },
-      {
-        "key": "X",
-        "text": "X, 옳지 않다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "오답입니다. PCL-R은 면담과 기록 검토를 바탕으로 20문항을 3점 척도로 평정한다. 전통적으로 대인관계 정서 요인과 생활양식 반사회성 요인의 두 요인 구조로 설명되며, 북미 연구에서는 30점을 흔히 절단점으로 사용한다."
-      }
-    ],
-    "answer": [
-      "O"
-    ],
-    "theory": "Hare PCL-R",
-    "concept": "반사회성-PCLR-구조",
-    "explanation": "PCL-R은 자기보고식이 아니라 반구조화 면담과 부수 정보에 근거한 임상가 평정 도구라는 점도 함께 기억하자.",
-    "sources": [
-      {
-        "source_name": "University of Wisconsin 척도 자료 및 PMC 표",
-        "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2242629/",
-        "unit": "Hare 사이코패시 체크리스트 개정판",
-        "basis": "20문항을 0, 1, 2점으로 평정하여 총점 0에서 40점. 요인 1 대인관계 정서, 요인 2 생활양식 반사회성",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "출처확인",
+ {
+  "id": "PD-L1-016",
+  "domain": "personality",
+  "disorder": "antisocial",
+  "related": [],
+  "level": 1,
+  "type": "ox",
+  "polarity": "correct",
+  "case": null,
+  "stem": "Hare의 사이코패시 체크리스트 개정판은 20개 문항을 각각 0점, 1점, 2점으로 평정하며 총점 범위는 0점에서 40점이다.",
+  "options": [
+   {
+    "key": "O",
+    "text": "O, 옳다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "정답입니다. PCL-R은 면담과 기록 검토를 바탕으로 20문항을 3점 척도로 평정한다. 전통적으로 대인관계 정서 요인과 생활양식 반사회성 요인의 두 요인 구조로 설명되며, 북미 연구에서는 30점을 흔히 절단점으로 사용한다."
+   },
+   {
+    "key": "X",
+    "text": "X, 옳지 않다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "오답입니다. PCL-R은 면담과 기록 검토를 바탕으로 20문항을 3점 척도로 평정한다. 전통적으로 대인관계 정서 요인과 생활양식 반사회성 요인의 두 요인 구조로 설명되며, 북미 연구에서는 30점을 흔히 절단점으로 사용한다."
+   }
+  ],
+  "answer": [
+   "O"
+  ],
+  "theory": "Hare PCL-R",
+  "concept": "반사회성-PCLR-구조",
+  "explanation": "PCL-R은 자기보고식이 아니라 반구조화 면담과 부수 정보에 근거한 임상가 평정 도구라는 점도 함께 기억하자.",
+  "sources": [
+   {
+    "source_name": "University of Wisconsin 척도 자료 및 PMC 표",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2242629/",
+    "unit": "Hare 사이코패시 체크리스트 개정판",
+    "basis": "20문항을 0, 1, 2점으로 평정하여 총점 0에서 40점. 요인 1 대인관계 정서, 요인 2 생활양식 반사회성",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L1-017",
-    "domain": "personality",
-    "disorder": "antisocial",
-    "related": [],
-    "level": 1,
-    "type": "ox",
-    "polarity": "correct",
-    "case": null,
-    "stem": "DSM-5의 반사회성 성격장애와 Hare가 말하는 사이코패시는 같은 대상을 가리키는 동일한 개념이다.",
-    "options": [
-      {
-        "key": "O",
-        "text": "O, 옳다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "오답입니다. 반사회성 성격장애는 범법, 기만, 충동성 같은 행동 중심 기준으로 정의되는 반면, 사이코패시는 피상적 매력, 공감과 죄책감 결여, 얕은 정서 같은 정서적 대인관계 특징을 포함하는 더 좁은 개념이다. 반사회성 진단자 중 일부만 사이코패시 기준을 충족한다."
-      },
-      {
-        "key": "X",
-        "text": "X, 옳지 않다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "정답입니다. 반사회성 성격장애는 범법, 기만, 충동성 같은 행동 중심 기준으로 정의되는 반면, 사이코패시는 피상적 매력, 공감과 죄책감 결여, 얕은 정서 같은 정서적 대인관계 특징을 포함하는 더 좁은 개념이다. 반사회성 진단자 중 일부만 사이코패시 기준을 충족한다."
-      }
-    ],
-    "answer": [
-      "X"
-    ],
-    "theory": "반사회성 성격장애와 사이코패시",
-    "concept": "반사회성-사이코패시-구분",
-    "explanation": "Cleckley의 임상 기술과 Hare의 PCL-R은 정서적 대인관계 특징을 강조한다. DSM-5 대안모형의 반사회성에는 사이코패시 특성을 명시하는 지정자가 있다.",
-    "sources": [
-      {
-        "source_name": "University of Wisconsin 척도 자료 및 PMC 표",
-        "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2242629/",
-        "unit": "Hare 사이코패시 체크리스트 개정판",
-        "basis": "20문항을 0, 1, 2점으로 평정하여 총점 0에서 40점. 요인 1 대인관계 정서, 요인 2 생활양식 반사회성",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "Cleckley와 낮은 각성 이론(모델 지식)",
-        "ref": "Cleckley, The Mask of Sanity 1941; Lykken 1957",
-        "unit": "사이코패시 개념",
-        "basis": "사이코패시의 정서적 대인관계 특징, 낮은 불안과 공포 조건형성 결함, 자극 추구",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L1-017",
+  "domain": "personality",
+  "disorder": "antisocial",
+  "related": [],
+  "level": 1,
+  "type": "ox",
+  "polarity": "correct",
+  "case": null,
+  "stem": "DSM-5의 반사회성 성격장애와 Hare가 말하는 사이코패시는 같은 대상을 가리키는 동일한 개념이다.",
+  "options": [
+   {
+    "key": "O",
+    "text": "O, 옳다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "오답입니다. 반사회성 성격장애는 범법, 기만, 충동성 같은 행동 중심 기준으로 정의되는 반면, 사이코패시는 피상적 매력, 공감과 죄책감 결여, 얕은 정서 같은 정서적 대인관계 특징을 포함하는 더 좁은 개념이다. 반사회성 진단자 중 일부만 사이코패시 기준을 충족한다."
+   },
+   {
+    "key": "X",
+    "text": "X, 옳지 않다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "정답입니다. 반사회성 성격장애는 범법, 기만, 충동성 같은 행동 중심 기준으로 정의되는 반면, 사이코패시는 피상적 매력, 공감과 죄책감 결여, 얕은 정서 같은 정서적 대인관계 특징을 포함하는 더 좁은 개념이다. 반사회성 진단자 중 일부만 사이코패시 기준을 충족한다."
+   }
+  ],
+  "answer": [
+   "X"
+  ],
+  "theory": "반사회성 성격장애와 사이코패시",
+  "concept": "반사회성-사이코패시-구분",
+  "explanation": "Cleckley의 임상 기술과 Hare의 PCL-R은 정서적 대인관계 특징을 강조한다. DSM-5 대안모형의 반사회성에는 사이코패시 특성을 명시하는 지정자가 있다.",
+  "sources": [
+   {
+    "source_name": "University of Wisconsin 척도 자료 및 PMC 표",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2242629/",
+    "unit": "Hare 사이코패시 체크리스트 개정판",
+    "basis": "20문항을 0, 1, 2점으로 평정하여 총점 0에서 40점. 요인 1 대인관계 정서, 요인 2 생활양식 반사회성",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L1-018",
-    "domain": "personality",
-    "disorder": "narcissistic",
-    "related": [],
-    "level": 1,
-    "type": "ox",
-    "polarity": "correct",
-    "case": null,
-    "stem": "Kohut은 자기애성 성격 병리를 체질적으로 과도한 공격성과 이에 대한 방어로 형성된 병리적 거대자기로 설명했다.",
-    "options": [
-      {
-        "key": "O",
-        "text": "O, 옳다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "오답입니다. 체질적 공격성과 병리적 거대자기는 Kernberg의 설명이다. Kohut은 부모가 거울 자기대상과 이상화 자기대상의 공감적 기능을 충분히 제공하지 못해 자기의 정상 발달이 정지된 결과로 보았다."
-      },
-      {
-        "key": "X",
-        "text": "X, 옳지 않다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "정답입니다. 체질적 공격성과 병리적 거대자기는 Kernberg의 설명이다. Kohut은 부모가 거울 자기대상과 이상화 자기대상의 공감적 기능을 충분히 제공하지 못해 자기의 정상 발달이 정지된 결과로 보았다."
-      }
-    ],
-    "answer": [
-      "X"
-    ],
-    "theory": "Kohut과 Kernberg의 자기애 이론",
-    "concept": "자기애성-Kohut-Kernberg혼동",
-    "explanation": "Kohut은 결핍과 발달 정지, Kernberg는 갈등과 방어 구조를 강조한다. 이 대비가 자기애성 이론 문항의 가장 흔한 함정이다.",
-    "sources": [
-      {
-        "source_name": "정신역동 성격장애 이론(모델 지식)",
-        "ref": "Kernberg 1975; Kohut 1971, 1977; Masterson 1976; Mahler 1975",
-        "unit": "정신역동적 설명",
-        "basis": "Kernberg 경계선 성격조직, Kohut 자기대상, Masterson 버림받음 우울, Mahler 재접근기",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   },
+   {
+    "source_name": "Cleckley와 낮은 각성 이론(모델 지식)",
+    "ref": "Cleckley, The Mask of Sanity 1941; Lykken 1957",
+    "unit": "사이코패시 개념",
+    "basis": "사이코패시의 정서적 대인관계 특징, 낮은 불안과 공포 조건형성 결함, 자극 추구",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L1-019",
-    "domain": "personality",
-    "disorder": "histrionic",
-    "related": [
-      "pd_alternative_model"
-    ],
-    "level": 1,
-    "type": "ox",
-    "polarity": "correct",
-    "case": null,
-    "stem": "연극성 성격장애는 DSM-5 성격장애 대안모형의 6개 특정 성격장애 중 하나로 정의되어 있다.",
-    "options": [
-      {
-        "key": "O",
-        "text": "O, 옳다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "오답입니다. 대안모형의 6개 특정 성격장애는 반사회성, 회피성, 경계성, 자기애성, 강박성, 조현형이다. 연극성은 편집성, 조현성, 의존성과 함께 제외되어 특성 명시 성격장애로 기술된다."
-      },
-      {
-        "key": "X",
-        "text": "X, 옳지 않다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "정답입니다. 대안모형의 6개 특정 성격장애는 반사회성, 회피성, 경계성, 자기애성, 강박성, 조현형이다. 연극성은 편집성, 조현성, 의존성과 함께 제외되어 특성 명시 성격장애로 기술된다."
-      }
-    ],
-    "answer": [
-      "X"
-    ],
-    "theory": "대안모형의 특정 성격장애",
-    "concept": "연극성-대안모형제외",
-    "explanation": "대안모형에서 제외된 4개 장애는 편집성, 조현성, 연극성, 의존성이다.",
-    "sources": [
-      {
-        "source_name": "Krueger와 Hobbs 리뷰 및 Focus 논문",
-        "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7529724/",
-        "unit": "DSM-5 성격장애 대안모형",
-        "basis": "Section III 대안모형. 기준 A 성격기능 4요소 정체성, 자기주도성, 공감, 친밀감과 0에서 4수준. 기준 B 5개 병적 특성영역과 25개 하위 특성. 6개 특정 성격장애",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "출처확인",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L1-018",
+  "domain": "personality",
+  "disorder": "narcissistic",
+  "related": [],
+  "level": 1,
+  "type": "ox",
+  "polarity": "correct",
+  "case": null,
+  "stem": "Kohut은 자기애성 성격 병리를 체질적으로 과도한 공격성과 이에 대한 방어로 형성된 병리적 거대자기로 설명했다.",
+  "options": [
+   {
+    "key": "O",
+    "text": "O, 옳다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "오답입니다. 체질적 공격성과 병리적 거대자기는 Kernberg의 설명이다. Kohut은 부모가 거울 자기대상과 이상화 자기대상의 공감적 기능을 충분히 제공하지 못해 자기의 정상 발달이 정지된 결과로 보았다."
+   },
+   {
+    "key": "X",
+    "text": "X, 옳지 않다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "정답입니다. 체질적 공격성과 병리적 거대자기는 Kernberg의 설명이다. Kohut은 부모가 거울 자기대상과 이상화 자기대상의 공감적 기능을 충분히 제공하지 못해 자기의 정상 발달이 정지된 결과로 보았다."
+   }
+  ],
+  "answer": [
+   "X"
+  ],
+  "theory": "Kohut과 Kernberg의 자기애 이론",
+  "concept": "자기애성-Kohut-Kernberg혼동",
+  "explanation": "Kohut은 결핍과 발달 정지, Kernberg는 갈등과 방어 구조를 강조한다. 이 대비가 자기애성 이론 문항의 가장 흔한 함정이다.",
+  "sources": [
+   {
+    "source_name": "정신역동 성격장애 이론(모델 지식)",
+    "ref": "Kernberg 1975; Kohut 1971, 1977; Masterson 1976; Mahler 1975",
+    "unit": "정신역동적 설명",
+    "basis": "Kernberg 경계선 성격조직, Kohut 자기대상, Masterson 버림받음 우울, Mahler 재접근기",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L1-020",
-    "domain": "personality",
-    "disorder": "schizoid",
-    "related": [],
-    "level": 1,
-    "type": "ox",
-    "polarity": "correct",
-    "case": null,
-    "stem": "조현성 성격장애의 특징이 자폐스펙트럼장애로 더 잘 설명되거나 조현병의 경과 중에만 나타난다면 조현성 성격장애로 진단하지 않는다.",
-    "options": [
-      {
-        "key": "O",
-        "text": "O, 옳다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "정답입니다. 조현성 기준에는 조현병, 정신병적 양상을 동반한 양극성장애나 우울장애, 다른 정신병적 장애, 자폐스펙트럼장애의 경과 중에만 나타나지 않아야 한다는 배제 조항이 있다. 사회적 무관심이 자폐스펙트럼장애와 겹치기 때문이다."
-      },
-      {
-        "key": "X",
-        "text": "X, 옳지 않다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "오답입니다. 조현성 기준에는 조현병, 정신병적 양상을 동반한 양극성장애나 우울장애, 다른 정신병적 장애, 자폐스펙트럼장애의 경과 중에만 나타나지 않아야 한다는 배제 조항이 있다. 사회적 무관심이 자폐스펙트럼장애와 겹치기 때문이다."
-      }
-    ],
-    "answer": [
-      "O"
-    ],
-    "theory": "조현성 성격장애 배제 기준",
-    "concept": "조현성-배제조항-자폐",
-    "explanation": "군집 A 장애의 배제 조항은 정신병적 장애와의 관계를 다룬다. 조현성과 조현형은 자폐스펙트럼장애도 배제 대상으로 명시한다.",
-    "sources": [
-      {
-        "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
-        "ref": "American Psychiatric Association. DSM-5, 2013; DSM-5-TR, 2022",
-        "unit": "성격장애 일반 기준과 군집",
-        "basis": "지속적 내적 경험과 행동 패턴, 4개 영역 중 2개 이상, 청소년기나 성인기 초기 발병, 군집 A, B, C 분류",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "MSD 매뉴얼 전문가판",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/schizoid-personality-disorder-scpd",
-        "unit": "조현성 성격장애",
-        "basis": "사회적 관계로부터의 분리와 제한된 정서 표현이 7개 기준 중 4개 이상으로 나타남",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L1-019",
+  "domain": "personality",
+  "disorder": "histrionic",
+  "related": [
+   "pd_alternative_model"
+  ],
+  "level": 1,
+  "type": "ox",
+  "polarity": "correct",
+  "case": null,
+  "stem": "연극성 성격장애는 DSM-5 성격장애 대안모형의 6개 특정 성격장애 중 하나로 정의되어 있다.",
+  "options": [
+   {
+    "key": "O",
+    "text": "O, 옳다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "오답입니다. 대안모형의 6개 특정 성격장애는 반사회성, 회피성, 경계성, 자기애성, 강박성, 조현형이다. 연극성은 편집성, 조현성, 의존성과 함께 제외되어 특성 명시 성격장애로 기술된다."
+   },
+   {
+    "key": "X",
+    "text": "X, 옳지 않다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "정답입니다. 대안모형의 6개 특정 성격장애는 반사회성, 회피성, 경계성, 자기애성, 강박성, 조현형이다. 연극성은 편집성, 조현성, 의존성과 함께 제외되어 특성 명시 성격장애로 기술된다."
+   }
+  ],
+  "answer": [
+   "X"
+  ],
+  "theory": "대안모형의 특정 성격장애",
+  "concept": "연극성-대안모형제외",
+  "explanation": "대안모형에서 제외된 4개 장애는 편집성, 조현성, 연극성, 의존성이다.",
+  "sources": [
+   {
+    "source_name": "Krueger와 Hobbs 리뷰 및 Focus 논문",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7529724/",
+    "unit": "DSM-5 성격장애 대안모형",
+    "basis": "Section III 대안모형. 기준 A 성격기능 4요소 정체성, 자기주도성, 공감, 친밀감과 0에서 4수준. 기준 B 5개 병적 특성영역과 25개 하위 특성. 6개 특정 성격장애",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L2-020",
-    "domain": "personality",
-    "disorder": "pd_general",
-    "related": [],
-    "level": 2,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "DSM-IV에서 DSM-5로 바뀌면서 성격장애의 진단 체계에 나타난 변화로 옳은 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "반사회성 성격장애는 16세 이상이면 진단할 수 있게 바뀌었다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "반사회성은 여전히 18세 이상에게 진단한다."
-      },
-      {
-        "key": "2",
-        "text": "군집 A, B, C 분류가 폐지되었다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "세 군집 분류는 DSM-5 Section II에서도 유지된다."
-      },
-      {
-        "key": "3",
-        "text": "Section II의 10개 성격장애가 모두 삭제되고 대안모형만 남았다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "Section II의 10개 범주적 성격장애는 유지되었다."
-      },
-      {
-        "key": "4",
-        "text": "다축 진단 체계가 폐지되어 성격장애가 다른 정신장애와 같은 축에서 기록되게 되었다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "DSM-IV는 성격장애를 축 II에 기록했으나 DSM-5는 다축 체계를 폐지했다."
-      },
-      {
-        "key": "5",
-        "text": "수동공격성 성격장애가 정식 성격장애로 추가되었다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "수동공격성 성격장애는 DSM-IV에서 부록의 연구 기준으로 옮겨졌고 DSM-5에서 정식 성격장애가 아니다."
-      }
-    ],
-    "answer": [
-      "4"
-    ],
-    "theory": "DSM 판본별 성격장애 체계 변화",
-    "concept": "성격장애-DSM변화-다축폐지",
-    "explanation": "DSM-5는 다축 체계를 없앴지만 성격장애의 Section II 기준은 DSM-IV와 거의 같다. 대안모형은 Section III에 추가되었다.",
-    "sources": [
-      {
-        "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
-        "ref": "American Psychiatric Association. DSM-5, 2013; DSM-5-TR, 2022",
-        "unit": "성격장애 일반 기준과 군집",
-        "basis": "지속적 내적 경험과 행동 패턴, 4개 영역 중 2개 이상, 청소년기나 성인기 초기 발병, 군집 A, B, C 분류",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "Krueger와 Hobbs 리뷰 및 Focus 논문",
-        "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7529724/",
-        "unit": "DSM-5 성격장애 대안모형",
-        "basis": "Section III 대안모형. 기준 A 성격기능 4요소 정체성, 자기주도성, 공감, 친밀감과 0에서 4수준. 기준 B 5개 병적 특성영역과 25개 하위 특성. 6개 특정 성격장애",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L1-020",
+  "domain": "personality",
+  "disorder": "schizoid",
+  "related": [],
+  "level": 1,
+  "type": "ox",
+  "polarity": "correct",
+  "case": null,
+  "stem": "조현성 성격장애의 특징이 자폐스펙트럼장애로 더 잘 설명되거나 조현병의 경과 중에만 나타난다면 조현성 성격장애로 진단하지 않는다.",
+  "options": [
+   {
+    "key": "O",
+    "text": "O, 옳다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "정답입니다. 조현성 기준에는 조현병, 정신병적 양상을 동반한 양극성장애나 우울장애, 다른 정신병적 장애, 자폐스펙트럼장애의 경과 중에만 나타나지 않아야 한다는 배제 조항이 있다. 사회적 무관심이 자폐스펙트럼장애와 겹치기 때문이다."
+   },
+   {
+    "key": "X",
+    "text": "X, 옳지 않다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "오답입니다. 조현성 기준에는 조현병, 정신병적 양상을 동반한 양극성장애나 우울장애, 다른 정신병적 장애, 자폐스펙트럼장애의 경과 중에만 나타나지 않아야 한다는 배제 조항이 있다. 사회적 무관심이 자폐스펙트럼장애와 겹치기 때문이다."
+   }
+  ],
+  "answer": [
+   "O"
+  ],
+  "theory": "조현성 성격장애 배제 기준",
+  "concept": "조현성-배제조항-자폐",
+  "explanation": "군집 A 장애의 배제 조항은 정신병적 장애와의 관계를 다룬다. 조현성과 조현형은 자폐스펙트럼장애도 배제 대상으로 명시한다.",
+  "sources": [
+   {
+    "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
+    "ref": "American Psychiatric Association. DSM-5, 2013; DSM-5-TR, 2022",
+    "unit": "성격장애 일반 기준과 군집",
+    "basis": "지속적 내적 경험과 행동 패턴, 4개 영역 중 2개 이상, 청소년기나 성인기 초기 발병, 군집 A, B, C 분류",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L2-021",
-    "domain": "personality",
-    "disorder": "antisocial",
-    "related": [],
-    "level": 2,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "반사회성 성격장애에 대한 낮은 각성 이론의 설명으로 가장 적절한 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "피질 각성 수준이 만성적으로 낮아 이를 보상하기 위해 위험하고 자극적인 행동을 추구하며, 처벌 단서에 대한 불안 반응이 약해 회피 학습이 잘 되지 않는다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "저각성 이론은 낮은 휴식기 심박, 약한 피부전도 반응, 공포 조건형성 결함을 근거로 든다."
-      },
-      {
-        "key": "2",
-        "text": "재접근기 어머니의 애정 철회로 버림받음 우울이 생긴다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "이는 Masterson의 경계성 이론이다."
-      },
-      {
-        "key": "3",
-        "text": "자기대상의 공감 실패로 자기가 응집되지 못한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "이는 Kohut의 자기애성 이론이다."
-      },
-      {
-        "key": "4",
-        "text": "정서조절 취약성과 비타당화 환경의 상호작용으로 발생한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "이는 Linehan의 경계성 생물사회이론이다."
-      },
-      {
-        "key": "5",
-        "text": "각성 수준이 지나치게 높아 작은 자극에도 불안이 커지고 이를 피하려고 공격적이 된다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "과각성은 불안장애에 가까운 설명이며 저각성 이론과 반대이다."
-      }
-    ],
-    "answer": [
-      "1"
-    ],
-    "theory": "반사회성 낮은 각성 이론",
-    "concept": "반사회성-저각성-자극추구",
-    "explanation": "저각성 이론과 Lykken의 낮은 공포 가설은 반사회성과 사이코패시의 생물학적 설명이다. 이 밖에 유전 연구, 세로토닌 기능 저하와 충동적 공격성, 전두엽 기능 이상도 논의된다.",
-    "sources": [
-      {
-        "source_name": "Cleckley와 낮은 각성 이론(모델 지식)",
-        "ref": "Cleckley, The Mask of Sanity 1941; Lykken 1957",
-        "unit": "사이코패시 개념",
-        "basis": "사이코패시의 정서적 대인관계 특징, 낮은 불안과 공포 조건형성 결함, 자극 추구",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "성격장애 생물학 연구(모델 지식)",
-        "ref": "Siever와 Davis 1991 등 생물학적 연구 개관",
-        "unit": "생물학적 요인",
-        "basis": "세로토닌 기능 저하와 충동적 공격성, 조현병 스펙트럼 유전 연관, 반사회성의 낮은 각성",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/schizoid-personality-disorder-scpd",
+    "unit": "조현성 성격장애",
+    "basis": "사회적 관계로부터의 분리와 제한된 정서 표현이 7개 기준 중 4개 이상으로 나타남",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L2-022",
-    "domain": "personality",
-    "disorder": "narcissistic",
-    "related": [
-      "histrionic"
-    ],
-    "level": 2,
-    "type": "single",
-    "polarity": "incorrect",
-    "case": null,
-    "stem": "자기애성 성격장애의 진단 기준에 해당하지 않는 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "특권의식이 있어 특별한 대우나 자동적인 순응을 불합리하게 기대한다",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "특권의식은 자기애성 기준이다."
-      },
-      {
-        "key": "2",
-        "text": "자신이 특별하고 독특하여 특별하거나 지위가 높은 사람만 자신을 이해할 수 있다고 믿는다",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "특별함에 대한 믿음은 자기애성 기준이다."
-      },
-      {
-        "key": "3",
-        "text": "피암시성이 높아 타인이나 상황에 쉽게 영향을 받는다",
-        "is_true": false,
-        "in_answer": true,
-        "explanation": "피암시성은 연극성 성격장애의 기준이다."
-      },
-      {
-        "key": "4",
-        "text": "거만하고 오만한 행동이나 태도를 보인다",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "오만함은 자기애성의 아홉 번째 기준이다."
-      },
-      {
-        "key": "5",
-        "text": "타인을 시기하거나 타인이 자신을 시기한다고 믿는다",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "시기심은 자기애성 기준이다."
-      }
-    ],
-    "answer": [
-      "3"
-    ],
-    "theory": "자기애성 성격장애 진단 기준",
-    "concept": "자기애성-진단기준-항목",
-    "explanation": "자기애성의 9개 기준은 과대한 자기중요감, 성공과 권력에 대한 공상, 특별함에 대한 믿음, 과도한 찬사 요구, 특권의식, 착취성, 공감 결여, 시기심, 오만함이다.",
-    "sources": [
-      {
-        "source_name": "MSD 매뉴얼 전문가판",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/narcissistic-personality-disorder-npd",
-        "unit": "자기애성 성격장애",
-        "basis": "과대성, 찬사 요구, 공감 결여의 지속적 패턴이 9개 특징 중 5개 이상으로 나타나며 성인기 초기까지 시작",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "MSD 매뉴얼 전문가판",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/histrionic-personality-disorder-hpd",
-        "unit": "연극성 성격장애",
-        "basis": "과도한 정서성과 관심 추구가 8개 특징 중 5개 이상으로 나타남",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "출처확인",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L2-020",
+  "domain": "personality",
+  "disorder": "pd_general",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "DSM-IV에서 DSM-5로 바뀌면서 성격장애의 진단 체계에 나타난 변화로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "반사회성 성격장애는 16세 이상이면 진단할 수 있게 바뀌었다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "반사회성은 여전히 18세 이상에게 진단한다."
+   },
+   {
+    "key": "2",
+    "text": "군집 A, B, C 분류가 폐지되었다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "세 군집 분류는 DSM-5 Section II에서도 유지된다."
+   },
+   {
+    "key": "3",
+    "text": "Section II의 10개 성격장애가 모두 삭제되고 대안모형만 남았다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "Section II의 10개 범주적 성격장애는 유지되었다."
+   },
+   {
+    "key": "4",
+    "text": "다축 진단 체계가 폐지되어 성격장애가 다른 정신장애와 같은 축에서 기록되게 되었다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "DSM-IV는 성격장애를 축 II에 기록했으나 DSM-5는 다축 체계를 폐지했다."
+   },
+   {
+    "key": "5",
+    "text": "수동공격성 성격장애가 정식 성격장애로 추가되었다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "수동공격성 성격장애는 DSM-IV에서 부록의 연구 기준으로 옮겨졌고 DSM-5에서 정식 성격장애가 아니다."
+   }
+  ],
+  "answer": [
+   "4"
+  ],
+  "theory": "DSM 판본별 성격장애 체계 변화",
+  "concept": "성격장애-DSM변화-다축폐지",
+  "explanation": "DSM-5는 다축 체계를 없앴지만 성격장애의 Section II 기준은 DSM-IV와 거의 같다. 대안모형은 Section III에 추가되었다.",
+  "sources": [
+   {
+    "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
+    "ref": "American Psychiatric Association. DSM-5, 2013; DSM-5-TR, 2022",
+    "unit": "성격장애 일반 기준과 군집",
+    "basis": "지속적 내적 경험과 행동 패턴, 4개 영역 중 2개 이상, 청소년기나 성인기 초기 발병, 군집 A, B, C 분류",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L2-023",
-    "domain": "personality",
-    "disorder": "histrionic",
-    "related": [],
-    "level": 2,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "연극성 성격장애에 대한 이론적 설명으로 가장 적절한 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "Freud 이후 정신분석은 연극성을 항문기 고착과 관련된 질서와 인색함으로 설명했다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "항문기 성격은 강박성의 설명이다. 연극성은 전통적으로 오이디푸스기 갈등과 관련하여 설명되었다."
-      },
-      {
-        "key": "2",
-        "text": "Millon은 연극성을 타인에게서 강화를 얻기 위해 적극적으로 관심과 인정을 끌어내는 능동적 의존형으로 보았다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "Millon의 분류에서 연극성은 능동적 의존형, 의존성은 수동적 의존형이다."
-      },
-      {
-        "key": "3",
-        "text": "연극성은 조현병 스펙트럼의 경미한 형태로 간주된다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "조현병 스펙트럼과 연관된 성격장애는 조현형이다."
-      },
-      {
-        "key": "4",
-        "text": "Beck은 연극성의 핵심신념을 사람들은 악의적이며 나를 이용할 것이라는 내용으로 보았다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "이는 편집성의 핵심신념이다. 연극성은 관심을 끌어야 가치 있고 사랑받는다는 신념으로 설명된다."
-      },
-      {
-        "key": "5",
-        "text": "연극성은 체질적 저각성으로 인한 자극 추구로 가장 잘 설명된다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "저각성 이론은 반사회성의 설명이다."
-      }
-    ],
-    "answer": [
-      "2"
-    ],
-    "theory": "연극성 성격장애 이론",
-    "concept": "연극성-Millon-능동의존",
-    "explanation": "연극성은 정신역동적으로 오이디푸스기 갈등, Millon의 능동적 의존형, 인지적으로 관심을 얻어야 한다는 신념과 인상 중심적 인지 양식으로 설명된다.",
-    "sources": [
-      {
-        "source_name": "Millon 성격 이론(모델 지식)",
-        "ref": "Millon, Disorders of Personality",
-        "unit": "생물사회적 학습이론",
-        "basis": "쾌-고통, 능동-수동, 자기-타인 양극성에 따른 성격 유형 분류",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "인지적 성격장애 이론(모델 지식)",
-        "ref": "Beck, Freeman 등 Cognitive Therapy of Personality Disorders; Young 등 Schema Therapy 2003",
-        "unit": "인지 및 도식 이론",
-        "basis": "장애별 핵심신념과 과잉발달 및 미발달 전략, 초기 부적응 도식과 도식 모드",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "정신역동 성격장애 이론(모델 지식)",
-        "ref": "Kernberg 1975; Kohut 1971, 1977; Masterson 1976; Mahler 1975",
-        "unit": "정신역동적 설명",
-        "basis": "Kernberg 경계선 성격조직, Kohut 자기대상, Masterson 버림받음 우울, Mahler 재접근기",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   },
+   {
+    "source_name": "Krueger와 Hobbs 리뷰 및 Focus 논문",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7529724/",
+    "unit": "DSM-5 성격장애 대안모형",
+    "basis": "Section III 대안모형. 기준 A 성격기능 4요소 정체성, 자기주도성, 공감, 친밀감과 0에서 4수준. 기준 B 5개 병적 특성영역과 25개 하위 특성. 6개 특정 성격장애",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L2-024",
-    "domain": "personality",
-    "disorder": "borderline",
-    "related": [],
-    "level": 2,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "경계성 성격장애의 치료에 관한 설명으로 가장 적절한 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "경계성 성격장애를 근본적으로 치료하는 승인된 단일 약물이 있어 약물치료가 일차적이다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "경계성 성격장애 자체에 대해 미국 FDA가 승인한 약물은 없다."
-      },
-      {
-        "key": "2",
-        "text": "성격장애이므로 심리치료로는 변화가 불가능하다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "여러 구조화된 심리치료가 효과를 보였으며 장기 추적 연구에서도 상당수 환자가 호전된다."
-      },
-      {
-        "key": "3",
-        "text": "정신화 기반 치료는 노출과 반응방지를 핵심 기법으로 사용한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "노출과 반응방지는 강박장애 치료 기법이다. MBT는 정신화 능력 회복을 목표로 한다."
-      },
-      {
-        "key": "4",
-        "text": "자해 행동은 관심 끌기이므로 치료에서 다루지 않는 것이 원칙이다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "DBT 등은 자해와 자살 행동을 최우선 치료 목표로 다룬다."
-      },
-      {
-        "key": "5",
-        "text": "구조화된 심리치료가 일차적 치료이며, 약물은 특정 증상을 보조적으로 조절하는 데 사용된다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "DBT, MBT, TFP, 도식치료 등 심리치료의 효과가 연구되어 왔고, 약물은 경계성 자체를 치료하기보다 동반 증상을 겨냥한다."
-      }
-    ],
-    "answer": [
-      "5"
-    ],
-    "theory": "경계성 성격장애 치료",
-    "concept": "경계성-치료원칙-약물",
-    "explanation": "경계성 성격장애 치료의 중심은 구조화된 심리치료이다. 약물은 우울, 충동성, 일시적 정신병적 증상 등 표적 증상에 보조적으로 사용된다.",
-    "sources": [
-      {
-        "source_name": "Linehan DBT 기술훈련 매뉴얼 발췌 및 관련 장",
-        "ref": "https://www.guilford.com/excerpts/linehan7_old_ch1.pdf",
-        "unit": "생물사회이론과 DBT",
-        "basis": "생물학적 정서조절 취약성과 비타당화 환경의 상호작용. 기술훈련은 마음챙김, 대인관계 효율성, 정서조절, 고통감내의 4모듈",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "Bateman과 Fonagy 관련 PMC 리뷰",
-        "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4467231/",
-        "unit": "정신화 기반 치료",
-        "basis": "경계성 성격장애를 위해 개발. 불안정 특히 혼란 애착과 관련된 정신화 능력의 취약성, 강한 정서와 애착 활성화 상황에서 정신화가 무너짐",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L2-021",
+  "domain": "personality",
+  "disorder": "antisocial",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "반사회성 성격장애에 대한 낮은 각성 이론의 설명으로 가장 적절한 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "피질 각성 수준이 만성적으로 낮아 이를 보상하기 위해 위험하고 자극적인 행동을 추구하며, 처벌 단서에 대한 불안 반응이 약해 회피 학습이 잘 되지 않는다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "저각성 이론은 낮은 휴식기 심박, 약한 피부전도 반응, 공포 조건형성 결함을 근거로 든다."
+   },
+   {
+    "key": "2",
+    "text": "재접근기 어머니의 애정 철회로 버림받음 우울이 생긴다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "이는 Masterson의 경계성 이론이다."
+   },
+   {
+    "key": "3",
+    "text": "자기대상의 공감 실패로 자기가 응집되지 못한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "이는 Kohut의 자기애성 이론이다."
+   },
+   {
+    "key": "4",
+    "text": "정서조절 취약성과 비타당화 환경의 상호작용으로 발생한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "이는 Linehan의 경계성 생물사회이론이다."
+   },
+   {
+    "key": "5",
+    "text": "각성 수준이 지나치게 높아 작은 자극에도 불안이 커지고 이를 피하려고 공격적이 된다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "과각성은 불안장애에 가까운 설명이며 저각성 이론과 반대이다."
+   }
+  ],
+  "answer": [
+   "1"
+  ],
+  "theory": "반사회성 낮은 각성 이론",
+  "concept": "반사회성-저각성-자극추구",
+  "explanation": "저각성 이론과 Lykken의 낮은 공포 가설은 반사회성과 사이코패시의 생물학적 설명이다. 이 밖에 유전 연구, 세로토닌 기능 저하와 충동적 공격성, 전두엽 기능 이상도 논의된다.",
+  "sources": [
+   {
+    "source_name": "Cleckley와 낮은 각성 이론(모델 지식)",
+    "ref": "Cleckley, The Mask of Sanity 1941; Lykken 1957",
+    "unit": "사이코패시 개념",
+    "basis": "사이코패시의 정서적 대인관계 특징, 낮은 불안과 공포 조건형성 결함, 자극 추구",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L2-025",
-    "domain": "personality",
-    "disorder": "pd_alternative_model",
-    "related": [],
-    "level": 2,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "DSM-5 성격장애 대안모형의 성격기능 수준 척도에 대한 설명으로 옳은 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "성격기능은 정체성과 자기주도성만으로 평가하고 대인관계 기능은 제외한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "자기 영역의 정체성과 자기주도성, 대인관계 영역의 공감과 친밀감을 모두 평가한다."
-      },
-      {
-        "key": "2",
-        "text": "경미한 손상만 있어도 성격장애로 진단한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "진단에는 중등도 이상의 손상이 필요하다."
-      },
-      {
-        "key": "3",
-        "text": "손상 없음에 해당하는 수준 0부터 극도의 손상에 해당하는 수준 4까지 다섯 수준으로 평가하며, 성격장애 진단에는 중등도 이상의 손상이 필요하다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "성격기능 수준 척도는 0에서 4까지 다섯 수준이며 중등도는 수준 2에 해당한다."
-      },
-      {
-        "key": "4",
-        "text": "부정적 정서성, 애착상실, 적대성, 탈억제, 정신병적 경향성을 평가한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "이것은 기준 B의 병적 특성영역이다. 성격기능 수준 척도는 기준 A에 해당한다."
-      },
-      {
-        "key": "5",
-        "text": "수준 1부터 수준 10까지 열 수준으로 평가한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "척도는 0에서 4까지 다섯 수준이다."
-      }
-    ],
-    "answer": [
-      "3"
-    ],
-    "theory": "대안모형 성격기능 수준 척도",
-    "concept": "대안모형-LPFS-수준",
-    "explanation": "대안모형의 기준 A는 성격기능 수준 척도로 평가하고, 기준 B는 5개 영역과 25개 하위 특성으로 평가한다.",
-    "sources": [
-      {
-        "source_name": "Krueger와 Hobbs 리뷰 및 Focus 논문",
-        "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7529724/",
-        "unit": "DSM-5 성격장애 대안모형",
-        "basis": "Section III 대안모형. 기준 A 성격기능 4요소 정체성, 자기주도성, 공감, 친밀감과 0에서 4수준. 기준 B 5개 병적 특성영역과 25개 하위 특성. 6개 특정 성격장애",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "출처확인",
+   },
+   {
+    "source_name": "성격장애 생물학 연구(모델 지식)",
+    "ref": "Siever와 Davis 1991 등 생물학적 연구 개관",
+    "unit": "생물학적 요인",
+    "basis": "세로토닌 기능 저하와 충동적 공격성, 조현병 스펙트럼 유전 연관, 반사회성의 낮은 각성",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L3-016",
-    "domain": "personality",
-    "disorder": "borderline",
-    "related": [
-      "schizotypal"
-    ],
-    "level": 3,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "경계성 성격장애와 조현형 성격장애는 모두 편집적 사고를 보일 수 있다. 둘을 감별하는 설명으로 가장 적절한 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "경계성의 편집적 사고는 망상 수준으로 지속되어야 진단된다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "경계성의 편집 사고는 일시적이며 망상 수준의 지속은 요구되지 않는다."
-      },
-      {
-        "key": "2",
-        "text": "경계성의 편집적 사고는 스트레스와 관련해 일시적으로 나타나고, 조현형의 의심과 기이한 인지는 지속적인 성격 특성이다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "경계성 기준은 스트레스 관련 일시적 편집 사고를 명시하며, 조현형은 괴이성이 지속적 패턴이다."
-      },
-      {
-        "key": "3",
-        "text": "조현형은 버림받음에 대한 필사적 노력이 핵심이다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "버림받음 회피 노력은 경계성의 기준이다."
-      },
-      {
-        "key": "4",
-        "text": "두 장애는 같은 군집에 속하므로 감별이 필요 없다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "경계성은 군집 B, 조현형은 군집 A이다."
-      },
-      {
-        "key": "5",
-        "text": "조현형은 반드시 자해 행동을 동반한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "반복적 자해는 경계성의 기준이다."
-      }
-    ],
-    "answer": [
-      "2"
-    ],
-    "theory": "경계성과 조현형 감별",
-    "concept": "경계성-조현형-일시적편집",
-    "explanation": "편집적 사고가 스트레스와 함께 나타났다 사라지는지, 아니면 마술적 사고와 이상한 지각 경험을 동반하며 지속되는지가 감별의 핵심이다.",
-    "sources": [
-      {
-        "source_name": "MSD 매뉴얼 전문가판 및 Australian Prescriber",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/borderline-personality-disorder-bpd",
-        "unit": "경계성 성격장애",
-        "basis": "경계성 성격장애는 9개 기준 중 5개 이상을 충족해야 진단하며 DSM-5-TR 기준을 따름",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/schizotypal-personality-disorder-stpd",
-        "unit": "조현형 성격장애",
-        "basis": "9개 기준 중 5개 이상. 관계사고, 마술적 사고, 이상한 지각 경험, 친숙해져도 줄지 않는 사회불안",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L2-022",
+  "domain": "personality",
+  "disorder": "narcissistic",
+  "related": [
+   "histrionic"
+  ],
+  "level": 2,
+  "type": "single",
+  "polarity": "incorrect",
+  "case": null,
+  "stem": "자기애성 성격장애의 진단 기준에 해당하지 않는 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "특권의식이 있어 특별한 대우나 자동적인 순응을 불합리하게 기대한다",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "특권의식은 자기애성 기준이다."
+   },
+   {
+    "key": "2",
+    "text": "자신이 특별하고 독특하여 특별하거나 지위가 높은 사람만 자신을 이해할 수 있다고 믿는다",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "특별함에 대한 믿음은 자기애성 기준이다."
+   },
+   {
+    "key": "3",
+    "text": "피암시성이 높아 타인이나 상황에 쉽게 영향을 받는다",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "피암시성은 연극성 성격장애의 기준이다."
+   },
+   {
+    "key": "4",
+    "text": "거만하고 오만한 행동이나 태도를 보인다",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "오만함은 자기애성의 아홉 번째 기준이다."
+   },
+   {
+    "key": "5",
+    "text": "타인을 시기하거나 타인이 자신을 시기한다고 믿는다",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "시기심은 자기애성 기준이다."
+   }
+  ],
+  "answer": [
+   "3"
+  ],
+  "theory": "자기애성 성격장애 진단 기준",
+  "concept": "자기애성-진단기준-항목",
+  "explanation": "자기애성의 9개 기준은 과대한 자기중요감, 성공과 권력에 대한 공상, 특별함에 대한 믿음, 과도한 찬사 요구, 특권의식, 착취성, 공감 결여, 시기심, 오만함이다.",
+  "sources": [
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/narcissistic-personality-disorder-npd",
+    "unit": "자기애성 성격장애",
+    "basis": "과대성, 찬사 요구, 공감 결여의 지속적 패턴이 9개 특징 중 5개 이상으로 나타나며 성인기 초기까지 시작",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L3-017",
-    "domain": "personality",
-    "disorder": "pd_general",
-    "related": [],
-    "level": 3,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "45세 남성이 2년 전 교통사고로 전두엽 손상을 입은 뒤 충동적이고 공격적으로 변했으며 무례한 언행이 잦아졌다. 사고 이전에는 원만한 성격이었다. 이에 대한 진단적 판단으로 가장 적절한 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "분노 폭발이 있으므로 경계성 성격장애로 진단한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "성격장애는 청소년기나 성인기 초기부터 이어진 패턴이어야 하며, 의학적 상태로 인한 것이 아니어야 한다."
-      },
-      {
-        "key": "2",
-        "text": "성격은 성인기에 변하지 않으므로 꾀병으로 판단한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "뇌손상으로 성격이 변할 수 있으며 근거 없이 꾀병으로 판단해서는 안 된다."
-      },
-      {
-        "key": "3",
-        "text": "2년 이상 지속되었으므로 일반 기준을 충족하여 성격장애로 진단한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "지속 기간만으로 충분하지 않다. 발병 시기와 의학적 원인 배제 조건을 충족하지 않는다."
-      },
-      {
-        "key": "4",
-        "text": "충동성과 공격성이 있으므로 반사회성 성격장애로 진단한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "15세 이전 품행장애 증거가 없고 패턴이 뇌손상 이후 시작되었다."
-      },
-      {
-        "key": "5",
-        "text": "다른 의학적 상태로 인한 성격 변화를 고려한다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "성격 변화가 의학적 상태의 직접적 생리적 결과이고 이전 성격 패턴과 달라졌다면 다른 의학적 상태로 인한 성격 변화로 진단한다."
-      }
-    ],
-    "answer": [
-      "5"
-    ],
-    "theory": "성격장애와 의학적 상태로 인한 성격 변화 감별",
-    "concept": "성격장애-의학적상태-성격변화",
-    "explanation": "성격장애 일반 기준은 패턴이 물질이나 다른 의학적 상태의 생리적 효과로 인한 것이 아니어야 한다고 규정한다. 성인기 후기에 새로 나타난 성격 변화는 의학적 원인을 먼저 확인한다.",
-    "sources": [
-      {
-        "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
-        "ref": "American Psychiatric Association. DSM-5, 2013; DSM-5-TR, 2022",
-        "unit": "성격장애 일반 기준과 군집",
-        "basis": "지속적 내적 경험과 행동 패턴, 4개 영역 중 2개 이상, 청소년기나 성인기 초기 발병, 군집 A, B, C 분류",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/histrionic-personality-disorder-hpd",
+    "unit": "연극성 성격장애",
+    "basis": "과도한 정서성과 관심 추구가 8개 특징 중 5개 이상으로 나타남",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L3-018",
-    "domain": "personality",
-    "disorder": "ocpd",
-    "related": [
-      "narcissistic"
-    ],
-    "level": 3,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "강박성 성격장애와 자기애성 성격장애 모두 완벽주의적일 수 있다. 둘을 감별하는 설명으로 가장 적절한 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "완벽주의가 있으면 언제나 강박성으로 진단한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "완벽주의는 여러 장애와 정상 성격에서도 나타나므로 동기와 다른 기준을 함께 평가해야 한다."
-      },
-      {
-        "key": "2",
-        "text": "두 장애는 모두 군집 C에 속한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "강박성은 군집 C, 자기애성은 군집 B이다."
-      },
-      {
-        "key": "3",
-        "text": "자기애성은 쓸모없는 물건을 버리지 못하고 인색한 것이 핵심이다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "버리지 못함과 인색함은 강박성의 기준이다."
-      },
-      {
-        "key": "4",
-        "text": "강박성은 자신이 완벽하지 못하다고 여겨 스스로를 혹독하게 비판하는 경향이 있고, 자기애성은 자신이 이미 완벽하다고 믿는 경향이 있다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "DSM-5 감별 설명에서도 자기애성은 자신이 완벽을 이루었다고 믿는 반면 강박성은 자기비판적이라는 차이가 제시된다."
-      },
-      {
-        "key": "5",
-        "text": "강박성은 찬사와 인정을 받기 위해 완벽을 추구하는 것이 핵심이다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "찬사 추구는 자기애성의 동기이다. 강박성은 통제와 실수 회피가 핵심이다."
-      }
-    ],
-    "answer": [
-      "4"
-    ],
-    "theory": "강박성과 자기애성 감별",
-    "concept": "강박성-자기애성-완벽주의",
-    "explanation": "같은 완벽주의라도 강박성은 자기비판과 통제, 자기애성은 우월감과 찬사 요구와 연결된다.",
-    "sources": [
-      {
-        "source_name": "PubMed Central 리뷰 논문 표(DSM-5 기준 정리)",
-        "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5540167/",
-        "unit": "강박성 성격장애 진단 기준",
-        "basis": "질서, 완벽주의, 통제에 대한 집착이 8개 기준 중 4개 이상으로 나타남",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "MSD 매뉴얼 전문가판",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/narcissistic-personality-disorder-npd",
-        "unit": "자기애성 성격장애",
-        "basis": "과대성, 찬사 요구, 공감 결여의 지속적 패턴이 9개 특징 중 5개 이상으로 나타나며 성인기 초기까지 시작",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
-        "ref": "American Psychiatric Association. DSM-5, 2013; DSM-5-TR, 2022",
-        "unit": "성격장애 일반 기준과 군집",
-        "basis": "지속적 내적 경험과 행동 패턴, 4개 영역 중 2개 이상, 청소년기나 성인기 초기 발병, 군집 A, B, C 분류",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L2-023",
+  "domain": "personality",
+  "disorder": "histrionic",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "연극성 성격장애에 대한 이론적 설명으로 가장 적절한 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "Freud 이후 정신분석은 연극성을 항문기 고착과 관련된 질서와 인색함으로 설명했다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "항문기 성격은 강박성의 설명이다. 연극성은 전통적으로 오이디푸스기 갈등과 관련하여 설명되었다."
+   },
+   {
+    "key": "2",
+    "text": "Millon은 연극성을 타인에게서 강화를 얻기 위해 적극적으로 관심과 인정을 끌어내는 능동적 의존형으로 보았다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "Millon의 분류에서 연극성은 능동적 의존형, 의존성은 수동적 의존형이다."
+   },
+   {
+    "key": "3",
+    "text": "연극성은 조현병 스펙트럼의 경미한 형태로 간주된다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "조현병 스펙트럼과 연관된 성격장애는 조현형이다."
+   },
+   {
+    "key": "4",
+    "text": "Beck은 연극성의 핵심신념을 사람들은 악의적이며 나를 이용할 것이라는 내용으로 보았다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "이는 편집성의 핵심신념이다. 연극성은 관심을 끌어야 가치 있고 사랑받는다는 신념으로 설명된다."
+   },
+   {
+    "key": "5",
+    "text": "연극성은 체질적 저각성으로 인한 자극 추구로 가장 잘 설명된다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "저각성 이론은 반사회성의 설명이다."
+   }
+  ],
+  "answer": [
+   "2"
+  ],
+  "theory": "연극성 성격장애 이론",
+  "concept": "연극성-Millon-능동의존",
+  "explanation": "연극성은 정신역동적으로 오이디푸스기 갈등, Millon의 능동적 의존형, 인지적으로 관심을 얻어야 한다는 신념과 인상 중심적 인지 양식으로 설명된다.",
+  "sources": [
+   {
+    "source_name": "Millon 성격 이론(모델 지식)",
+    "ref": "Millon, Disorders of Personality",
+    "unit": "생물사회적 학습이론",
+    "basis": "쾌-고통, 능동-수동, 자기-타인 양극성에 따른 성격 유형 분류",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L3-019",
-    "domain": "personality",
-    "disorder": "narcissistic",
-    "related": [],
-    "level": 3,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "과대성을 보이는 환자에게서 자기애성 성격장애와 양극성장애의 조증이나 경조증 삽화를 감별할 때 가장 중요한 정보는?",
-    "options": [
-      {
-        "key": "1",
-        "text": "과대성이 성인기 초기부터 지속된 안정된 패턴인지, 아니면 수면 욕구 감소와 활동 증가를 동반하여 평소와 구분되는 삽화로 나타났는지",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "자기애성의 과대성은 지속적 성격 특성이고, 조증과 경조증의 과대성은 기분 삽화의 일부로 나타난다."
-      },
-      {
-        "key": "2",
-        "text": "과대성의 내용이 사업에 관한 것인지 여부",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "과대성의 내용만으로는 감별할 수 없다."
-      },
-      {
-        "key": "3",
-        "text": "환자의 직업적 지위가 높은지 여부",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "직업적 지위는 진단 기준과 무관하다."
-      },
-      {
-        "key": "4",
-        "text": "환자가 자신을 특별하다고 말하는지 여부",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "두 경우 모두 자신을 특별하다고 말할 수 있다."
-      },
-      {
-        "key": "5",
-        "text": "타인의 칭찬을 좋아하는지 여부",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "칭찬 선호는 감별에 결정적이지 않다."
-      }
-    ],
-    "answer": [
-      "1"
-    ],
-    "theory": "자기애성과 조증 삽화 감별",
-    "concept": "자기애성-조증-과대성",
-    "explanation": "성격장애와 기분장애의 감별 원리는 지속성 대 삽화성이다. 과대성이 기분 삽화 중에만 나타나면 자기애성 성격장애로 진단하지 않는다.",
-    "sources": [
-      {
-        "source_name": "MSD 매뉴얼 전문가판",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/narcissistic-personality-disorder-npd",
-        "unit": "자기애성 성격장애",
-        "basis": "과대성, 찬사 요구, 공감 결여의 지속적 패턴이 9개 특징 중 5개 이상으로 나타나며 성인기 초기까지 시작",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
-        "ref": "American Psychiatric Association. DSM-5, 2013; DSM-5-TR, 2022",
-        "unit": "성격장애 일반 기준과 군집",
-        "basis": "지속적 내적 경험과 행동 패턴, 4개 영역 중 2개 이상, 청소년기나 성인기 초기 발병, 군집 A, B, C 분류",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   },
+   {
+    "source_name": "인지적 성격장애 이론(모델 지식)",
+    "ref": "Beck, Freeman 등 Cognitive Therapy of Personality Disorders; Young 등 Schema Therapy 2003",
+    "unit": "인지 및 도식 이론",
+    "basis": "장애별 핵심신념과 과잉발달 및 미발달 전략, 초기 부적응 도식과 도식 모드",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L3-020",
-    "domain": "personality",
-    "disorder": "avoidant",
-    "related": [
-      "schizoid",
-      "social_anxiety"
-    ],
-    "level": 3,
-    "type": "single",
-    "polarity": "correct",
-    "case": null,
-    "stem": "세 사람이 모두 직장 회식에 가지 않는다. 갑은 사람들과 어울리는 것 자체에 관심이 없어 혼자 있는 것이 편하다고 한다. 을은 사람들과 가까워지고 싶지만 무시당할까 두려워 늘 빠지며 자신을 매력 없는 사람이라고 여긴다. 병은 평소 친구들과 잘 지내지만 회식에서 건배사를 해야 할 때 망신당할까 봐 극심하게 불안해한다. 가장 적절한 진단적 가설의 연결은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "병은 친구들과 잘 지내므로 어떤 불안 문제도 없다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "특정 수행 상황에서의 극심한 불안은 사회불안장애 수행형을 시사할 수 있다."
-      },
-      {
-        "key": "2",
-        "text": "갑은 조현성 성격 특성, 을은 회피성 성격 특성, 병은 수행 상황 중심의 사회불안을 우선 가설로 둔다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "관계 무관심은 조현성, 관계 욕구와 거절 공포 및 부적절감은 회피성, 특정 수행 상황의 불안은 사회불안장애를 시사한다. 확정에는 지속 기간과 손상 평가가 필요하다."
-      },
-      {
-        "key": "3",
-        "text": "세 사람 모두 회피 행동이 있으므로 회피성 성격장애로 진단한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "회피 행동은 같아도 동기와 범위가 다르므로 하나의 진단으로 묶을 수 없다."
-      },
-      {
-        "key": "4",
-        "text": "갑은 관계에 관심이 없으므로 조현형 성격장애이다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "조현형은 괴이한 인지 지각 경험이 있어야 하며 사례에 제시되지 않았다."
-      },
-      {
-        "key": "5",
-        "text": "갑은 회피성, 을은 조현성, 병은 회피성 성격 특성으로 본다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "관계 욕구 유무를 거꾸로 적용했다."
-      }
-    ],
-    "answer": [
-      "2"
-    ],
-    "theory": "회피성, 조현성, 사회불안장애 감별",
-    "concept": "회피성-조현성-사회불안-삼자감별",
-    "explanation": "회피 행동의 동기를 묻는 것이 감별의 출발점이다. 관계 무관심, 거절 공포와 부적절감, 특정 수행 상황의 불안을 구분한다.",
-    "sources": [
-      {
-        "source_name": "MSD 매뉴얼 전문가판",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/avoidant-personality-disorder-avpd",
-        "unit": "회피성 성격장애",
-        "basis": "사회적 회피, 부적절감, 비판에 대한 과민성이 7개 특징 중 4개 이상으로 나타남",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "MSD 매뉴얼 전문가판",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/schizoid-personality-disorder-scpd",
-        "unit": "조현성 성격장애",
-        "basis": "사회적 관계로부터의 분리와 제한된 정서 표현이 7개 기준 중 4개 이상으로 나타남",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
-        "ref": "American Psychiatric Association. DSM-5, 2013; DSM-5-TR, 2022",
-        "unit": "성격장애 일반 기준과 군집",
-        "basis": "지속적 내적 경험과 행동 패턴, 4개 영역 중 2개 이상, 청소년기나 성인기 초기 발병, 군집 A, B, C 분류",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   },
+   {
+    "source_name": "정신역동 성격장애 이론(모델 지식)",
+    "ref": "Kernberg 1975; Kohut 1971, 1977; Masterson 1976; Mahler 1975",
+    "unit": "정신역동적 설명",
+    "basis": "Kernberg 경계선 성격조직, Kohut 자기대상, Masterson 버림받음 우울, Mahler 재접근기",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L4-016",
-    "domain": "personality",
-    "disorder": "pd_alternative_model",
-    "related": [
-      "borderline"
-    ],
-    "level": 4,
-    "type": "multi",
-    "polarity": "correct",
-    "case": "30세 여성의 자기 개념은 만나는 사람에 따라 크게 달라지고, 목표를 세워도 쉽게 포기한다. 타인의 감정을 오해하는 일이 잦고, 친밀한 관계는 버림받을까 두려워 집착하다가 금세 깨진다. 평가 결과 정서 불안정, 불안, 분리불안, 충동성, 위험 감수, 적대감이 두드러진다. 임상가는 대안모형을 적용해 보려 한다.",
-    "stem": "대안모형 적용에 관한 판단으로 옳은 것을 모두 고르시오.",
-    "options": [
-      {
-        "key": "1",
-        "text": "정서 불안정, 불안, 분리불안은 부정적 정서성 영역, 충동성과 위험 감수는 탈억제 영역, 적대감은 적대성 영역의 특성으로 볼 수 있다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "정서 불안정, 불안, 분리불안은 부정적 정서성, 충동성과 위험 감수는 탈억제에 속한다. 대안모형의 경계성 정의에서 적대감은 적대성 영역의 측면으로 기술되며, 부정적 정서성과도 관련되는 하위 특성이다."
-      },
-      {
-        "key": "2",
-        "text": "성격기능 손상이 중등도 이상이고 해당 병적 특성이 확인되면 대안모형의 경계성 성격장애를 고려할 수 있다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "대안모형의 경계성은 성격기능 손상과 부정적 정서성 및 탈억제 영역 특성들로 정의된다."
-      },
-      {
-        "key": "3",
-        "text": "대안모형은 공식 진단 체계이므로 Section II 기준 평가는 생략해야 한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "대안모형은 Section III의 연구용 모델이며 Section II 기준이 공식 진단 체계이다."
-      },
-      {
-        "key": "4",
-        "text": "대안모형에서는 성격기능 손상이 경미하더라도 병적 특성이 5개 영역 모두에서 나타나야 진단한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "중등도 이상의 성격기능 손상이 필요하며, 5개 영역 모두에서 특성이 나타날 필요는 없다."
-      },
-      {
-        "key": "5",
-        "text": "자기 개념의 불안정은 정체성, 목표 포기는 자기주도성, 감정 오해는 공감, 불안정한 관계는 친밀감 영역의 손상으로 평가할 수 있다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "기준 A의 네 요소에 사례 정보를 대응시킨 판단이다."
-      }
-    ],
-    "answer": [
-      "1",
-      "2",
-      "5"
-    ],
-    "theory": "대안모형 사례 적용",
-    "concept": "대안모형-사례-기능과특성",
-    "explanation": "대안모형은 기준 A의 성격기능 네 요소와 기준 B의 병적 특성을 차례로 평가한다. 경계성은 정서 불안정, 불안, 분리불안, 우울감 등 부정적 정서성과 충동성, 위험 감수 등 탈억제, 그리고 적대성 영역의 측면인 적대감 특성으로 기술된다.",
-    "sources": [
-      {
-        "source_name": "Krueger와 Hobbs 리뷰 및 Focus 논문",
-        "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7529724/",
-        "unit": "DSM-5 성격장애 대안모형",
-        "basis": "Section III 대안모형. 기준 A 성격기능 4요소 정체성, 자기주도성, 공감, 친밀감과 0에서 4수준. 기준 B 5개 병적 특성영역과 25개 하위 특성. 6개 특정 성격장애",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L2-024",
+  "domain": "personality",
+  "disorder": "borderline",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "경계성 성격장애의 치료에 관한 설명으로 가장 적절한 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "경계성 성격장애를 근본적으로 치료하는 승인된 단일 약물이 있어 약물치료가 일차적이다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "경계성 성격장애 자체에 대해 미국 FDA가 승인한 약물은 없다."
+   },
+   {
+    "key": "2",
+    "text": "성격장애이므로 심리치료로는 변화가 불가능하다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "여러 구조화된 심리치료가 효과를 보였으며 장기 추적 연구에서도 상당수 환자가 호전된다."
+   },
+   {
+    "key": "3",
+    "text": "정신화 기반 치료는 노출과 반응방지를 핵심 기법으로 사용한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "노출과 반응방지는 강박장애 치료 기법이다. MBT는 정신화 능력 회복을 목표로 한다."
+   },
+   {
+    "key": "4",
+    "text": "자해 행동은 관심 끌기이므로 치료에서 다루지 않는 것이 원칙이다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "DBT 등은 자해와 자살 행동을 최우선 치료 목표로 다룬다."
+   },
+   {
+    "key": "5",
+    "text": "구조화된 심리치료가 일차적 치료이며, 약물은 특정 증상을 보조적으로 조절하는 데 사용된다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "DBT, MBT, TFP, 도식치료 등 심리치료의 효과가 연구되어 왔고, 약물은 경계성 자체를 치료하기보다 동반 증상을 겨냥한다."
+   }
+  ],
+  "answer": [
+   "5"
+  ],
+  "theory": "경계성 성격장애 치료",
+  "concept": "경계성-치료원칙-약물",
+  "explanation": "경계성 성격장애 치료의 중심은 구조화된 심리치료이다. 약물은 우울, 충동성, 일시적 정신병적 증상 등 표적 증상에 보조적으로 사용된다.",
+  "sources": [
+   {
+    "source_name": "Linehan DBT 기술훈련 매뉴얼 발췌 및 관련 장",
+    "ref": "https://www.guilford.com/excerpts/linehan7_old_ch1.pdf",
+    "unit": "생물사회이론과 DBT",
+    "basis": "생물학적 정서조절 취약성과 비타당화 환경의 상호작용. 기술훈련은 마음챙김, 대인관계 효율성, 정서조절, 고통감내의 4모듈",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L4-017",
-    "domain": "personality",
-    "disorder": "paranoid",
-    "related": [
-      "pd_general"
-    ],
-    "level": 4,
-    "type": "single",
-    "polarity": "correct",
-    "case": "32세 남성이 이웃이 자신을 독살하려 한다는 확고한 믿음과 자신을 욕하는 목소리 때문에 입원했다. 입원 3주째 항정신병 약물로 환청과 망상이 줄었다. 가족에 따르면 그는 이번 발병 전까지는 사람들을 크게 의심하지 않았고 친구 관계도 원만했다. 현재 그는 병동 직원들을 여전히 경계하고 속마음을 털어놓지 않는다.",
-    "stem": "편집성 성격장애 진단에 대한 판단으로 가장 적절한 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "편집성 성격장애가 조현병보다 먼저 있었으므로 병전 특성으로 기록한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "가족 보고에 따르면 발병 전에는 의심 패턴이 없었다."
-      },
-      {
-        "key": "2",
-        "text": "환청이 줄었으므로 현재 의심은 성격장애로 보아야 한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "증상이 남아 있는 회복 과정의 일부일 수 있으며 병전 성격 정보는 이를 지지하지 않는다."
-      },
-      {
-        "key": "3",
-        "text": "의심과 경계가 정신병적 삽화 경과 중에만 나타난 것으로 보이므로 편집성 성격장애로 진단하지 않는다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "발병 전에는 의심 패턴이 없었고 현재 경계도 정신병적 장애의 경과 안에 있으므로 배제 조항에 해당한다."
-      },
-      {
-        "key": "4",
-        "text": "7개 중 2개 기준만 확인되지만 정신병이 있으므로 역치를 낮추어 진단한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "정신병이 있다고 역치를 낮추는 규칙은 없다."
-      },
-      {
-        "key": "5",
-        "text": "직원을 경계하고 속마음을 털어놓지 않으므로 편집성 성격장애를 추가로 진단한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "성격장애는 장기적 패턴이어야 하며, 정신병적 장애 경과 중에만 나타나는 특징은 성격장애로 진단하지 않는다."
-      }
-    ],
-    "answer": [
-      "3"
-    ],
-    "theory": "편집성 성격장애 배제 조항 적용",
-    "concept": "편집성-사례-정신병경과배제",
-    "explanation": "군집 A 성격장애는 정신병적 장애 경과 중에만 나타나면 진단하지 않는다. 정신병 발병 이전부터 성격장애 기준을 충족했다면 병전 특성임을 명시할 수 있다.",
-    "sources": [
-      {
-        "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
-        "ref": "NCBI StatPearls Paranoid Personality Disorder, NBK606107",
-        "unit": "편집성 성격장애",
-        "basis": "불신과 의심의 패턴이 7개 기준 중 4개 이상. 조현병 등 정신병적 장애의 경과 중에만 나타나면 진단하지 않음",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   },
+   {
+    "source_name": "Bateman과 Fonagy 관련 PMC 리뷰",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4467231/",
+    "unit": "정신화 기반 치료",
+    "basis": "경계성 성격장애를 위해 개발. 불안정 특히 혼란 애착과 관련된 정신화 능력의 취약성, 강한 정서와 애착 활성화 상황에서 정신화가 무너짐",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L4-018",
-    "domain": "personality",
-    "disorder": "pd_general",
-    "related": [
-      "avoidant"
-    ],
-    "level": 4,
-    "type": "single",
-    "polarity": "correct",
-    "case": "15세 여학생은 6개월 전 전학 온 뒤 새 친구들과 잘 어울리지 못하고 수업 시간에 발표를 피한다. 부모는 아이가 회피성 성격장애가 아닌지 걱정한다. 전학 전 학교에서는 친한 친구들이 있었고 동아리 활동도 적극적으로 했다고 한다.",
-    "stem": "이 사례에 대한 판단으로 가장 적절한 것은?",
-    "options": [
-      {
-        "key": "1",
-        "text": "청소년기의 사회적 위축은 언제나 정상이므로 평가할 필요가 없다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "지속되거나 기능 손상이 크면 평가가 필요하다."
-      },
-      {
-        "key": "2",
-        "text": "6개월 이상 지속되었으므로 성격장애의 기간 조건을 충족한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "18세 미만에게 적용되는 기간 조건은 1년 이상이다."
-      },
-      {
-        "key": "3",
-        "text": "15세는 성격장애를 진단할 수 없는 나이이다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "반사회성을 제외하면 1년 이상 지속 조건에서 18세 미만에게도 진단할 수 있다."
-      },
-      {
-        "key": "4",
-        "text": "18세 미만은 특성이 1년 이상 지속되어야 성격장애를 고려할 수 있고, 전학이라는 상황 변화 이후 시작되었으므로 현재로서는 회피성 성격장애로 볼 근거가 부족하다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "6개월은 1년 조건에 못 미치고, 전학 전에는 적응이 좋았으므로 안정된 성격 패턴으로 보기 어렵다. 적응 문제나 사회불안을 포함해 추가 평가한다."
-      },
-      {
-        "key": "5",
-        "text": "발표를 피하므로 회피성 성격장애로 진단한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "단일 행동과 6개월의 짧은 기간으로 성격장애를 진단할 수 없다."
-      }
-    ],
-    "answer": [
-      "4"
-    ],
-    "theory": "18세 미만 성격장애 진단 규칙과 불확실성",
-    "concept": "성격장애-청소년-기간미충족",
-    "explanation": "청소년의 성격장애 진단은 1년 이상 지속, 다양한 맥락에서의 광범위함, 발달 단계나 상황적 반응으로 설명되지 않음을 확인해야 한다.",
-    "sources": [
-      {
-        "source_name": "MSD 매뉴얼 전문가판",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/overview-of-personality-disorders",
-        "unit": "성격장애 개관",
-        "basis": "18세 미만은 성격 특성이 1년 이상 지속되면 성격장애 진단이 가능하나 반사회성 성격장애는 18세 미만에게 진단할 수 없고 대신 품행장애를 고려함",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "MSD 매뉴얼 전문가판",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/avoidant-personality-disorder-avpd",
-        "unit": "회피성 성격장애",
-        "basis": "사회적 회피, 부적절감, 비판에 대한 과민성이 7개 특징 중 4개 이상으로 나타남",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "출처확인",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L2-025",
+  "domain": "personality",
+  "disorder": "pd_alternative_model",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "DSM-5 성격장애 대안모형의 성격기능 수준 척도에 대한 설명으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "성격기능은 정체성과 자기주도성만으로 평가하고 대인관계 기능은 제외한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "자기 영역의 정체성과 자기주도성, 대인관계 영역의 공감과 친밀감을 모두 평가한다."
+   },
+   {
+    "key": "2",
+    "text": "경미한 손상만 있어도 성격장애로 진단한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "진단에는 중등도 이상의 손상이 필요하다."
+   },
+   {
+    "key": "3",
+    "text": "손상 없음에 해당하는 수준 0부터 극도의 손상에 해당하는 수준 4까지 다섯 수준으로 평가하며, 성격장애 진단에는 중등도 이상의 손상이 필요하다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "성격기능 수준 척도는 0에서 4까지 다섯 수준이며 중등도는 수준 2에 해당한다."
+   },
+   {
+    "key": "4",
+    "text": "부정적 정서성, 애착상실, 적대성, 탈억제, 정신병적 경향성을 평가한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "이것은 기준 B의 병적 특성영역이다. 성격기능 수준 척도는 기준 A에 해당한다."
+   },
+   {
+    "key": "5",
+    "text": "수준 1부터 수준 10까지 열 수준으로 평가한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "척도는 0에서 4까지 다섯 수준이다."
+   }
+  ],
+  "answer": [
+   "3"
+  ],
+  "theory": "대안모형 성격기능 수준 척도",
+  "concept": "대안모형-LPFS-수준",
+  "explanation": "대안모형의 기준 A는 성격기능 수준 척도로 평가하고, 기준 B는 5개 영역과 25개 하위 특성으로 평가한다.",
+  "sources": [
+   {
+    "source_name": "Krueger와 Hobbs 리뷰 및 Focus 논문",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7529724/",
+    "unit": "DSM-5 성격장애 대안모형",
+    "basis": "Section III 대안모형. 기준 A 성격기능 4요소 정체성, 자기주도성, 공감, 친밀감과 0에서 4수준. 기준 B 5개 병적 특성영역과 25개 하위 특성. 6개 특정 성격장애",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L4-019",
-    "domain": "personality",
-    "disorder": "dependent",
-    "related": [
-      "borderline"
-    ],
-    "level": 4,
-    "type": "multi",
-    "polarity": "correct",
-    "case": "34세 여성은 10년간 사귄 연인과 헤어진 지 2주 만에 소개를 통해 새 연인을 만나 동거를 시작했다. 그녀는 새 연인이 원하는 대로 직장과 취미까지 바꾸었고, 사소한 결정도 연인에게 묻는다. 연인이 화를 내도 반박하지 않고 사과하며, 혼자 있는 시간을 견디기 어려워한다. 자해, 강렬한 분노 폭발, 공허감, 이상화와 평가절하의 반복은 보고되지 않았다. 이러한 모습은 20대 초반부터 이어져 왔다.",
-    "stem": "이 사례에 대한 판단으로 옳은 것을 모두 고르시오.",
-    "options": [
-      {
-        "key": "1",
-        "text": "이별 직후 새로운 관계를 서둘러 찾은 것은 의존성 성격장애의 기준에 해당한다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "가까운 관계가 끝나면 다른 관계를 급히 찾는 것은 의존성 기준이다."
-      },
-      {
-        "key": "2",
-        "text": "현재 정보로 의존성 기준 5개 이상이 확인되어 의존성 성격장애를 고려할 수 있다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "결정의 어려움, 반대 의견 표현의 어려움, 혼자 있을 때의 불편, 새 관계를 급히 찾음, 타인에게 주요 생활 영역의 책임을 맡김이 확인된다."
-      },
-      {
-        "key": "3",
-        "text": "버림받음에 대해 분노와 자기파괴가 아니라 순응과 복종으로 반응하는 양상은 경계성보다 의존성을 시사한다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "버림받음에 대한 반응 방식이 두 장애의 감별 포인트이다."
-      },
-      {
-        "key": "4",
-        "text": "버림받음에 대한 두려움이 있으므로 경계성 성격장애로 진단해야 한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "버림받음 두려움은 두 장애에 공통이며, 경계성의 다른 핵심 특징이 보고되지 않았다."
-      },
-      {
-        "key": "5",
-        "text": "의존성 성격장애는 군집 B에 속하므로 경계성과 같은 군집이다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "의존성은 군집 C이다."
-      }
-    ],
-    "answer": [
-      "1",
-      "2",
-      "3"
-    ],
-    "theory": "의존성과 경계성 사례 감별",
-    "concept": "의존성-경계성-사례감별",
-    "explanation": "의존성은 돌봄을 잃지 않으려는 복종과 매달림이, 경계성은 불안정하고 강렬한 관계, 분노, 자기파괴성이 핵심이다. 사례에서는 의존성 기준 5개 이상이 확인된다.",
-    "sources": [
-      {
-        "source_name": "MSD 매뉴얼 전문가판",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/dependent-personality-disorder-dpd",
-        "unit": "의존성 성격장애",
-        "basis": "돌봄받으려는 지속적 욕구가 8개 특징 중 5개 이상으로 나타나며 성인기 초기까지 시작",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "MSD 매뉴얼 전문가판 및 Australian Prescriber",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/borderline-personality-disorder-bpd",
-        "unit": "경계성 성격장애",
-        "basis": "경계성 성격장애는 9개 기준 중 5개 이상을 충족해야 진단하며 DSM-5-TR 기준을 따름",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "출처확인",
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L3-016",
+  "domain": "personality",
+  "disorder": "borderline",
+  "related": [
+   "schizotypal"
+  ],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "경계성 성격장애와 조현형 성격장애는 모두 편집적 사고를 보일 수 있다. 둘을 감별하는 설명으로 가장 적절한 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "경계성의 편집적 사고는 망상 수준으로 지속되어야 진단된다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "경계성의 편집 사고는 일시적이며 망상 수준의 지속은 요구되지 않는다."
+   },
+   {
+    "key": "2",
+    "text": "경계성의 편집적 사고는 스트레스와 관련해 일시적으로 나타나고, 조현형의 의심과 기이한 인지는 지속적인 성격 특성이다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "경계성 기준은 스트레스 관련 일시적 편집 사고를 명시하며, 조현형은 괴이성이 지속적 패턴이다."
+   },
+   {
+    "key": "3",
+    "text": "조현형은 버림받음에 대한 필사적 노력이 핵심이다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "버림받음 회피 노력은 경계성의 기준이다."
+   },
+   {
+    "key": "4",
+    "text": "두 장애는 같은 군집에 속하므로 감별이 필요 없다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "경계성은 군집 B, 조현형은 군집 A이다."
+   },
+   {
+    "key": "5",
+    "text": "조현형은 반드시 자해 행동을 동반한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "반복적 자해는 경계성의 기준이다."
+   }
+  ],
+  "answer": [
+   "2"
+  ],
+  "theory": "경계성과 조현형 감별",
+  "concept": "경계성-조현형-일시적편집",
+  "explanation": "편집적 사고가 스트레스와 함께 나타났다 사라지는지, 아니면 마술적 사고와 이상한 지각 경험을 동반하며 지속되는지가 감별의 핵심이다.",
+  "sources": [
+   {
+    "source_name": "MSD 매뉴얼 전문가판 및 Australian Prescriber",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/borderline-personality-disorder-bpd",
+    "unit": "경계성 성격장애",
+    "basis": "경계성 성격장애는 9개 기준 중 5개 이상을 충족해야 진단하며 DSM-5-TR 기준을 따름",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L4-020",
-    "domain": "personality",
-    "disorder": "schizoid",
-    "related": [
-      "avoidant"
-    ],
-    "level": 4,
-    "type": "multi",
-    "polarity": "correct",
-    "case": "29세 남성 프로그래머는 재택근무를 하며 사람들과 거의 만나지 않는다. 그는 사람과의 관계는 번거롭고 자유를 방해할 뿐이라고 말한다. 어린 시절 부모는 정서적으로 차갑고 예측하기 어려웠으며, 그는 일찍부터 혼자 노는 것을 편하게 여겼다. 연애나 친구에 대한 욕구가 없고, 남들의 평가에도 별 관심이 없다.",
-    "stem": "이 사례에 대한 이론적 설명으로 적절한 것을 모두 고르시오.",
-    "options": [
-      {
-        "key": "1",
-        "text": "Kohut의 거울 자기대상 결핍으로 인한 과도한 찬사 요구가 이 사례의 핵심이다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "이 사람은 평가에 무관심하며 찬사를 요구하지 않는다."
-      },
-      {
-        "key": "2",
-        "text": "Beck의 인지 이론에 따르면 나는 자족적이며 관계는 번거롭고 불필요하다는 신념이 조현성의 핵심신념이다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "관계를 번거롭다고 보는 진술은 조현성의 핵심신념과 일치한다."
-      },
-      {
-        "key": "3",
-        "text": "이 사람의 고립은 거절에 대한 두려움 때문이므로 Millon의 능동적 분리형으로 설명하는 것이 가장 적절하다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "사례에는 거절 공포가 없고 관계 욕구 자체가 없으므로 능동적 분리형인 회피성과 맞지 않는다."
-      },
-      {
-        "key": "4",
-        "text": "Millon의 이론에서 이 사람은 쾌락과 고통에 모두 둔감한 수동적 분리형에 가깝다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "관계 욕구도 거절 공포도 약한 양상은 수동적 분리형에 해당한다."
-      },
-      {
-        "key": "5",
-        "text": "대상관계 이론가들은 차갑고 예측하기 어려운 초기 양육 경험이 관계로부터의 철수를 낳았다고 설명할 수 있다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "Fairbairn과 Guntrip 등은 조현성 철수를 초기 대상관계의 좌절과 관련지었다."
-      }
-    ],
-    "answer": [
-      "2",
-      "4",
-      "5"
-    ],
-    "theory": "조현성 성격장애 이론 적용",
-    "concept": "조현성-이론적합성-사례",
-    "explanation": "조현성은 인지 이론의 자족성 신념, Millon의 수동적 분리형, 대상관계 이론의 초기 관계 좌절과 철수로 설명된다. 회피성과의 차이는 관계 욕구와 거절 공포의 유무이다.",
-    "sources": [
-      {
-        "source_name": "인지적 성격장애 이론(모델 지식)",
-        "ref": "Beck, Freeman 등 Cognitive Therapy of Personality Disorders; Young 등 Schema Therapy 2003",
-        "unit": "인지 및 도식 이론",
-        "basis": "장애별 핵심신념과 과잉발달 및 미발달 전략, 초기 부적응 도식과 도식 모드",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "Millon 성격 이론(모델 지식)",
-        "ref": "Millon, Disorders of Personality",
-        "unit": "생물사회적 학습이론",
-        "basis": "쾌-고통, 능동-수동, 자기-타인 양극성에 따른 성격 유형 분류",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "정신역동 성격장애 이론(모델 지식)",
-        "ref": "Kernberg 1975; Kohut 1971, 1977; Masterson 1976; Mahler 1975",
-        "unit": "정신역동적 설명",
-        "basis": "Kernberg 경계선 성격조직, Kohut 자기대상, Masterson 버림받음 우울, Mahler 재접근기",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   },
+   {
+    "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/schizotypal-personality-disorder-stpd",
+    "unit": "조현형 성격장애",
+    "basis": "9개 기준 중 5개 이상. 관계사고, 마술적 사고, 이상한 지각 경험, 친숙해져도 줄지 않는 사회불안",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L5-012",
-    "domain": "personality",
-    "disorder": "paranoid",
-    "related": [
-      "schizotypal"
-    ],
-    "level": 5,
-    "type": "multi",
-    "polarity": "incorrect",
-    "case": null,
-    "stem": "편집성 성격장애의 진단, 원인론, 치료에 관한 설명으로 옳지 않은 것을 모두 고르시오.",
-    "options": [
-      {
-        "key": "1",
-        "text": "정신역동 이론은 수용할 수 없는 적대감과 약점을 타인에게 투사하는 것을 핵심 방어로 본다",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "투사는 편집성에 대한 대표적 정신역동 설명이다."
-      },
-      {
-        "key": "2",
-        "text": "치료 초기부터 의심을 비합리적이라고 강하게 직면하는 것이 신뢰 형성에 가장 효과적이다",
-        "is_true": false,
-        "in_answer": true,
-        "explanation": "편집성 환자는 직면을 공격으로 받아들이기 쉬워 치료 동맹이 깨질 수 있다. 투명하고 일관된 태도로 신뢰를 먼저 형성하는 것이 권장된다."
-      },
-      {
-        "key": "3",
-        "text": "편집성 성격장애는 9개 기준 중 5개 이상을 충족해야 진단한다",
-        "is_true": false,
-        "in_answer": true,
-        "explanation": "편집성은 7개 기준 중 4개 이상이다. 9개 중 5개는 조현형, 경계성, 자기애성의 구조이다."
-      },
-      {
-        "key": "4",
-        "text": "편집성 성격장애의 의심은 체계화된 망상 수준에 이르지 않는다는 점에서 망상장애와 구분된다",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "고정된 망상이 있으면 망상장애를 고려한다."
-      },
-      {
-        "key": "5",
-        "text": "Beck의 인지 이론에서 편집성의 핵심신념은 타인은 악의적이고 기만적이므로 늘 경계해야 한다는 것이다",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "경계와 의심이 과잉발달한 전략으로 설명된다."
-      }
-    ],
-    "answer": [
-      "2",
-      "3"
-    ],
-    "theory": "편집성 성격장애 통합",
-    "concept": "편집성-진단원인치료-통합",
-    "explanation": "편집성은 7개 중 4개 기준, 투사 방어, 타인의 악의에 대한 신념으로 정리되며, 치료에서는 신뢰 형성과 투명성이 무엇보다 중요하다.",
-    "sources": [
-      {
-        "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
-        "ref": "NCBI StatPearls Paranoid Personality Disorder, NBK606107",
-        "unit": "편집성 성격장애",
-        "basis": "불신과 의심의 패턴이 7개 기준 중 4개 이상. 조현병 등 정신병적 장애의 경과 중에만 나타나면 진단하지 않음",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "정신역동 성격장애 이론(모델 지식)",
-        "ref": "Kernberg 1975; Kohut 1971, 1977; Masterson 1976; Mahler 1975",
-        "unit": "정신역동적 설명",
-        "basis": "Kernberg 경계선 성격조직, Kohut 자기대상, Masterson 버림받음 우울, Mahler 재접근기",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "인지적 성격장애 이론(모델 지식)",
-        "ref": "Beck, Freeman 등 Cognitive Therapy of Personality Disorders; Young 등 Schema Therapy 2003",
-        "unit": "인지 및 도식 이론",
-        "basis": "장애별 핵심신념과 과잉발달 및 미발달 전략, 초기 부적응 도식과 도식 모드",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L3-017",
+  "domain": "personality",
+  "disorder": "pd_general",
+  "related": [],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "45세 남성이 2년 전 교통사고로 전두엽 손상을 입은 뒤 충동적이고 공격적으로 변했으며 무례한 언행이 잦아졌다. 사고 이전에는 원만한 성격이었다. 이에 대한 진단적 판단으로 가장 적절한 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "분노 폭발이 있으므로 경계성 성격장애로 진단한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "성격장애는 청소년기나 성인기 초기부터 이어진 패턴이어야 하며, 의학적 상태로 인한 것이 아니어야 한다."
+   },
+   {
+    "key": "2",
+    "text": "성격은 성인기에 변하지 않으므로 꾀병으로 판단한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "뇌손상으로 성격이 변할 수 있으며 근거 없이 꾀병으로 판단해서는 안 된다."
+   },
+   {
+    "key": "3",
+    "text": "2년 이상 지속되었으므로 일반 기준을 충족하여 성격장애로 진단한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "지속 기간만으로 충분하지 않다. 발병 시기와 의학적 원인 배제 조건을 충족하지 않는다."
+   },
+   {
+    "key": "4",
+    "text": "충동성과 공격성이 있으므로 반사회성 성격장애로 진단한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "15세 이전 품행장애 증거가 없고 패턴이 뇌손상 이후 시작되었다."
+   },
+   {
+    "key": "5",
+    "text": "다른 의학적 상태로 인한 성격 변화를 고려한다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "성격 변화가 의학적 상태의 직접적 생리적 결과이고 이전 성격 패턴과 달라졌다면 다른 의학적 상태로 인한 성격 변화로 진단한다."
+   }
+  ],
+  "answer": [
+   "5"
+  ],
+  "theory": "성격장애와 의학적 상태로 인한 성격 변화 감별",
+  "concept": "성격장애-의학적상태-성격변화",
+  "explanation": "성격장애 일반 기준은 패턴이 물질이나 다른 의학적 상태의 생리적 효과로 인한 것이 아니어야 한다고 규정한다. 성인기 후기에 새로 나타난 성격 변화는 의학적 원인을 먼저 확인한다.",
+  "sources": [
+   {
+    "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
+    "ref": "American Psychiatric Association. DSM-5, 2013; DSM-5-TR, 2022",
+    "unit": "성격장애 일반 기준과 군집",
+    "basis": "지속적 내적 경험과 행동 패턴, 4개 영역 중 2개 이상, 청소년기나 성인기 초기 발병, 군집 A, B, C 분류",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L5-013",
-    "domain": "personality",
-    "disorder": "histrionic",
-    "related": [
-      "narcissistic",
-      "borderline"
-    ],
-    "level": 5,
-    "type": "multi",
-    "polarity": "correct",
-    "case": null,
-    "stem": "연극성, 자기애성, 경계성 성격장애에 관한 비교로 옳은 것을 모두 고르시오.",
-    "options": [
-      {
-        "key": "1",
-        "text": "연극성과 의존성은 8개 중 5개, 자기애성과 경계성은 9개 중 5개를 진단 역치로 한다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "각 장애의 정확한 기준 개수이다."
-      },
-      {
-        "key": "2",
-        "text": "세 장애는 모두 군집 B에 속하며 극적이고 감정적이며 변덕스러운 특성을 공유한다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "군집 B는 반사회성, 경계성, 연극성, 자기애성이다."
-      },
-      {
-        "key": "3",
-        "text": "만성적 공허감과 반복적 자해는 경계성의 기준으로, 연극성 및 자기애성과 감별하는 단서가 된다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "두 특징은 경계성에만 있는 기준이다."
-      },
-      {
-        "key": "4",
-        "text": "세 장애는 모두 DSM-5 대안모형의 특정 성격장애로 정의되어 있다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "경계성과 자기애성은 포함되지만 연극성은 제외되었다."
-      },
-      {
-        "key": "5",
-        "text": "자기애성의 시기심과 특권의식, 연극성의 피암시성은 각 장애를 구분하는 기준이다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "시기심과 특권의식은 자기애성, 피암시성은 연극성의 기준이다."
-      }
-    ],
-    "answer": [
-      "1",
-      "2",
-      "3",
-      "5"
-    ],
-    "theory": "군집 B 성격장애 비교",
-    "concept": "연극성-자기애성-경계성-비교",
-    "explanation": "군집 B 장애는 기준 개수, 고유 기준, 대안모형 포함 여부를 함께 비교해 두면 혼동을 줄일 수 있다.",
-    "sources": [
-      {
-        "source_name": "MSD 매뉴얼 전문가판",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/histrionic-personality-disorder-hpd",
-        "unit": "연극성 성격장애",
-        "basis": "과도한 정서성과 관심 추구가 8개 특징 중 5개 이상으로 나타남",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "MSD 매뉴얼 전문가판",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/narcissistic-personality-disorder-npd",
-        "unit": "자기애성 성격장애",
-        "basis": "과대성, 찬사 요구, 공감 결여의 지속적 패턴이 9개 특징 중 5개 이상으로 나타나며 성인기 초기까지 시작",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "MSD 매뉴얼 전문가판 및 Australian Prescriber",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/borderline-personality-disorder-bpd",
-        "unit": "경계성 성격장애",
-        "basis": "경계성 성격장애는 9개 기준 중 5개 이상을 충족해야 진단하며 DSM-5-TR 기준을 따름",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "Krueger와 Hobbs 리뷰 및 Focus 논문",
-        "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7529724/",
-        "unit": "DSM-5 성격장애 대안모형",
-        "basis": "Section III 대안모형. 기준 A 성격기능 4요소 정체성, 자기주도성, 공감, 친밀감과 0에서 4수준. 기준 B 5개 병적 특성영역과 25개 하위 특성. 6개 특정 성격장애",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "출처확인",
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L3-018",
+  "domain": "personality",
+  "disorder": "ocpd",
+  "related": [
+   "narcissistic"
+  ],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "강박성 성격장애와 자기애성 성격장애 모두 완벽주의적일 수 있다. 둘을 감별하는 설명으로 가장 적절한 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "완벽주의가 있으면 언제나 강박성으로 진단한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "완벽주의는 여러 장애와 정상 성격에서도 나타나므로 동기와 다른 기준을 함께 평가해야 한다."
+   },
+   {
+    "key": "2",
+    "text": "두 장애는 모두 군집 C에 속한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "강박성은 군집 C, 자기애성은 군집 B이다."
+   },
+   {
+    "key": "3",
+    "text": "자기애성은 쓸모없는 물건을 버리지 못하고 인색한 것이 핵심이다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "버리지 못함과 인색함은 강박성의 기준이다."
+   },
+   {
+    "key": "4",
+    "text": "강박성은 자신이 완벽하지 못하다고 여겨 스스로를 혹독하게 비판하는 경향이 있고, 자기애성은 자신이 이미 완벽하다고 믿는 경향이 있다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "DSM-5 감별 설명에서도 자기애성은 자신이 완벽을 이루었다고 믿는 반면 강박성은 자기비판적이라는 차이가 제시된다."
+   },
+   {
+    "key": "5",
+    "text": "강박성은 찬사와 인정을 받기 위해 완벽을 추구하는 것이 핵심이다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "찬사 추구는 자기애성의 동기이다. 강박성은 통제와 실수 회피가 핵심이다."
+   }
+  ],
+  "answer": [
+   "4"
+  ],
+  "theory": "강박성과 자기애성 감별",
+  "concept": "강박성-자기애성-완벽주의",
+  "explanation": "같은 완벽주의라도 강박성은 자기비판과 통제, 자기애성은 우월감과 찬사 요구와 연결된다.",
+  "sources": [
+   {
+    "source_name": "PubMed Central 리뷰 논문 표(DSM-5 기준 정리)",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5540167/",
+    "unit": "강박성 성격장애 진단 기준",
+    "basis": "질서, 완벽주의, 통제에 대한 집착이 8개 기준 중 4개 이상으로 나타남",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L5-014",
-    "domain": "personality",
-    "disorder": "schizotypal",
-    "related": [
-      "paranoid",
-      "schizoid"
-    ],
-    "level": 5,
-    "type": "multi",
-    "polarity": "incorrect",
-    "case": null,
-    "stem": "군집 A 성격장애인 편집성, 조현성, 조현형 성격장애를 비교한 설명으로 옳지 않은 것을 모두 고르시오.",
-    "options": [
-      {
-        "key": "1",
-        "text": "세 장애 모두 정신병적 장애의 경과 중에만 나타나면 진단하지 않는다는 배제 조항이 있다",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "군집 A 세 장애 모두 정신병적 장애와 관련된 배제 조항을 가진다."
-      },
-      {
-        "key": "2",
-        "text": "조현형은 관계사고와 마술적 사고 같은 인지 지각 왜곡이 있다는 점에서 편집성, 조현성과 구분된다",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "괴이성은 조현형의 고유한 특징이다."
-      },
-      {
-        "key": "3",
-        "text": "조현성은 친숙해져도 줄지 않는 사회불안이, 조현형은 칭찬과 비판에 대한 무관심이 핵심 기준이다",
-        "is_true": false,
-        "in_answer": true,
-        "explanation": "거꾸로 기술했다. 친숙해져도 줄지 않는 사회불안은 조현형, 칭찬과 비판에 대한 무관심은 조현성의 기준이다."
-      },
-      {
-        "key": "4",
-        "text": "조현성은 7개 중 4개, 편집성은 7개 중 4개, 조현형은 9개 중 5개를 요구한다",
-        "is_true": true,
-        "in_answer": false,
-        "explanation": "군집 A 세 장애의 정확한 역치이다."
-      },
-      {
-        "key": "5",
-        "text": "세 장애 모두 DSM-5 대안모형의 특정 성격장애로 유지되었다",
-        "is_true": false,
-        "in_answer": true,
-        "explanation": "대안모형에는 조현형만 포함되고 편집성과 조현성은 제외되었다."
-      }
-    ],
-    "answer": [
-      "3",
-      "5"
-    ],
-    "theory": "군집 A 성격장애 비교",
-    "concept": "조현형-군집A-비교",
-    "explanation": "군집 A는 기이하고 괴짜 같은 특성을 공유한다. 의심의 편집성, 관계 무관심의 조현성, 괴이성의 조현형으로 구분하고, 대안모형에는 조현형만 남았다는 점을 기억하자.",
-    "sources": [
-      {
-        "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/schizotypal-personality-disorder-stpd",
-        "unit": "조현형 성격장애",
-        "basis": "9개 기준 중 5개 이상. 관계사고, 마술적 사고, 이상한 지각 경험, 친숙해져도 줄지 않는 사회불안",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
-        "ref": "NCBI StatPearls Paranoid Personality Disorder, NBK606107",
-        "unit": "편집성 성격장애",
-        "basis": "불신과 의심의 패턴이 7개 기준 중 4개 이상. 조현병 등 정신병적 장애의 경과 중에만 나타나면 진단하지 않음",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "MSD 매뉴얼 전문가판",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/schizoid-personality-disorder-scpd",
-        "unit": "조현성 성격장애",
-        "basis": "사회적 관계로부터의 분리와 제한된 정서 표현이 7개 기준 중 4개 이상으로 나타남",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "Krueger와 Hobbs 리뷰 및 Focus 논문",
-        "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7529724/",
-        "unit": "DSM-5 성격장애 대안모형",
-        "basis": "Section III 대안모형. 기준 A 성격기능 4요소 정체성, 자기주도성, 공감, 친밀감과 0에서 4수준. 기준 B 5개 병적 특성영역과 25개 하위 특성. 6개 특정 성격장애",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/narcissistic-personality-disorder-npd",
+    "unit": "자기애성 성격장애",
+    "basis": "과대성, 찬사 요구, 공감 결여의 지속적 패턴이 9개 특징 중 5개 이상으로 나타나며 성인기 초기까지 시작",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
     "textbook_compared": false
-  },
-  {
-    "id": "PD-L5-015",
-    "domain": "personality",
-    "disorder": "borderline",
-    "related": [],
-    "level": 5,
-    "type": "multi",
-    "polarity": "correct",
-    "case": "25세 여성은 연인이 연락을 늦게 하면 버림받았다고 느끼며 수십 통의 문자를 보낸다. 연인을 이상화하다가 사소한 실망에 경멸하며 분노를 폭발한다. 과식과 충동적 성관계를 반복하고, 스트레스를 받으면 손목을 긋는다. 기분은 몇 시간 단위로 변하고, 자신이 누구인지 모르겠다며 늘 텅 빈 느낌을 호소한다. 어머니도 비슷한 정서 문제를 겪었다고 한다.",
-    "stem": "이 사례에 대한 진단, 원인론, 치료적 판단으로 옳은 것을 모두 고르시오.",
-    "options": [
-      {
-        "key": "1",
-        "text": "Kernberg의 관점에서 연인을 이상화하다가 경멸하는 것은 분리 방어로 이해할 수 있다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "전적으로 좋은 대상과 나쁜 대상 표상을 통합하지 못하는 분리의 예이다."
-      },
-      {
-        "key": "2",
-        "text": "자해가 있으므로 DBT보다 장기 입원과 약물치료만이 유일한 표준 치료이다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "DBT 같은 외래 구조화 심리치료가 근거기반 치료이며, 장기 입원과 약물만이 유일한 표준 치료라는 근거는 없다."
-      },
-      {
-        "key": "3",
-        "text": "생물학적 연구는 세로토닌 기능 저하가 충동적 공격성과 관련된다고 보고하며, 가족력은 유전적 소인의 가능성을 시사한다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "세로토닌 기능 저하와 충동성, 경계성의 가족 집적성은 생물학적 원인론의 근거로 논의된다."
-      },
-      {
-        "key": "4",
-        "text": "기분이 몇 시간 단위로 변하므로 양극성장애 진단이 경계성 진단보다 우선한다",
-        "is_true": false,
-        "in_answer": false,
-        "explanation": "수 시간 단위의 반응성 기분 변화는 경계성의 정서 불안정에 부합하며, 양극성장애는 지속적 삽화가 있어야 한다."
-      },
-      {
-        "key": "5",
-        "text": "버림받음 회피, 불안정한 관계, 자기손상적 충동성, 자해, 정서 불안정, 정체성 혼란, 공허감, 분노 등 5개 이상의 기준을 충족하여 경계성 성격장애를 진단할 수 있다",
-        "is_true": true,
-        "in_answer": true,
-        "explanation": "사례에서 8개 기준이 확인되어 9개 중 5개 역치를 충족한다."
-      }
-    ],
-    "answer": [
-      "1",
-      "3",
-      "5"
-    ],
-    "theory": "경계성 성격장애 진단, 원인론, 치료 통합",
-    "concept": "경계성-통합사례-진단원인치료",
-    "explanation": "최상위 문항은 진단 기준 수 판단, 생물학 및 정신역동 원인론, 근거기반 치료를 사례 하나에 결합한다. 경계성은 9개 중 5개, 분리 방어, 세로토닌과 충동성, DBT가 핵심이다.",
-    "sources": [
-      {
-        "source_name": "MSD 매뉴얼 전문가판 및 Australian Prescriber",
-        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/borderline-personality-disorder-bpd",
-        "unit": "경계성 성격장애",
-        "basis": "경계성 성격장애는 9개 기준 중 5개 이상을 충족해야 진단하며 DSM-5-TR 기준을 따름",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "성격장애 생물학 연구(모델 지식)",
-        "ref": "Siever와 Davis 1991 등 생물학적 연구 개관",
-        "unit": "생물학적 요인",
-        "basis": "세로토닌 기능 저하와 충동적 공격성, 조현병 스펙트럼 유전 연관, 반사회성의 낮은 각성",
-        "checked_date": "2026-11-20",
-        "source_verified": false,
-        "verify_method": "미확인(모델 지식)",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "American Journal of Psychotherapy TFP 리뷰",
-        "ref": "https://psychotherapy.psychiatryonline.org/doi/10.1176/appi.psychotherapy.20220017",
-        "unit": "Kernberg 경계선 성격조직과 전이초점 심리치료",
-        "basis": "정체성 혼미, 분리와 투사적 동일시 등 원시적 방어, 대상관계 모형에 기초한 주 2회 구조화된 정신역동 치료",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      },
-      {
-        "source_name": "Linehan DBT 기술훈련 매뉴얼 발췌 및 관련 장",
-        "ref": "https://www.guilford.com/excerpts/linehan7_old_ch1.pdf",
-        "unit": "생물사회이론과 DBT",
-        "basis": "생물학적 정서조절 취약성과 비타당화 환경의 상호작용. 기술훈련은 마음챙김, 대인관계 효율성, 정서조절, 고통감내의 4모듈",
-        "checked_date": "2026-11-20",
-        "source_verified": true,
-        "verify_method": "WebSearch 결과 요약 확인",
-        "textbook_compared": false
-      }
-    ],
-    "verification_status": "자체검토(출처 미검증)",
+   },
+   {
+    "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
+    "ref": "American Psychiatric Association. DSM-5, 2013; DSM-5-TR, 2022",
+    "unit": "성격장애 일반 기준과 군집",
+    "basis": "지속적 내적 경험과 행동 패턴, 4개 영역 중 2개 이상, 청소년기나 성인기 초기 발병, 군집 A, B, C 분류",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
     "textbook_compared": false
-  }
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L3-019",
+  "domain": "personality",
+  "disorder": "narcissistic",
+  "related": [],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "과대성을 보이는 환자에게서 자기애성 성격장애와 양극성장애의 조증이나 경조증 삽화를 감별할 때 가장 중요한 정보는?",
+  "options": [
+   {
+    "key": "1",
+    "text": "과대성이 성인기 초기부터 지속된 안정된 패턴인지, 아니면 수면 욕구 감소와 활동 증가를 동반하여 평소와 구분되는 삽화로 나타났는지",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "자기애성의 과대성은 지속적 성격 특성이고, 조증과 경조증의 과대성은 기분 삽화의 일부로 나타난다."
+   },
+   {
+    "key": "2",
+    "text": "과대성의 내용이 사업에 관한 것인지 여부",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "과대성의 내용만으로는 감별할 수 없다."
+   },
+   {
+    "key": "3",
+    "text": "환자의 직업적 지위가 높은지 여부",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "직업적 지위는 진단 기준과 무관하다."
+   },
+   {
+    "key": "4",
+    "text": "환자가 자신을 특별하다고 말하는지 여부",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "두 경우 모두 자신을 특별하다고 말할 수 있다."
+   },
+   {
+    "key": "5",
+    "text": "타인의 칭찬을 좋아하는지 여부",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "칭찬 선호는 감별에 결정적이지 않다."
+   }
+  ],
+  "answer": [
+   "1"
+  ],
+  "theory": "자기애성과 조증 삽화 감별",
+  "concept": "자기애성-조증-과대성",
+  "explanation": "성격장애와 기분장애의 감별 원리는 지속성 대 삽화성이다. 과대성이 기분 삽화 중에만 나타나면 자기애성 성격장애로 진단하지 않는다.",
+  "sources": [
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/narcissistic-personality-disorder-npd",
+    "unit": "자기애성 성격장애",
+    "basis": "과대성, 찬사 요구, 공감 결여의 지속적 패턴이 9개 특징 중 5개 이상으로 나타나며 성인기 초기까지 시작",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
+    "ref": "American Psychiatric Association. DSM-5, 2013; DSM-5-TR, 2022",
+    "unit": "성격장애 일반 기준과 군집",
+    "basis": "지속적 내적 경험과 행동 패턴, 4개 영역 중 2개 이상, 청소년기나 성인기 초기 발병, 군집 A, B, C 분류",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L3-020",
+  "domain": "personality",
+  "disorder": "avoidant",
+  "related": [
+   "schizoid",
+   "social_anxiety"
+  ],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "세 사람이 모두 직장 회식에 가지 않는다. 갑은 사람들과 어울리는 것 자체에 관심이 없어 혼자 있는 것이 편하다고 한다. 을은 사람들과 가까워지고 싶지만 무시당할까 두려워 늘 빠지며 자신을 매력 없는 사람이라고 여긴다. 병은 평소 친구들과 잘 지내지만 회식에서 건배사를 해야 할 때 망신당할까 봐 극심하게 불안해한다. 가장 적절한 진단적 가설의 연결은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "병은 친구들과 잘 지내므로 어떤 불안 문제도 없다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "특정 수행 상황에서의 극심한 불안은 사회불안장애 수행형을 시사할 수 있다."
+   },
+   {
+    "key": "2",
+    "text": "갑은 조현성 성격 특성, 을은 회피성 성격 특성, 병은 수행 상황 중심의 사회불안을 우선 가설로 둔다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "관계 무관심은 조현성, 관계 욕구와 거절 공포 및 부적절감은 회피성, 특정 수행 상황의 불안은 사회불안장애를 시사한다. 확정에는 지속 기간과 손상 평가가 필요하다."
+   },
+   {
+    "key": "3",
+    "text": "세 사람 모두 회피 행동이 있으므로 회피성 성격장애로 진단한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "회피 행동은 같아도 동기와 범위가 다르므로 하나의 진단으로 묶을 수 없다."
+   },
+   {
+    "key": "4",
+    "text": "갑은 관계에 관심이 없으므로 조현형 성격장애이다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "조현형은 괴이한 인지 지각 경험이 있어야 하며 사례에 제시되지 않았다."
+   },
+   {
+    "key": "5",
+    "text": "갑은 회피성, 을은 조현성, 병은 회피성 성격 특성으로 본다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "관계 욕구 유무를 거꾸로 적용했다."
+   }
+  ],
+  "answer": [
+   "2"
+  ],
+  "theory": "회피성, 조현성, 사회불안장애 감별",
+  "concept": "회피성-조현성-사회불안-삼자감별",
+  "explanation": "회피 행동의 동기를 묻는 것이 감별의 출발점이다. 관계 무관심, 거절 공포와 부적절감, 특정 수행 상황의 불안을 구분한다.",
+  "sources": [
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/avoidant-personality-disorder-avpd",
+    "unit": "회피성 성격장애",
+    "basis": "사회적 회피, 부적절감, 비판에 대한 과민성이 7개 특징 중 4개 이상으로 나타남",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/schizoid-personality-disorder-scpd",
+    "unit": "조현성 성격장애",
+    "basis": "사회적 관계로부터의 분리와 제한된 정서 표현이 7개 기준 중 4개 이상으로 나타남",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
+    "ref": "American Psychiatric Association. DSM-5, 2013; DSM-5-TR, 2022",
+    "unit": "성격장애 일반 기준과 군집",
+    "basis": "지속적 내적 경험과 행동 패턴, 4개 영역 중 2개 이상, 청소년기나 성인기 초기 발병, 군집 A, B, C 분류",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L4-016",
+  "domain": "personality",
+  "disorder": "pd_alternative_model",
+  "related": [
+   "borderline"
+  ],
+  "level": 4,
+  "type": "multi",
+  "polarity": "correct",
+  "case": "30세 여성의 자기 개념은 만나는 사람에 따라 크게 달라지고, 목표를 세워도 쉽게 포기한다. 타인의 감정을 오해하는 일이 잦고, 친밀한 관계는 버림받을까 두려워 집착하다가 금세 깨진다. 평가 결과 정서 불안정, 불안, 분리불안, 충동성, 위험 감수, 적대감이 두드러진다. 임상가는 대안모형을 적용해 보려 한다.",
+  "stem": "대안모형 적용에 관한 판단으로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "정서 불안정, 불안, 분리불안은 부정적 정서성 영역, 충동성과 위험 감수는 탈억제 영역, 적대감은 적대성 영역의 특성으로 볼 수 있다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "정서 불안정, 불안, 분리불안은 부정적 정서성, 충동성과 위험 감수는 탈억제에 속한다. 대안모형의 경계성 정의에서 적대감은 적대성 영역의 측면으로 기술되며, 부정적 정서성과도 관련되는 하위 특성이다."
+   },
+   {
+    "key": "2",
+    "text": "성격기능 손상이 중등도 이상이고 해당 병적 특성이 확인되면 대안모형의 경계성 성격장애를 고려할 수 있다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "대안모형의 경계성은 성격기능 손상과 부정적 정서성 및 탈억제 영역 특성들로 정의된다."
+   },
+   {
+    "key": "3",
+    "text": "대안모형은 공식 진단 체계이므로 Section II 기준 평가는 생략해야 한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "대안모형은 Section III의 연구용 모델이며 Section II 기준이 공식 진단 체계이다."
+   },
+   {
+    "key": "4",
+    "text": "대안모형에서는 성격기능 손상이 경미하더라도 병적 특성이 5개 영역 모두에서 나타나야 진단한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "중등도 이상의 성격기능 손상이 필요하며, 5개 영역 모두에서 특성이 나타날 필요는 없다."
+   },
+   {
+    "key": "5",
+    "text": "자기 개념의 불안정은 정체성, 목표 포기는 자기주도성, 감정 오해는 공감, 불안정한 관계는 친밀감 영역의 손상으로 평가할 수 있다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "기준 A의 네 요소에 사례 정보를 대응시킨 판단이다."
+   }
+  ],
+  "answer": [
+   "1",
+   "2",
+   "5"
+  ],
+  "theory": "대안모형 사례 적용",
+  "concept": "대안모형-사례-기능과특성",
+  "explanation": "대안모형은 기준 A의 성격기능 네 요소와 기준 B의 병적 특성을 차례로 평가한다. 경계성은 정서 불안정, 불안, 분리불안, 우울감 등 부정적 정서성과 충동성, 위험 감수 등 탈억제, 그리고 적대성 영역의 측면인 적대감 특성으로 기술된다.",
+  "sources": [
+   {
+    "source_name": "Krueger와 Hobbs 리뷰 및 Focus 논문",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7529724/",
+    "unit": "DSM-5 성격장애 대안모형",
+    "basis": "Section III 대안모형. 기준 A 성격기능 4요소 정체성, 자기주도성, 공감, 친밀감과 0에서 4수준. 기준 B 5개 병적 특성영역과 25개 하위 특성. 6개 특정 성격장애",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L4-017",
+  "domain": "personality",
+  "disorder": "paranoid",
+  "related": [
+   "pd_general"
+  ],
+  "level": 4,
+  "type": "single",
+  "polarity": "correct",
+  "case": "32세 남성이 이웃이 자신을 독살하려 한다는 확고한 믿음과 자신을 욕하는 목소리 때문에 입원했다. 입원 3주째 항정신병 약물로 환청과 망상이 줄었다. 가족에 따르면 그는 이번 발병 전까지는 사람들을 크게 의심하지 않았고 친구 관계도 원만했다. 현재 그는 병동 직원들을 여전히 경계하고 속마음을 털어놓지 않는다.",
+  "stem": "편집성 성격장애 진단에 대한 판단으로 가장 적절한 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "편집성 성격장애가 조현병보다 먼저 있었으므로 병전 특성으로 기록한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "가족 보고에 따르면 발병 전에는 의심 패턴이 없었다."
+   },
+   {
+    "key": "2",
+    "text": "환청이 줄었으므로 현재 의심은 성격장애로 보아야 한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "증상이 남아 있는 회복 과정의 일부일 수 있으며 병전 성격 정보는 이를 지지하지 않는다."
+   },
+   {
+    "key": "3",
+    "text": "의심과 경계가 정신병적 삽화 경과 중에만 나타난 것으로 보이므로 편집성 성격장애로 진단하지 않는다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "발병 전에는 의심 패턴이 없었고 현재 경계도 정신병적 장애의 경과 안에 있으므로 배제 조항에 해당한다."
+   },
+   {
+    "key": "4",
+    "text": "7개 중 2개 기준만 확인되지만 정신병이 있으므로 역치를 낮추어 진단한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "정신병이 있다고 역치를 낮추는 규칙은 없다."
+   },
+   {
+    "key": "5",
+    "text": "직원을 경계하고 속마음을 털어놓지 않으므로 편집성 성격장애를 추가로 진단한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "성격장애는 장기적 패턴이어야 하며, 정신병적 장애 경과 중에만 나타나는 특징은 성격장애로 진단하지 않는다."
+   }
+  ],
+  "answer": [
+   "3"
+  ],
+  "theory": "편집성 성격장애 배제 조항 적용",
+  "concept": "편집성-사례-정신병경과배제",
+  "explanation": "군집 A 성격장애는 정신병적 장애 경과 중에만 나타나면 진단하지 않는다. 정신병 발병 이전부터 성격장애 기준을 충족했다면 병전 특성임을 명시할 수 있다.",
+  "sources": [
+   {
+    "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
+    "ref": "NCBI StatPearls Paranoid Personality Disorder, NBK606107",
+    "unit": "편집성 성격장애",
+    "basis": "불신과 의심의 패턴이 7개 기준 중 4개 이상. 조현병 등 정신병적 장애의 경과 중에만 나타나면 진단하지 않음",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L4-018",
+  "domain": "personality",
+  "disorder": "pd_general",
+  "related": [
+   "avoidant"
+  ],
+  "level": 4,
+  "type": "single",
+  "polarity": "correct",
+  "case": "15세 여학생은 6개월 전 전학 온 뒤 새 친구들과 잘 어울리지 못하고 수업 시간에 발표를 피한다. 부모는 아이가 회피성 성격장애가 아닌지 걱정한다. 전학 전 학교에서는 친한 친구들이 있었고 동아리 활동도 적극적으로 했다고 한다.",
+  "stem": "이 사례에 대한 판단으로 가장 적절한 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "청소년기의 사회적 위축은 언제나 정상이므로 평가할 필요가 없다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "지속되거나 기능 손상이 크면 평가가 필요하다."
+   },
+   {
+    "key": "2",
+    "text": "6개월 이상 지속되었으므로 성격장애의 기간 조건을 충족한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "18세 미만에게 적용되는 기간 조건은 1년 이상이다."
+   },
+   {
+    "key": "3",
+    "text": "15세는 성격장애를 진단할 수 없는 나이이다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "반사회성을 제외하면 1년 이상 지속 조건에서 18세 미만에게도 진단할 수 있다."
+   },
+   {
+    "key": "4",
+    "text": "18세 미만은 특성이 1년 이상 지속되어야 성격장애를 고려할 수 있고, 전학이라는 상황 변화 이후 시작되었으므로 현재로서는 회피성 성격장애로 볼 근거가 부족하다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "6개월은 1년 조건에 못 미치고, 전학 전에는 적응이 좋았으므로 안정된 성격 패턴으로 보기 어렵다. 적응 문제나 사회불안을 포함해 추가 평가한다."
+   },
+   {
+    "key": "5",
+    "text": "발표를 피하므로 회피성 성격장애로 진단한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "단일 행동과 6개월의 짧은 기간으로 성격장애를 진단할 수 없다."
+   }
+  ],
+  "answer": [
+   "4"
+  ],
+  "theory": "18세 미만 성격장애 진단 규칙과 불확실성",
+  "concept": "성격장애-청소년-기간미충족",
+  "explanation": "청소년의 성격장애 진단은 1년 이상 지속, 다양한 맥락에서의 광범위함, 발달 단계나 상황적 반응으로 설명되지 않음을 확인해야 한다.",
+  "sources": [
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/overview-of-personality-disorders",
+    "unit": "성격장애 개관",
+    "basis": "18세 미만은 성격 특성이 1년 이상 지속되면 성격장애 진단이 가능하나 반사회성 성격장애는 18세 미만에게 진단할 수 없고 대신 품행장애를 고려함",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/avoidant-personality-disorder-avpd",
+    "unit": "회피성 성격장애",
+    "basis": "사회적 회피, 부적절감, 비판에 대한 과민성이 7개 특징 중 4개 이상으로 나타남",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L4-019",
+  "domain": "personality",
+  "disorder": "dependent",
+  "related": [
+   "borderline"
+  ],
+  "level": 4,
+  "type": "multi",
+  "polarity": "correct",
+  "case": "34세 여성은 10년간 사귄 연인과 헤어진 지 2주 만에 소개를 통해 새 연인을 만나 동거를 시작했다. 그녀는 새 연인이 원하는 대로 직장과 취미까지 바꾸었고, 사소한 결정도 연인에게 묻는다. 연인이 화를 내도 반박하지 않고 사과하며, 혼자 있는 시간을 견디기 어려워한다. 자해, 강렬한 분노 폭발, 공허감, 이상화와 평가절하의 반복은 보고되지 않았다. 이러한 모습은 20대 초반부터 이어져 왔다.",
+  "stem": "이 사례에 대한 판단으로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "이별 직후 새로운 관계를 서둘러 찾은 것은 의존성 성격장애의 기준에 해당한다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "가까운 관계가 끝나면 다른 관계를 급히 찾는 것은 의존성 기준이다."
+   },
+   {
+    "key": "2",
+    "text": "현재 정보로 의존성 기준 5개 이상이 확인되어 의존성 성격장애를 고려할 수 있다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "결정의 어려움, 반대 의견 표현의 어려움, 혼자 있을 때의 불편, 새 관계를 급히 찾음, 타인에게 주요 생활 영역의 책임을 맡김이 확인된다."
+   },
+   {
+    "key": "3",
+    "text": "버림받음에 대해 분노와 자기파괴가 아니라 순응과 복종으로 반응하는 양상은 경계성보다 의존성을 시사한다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "버림받음에 대한 반응 방식이 두 장애의 감별 포인트이다."
+   },
+   {
+    "key": "4",
+    "text": "버림받음에 대한 두려움이 있으므로 경계성 성격장애로 진단해야 한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "버림받음 두려움은 두 장애에 공통이며, 경계성의 다른 핵심 특징이 보고되지 않았다."
+   },
+   {
+    "key": "5",
+    "text": "의존성 성격장애는 군집 B에 속하므로 경계성과 같은 군집이다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "의존성은 군집 C이다."
+   }
+  ],
+  "answer": [
+   "1",
+   "2",
+   "3"
+  ],
+  "theory": "의존성과 경계성 사례 감별",
+  "concept": "의존성-경계성-사례감별",
+  "explanation": "의존성은 돌봄을 잃지 않으려는 복종과 매달림이, 경계성은 불안정하고 강렬한 관계, 분노, 자기파괴성이 핵심이다. 사례에서는 의존성 기준 5개 이상이 확인된다.",
+  "sources": [
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/dependent-personality-disorder-dpd",
+    "unit": "의존성 성격장애",
+    "basis": "돌봄받으려는 지속적 욕구가 8개 특징 중 5개 이상으로 나타나며 성인기 초기까지 시작",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판 및 Australian Prescriber",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/borderline-personality-disorder-bpd",
+    "unit": "경계성 성격장애",
+    "basis": "경계성 성격장애는 9개 기준 중 5개 이상을 충족해야 진단하며 DSM-5-TR 기준을 따름",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L4-020",
+  "domain": "personality",
+  "disorder": "schizoid",
+  "related": [
+   "avoidant"
+  ],
+  "level": 4,
+  "type": "multi",
+  "polarity": "correct",
+  "case": "29세 남성 프로그래머는 재택근무를 하며 사람들과 거의 만나지 않는다. 그는 사람과의 관계는 번거롭고 자유를 방해할 뿐이라고 말한다. 어린 시절 부모는 정서적으로 차갑고 예측하기 어려웠으며, 그는 일찍부터 혼자 노는 것을 편하게 여겼다. 연애나 친구에 대한 욕구가 없고, 남들의 평가에도 별 관심이 없다.",
+  "stem": "이 사례에 대한 이론적 설명으로 적절한 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "Kohut의 거울 자기대상 결핍으로 인한 과도한 찬사 요구가 이 사례의 핵심이다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "이 사람은 평가에 무관심하며 찬사를 요구하지 않는다."
+   },
+   {
+    "key": "2",
+    "text": "Beck의 인지 이론에 따르면 나는 자족적이며 관계는 번거롭고 불필요하다는 신념이 조현성의 핵심신념이다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "관계를 번거롭다고 보는 진술은 조현성의 핵심신념과 일치한다."
+   },
+   {
+    "key": "3",
+    "text": "이 사람의 고립은 거절에 대한 두려움 때문이므로 Millon의 능동적 분리형으로 설명하는 것이 가장 적절하다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "사례에는 거절 공포가 없고 관계 욕구 자체가 없으므로 능동적 분리형인 회피성과 맞지 않는다."
+   },
+   {
+    "key": "4",
+    "text": "Millon의 이론에서 이 사람은 쾌락과 고통에 모두 둔감한 수동적 분리형에 가깝다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "관계 욕구도 거절 공포도 약한 양상은 수동적 분리형에 해당한다."
+   },
+   {
+    "key": "5",
+    "text": "대상관계 이론가들은 차갑고 예측하기 어려운 초기 양육 경험이 관계로부터의 철수를 낳았다고 설명할 수 있다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "Fairbairn과 Guntrip 등은 조현성 철수를 초기 대상관계의 좌절과 관련지었다."
+   }
+  ],
+  "answer": [
+   "2",
+   "4",
+   "5"
+  ],
+  "theory": "조현성 성격장애 이론 적용",
+  "concept": "조현성-이론적합성-사례",
+  "explanation": "조현성은 인지 이론의 자족성 신념, Millon의 수동적 분리형, 대상관계 이론의 초기 관계 좌절과 철수로 설명된다. 회피성과의 차이는 관계 욕구와 거절 공포의 유무이다.",
+  "sources": [
+   {
+    "source_name": "인지적 성격장애 이론(모델 지식)",
+    "ref": "Beck, Freeman 등 Cognitive Therapy of Personality Disorders; Young 등 Schema Therapy 2003",
+    "unit": "인지 및 도식 이론",
+    "basis": "장애별 핵심신념과 과잉발달 및 미발달 전략, 초기 부적응 도식과 도식 모드",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "Millon 성격 이론(모델 지식)",
+    "ref": "Millon, Disorders of Personality",
+    "unit": "생물사회적 학습이론",
+    "basis": "쾌-고통, 능동-수동, 자기-타인 양극성에 따른 성격 유형 분류",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "정신역동 성격장애 이론(모델 지식)",
+    "ref": "Kernberg 1975; Kohut 1971, 1977; Masterson 1976; Mahler 1975",
+    "unit": "정신역동적 설명",
+    "basis": "Kernberg 경계선 성격조직, Kohut 자기대상, Masterson 버림받음 우울, Mahler 재접근기",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L5-012",
+  "domain": "personality",
+  "disorder": "paranoid",
+  "related": [
+   "schizotypal"
+  ],
+  "level": 5,
+  "type": "multi",
+  "polarity": "incorrect",
+  "case": null,
+  "stem": "편집성 성격장애의 진단, 원인론, 치료에 관한 설명으로 옳지 않은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "정신역동 이론은 수용할 수 없는 적대감과 약점을 타인에게 투사하는 것을 핵심 방어로 본다",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "투사는 편집성에 대한 대표적 정신역동 설명이다."
+   },
+   {
+    "key": "2",
+    "text": "치료 초기부터 의심을 비합리적이라고 강하게 직면하는 것이 신뢰 형성에 가장 효과적이다",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "편집성 환자는 직면을 공격으로 받아들이기 쉬워 치료 동맹이 깨질 수 있다. 투명하고 일관된 태도로 신뢰를 먼저 형성하는 것이 권장된다."
+   },
+   {
+    "key": "3",
+    "text": "편집성 성격장애는 9개 기준 중 5개 이상을 충족해야 진단한다",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "편집성은 7개 기준 중 4개 이상이다. 9개 중 5개는 조현형, 경계성, 자기애성의 구조이다."
+   },
+   {
+    "key": "4",
+    "text": "편집성 성격장애의 의심은 체계화된 망상 수준에 이르지 않는다는 점에서 망상장애와 구분된다",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "고정된 망상이 있으면 망상장애를 고려한다."
+   },
+   {
+    "key": "5",
+    "text": "Beck의 인지 이론에서 편집성의 핵심신념은 타인은 악의적이고 기만적이므로 늘 경계해야 한다는 것이다",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "경계와 의심이 과잉발달한 전략으로 설명된다."
+   }
+  ],
+  "answer": [
+   "2",
+   "3"
+  ],
+  "theory": "편집성 성격장애 통합",
+  "concept": "편집성-진단원인치료-통합",
+  "explanation": "편집성은 7개 중 4개 기준, 투사 방어, 타인의 악의에 대한 신념으로 정리되며, 치료에서는 신뢰 형성과 투명성이 무엇보다 중요하다.",
+  "sources": [
+   {
+    "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
+    "ref": "NCBI StatPearls Paranoid Personality Disorder, NBK606107",
+    "unit": "편집성 성격장애",
+    "basis": "불신과 의심의 패턴이 7개 기준 중 4개 이상. 조현병 등 정신병적 장애의 경과 중에만 나타나면 진단하지 않음",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "정신역동 성격장애 이론(모델 지식)",
+    "ref": "Kernberg 1975; Kohut 1971, 1977; Masterson 1976; Mahler 1975",
+    "unit": "정신역동적 설명",
+    "basis": "Kernberg 경계선 성격조직, Kohut 자기대상, Masterson 버림받음 우울, Mahler 재접근기",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "인지적 성격장애 이론(모델 지식)",
+    "ref": "Beck, Freeman 등 Cognitive Therapy of Personality Disorders; Young 등 Schema Therapy 2003",
+    "unit": "인지 및 도식 이론",
+    "basis": "장애별 핵심신념과 과잉발달 및 미발달 전략, 초기 부적응 도식과 도식 모드",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L5-013",
+  "domain": "personality",
+  "disorder": "histrionic",
+  "related": [
+   "narcissistic",
+   "borderline"
+  ],
+  "level": 5,
+  "type": "multi",
+  "polarity": "correct",
+  "case": null,
+  "stem": "연극성, 자기애성, 경계성 성격장애에 관한 비교로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "연극성과 의존성은 8개 중 5개, 자기애성과 경계성은 9개 중 5개를 진단 역치로 한다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "각 장애의 정확한 기준 개수이다."
+   },
+   {
+    "key": "2",
+    "text": "세 장애는 모두 군집 B에 속하며 극적이고 감정적이며 변덕스러운 특성을 공유한다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "군집 B는 반사회성, 경계성, 연극성, 자기애성이다."
+   },
+   {
+    "key": "3",
+    "text": "만성적 공허감과 반복적 자해는 경계성의 기준으로, 연극성 및 자기애성과 감별하는 단서가 된다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "두 특징은 경계성에만 있는 기준이다."
+   },
+   {
+    "key": "4",
+    "text": "세 장애는 모두 DSM-5 대안모형의 특정 성격장애로 정의되어 있다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "경계성과 자기애성은 포함되지만 연극성은 제외되었다."
+   },
+   {
+    "key": "5",
+    "text": "자기애성의 시기심과 특권의식, 연극성의 피암시성은 각 장애를 구분하는 기준이다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "시기심과 특권의식은 자기애성, 피암시성은 연극성의 기준이다."
+   }
+  ],
+  "answer": [
+   "1",
+   "2",
+   "3",
+   "5"
+  ],
+  "theory": "군집 B 성격장애 비교",
+  "concept": "연극성-자기애성-경계성-비교",
+  "explanation": "군집 B 장애는 기준 개수, 고유 기준, 대안모형 포함 여부를 함께 비교해 두면 혼동을 줄일 수 있다.",
+  "sources": [
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/histrionic-personality-disorder-hpd",
+    "unit": "연극성 성격장애",
+    "basis": "과도한 정서성과 관심 추구가 8개 특징 중 5개 이상으로 나타남",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/narcissistic-personality-disorder-npd",
+    "unit": "자기애성 성격장애",
+    "basis": "과대성, 찬사 요구, 공감 결여의 지속적 패턴이 9개 특징 중 5개 이상으로 나타나며 성인기 초기까지 시작",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판 및 Australian Prescriber",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/borderline-personality-disorder-bpd",
+    "unit": "경계성 성격장애",
+    "basis": "경계성 성격장애는 9개 기준 중 5개 이상을 충족해야 진단하며 DSM-5-TR 기준을 따름",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "Krueger와 Hobbs 리뷰 및 Focus 논문",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7529724/",
+    "unit": "DSM-5 성격장애 대안모형",
+    "basis": "Section III 대안모형. 기준 A 성격기능 4요소 정체성, 자기주도성, 공감, 친밀감과 0에서 4수준. 기준 B 5개 병적 특성영역과 25개 하위 특성. 6개 특정 성격장애",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L5-014",
+  "domain": "personality",
+  "disorder": "schizotypal",
+  "related": [
+   "paranoid",
+   "schizoid"
+  ],
+  "level": 5,
+  "type": "multi",
+  "polarity": "incorrect",
+  "case": null,
+  "stem": "군집 A 성격장애인 편집성, 조현성, 조현형 성격장애를 비교한 설명으로 옳지 않은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "세 장애 모두 정신병적 장애의 경과 중에만 나타나면 진단하지 않는다는 배제 조항이 있다",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "군집 A 세 장애 모두 정신병적 장애와 관련된 배제 조항을 가진다."
+   },
+   {
+    "key": "2",
+    "text": "조현형은 관계사고와 마술적 사고 같은 인지 지각 왜곡이 있다는 점에서 편집성, 조현성과 구분된다",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "괴이성은 조현형의 고유한 특징이다."
+   },
+   {
+    "key": "3",
+    "text": "조현성은 친숙해져도 줄지 않는 사회불안이, 조현형은 칭찬과 비판에 대한 무관심이 핵심 기준이다",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "거꾸로 기술했다. 친숙해져도 줄지 않는 사회불안은 조현형, 칭찬과 비판에 대한 무관심은 조현성의 기준이다."
+   },
+   {
+    "key": "4",
+    "text": "조현성은 7개 중 4개, 편집성은 7개 중 4개, 조현형은 9개 중 5개를 요구한다",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "군집 A 세 장애의 정확한 역치이다."
+   },
+   {
+    "key": "5",
+    "text": "세 장애 모두 DSM-5 대안모형의 특정 성격장애로 유지되었다",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "대안모형에는 조현형만 포함되고 편집성과 조현성은 제외되었다."
+   }
+  ],
+  "answer": [
+   "3",
+   "5"
+  ],
+  "theory": "군집 A 성격장애 비교",
+  "concept": "조현형-군집A-비교",
+  "explanation": "군집 A는 기이하고 괴짜 같은 특성을 공유한다. 의심의 편집성, 관계 무관심의 조현성, 괴이성의 조현형으로 구분하고, 대안모형에는 조현형만 남았다는 점을 기억하자.",
+  "sources": [
+   {
+    "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/schizotypal-personality-disorder-stpd",
+    "unit": "조현형 성격장애",
+    "basis": "9개 기준 중 5개 이상. 관계사고, 마술적 사고, 이상한 지각 경험, 친숙해져도 줄지 않는 사회불안",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "DSM-5 진단 기준(모델 지식 기반 재구성)",
+    "ref": "NCBI StatPearls Paranoid Personality Disorder, NBK606107",
+    "unit": "편집성 성격장애",
+    "basis": "불신과 의심의 패턴이 7개 기준 중 4개 이상. 조현병 등 정신병적 장애의 경과 중에만 나타나면 진단하지 않음",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/schizoid-personality-disorder-scpd",
+    "unit": "조현성 성격장애",
+    "basis": "사회적 관계로부터의 분리와 제한된 정서 표현이 7개 기준 중 4개 이상으로 나타남",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "Krueger와 Hobbs 리뷰 및 Focus 논문",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7529724/",
+    "unit": "DSM-5 성격장애 대안모형",
+    "basis": "Section III 대안모형. 기준 A 성격기능 4요소 정체성, 자기주도성, 공감, 친밀감과 0에서 4수준. 기준 B 5개 병적 특성영역과 25개 하위 특성. 6개 특정 성격장애",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ },
+ {
+  "id": "PD-L5-015",
+  "domain": "personality",
+  "disorder": "borderline",
+  "related": [],
+  "level": 5,
+  "type": "multi",
+  "polarity": "correct",
+  "case": "25세 여성은 연인이 연락을 늦게 하면 버림받았다고 느끼며 수십 통의 문자를 보낸다. 연인을 이상화하다가 사소한 실망에 경멸하며 분노를 폭발한다. 과식과 충동적 성관계를 반복하고, 스트레스를 받으면 손목을 긋는다. 기분은 몇 시간 단위로 변하고, 자신이 누구인지 모르겠다며 늘 텅 빈 느낌을 호소한다. 어머니도 비슷한 정서 문제를 겪었다고 한다.",
+  "stem": "이 사례에 대한 진단, 원인론, 치료적 판단으로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "Kernberg의 관점에서 연인을 이상화하다가 경멸하는 것은 분리 방어로 이해할 수 있다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "전적으로 좋은 대상과 나쁜 대상 표상을 통합하지 못하는 분리의 예이다."
+   },
+   {
+    "key": "2",
+    "text": "자해가 있으므로 DBT보다 장기 입원과 약물치료만이 유일한 표준 치료이다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "DBT 같은 외래 구조화 심리치료가 근거기반 치료이며, 장기 입원과 약물만이 유일한 표준 치료라는 근거는 없다."
+   },
+   {
+    "key": "3",
+    "text": "생물학적 연구는 세로토닌 기능 저하가 충동적 공격성과 관련된다고 보고하며, 가족력은 유전적 소인의 가능성을 시사한다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "세로토닌 기능 저하와 충동성, 경계성의 가족 집적성은 생물학적 원인론의 근거로 논의된다."
+   },
+   {
+    "key": "4",
+    "text": "기분이 몇 시간 단위로 변하므로 양극성장애 진단이 경계성 진단보다 우선한다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "수 시간 단위의 반응성 기분 변화는 경계성의 정서 불안정에 부합하며, 양극성장애는 지속적 삽화가 있어야 한다."
+   },
+   {
+    "key": "5",
+    "text": "버림받음 회피, 불안정한 관계, 자기손상적 충동성, 자해, 정서 불안정, 정체성 혼란, 공허감, 분노 등 5개 이상의 기준을 충족하여 경계성 성격장애를 진단할 수 있다",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "사례에서 8개 기준이 확인되어 9개 중 5개 역치를 충족한다."
+   }
+  ],
+  "answer": [
+   "1",
+   "3",
+   "5"
+  ],
+  "theory": "경계성 성격장애 진단, 원인론, 치료 통합",
+  "concept": "경계성-통합사례-진단원인치료",
+  "explanation": "최상위 문항은 진단 기준 수 판단, 생물학 및 정신역동 원인론, 근거기반 치료를 사례 하나에 결합한다. 경계성은 9개 중 5개, 분리 방어, 세로토닌과 충동성, DBT가 핵심이다.",
+  "sources": [
+   {
+    "source_name": "MSD 매뉴얼 전문가판 및 Australian Prescriber",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/personality-disorders/borderline-personality-disorder-bpd",
+    "unit": "경계성 성격장애",
+    "basis": "경계성 성격장애는 9개 기준 중 5개 이상을 충족해야 진단하며 DSM-5-TR 기준을 따름",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "성격장애 생물학 연구(모델 지식)",
+    "ref": "Siever와 Davis 1991 등 생물학적 연구 개관",
+    "unit": "생물학적 요인",
+    "basis": "세로토닌 기능 저하와 충동적 공격성, 조현병 스펙트럼 유전 연관, 반사회성의 낮은 각성",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "American Journal of Psychotherapy TFP 리뷰",
+    "ref": "https://psychotherapy.psychiatryonline.org/doi/10.1176/appi.psychotherapy.20220017",
+    "unit": "Kernberg 경계선 성격조직과 전이초점 심리치료",
+    "basis": "정체성 혼미, 분리와 투사적 동일시 등 원시적 방어, 대상관계 모형에 기초한 주 2회 구조화된 정신역동 치료",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "Linehan DBT 기술훈련 매뉴얼 발췌 및 관련 장",
+    "ref": "https://www.guilford.com/excerpts/linehan7_old_ch1.pdf",
+    "unit": "생물사회이론과 DBT",
+    "basis": "생물학적 정서조절 취약성과 비타당화 환경의 상호작용. 기술훈련은 마음챙김, 대인관계 효율성, 정서조절, 고통감내의 4모듈",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
+ }
 ]

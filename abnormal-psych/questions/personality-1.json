@@ -44,7 +44,8 @@
    }
   ],
   "verification_status": "자체검토(출처 미검증)",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L1-002",
@@ -91,7 +92,8 @@
    }
   ],
   "verification_status": "출처확인",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L1-003",
@@ -138,7 +140,8 @@
    }
   ],
   "verification_status": "출처확인",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L1-004",
@@ -185,7 +188,8 @@
    }
   ],
   "verification_status": "출처확인",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L1-005",
@@ -242,7 +246,8 @@
    }
   ],
   "verification_status": "출처확인",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L2-001",
@@ -312,7 +317,8 @@
    }
   ],
   "verification_status": "자체검토(출처 미검증)",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L2-002",
@@ -392,7 +398,8 @@
    }
   ],
   "verification_status": "출처확인",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L2-003",
@@ -460,7 +467,8 @@
    }
   ],
   "verification_status": "자체검토(출처 미검증)",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L2-004",
@@ -528,7 +536,8 @@
    }
   ],
   "verification_status": "출처확인",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L2-005",
@@ -598,7 +607,8 @@
    }
   ],
   "verification_status": "자체검토(출처 미검증)",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L2-006",
@@ -666,7 +676,8 @@
    }
   ],
   "verification_status": "출처확인",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L3-001",
@@ -747,7 +758,8 @@
    }
   ],
   "verification_status": "출처확인",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L3-002",
@@ -829,7 +841,8 @@
    }
   ],
   "verification_status": "자체검토(출처 미검증)",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L3-003",
@@ -910,7 +923,8 @@
   ],
   "verification_status": "자체검토(출처 미검증)",
   "textbook_compared": false,
-  "review_note": "검토: 1시간 기준 설명 정정"
+  "review_note": "검토: 1시간 기준 설명 정정",
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L3-004",
@@ -988,7 +1002,8 @@
    }
   ],
   "verification_status": "자체검토(출처 미검증)",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L3-005",
@@ -1071,7 +1086,8 @@
    }
   ],
   "verification_status": "출처확인",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L4-001",
@@ -1139,7 +1155,8 @@
    }
   ],
   "verification_status": "자체검토(출처 미검증)",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L4-002",
@@ -1219,7 +1236,8 @@
    }
   ],
   "verification_status": "출처확인",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L4-003",
@@ -1299,7 +1317,8 @@
    }
   ],
   "verification_status": "출처확인",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L4-004",
@@ -1367,7 +1386,8 @@
    }
   ],
   "verification_status": "출처확인",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L4-005",
@@ -1448,7 +1468,8 @@
    }
   ],
   "verification_status": "자체검토(출처 미검증)",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L5-001",
@@ -1541,7 +1562,8 @@
    }
   ],
   "verification_status": "자체검토(출처 미검증)",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L5-002",
@@ -1622,7 +1644,8 @@
    }
   ],
   "verification_status": "자체검토(출처 미검증)",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L5-003",
@@ -1722,7 +1745,8 @@
    }
   ],
   "verification_status": "자체검토(출처 미검증)",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  },
  {
   "id": "PD-L5-004",
@@ -1813,6 +1837,7 @@
    }
   ],
   "verification_status": "자체검토(출처 미검증)",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "independent_review": "AI 독립 검토 완료(2026-11-20): 정답 키 오류 0건, 지적 사항 반영. 사람 전문가 검토 아님"
  }
 ]
