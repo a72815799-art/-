@@ -1447,7 +1447,7 @@
   "type": "single",
   "polarity": "correct",
   "case": null,
-  "stem": "무장 강도 사건 2주 후 침투 기억, 악몽, 비현실감, 회피, 수면 곤란, 과각성 등 14개 증상 범주 중 10개를 보이고 직장 기능이 손상된 성인에게 가장 적절한 진단은?",
+  "stem": "무장 강도 사건 2주 후 침투 기억, 악몽, 비현실감, 회피, 수면 곤란, 과각성 등 다섯 범주에 걸친 14개 증상 중 10개를 보이고 직장 기능이 손상된 성인에게 가장 적절한 진단은?",
   "options": [
    {
     "key": "1",
@@ -1514,7 +1514,8 @@
    }
   ],
   "verification_status": "출처확인",
-  "textbook_compared": false
+  "textbook_compared": false,
+  "review_note": "검토: 증상 수 표현 정정"
  },
  {
   "id": "TRM-L3-002",

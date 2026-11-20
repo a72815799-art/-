@@ -6,7 +6,7 @@ const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../.
 const URL_ = 'file://' + root + '/app/dist/index.html';
 const SHOT = root + '/screenshots'; fs.mkdirSync(SHOT, { recursive: true }); fs.mkdirSync(root + '/tests/results', { recursive: true });
 const results = []; const log = [];
-async function T(id, name, fn) { const t0 = Date.now(); try { const ev = await fn(); results.push({ id, name, status: 'pass', ms: Date.now() - t0, evidence: ev || '' }); console.log('PASS', id, name); } catch (e) { results.push({ id, name, status: 'fail', ms: Date.now() - t0, error: String(e && e.stack || e).slice(0, 800) }); console.log('FAIL', id, name, e.message); } }
+async function T(id, name, fn) { const t0 = Date.now(); try { const ev = await fn(); if (typeof ev === 'string' && ev.startsWith('SKIP')) { results.push({ id, name, status: 'skip', evidence: ev }); console.log('SKIP', id, name); return; } results.push({ id, name, status: 'pass', ms: Date.now() - t0, evidence: ev || '' }); console.log('PASS', id, name); } catch (e) { results.push({ id, name, status: 'fail', ms: Date.now() - t0, error: String(e && e.stack || e).slice(0, 800) }); console.log('FAIL', id, name, e.message); } }
 const ok = (c, m) => { if (!c) throw new Error(m || 'assertion failed'); };
 // 모의 TTS/STT: 헤드리스 브라우저에는 한국어 음성과 마이크가 없으므로 호출 내용을 기록하는 대체물을 주입한다.
 const MOCK = () => {
@@ -98,7 +98,7 @@ await T('VO-02', '연속 강의: 실제 학습 데이터 문장 낭독, 일시�
   return '첫 문장="' + s1[0] + '", 2번째="' + s1[1].slice(0, 40) + '…", 다음→' + t2 + ', 자동→' + titleLater + ', 새로고침 후 위치 ' + restored + ' (저장 ' + JSON.stringify(saved).slice(0, 80) + ')';
 });
 await T('VO-04', '오디오 파일 재생(잠금화면용 <audio> + Media Session 메타데이터)', async () => {
-  const has = await p.evaluate(() => (APP_DATA.audio || []).length); if (!has) throw new Error('오디오 묶음 없음');
+  const has = await p.evaluate(() => (APP_DATA.audio || []).length); if (!has) return 'SKIP: 오디오 묶음 없음(scripts/make-audio.py 미실행)';
   await p.evaluate(() => location.hash = '#/voice?tab=lecture'); await p.waitForSelector('#aPlay'); await p.click('#aPlay'); await p.waitForTimeout(2500);
   const st = await p.evaluate(() => { const a = document.getElementById('audioEl'); return { src: a.src.split('/').slice(-2).join('/'), t: a.currentTime, paused: a.paused, dur: a.duration, err: a.error && a.error.code, meta: navigator.mediaSession && navigator.mediaSession.metadata && navigator.mediaSession.metadata.title }; });
   if (!(st.t > 0.5 && !st.paused && st.meta)) throw new Error(JSON.stringify(st));

@@ -1,0 +1,29 @@
+name: 이상심리학 학습앱
+
+on:
+  push:
+    paths: ['abnormal-psych/**', '.github/workflows/abnormal-psych.yml']
+  pull_request:
+    paths: ['abnormal-psych/**']
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: abnormal-psych
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: 데이터 규격 검사
+        run: node scripts/validate.mjs
+      - name: 단위 테스트
+        run: node --test tests/unit/*.test.mjs
+      - name: 빌드
+        run: node scripts/build.mjs
+      - name: Playwright 설치
+        run: npm install --no-save playwright@1.63.0 && npx playwright install --with-deps chromium
+      - name: 브라우저 종단 테스트
+        run: node tests/e2e/run.mjs

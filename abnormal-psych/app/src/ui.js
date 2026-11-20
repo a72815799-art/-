@@ -16,6 +16,7 @@
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const para = s => esc(s).replace(/\n{2,}/g, '</p><p>').replace(/\n/g, '<br>');
   const pct = x => Math.round(x * 100) + '%';
+  const josa = (w, withB, noB) => { const c = (w || '').trim().slice(-1).charCodeAt(0); return c >= 0xAC00 && c <= 0xD7A3 && (c - 0xAC00) % 28 ? withB : noB; };
   function safeStorage() { try { const k = '__t'; localStorage.setItem(k, '1'); localStorage.removeItem(k); return localStorage; } catch (e) { const m = {}; return { getItem: k => m[k] || null, setItem: (k, v) => { m[k] = v; } }; } }
   function toast(msg, ms) { const t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role', 'status'); t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), ms || 2600); }
   function save() { if (!store.save()) toast(store.lastError, 6000); }
@@ -280,7 +281,7 @@
       const [a, b] = uniq.sort((x, y) => x.idx - y.idx).map(x => x.d);
       const da = (a.sections.differential || []).filter(x => x.vs.includes(b.name.replace(/ /g, '')) || x.vs.includes(b.name) || b.name.includes(x.vs));
       const db = (b.sections.differential || []).filter(x => x.vs.includes(a.name) || a.name.includes(x.vs));
-      let t = a.name + '와(과) ' + b.name + ' 비교\n\n';
+      let t = a.name + josa(a.name, '과', '와') + ' ' + b.name + ' 비교\n\n';
       if (da.length || db.length) t += da.concat(db).map(x => '• ' + x.point).join('\n') + '\n\n';
       t += '■ ' + a.name + ': ' + C.splitSentences(a.summary).slice(0, 3).join(' ') + '\n\n■ ' + b.name + ': ' + C.splitSentences(b.summary).slice(0, 3).join(' ');
       return { text: t, src: a.name + ' · ' + b.name + ' 단원(감별진단, 핵심 요약)' };

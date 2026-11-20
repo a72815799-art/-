@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-20T01:27:43.981Z",
+ "generated": "2026-11-20T01:32:58.534Z",
  "content": {
   "domains": [
    {
@@ -478,25 +478,31 @@
   ]
  },
  "questions": {
-  "total": 300,
+  "total": 400,
   "byDomain": {
+   "anxiety": 100,
    "ocd": 100,
    "personality": 100,
    "trauma": 100
   },
   "byLevel": {
-   "1": 60,
-   "2": 75,
-   "3": 60,
-   "4": 60,
-   "5": 45
+   "1": 80,
+   "2": 100,
+   "3": 80,
+   "4": 80,
+   "5": 60
   },
   "byType": {
-   "ox": 60,
-   "single": 156,
-   "multi": 84
+   "ox": 80,
+   "single": 201,
+   "multi": 119
   },
   "byDomainLevel": {
+   "anxiety-L1": 20,
+   "anxiety-L2": 25,
+   "anxiety-L3": 20,
+   "anxiety-L4": 20,
+   "anxiety-L5": 15,
    "ocd-L1": 20,
    "ocd-L2": 25,
    "ocd-L3": 20,
@@ -514,6 +520,14 @@
    "trauma-L5": 15
   },
   "byDisorder": {
+   "panic": 15,
+   "gad": 19,
+   "selective_mutism": 6,
+   "anxiety_overview": 19,
+   "specific_phobia": 15,
+   "agoraphobia": 7,
+   "social_anxiety": 11,
+   "separation_anxiety": 8,
    "ocd_overview": 7,
    "ocd": 52,
    "bdd": 14,
@@ -541,31 +555,31 @@
    "prolonged_grief": 10
   },
   "verification": {
-   "자체검토(출처 미검증)": 176,
-   "출처확인": 124
+   "출처확인": 166,
+   "자체검토(출처 미검증)": 234
   },
   "multiAnswerCount": {
-   "2": 25,
-   "3": 49,
-   "4": 10
+   "2": 35,
+   "3": 71,
+   "4": 13
   },
   "singleAnswerPos": {
-   "1": 24,
-   "2": 39,
-   "3": 33,
-   "4": 37,
-   "5": 23
+   "1": 29,
+   "2": 50,
+   "3": 44,
+   "4": 48,
+   "5": 30
   },
   "polarity": {
-   "ox/correct": 60,
-   "single/incorrect": 30,
-   "single/correct": 126,
-   "multi/correct": 58,
-   "multi/incorrect": 26
+   "ox/correct": 80,
+   "single/correct": 157,
+   "single/incorrect": 44,
+   "multi/correct": 80,
+   "multi/incorrect": 39
   },
-  "withCase": 66,
+  "withCase": 90,
   "textbook_compared": 0,
-  "avgExplanationChars": 52,
+  "avgExplanationChars": 57,
   "nearDuplicates_over_0_6": []
  }
 }
