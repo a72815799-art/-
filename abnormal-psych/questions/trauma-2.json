@@ -1,0 +1,1822 @@
+[
+ {
+  "id": "TRM-L2-006",
+  "domain": "trauma",
+  "disorder": "adjustment",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "적응장애의 진단 기준에 관한 설명으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "확인 가능한 스트레스 요인 후 3개월 이내에 증상이 시작되고, 스트레스 요인의 강도에 비해 불균형한 고통이나 기능 손상이 나타난다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 3개월 내 발병과 함께 맥락을 고려해도 과도한 고통 또는 기능 손상이 핵심 기준이다."
+   },
+   {
+    "key": "2",
+    "text": "스트레스 요인은 반드시 PTSD 기준 A에 해당하는 외상 사건이어야 한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 이혼, 실직, 이사처럼 외상 수준이 아닌 일상적 스트레스 요인도 해당한다."
+   },
+   {
+    "key": "3",
+    "text": "다른 정신장애의 기준을 충족하더라도 스트레스 요인이 있으면 적응장애를 우선 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 다른 정신장애의 기준을 충족하거나 기존 장애의 악화에 불과하면 적응장애로 진단하지 않는다."
+   },
+   {
+    "key": "4",
+    "text": "가까운 사람이 사망한 후의 정상적인 애도 반응도 적응장애에 포함된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 정상 애도는 적응장애에서 제외된다. 다만 애도 반응이 문화적 규범을 넘어설 정도로 과도하면 고려될 수 있다."
+   },
+   {
+    "key": "5",
+    "text": "스트레스 요인이 끝난 후에도 증상이 최대 12개월까지 지속될 수 있다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 스트레스 요인과 그 결과가 끝난 뒤 6개월 이내에 증상이 소멸해야 한다."
+   }
+  ],
+  "answer": [
+   "1"
+  ],
+  "theory": "DSM-5 적응장애 기준",
+  "concept": "적응장애-정의",
+  "explanation": "적응장애는 3개월 내 발생, 종료 후 6개월 내 소멸, 다른 장애나 정상 애도로 설명되지 않음이라는 조건을 함께 충족해야 한다.",
+  "sources": [
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/anxiety-and-trauma-and-stressor-related-disorders/adjustment-disorders",
+    "unit": "적응장애",
+    "basis": "DSM-5-TR 기준에서 증상은 스트레스 요인 노출 후 3개월 이내에 시작되어야 하며, 대개 스트레스 요인과 그 결과가 끝난 뒤 6개월 이내에 해소된다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "PubMed Central 게재 적응장애 리뷰 논문",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6678970/",
+    "unit": "Adjustment disorder 진단 개념",
+    "basis": "DSM-5에서 증상은 스트레스 요인과 그 결과가 종료된 뒤 6개월을 넘어 지속되지 않아야 한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-007",
+  "domain": "trauma",
+  "disorder": "rad",
+  "related": [
+   "dsed"
+  ],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "반응성 애착장애의 핵심 특징으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "충분하고 안정적인 양육을 받은 아동에게서도 흔히 진단된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 사회적 방임, 잦은 양육자 교체, 시설 양육 같은 불충분한 양육 이력이 필수 기준이다."
+   },
+   {
+    "key": "2",
+    "text": "고통스러울 때에도 양육자에게 위안을 거의 구하지 않고, 위안을 주어도 거의 반응하지 않는다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 양육자에 대한 일관된 정서적 위축과 억제된 애착 행동이 반응성 애착장애의 핵심이다."
+   },
+   {
+    "key": "3",
+    "text": "낯선 성인에게 거리낌 없이 다가가 지나치게 친숙하게 행동한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 이는 탈억제 사회관여장애의 핵심 특징이다."
+   },
+   {
+    "key": "4",
+    "text": "반복적 상동행동과 제한된 관심이 진단의 핵심이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 이는 자폐스펙트럼장애의 특징이며, 자폐스펙트럼장애 기준을 충족하면 반응성 애착장애로 진단하지 않는다."
+   },
+   {
+    "key": "5",
+    "text": "애착 대상과 분리될 때 발달 수준에 비해 과도한 불안을 보인다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 이는 분리불안장애의 특징이다. 분리불안은 이미 선택적 애착이 형성되어 있음을 전제한다."
+   }
+  ],
+  "answer": [
+   "2"
+  ],
+  "theory": "반응성 애착장애 핵심 특징",
+  "concept": "RAD-핵심특징",
+  "explanation": "반응성 애착장애는 내재화된 위축형, 탈억제 사회관여장애는 무분별한 사회성의 외현화형으로 대비해 기억하면 좋다.",
+  "sources": [
+   {
+    "source_name": "California Evidence-Based Clearinghouse for Child Welfare 및 StatPearls 반응성 애착장애",
+    "ref": "https://www.cebc4cw.org/dsm-5-criteria-for-reactive-attachment-disorder-rad",
+    "unit": "DSM-5 Criteria for Reactive Attachment Disorder",
+    "basis": "양육자에 대한 일관된 정서적 위축 행동, 지속적 사회정서 장해, 불충분한 양육 이력이 필요하고, 자폐스펙트럼장애 기준을 충족하지 않아야 하며, 장해는 5세 이전에 분명하고 발달연령은 최소 9개월이어야 한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-008",
+  "domain": "trauma",
+  "disorder": "dsed",
+  "related": [
+   "rad"
+  ],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "탈억제 사회관여장애에 관한 설명으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "불충분한 양육 이력은 진단에 필요하지 않다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 사회적 방임, 잦은 양육자 교체 등 불충분한 양육 이력이 필수이다."
+   },
+   {
+    "key": "2",
+    "text": "주로 청소년기 이후 처음 발병한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 생애 초기의 양육 결핍과 관련된 아동기 장애이다. 일부 특징이 청소년기까지 지속될 수는 있다."
+   },
+   {
+    "key": "3",
+    "text": "낯선 성인을 주저 없이 따라가려 하고 낯선 상황에서 양육자를 확인하지 않으며, 이 행동이 ADHD식 충동성에만 국한되지 않아야 한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 무분별한 사회적 접근 행동이 핵심이고, 그것이 단순한 충동성 문제가 아니라 사회적 탈억제여야 한다."
+   },
+   {
+    "key": "4",
+    "text": "양육자에게 위안을 구하지 않고 정서적으로 위축된 모습이 핵심이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 이는 반응성 애착장애의 특징이다."
+   },
+   {
+    "key": "5",
+    "text": "진단에는 최소 발달연령 3세가 필요하다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 최소 발달연령은 9개월이다."
+   }
+  ],
+  "answer": [
+   "3"
+  ],
+  "theory": "탈억제 사회관여장애",
+  "concept": "DSED-핵심특징",
+  "explanation": "탈억제 사회관여장애는 낯선 사람에 대한 경계 부족이 핵심이며, ADHD의 충동성과 감별해야 한다.",
+  "sources": [
+   {
+    "source_name": "California Evidence-Based Clearinghouse for Child Welfare",
+    "ref": "https://cebc4cw.org/search/topic-areas/dsm-5-criteria-for-disinhibited-social-engagement-disorder",
+    "unit": "DSM-5 Criteria for Disinhibited Social Engagement Disorder",
+    "basis": "낯선 성인에게 적극적으로 다가가 상호작용하며 지나친 친숙함, 양육자 확인의 감소, 낯선 성인을 주저 없이 따라감 등 가운데 2개 이상을 보이고, 불충분한 양육 이력이 있으며, 발달연령이 최소 9개월이어야 한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "미국정신의학회 DSM-5(2013) 및 DSM-5-TR(2022)",
+    "ref": "American Psychiatric Association. DSM-5 (2013), DSM-5-TR (2022).",
+    "unit": "외상 및 스트레스 관련 장애",
+    "basis": "진단 범주와 기준 구성에 관한 모델 지식 기반 요약.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-009",
+  "domain": "trauma",
+  "disorder": "prolonged_grief",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "지속성 비탄장애에 관한 설명으로 옳은 것은? 이 장애는 DSM-5-TR에서 신설되어 DSM-5 기반 교재에는 없을 수 있다.",
+  "options": [
+   {
+    "key": "1",
+    "text": "아동과 청소년도 성인과 같이 사망 후 12개월이 지나야 한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 아동과 청소년은 최소 6개월 기준이 적용된다."
+   },
+   {
+    "key": "2",
+    "text": "DSM-5 본문에 이미 정식 진단으로 수록되어 있었다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. DSM-5에서는 지속성 복합 애도장애가 추가 연구가 필요한 조건으로만 제시되었고, 정식 진단은 DSM-5-TR에서 이루어졌다."
+   },
+   {
+    "key": "3",
+    "text": "사고나 살인처럼 외상적 죽음인 경우에만 진단할 수 있다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 사망 원인의 외상성은 요구되지 않으며 자연사에서도 진단할 수 있다."
+   },
+   {
+    "key": "4",
+    "text": "핵심 증상은 고인에 대한 강렬한 그리움 또는 고인에 대한 생각과 기억에의 몰두이다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 둘 중 하나 이상이 거의 매일 나타나는 것이 핵심 기준이다."
+   },
+   {
+    "key": "5",
+    "text": "사망 후 2주 이내에 우울 증상이 나타나면 바로 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 성인은 사망 후 최소 12개월이 지나야 진단할 수 있다."
+   }
+  ],
+  "answer": [
+   "4"
+  ],
+  "theory": "DSM-5-TR 지속성 비탄장애",
+  "concept": "지속성비탄-핵심증상",
+  "explanation": "지속성 비탄장애는 2020년 APA 승인 후 DSM-5-TR에 수록되었다. 교재 3판이 DSM-5 기준이라면 다루지 않을 수 있으므로 시험 범위는 확인이 필요하다.",
+  "sources": [
+   {
+    "source_name": "미국정신의학회(APA) DSM-5-TR 지속성 비탄장애 자료",
+    "ref": "https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/DSM-5-TR/APA-DSM5TR-ProlongedGriefDisorder.pdf",
+    "unit": "Prolonged Grief Disorder",
+    "basis": "가까운 사람의 사망 후 성인은 최소 12개월, 아동과 청소년은 최소 6개월이 지나야 하며, 고인에 대한 강렬한 그리움 또는 고인에 대한 생각과 기억에의 몰두가 핵심이다. 일상 기능에 정상 애도와 달리 손상을 준다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "PubMed Central 게재 지속성 비탄장애 기준 비교 논문 및 Psychiatric News 2020",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8475918/",
+    "unit": "DSM-5-TR과 ICD-11 지속성 비탄장애 비교",
+    "basis": "ICD-11 지침은 6개월 기간을 요구하는 반면 DSM-5-TR은 성인 12개월을 요구하며, 정상 애도를 병리화하지 않기 위한 취지가 언급된다. 2020년 APA 이사회가 신설 진단을 승인하였다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-010",
+  "domain": "trauma",
+  "disorder": "trauma_overview",
+  "related": [
+   "ptsd"
+  ],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "PTSD의 위험요인을 외상 전, 외상 중, 외상 후로 나눌 때 외상 후 요인에 해당하는 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "외상 이전의 정신과적 병력",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 외상 전 요인에 해당한다."
+   },
+   {
+    "key": "2",
+    "text": "외상 당시 경험한 해리 반응",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 외상 중 요인, 즉 주변외상기 반응에 해당한다."
+   },
+   {
+    "key": "3",
+    "text": "외상 사건의 심각도와 생명 위협 정도",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 외상 중 요인에 해당한다."
+   },
+   {
+    "key": "4",
+    "text": "아동기 역경 경험과 낮은 교육 수준",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 외상 전 요인에 해당한다."
+   },
+   {
+    "key": "5",
+    "text": "외상 이후 주변의 사회적 지지 부족",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 사회적 지지 부족과 후속 생활 스트레스는 외상 후 요인이며, 메타분석에서 가장 강한 예측 요인 가운데 하나로 보고되었다."
+   }
+  ],
+  "answer": [
+   "5"
+  ],
+  "theory": "PTSD 위험요인과 보호요인",
+  "concept": "위험요인-시점분류",
+  "explanation": "Brewin 등의 메타분석에서 외상 전 요인보다 외상 중과 외상 후 요인이 PTSD와 더 강하게 관련되었고, 사회적 지지는 대표적 보호요인이다.",
+  "sources": [
+   {
+    "source_name": "Brewin, Andrews, Valentine 2000 메타분석 및 Ozer 등 2003 메타분석",
+    "ref": "Journal of Consulting and Clinical Psychology 68(5); Psychological Bulletin 129(1)",
+    "unit": "PTSD 위험요인",
+    "basis": "외상 전 요인보다 외상 중과 외상 후 요인, 특히 사회적 지지 부족과 외상 당시 해리가 PTSD와 더 강하게 관련된다.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-011",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "Foa와 Kozak의 정서처리이론에서 공포가 감소하기 위한 조건으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "공포 구조가 충분히 활성화되고, 그 구조와 양립하지 않는 교정 정보가 통합되어야 한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 기억 속 공포 구조를 활성화한 상태에서 실제로는 위험하지 않다는 새 정보가 들어올 때 구조가 수정된다."
+   },
+   {
+    "key": "2",
+    "text": "회피를 통해 공포 구조가 활성화되지 않도록 해야 한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 회피는 공포 구조의 활성화와 수정을 막아 오히려 공포를 유지시킨다."
+   },
+   {
+    "key": "3",
+    "text": "외상 기억을 의식적으로 억제하는 훈련이 핵심이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 사고억제는 침투를 증가시킬 수 있으며 정서처리 관점에서도 처리 기회를 막는다."
+   },
+   {
+    "key": "4",
+    "text": "이완만 반복하면 외상 기억을 다루지 않아도 충분하다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 이완은 보조 기법일 뿐 공포 구조의 활성화와 교정 정보 제공을 대체하지 못한다."
+   },
+   {
+    "key": "5",
+    "text": "무의식적 갈등을 해석하여 통찰을 얻는 것이 필수이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 이는 정신역동적 접근의 원리이다."
+   }
+  ],
+  "answer": [
+   "1"
+  ],
+  "theory": "Foa & Kozak 정서처리이론",
+  "concept": "이론-정서처리",
+  "explanation": "정서처리이론은 지속노출치료의 이론적 기반으로, 회기 내 각성과 회기 간 습관화가 처리 지표로 제시되었다.",
+  "sources": [
+   {
+    "source_name": "Foa & Kozak 1986, Psychological Bulletin 99권",
+    "ref": "Foa, E. B., & Kozak, M. J. (1986). Emotional processing of fear. Psychological Bulletin, 99(1), 20-35.",
+    "unit": "정서처리이론",
+    "basis": "공포 구조가 활성화되고 이와 양립하지 않는 교정 정보가 통합될 때 공포가 감소한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-012",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "Horowitz의 스트레스 반응 이론에 관한 설명으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "외상 정보는 기존 도식에 통합되지 않아도 시간이 지나면 저절로 사라진다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 정보가 도식에 통합되는 철저처리와 완결이 회복의 조건이다."
+   },
+   {
+    "key": "2",
+    "text": "침투 단계와 부인 또는 회피 단계가 교대로 나타나며, 외상 정보가 기존 인지 도식에 통합될 때까지 이 과정이 계속된다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 완결 경향성에 따라 처리되지 않은 정보가 침투로 떠오르고, 감당하기 어려우면 부인과 회피로 방어하는 교대가 반복된다."
+   },
+   {
+    "key": "3",
+    "text": "외상 직후 부인 단계는 나타나지 않고 침투 증상만 지속된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 절규 이후 부인 단계가 나타나는 것이 모형의 일부이다."
+   },
+   {
+    "key": "4",
+    "text": "각 단계는 정해진 순서대로 한 번씩만 지나간다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 침투와 부인은 반복적으로 교대할 수 있다."
+   },
+   {
+    "key": "5",
+    "text": "고전적 조건형성과 조작적 조건형성으로 증상을 설명한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 이는 Mowrer 2요인 이론의 설명이다."
+   }
+  ],
+  "answer": [
+   "2"
+  ],
+  "theory": "Horowitz 스트레스 반응 이론",
+  "concept": "이론-Horowitz",
+  "explanation": "Horowitz는 정보처리와 정신역동 관점을 결합하여 절규, 부인, 침투, 철저처리, 완결의 단계를 제시했다.",
+  "sources": [
+   {
+    "source_name": "Horowitz MJ, Stress Response Syndromes",
+    "ref": "Horowitz, M. J. (1976/1986). Stress response syndromes. Jason Aronson.",
+    "unit": "스트레스 반응 모델",
+    "basis": "외상 후 절규, 부인, 침투, 철저처리, 완결 단계가 제시되며 침투와 부인·회피가 교대로 나타나면서 정보가 기존 도식에 통합된다.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-013",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "인지처리치료(CPT)에 관한 설명으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "회피하던 상황을 위계에 따라 실제로 직면하는 것만으로 구성된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 실제 노출은 지속노출치료의 구성 요소이다."
+   },
+   {
+    "key": "2",
+    "text": "SSRI 투여를 필수 요소로 포함한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. CPT는 심리치료이며 약물은 구성 요소가 아니다."
+   },
+   {
+    "key": "3",
+    "text": "Resick이 개발했으며, 외상에 대한 왜곡된 신념인 고착점을 찾아 소크라테스식 질문으로 수정하고 외상 진술문 작성을 포함할 수 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. CPT는 안전, 신뢰, 힘과 통제, 존중감, 친밀감 주제의 신념을 다루는 인지 중심 치료이다."
+   },
+   {
+    "key": "4",
+    "text": "외상 기억을 눈을 감고 현재 시제로 반복 회상하고 녹음을 매일 듣는 것이 핵심이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 이는 지속노출치료의 심상 노출 절차이다."
+   },
+   {
+    "key": "5",
+    "text": "외상 기억을 떠올리며 치료자의 손가락을 따라 눈을 좌우로 움직인다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 이는 EMDR의 절차이다."
+   }
+  ],
+  "answer": [
+   "3"
+  ],
+  "theory": "인지처리치료",
+  "concept": "치료-CPT",
+  "explanation": "CPT에서는 외상 정보를 기존 신념에 맞추어 왜곡하는 동화와 지나치게 일반화하는 과잉조절을 함께 다룬다.",
+  "sources": [
+   {
+    "source_name": "미국심리학회 PTSD 치료지침 2017 및 VA/DoD PTSD 임상지침",
+    "ref": "https://www.apa.org/ptsd-guideline",
+    "unit": "PTSD 심리치료와 약물치료",
+    "basis": "지속노출치료, 인지처리치료, 인지치료, EMDR 등 외상초점 치료와 일부 SSRI가 권고된다.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-014",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "incorrect",
+  "case": null,
+  "stem": "Foa의 지속노출치료(PE)의 구성 요소로 옳지 않은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "회피해 온 안전한 상황에 단계적으로 접근하는 실제 노출",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "구성 요소이다. 실제 노출 위계를 만들어 과제로 수행한다."
+   },
+   {
+    "key": "2",
+    "text": "호흡 재훈련",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "구성 요소이다. 초기 회기에서 각성을 다루는 기술로 가르친다."
+   },
+   {
+    "key": "3",
+    "text": "외상 반응에 대한 심리교육",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "구성 요소이다. 흔한 외상 반응과 회피의 유지 역할을 설명한다."
+   },
+   {
+    "key": "4",
+    "text": "외상 기억을 떠올리며 시행하는 양측성 안구운동",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "정답이다. 양측성 안구운동은 EMDR의 요소이며 지속노출치료에는 포함되지 않는다."
+   },
+   {
+    "key": "5",
+    "text": "외상 기억을 반복해서 자세히 이야기하는 심상 노출",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "구성 요소이다. 회기 내 심상 노출과 녹음 청취 과제가 포함된다."
+   }
+  ],
+  "answer": [
+   "4"
+  ],
+  "theory": "지속노출치료",
+  "concept": "치료-PE",
+  "explanation": "지속노출치료는 정서처리이론에 근거하여 심리교육, 호흡 재훈련, 실제 노출, 심상 노출과 처리로 구성된다.",
+  "sources": [
+   {
+    "source_name": "미국심리학회 PTSD 치료지침 2017 및 VA/DoD PTSD 임상지침",
+    "ref": "https://www.apa.org/ptsd-guideline",
+    "unit": "PTSD 심리치료와 약물치료",
+    "basis": "지속노출치료, 인지처리치료, 인지치료, EMDR 등 외상초점 치료와 일부 SSRI가 권고된다.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "Foa & Kozak 1986, Psychological Bulletin 99권",
+    "ref": "Foa, E. B., & Kozak, M. J. (1986). Emotional processing of fear. Psychological Bulletin, 99(1), 20-35.",
+    "unit": "정서처리이론",
+    "basis": "공포 구조가 활성화되고 이와 양립하지 않는 교정 정보가 통합될 때 공포가 감소한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-015",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "외상초점 인지행동치료(TF-CBT)에 관한 설명으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "보호자는 치료 과정에서 배제하는 것이 원칙이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 보호자 참여가 TF-CBT의 특징이다."
+   },
+   {
+    "key": "2",
+    "text": "성인 전투 참전군인을 위해 개발되었다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. Cohen, Mannarino, Deblinger가 성학대 등 외상을 겪은 아동을 위해 개발했다."
+   },
+   {
+    "key": "3",
+    "text": "외상 경험을 언급하지 않는 것이 치료 원칙이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 점진적 노출로서 외상 내러티브를 다루는 것이 핵심이다."
+   },
+   {
+    "key": "4",
+    "text": "구조화되지 않은 비지시적 놀이치료만으로 구성된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. TF-CBT는 구조화된 단계적 인지행동 개입이다."
+   },
+   {
+    "key": "5",
+    "text": "아동과 청소년을 주 대상으로 하며, 비가해 보호자가 함께 참여하고 외상 내러티브 작성이 포함된다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 심리교육과 양육기술, 이완, 정서조절, 인지적 대처, 외상 내러티브, 실제 노출, 공동 회기, 안전 강화로 구성된다."
+   }
+  ],
+  "answer": [
+   "5"
+  ],
+  "theory": "외상초점 인지행동치료",
+  "concept": "치료-TFCBT",
+  "explanation": "TF-CBT는 아동 외상 치료에서 근거가 가장 많은 치료 가운데 하나이며 보호자 참여가 특징이다.",
+  "sources": [
+   {
+    "source_name": "Cohen, Mannarino, Deblinger 2006",
+    "ref": "Cohen, J. A., Mannarino, A. P., & Deblinger, E. (2006). Treating trauma and traumatic grief in children and adolescents. Guilford.",
+    "unit": "외상초점 인지행동치료",
+    "basis": "아동과 청소년을 대상으로 보호자가 함께 참여하며 심리교육, 이완, 정서조절, 인지적 대처, 외상 내러티브, 실제 노출, 공동 회기, 안전 강화로 구성된다.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-016",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "PTSD와 해마에 관한 연구 결과로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "PTSD 환자에게서 해마 부피 감소가 보고되며, 쌍둥이 연구는 작은 해마가 외상 이전부터 존재하는 취약성일 가능성을 시사한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. Gilbertson 등의 쌍둥이 연구에서 외상에 노출되지 않은 쌍둥이 형제도 해마가 작았다."
+   },
+   {
+    "key": "2",
+    "text": "PTSD 환자의 해마 부피는 일관되게 증가한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 보고되는 방향은 감소이다."
+   },
+   {
+    "key": "3",
+    "text": "해마 부피 감소는 반드시 외상 후 코르티솔 과다로 인한 손상의 결과임이 확정되었다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 원인인지 결과인지는 논쟁 중이며, 취약성 가설도 강력하게 제기된다."
+   },
+   {
+    "key": "4",
+    "text": "해마는 공포 학습과 무관하여 PTSD 연구에서 다루지 않는다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 해마는 맥락 정보 처리와 안전 맥락 구별에 관여하여 PTSD 신경회로 모형의 핵심 영역이다."
+   },
+   {
+    "key": "5",
+    "text": "해마 기능 저하는 맥락과 무관하게 공포를 억제하는 능력을 높인다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 해마 기능이 약하면 안전한 맥락과 위험한 맥락의 구별이 어려워 공포가 일반화된다."
+   }
+  ],
+  "answer": [
+   "1"
+  ],
+  "theory": "PTSD 신경생물학",
+  "concept": "PTSD-해마",
+  "explanation": "해마 감소, 편도체 과활성, 내측 전전두엽 저활성이 PTSD 신경회로의 세 축이다.",
+  "sources": [
+   {
+    "source_name": "Shin, Rauch, Pitman 2006 및 Gilbertson 등 2002",
+    "ref": "Annals of the New York Academy of Sciences 1071; Nature Neuroscience 5(11)",
+    "unit": "PTSD 신경회로",
+    "basis": "편도체 과활성, 내측 전전두엽 활동 저하, 해마 부피 감소가 보고되며 쌍둥이 연구는 작은 해마가 사전 취약성일 가능성을 시사한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-017",
+  "domain": "trauma",
+  "disorder": "rad",
+  "related": [
+   "dsed"
+  ],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "Bowlby의 애착이론에 관한 설명으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "Bowlby는 애착을 무의식적 성적 추동의 변형으로 설명했다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 이는 고전 정신분석의 추동 이론에 가까운 설명이다."
+   },
+   {
+    "key": "2",
+    "text": "초기 양육자와의 반복적 상호작용을 통해 자신과 타인에 대한 내적 작동 모델이 형성된다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 내적 작동 모델은 이후 대인관계에서의 기대와 행동을 안내한다."
+   },
+   {
+    "key": "3",
+    "text": "애착은 수유를 통한 배고픔 충족이라는 이차적 강화로 형성된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. Bowlby는 이차 추동 설명을 비판하고, 애착을 생존을 위한 진화적 행동 체계로 보았다."
+   },
+   {
+    "key": "4",
+    "text": "애착은 성인기 이후에만 형성된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 애착은 영아기부터 형성되며 생후 첫 몇 년이 중요하다."
+   },
+   {
+    "key": "5",
+    "text": "애착 대상의 상실이나 박탈은 아동 발달에 영향이 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. Bowlby는 모성 박탈 연구로 상실과 박탈의 영향을 강조했다."
+   }
+  ],
+  "answer": [
+   "2"
+  ],
+  "theory": "Bowlby 애착이론",
+  "concept": "이론-애착",
+  "explanation": "반응성 애착장애와 탈억제 사회관여장애는 불충분한 양육으로 선택적 애착 형성이 방해받은 결과로 이해된다.",
+  "sources": [
+   {
+    "source_name": "Bowlby J 1969, Attachment and Loss",
+    "ref": "Bowlby, J. (1969). Attachment and loss: Vol. 1. Attachment. Basic Books.",
+    "unit": "애착이론",
+    "basis": "초기 양육자와의 애착 경험이 자신과 타인에 대한 내적 작동 모델을 형성한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-018",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "PTSD의 해리 하위유형에 관한 설명으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "DSM-IV부터 존재하던 하위유형이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. DSM-5에서 신설되었다."
+   },
+   {
+    "key": "2",
+    "text": "알코올 중독 상태에서 나타난 해리 경험도 포함된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 물질의 생리적 효과나 다른 의학적 상태로 인한 해리는 제외한다."
+   },
+   {
+    "key": "3",
+    "text": "PTSD 기준을 충족하면서 이인증이나 비현실감이 지속적이거나 반복적으로 나타날 때 붙인다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 자신에게서 분리된 느낌이나 주변이 비현실적으로 느껴지는 경험이 두드러질 때 해당한다."
+   },
+   {
+    "key": "4",
+    "text": "외상의 중요한 부분을 기억하지 못하는 해리성 기억상실이 필수 요건이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 해리성 기억상실은 인지와 기분의 부정적 변화 군 증상이며, 해리 하위유형의 요건은 이인증 또는 비현실감이다."
+   },
+   {
+    "key": "5",
+    "text": "급성 스트레스장애의 하위유형이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 해리 하위유형은 PTSD의 명시자이다."
+   }
+  ],
+  "answer": [
+   "3"
+  ],
+  "theory": "PTSD 해리 하위유형",
+  "concept": "PTSD-해리하위유형",
+  "explanation": "해리 하위유형은 이인증 또는 비현실감이 핵심이며, 물질이나 의학적 상태로 인한 것은 제외한다.",
+  "sources": [
+   {
+    "source_name": "Friedman MJ, Focus(미국정신의학회 학술지) 2013",
+    "ref": "https://focus.psychiatryonline.org/doi/10.1176/appi.focus.11.3.358",
+    "unit": "Finalizing PTSD in DSM-5",
+    "basis": "DSM-5는 증상군을 재경험, 회피, 인지와 기분의 부정적 변화, 각성의 네 군으로 재편하고 기존 회피와 마비 군을 분리했다. 침투 1개, 회피 1개, 인지와 기분 2개 이상이 필요하며, 이인증 또는 비현실감이 두드러지는 해리 하위유형이 신설되었다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-019",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "incorrect",
+  "case": null,
+  "stem": "DSM-5 PTSD의 인지와 기분의 부정적 변화 증상군에 속하지 않는 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "자신, 타인, 세상에 대한 과장된 부정적 신념",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "이 군에 속한다. 나는 나쁜 사람이다, 세상은 완전히 위험하다 같은 신념이 해당한다."
+   },
+   {
+    "key": "2",
+    "text": "외상의 원인이나 결과에 대한 왜곡된 인지로 자신이나 타인을 비난함",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "이 군에 속한다. DSM-5에서 새로 강조된 증상이다."
+   },
+   {
+    "key": "3",
+    "text": "긍정적 정서를 지속적으로 경험하지 못함",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "이 군에 속한다. 행복, 만족, 사랑을 느끼지 못하는 상태가 해당한다."
+   },
+   {
+    "key": "4",
+    "text": "과장된 놀람 반응",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "정답이다. 과장된 놀람 반응은 각성과 반응성의 변화 군에 속한다."
+   },
+   {
+    "key": "5",
+    "text": "외상 사건의 중요한 부분을 기억하지 못함",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "이 군에 속한다. 두부 손상이나 물질 때문이 아닌 해리성 기억상실이 해당한다."
+   }
+  ],
+  "answer": [
+   "4"
+  ],
+  "theory": "PTSD 증상군 구성",
+  "concept": "PTSD-부정적인지기분군",
+  "explanation": "인지와 기분의 부정적 변화 군은 DSM-5에서 신설되었으며 2개 이상이 필요하다.",
+  "sources": [
+   {
+    "source_name": "Friedman MJ, Focus(미국정신의학회 학술지) 2013",
+    "ref": "https://focus.psychiatryonline.org/doi/10.1176/appi.focus.11.3.358",
+    "unit": "Finalizing PTSD in DSM-5",
+    "basis": "DSM-5는 증상군을 재경험, 회피, 인지와 기분의 부정적 변화, 각성의 네 군으로 재편하고 기존 회피와 마비 군을 분리했다. 침투 1개, 회피 1개, 인지와 기분 2개 이상이 필요하며, 이인증 또는 비현실감이 두드러지는 해리 하위유형이 신설되었다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "미국정신의학회 DSM-5(2013) 및 DSM-5-TR(2022)",
+    "ref": "American Psychiatric Association. DSM-5 (2013), DSM-5-TR (2022).",
+    "unit": "외상 및 스트레스 관련 장애",
+    "basis": "진단 범주와 기준 구성에 관한 모델 지식 기반 요약.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-020",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "DSM-5 PTSD의 각성과 반응성의 변화 증상군에 해당하는 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "외상과 관련된 반복적인 악몽",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 침투 증상군에 해당한다."
+   },
+   {
+    "key": "2",
+    "text": "외상 기억을 피하려는 노력",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 회피 증상군에 해당한다."
+   },
+   {
+    "key": "3",
+    "text": "공포, 분노, 죄책감 같은 지속적인 부정적 정서 상태",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 인지와 기분의 부정적 변화 군에 해당한다."
+   },
+   {
+    "key": "4",
+    "text": "외상이 다시 일어나는 것처럼 느끼고 행동하는 플래시백",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 해리성 반응인 플래시백은 침투 증상군에 해당한다."
+   },
+   {
+    "key": "5",
+    "text": "무모하거나 자기파괴적인 행동",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. DSM-5에서 각성 군에 새로 추가된 증상이다."
+   }
+  ],
+  "answer": [
+   "5"
+  ],
+  "theory": "PTSD 증상군 구성",
+  "concept": "PTSD-각성군",
+  "explanation": "각성 군은 과민과 분노 폭발, 무모한 행동, 과각성, 과장된 놀람, 집중 곤란, 수면 장해로 구성되며 2개 이상이 필요하다.",
+  "sources": [
+   {
+    "source_name": "미국정신의학회 DSM-5(2013) 및 DSM-5-TR(2022)",
+    "ref": "American Psychiatric Association. DSM-5 (2013), DSM-5-TR (2022).",
+    "unit": "외상 및 스트레스 관련 장애",
+    "basis": "진단 범주와 기준 구성에 관한 모델 지식 기반 요약.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-021",
+  "domain": "trauma",
+  "disorder": "asd",
+  "related": [
+   "ptsd"
+  ],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "급성 스트레스장애로 진단받은 사람의 증상이 외상 후 1개월을 넘어 지속될 때의 판단으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "PTSD 진단 기준 충족 여부를 다시 평가하며, 충족하면 PTSD로 진단을 바꿀 수 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 급성 스트레스장애는 1개월까지만 진단할 수 있으므로 이후에는 PTSD 기준을 검토한다."
+   },
+   {
+    "key": "2",
+    "text": "급성 스트레스장애를 3개월까지 연장해 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 급성 스트레스장애의 최대 기간은 1개월이다."
+   },
+   {
+    "key": "3",
+    "text": "급성 스트레스장애를 진단받았던 사람만 이후 PTSD로 진단될 수 있다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 급성 스트레스장애를 거치지 않고 PTSD가 발생하는 경우도 많다."
+   },
+   {
+    "key": "4",
+    "text": "급성 스트레스장애는 반드시 PTSD로 진행하므로 추가 평가는 불필요하다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 급성 스트레스장애가 있어도 상당수는 PTSD로 진행하지 않으며 예측력도 제한적이다."
+   },
+   {
+    "key": "5",
+    "text": "1개월이 지나면 기준 충족 여부와 관계없이 자동으로 적응장애로 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 적응장애는 PTSD 기준을 충족하지 않을 때 고려할 수 있는 선택지일 뿐 자동 전환이 아니다."
+   }
+  ],
+  "answer": [
+   "1"
+  ],
+  "theory": "급성 스트레스장애와 PTSD의 관계",
+  "concept": "ASD-PTSD전환",
+  "explanation": "급성 스트레스장애는 PTSD의 전구가 될 수 있지만 필요조건도 충분조건도 아니다.",
+  "sources": [
+   {
+    "source_name": "NCBI StatPearls",
+    "ref": "https://www.ncbi.nlm.nih.gov/books/NBK560815/",
+    "unit": "Acute Stress Disorder",
+    "basis": "급성 스트레스장애는 외상 노출 후 최소 3일에서 최대 1개월 사이의 반응이며, 4주를 넘어 지속되면 PTSD 기준을 검토한다. DSM-5에서는 해리 증상이 더 이상 필수 요건이 아니다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-022",
+  "domain": "trauma",
+  "disorder": "trauma_overview",
+  "related": [
+   "rad",
+   "dsed",
+   "asd",
+   "adjustment"
+  ],
+  "level": 2,
+  "type": "single",
+  "polarity": "incorrect",
+  "case": null,
+  "stem": "DSM-5의 외상 및 스트레스 관련 장애 범주에 포함되지 않는 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "적응장애",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "포함된다. DSM-5에서 이 범주로 옮겨졌다."
+   },
+   {
+    "key": "2",
+    "text": "분리불안장애",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "정답이다. 분리불안장애는 DSM-5에서 불안장애 범주에 포함된다."
+   },
+   {
+    "key": "3",
+    "text": "반응성 애착장애",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "포함된다. 불충분한 양육이라는 스트레스 요인과 관련된다."
+   },
+   {
+    "key": "4",
+    "text": "탈억제 사회관여장애",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "포함된다. DSM-5에서 반응성 애착장애의 탈억제형이 독립 장애가 되었다."
+   },
+   {
+    "key": "5",
+    "text": "급성 스트레스장애",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "포함된다. 외상 후 3일에서 1개월 사이의 반응이다."
+   }
+  ],
+  "answer": [
+   "2"
+  ],
+  "theory": "DSM-5 분류 체계",
+  "concept": "외상범주-구성",
+  "explanation": "외상 및 스트레스 관련 장애 범주에는 반응성 애착장애, 탈억제 사회관여장애, PTSD, 급성 스트레스장애, 적응장애가 있으며, DSM-5-TR에서 지속성 비탄장애가 추가되었다.",
+  "sources": [
+   {
+    "source_name": "미국정신의학회 DSM-5(2013) 및 DSM-5-TR(2022)",
+    "ref": "American Psychiatric Association. DSM-5 (2013), DSM-5-TR (2022).",
+    "unit": "외상 및 스트레스 관련 장애",
+    "basis": "진단 범주와 기준 구성에 관한 모델 지식 기반 요약.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-023",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "PTSD의 약물치료에 관한 설명으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "약물치료는 PTSD 증상에 전혀 효과가 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. SSRI와 SNRI 일부는 효과 근거가 있다. 다만 외상초점 심리치료가 우선 권고되는 경우가 많다."
+   },
+   {
+    "key": "2",
+    "text": "리튬이 표준 1차 약물이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 리튬은 양극성장애의 기분안정제이며 PTSD 1차 약물이 아니다."
+   },
+   {
+    "key": "3",
+    "text": "SSRI 계열인 서트랄린과 파록세틴이 미국 FDA의 PTSD 치료 승인을 받았다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. SSRI는 PTSD 약물치료의 1차 선택으로 널리 권고된다."
+   },
+   {
+    "key": "4",
+    "text": "벤조디아제핀은 PTSD 예방과 치료의 1차 약물로 권장된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 벤조디아제핀은 효과 근거가 부족하고 치료 반응을 저해할 수 있어 권장되지 않는다."
+   },
+   {
+    "key": "5",
+    "text": "항정신병약물 단독 사용이 1차 치료이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 일부 보조 사용 연구가 있을 뿐 1차 치료가 아니다."
+   }
+  ],
+  "answer": [
+   "3"
+  ],
+  "theory": "PTSD 약물치료",
+  "concept": "치료-약물",
+  "explanation": "PTSD 치료 지침은 외상초점 심리치료를 강하게 권고하고, 약물로는 SSRI와 벤라팍신 등을 권고한다.",
+  "sources": [
+   {
+    "source_name": "미국심리학회 PTSD 치료지침 2017 및 VA/DoD PTSD 임상지침",
+    "ref": "https://www.apa.org/ptsd-guideline",
+    "unit": "PTSD 심리치료와 약물치료",
+    "basis": "지속노출치료, 인지처리치료, 인지치료, EMDR 등 외상초점 치료와 일부 SSRI가 권고된다.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-024",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 2,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "Mowrer의 2요인 이론으로 PTSD를 설명할 때 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "외상에 대한 부정적 평가와 기억 특성이 핵심 기제이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 이는 Ehlers와 Clark 인지모형의 설명이다."
+   },
+   {
+    "key": "2",
+    "text": "노출치료가 효과적인 이유를 설명하지 못한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 회피를 막고 조건자극에 노출시키면 소거가 일어난다는 점에서 노출치료의 이론적 근거가 된다."
+   },
+   {
+    "key": "3",
+    "text": "억압된 무의식적 갈등이 증상으로 전환된다고 본다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 이는 정신분석적 설명이다."
+   },
+   {
+    "key": "4",
+    "text": "외상 단서를 회피하면 불안이 줄어 회피가 강화되고, 그 결과 조건자극에 다시 노출되어 소거될 기회가 차단된다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 회피가 공포 소거를 막아 공포가 유지된다는 설명이며 노출치료의 근거가 된다."
+   },
+   {
+    "key": "5",
+    "text": "공포는 조작적 조건형성으로 획득되고 회피는 고전적 조건형성으로 유지된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 획득은 고전적 조건형성, 유지는 조작적 조건형성으로 순서가 바뀌었다."
+   }
+  ],
+  "answer": [
+   "4"
+  ],
+  "theory": "Mowrer 2요인 이론",
+  "concept": "이론-2요인-회피유지",
+  "explanation": "2요인 이론의 한계로 외상 노출자가 모두 PTSD가 되지 않는 개인차와 인지적 의미 요인을 설명하기 어렵다는 점이 지적된다.",
+  "sources": [
+   {
+    "source_name": "Mowrer OH 1960, Learning Theory and Behavior",
+    "ref": "Mowrer, O. H. (1960). Learning theory and behavior. Wiley.",
+    "unit": "2요인 학습이론",
+    "basis": "공포는 고전적 조건형성으로 획득되고 회피는 불안 감소에 의한 부적 강화로 유지된다.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L2-025",
+  "domain": "trauma",
+  "disorder": "adjustment",
+  "related": [
+   "ptsd"
+  ],
+  "level": 2,
+  "type": "single",
+  "polarity": "incorrect",
+  "case": null,
+  "stem": "적응장애에 관한 설명으로 옳지 않은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "이혼, 실직, 사업 실패 같은 일상적 스트레스 요인에 대한 반응으로 진단할 수 있다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 설명이다. 스트레스 요인의 심각도에 제한이 없다."
+   },
+   {
+    "key": "2",
+    "text": "증상 지속 기간에 따라 급성과 지속성 명시자를 구분할 수 있다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 설명이다. 6개월 미만은 급성, 6개월 이상은 지속성 또는 만성이다."
+   },
+   {
+    "key": "3",
+    "text": "다른 특정 정신장애의 기준을 충족하면 적응장애로 진단하지 않는다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 설명이다. 적응장애는 잔여적 성격의 진단이다."
+   },
+   {
+    "key": "4",
+    "text": "정상적인 애도 반응은 적응장애로 진단하지 않는다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 설명이다. 정상 애도는 제외 기준이다."
+   },
+   {
+    "key": "5",
+    "text": "PTSD 기준 A에 해당하는 외상 사건 이후에는 적응장애를 진단할 수 없다.",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "정답이다. 외상 사건 후 PTSD나 급성 스트레스장애 기준을 충족하지 못하는 반응은 적응장애로 진단할 수 있다."
+   }
+  ],
+  "answer": [
+   "5"
+  ],
+  "theory": "적응장애 특징",
+  "concept": "적응장애-외상후진단",
+  "explanation": "적응장애는 외상 사건 이후 역치 미만 반응을 포괄하는 역할도 한다는 점이 감별 문제에 자주 쓰인다.",
+  "sources": [
+   {
+    "source_name": "미국정신의학회 DSM-5(2013) 및 DSM-5-TR(2022)",
+    "ref": "American Psychiatric Association. DSM-5 (2013), DSM-5-TR (2022).",
+    "unit": "외상 및 스트레스 관련 장애",
+    "basis": "진단 범주와 기준 구성에 관한 모델 지식 기반 요약.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "PubMed Central 게재 적응장애 리뷰 논문",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6678970/",
+    "unit": "Adjustment disorder 진단 개념",
+    "basis": "DSM-5에서 증상은 스트레스 요인과 그 결과가 종료된 뒤 6개월을 넘어 지속되지 않아야 한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-001",
+  "domain": "trauma",
+  "disorder": "asd",
+  "related": [
+   "ptsd"
+  ],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "무장 강도 사건 2주 후 침투 기억, 악몽, 비현실감, 회피, 수면 곤란, 과각성 등 14개 증상 범주 중 10개를 보이고 직장 기능이 손상된 성인에게 가장 적절한 진단은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "급성 스트레스장애",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 외상 후 3일에서 1개월 사이이고 9개 이상의 증상과 기능 손상이 있으므로 급성 스트레스장애에 해당한다."
+   },
+   {
+    "key": "2",
+    "text": "외상후 스트레스장애",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 아직 1개월이 지나지 않았으므로 PTSD로 진단할 수 없다."
+   },
+   {
+    "key": "3",
+    "text": "적응장애",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 급성 스트레스장애 기준을 충족하므로 잔여 진단인 적응장애를 쓰지 않는다."
+   },
+   {
+    "key": "4",
+    "text": "공황장애",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 증상이 외상과 관련된 침투와 회피 중심이며 예기치 않은 공황발작이 아니다."
+   },
+   {
+    "key": "5",
+    "text": "정상적 스트레스 반응이므로 진단하지 않는다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 기준 개수와 기능 손상을 충족하므로 정상 반응 범위를 넘는다."
+   }
+  ],
+  "answer": [
+   "1"
+  ],
+  "theory": "PTSD와 급성 스트레스장애 감별",
+  "concept": "감별-PTSDvsASD-기간",
+  "explanation": "외상 후 경과 기간이 첫 감별 축이다. 1개월 이내는 급성 스트레스장애, 1개월 초과는 PTSD를 검토한다.",
+  "sources": [
+   {
+    "source_name": "NCBI StatPearls",
+    "ref": "https://www.ncbi.nlm.nih.gov/books/NBK560815/",
+    "unit": "Acute Stress Disorder",
+    "basis": "급성 스트레스장애는 외상 노출 후 최소 3일에서 최대 1개월 사이의 반응이며, 4주를 넘어 지속되면 PTSD 기준을 검토한다. DSM-5에서는 해리 증상이 더 이상 필수 요건이 아니다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/anxiety-and-trauma-and-stressor-related-disorders/acute-stress-disorder",
+    "unit": "급성 스트레스장애",
+    "basis": "DSM-5-TR 기준에서 외상 노출과 함께 다섯 범주의 증상 가운데 9개 이상이 필요하다. 총 증상 수 14개는 이 검색에서 직접 확인하지 못함.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-002",
+  "domain": "trauma",
+  "disorder": "adjustment",
+  "related": [
+   "asd"
+  ],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "교통사고 1주 후 불안, 수면 곤란, 운전 회피를 보이지만 급성 스트레스장애 증상은 5개만 충족하고 일상 기능이 뚜렷하게 손상된 성인에게 우선 고려할 진단은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "범불안장애",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 범불안장애는 최소 6개월 이상의 다양한 주제에 대한 걱정을 요구한다."
+   },
+   {
+    "key": "2",
+    "text": "적응장애",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 외상 사건 후 급성 스트레스장애나 PTSD 역치에 미달하지만 임상적으로 의미 있는 반응이면 적응장애를 고려할 수 있다."
+   },
+   {
+    "key": "3",
+    "text": "급성 스트레스장애",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 9개 이상이라는 증상 개수 기준을 충족하지 못한다."
+   },
+   {
+    "key": "4",
+    "text": "외상후 스트레스장애",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 1개월이 지나지 않았고 증상 기준도 충족하지 않는다."
+   },
+   {
+    "key": "5",
+    "text": "특정공포증",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 운전 회피가 있지만 외상 사건 직후의 전반적 스트레스 반응이므로 우선 적응장애를 고려한다. 장기간 지속되면 재평가한다."
+   }
+  ],
+  "answer": [
+   "2"
+  ],
+  "theory": "외상 후 역치 미만 반응",
+  "concept": "감별-ASDvs적응장애",
+  "explanation": "외상 사건 이후라도 급성 스트레스장애나 PTSD 기준에 미달하면 적응장애가 가능하다는 점이 핵심이다.",
+  "sources": [
+   {
+    "source_name": "미국정신의학회 DSM-5(2013) 및 DSM-5-TR(2022)",
+    "ref": "American Psychiatric Association. DSM-5 (2013), DSM-5-TR (2022).",
+    "unit": "외상 및 스트레스 관련 장애",
+    "basis": "진단 범주와 기준 구성에 관한 모델 지식 기반 요약.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/anxiety-and-trauma-and-stressor-related-disorders/adjustment-disorders",
+    "unit": "적응장애",
+    "basis": "DSM-5-TR 기준에서 증상은 스트레스 요인 노출 후 3개월 이내에 시작되어야 하며, 대개 스트레스 요인과 그 결과가 끝난 뒤 6개월 이내에 해소된다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-003",
+  "domain": "trauma",
+  "disorder": "trauma_overview",
+  "related": [
+   "ptsd"
+  ],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "아동 성착취물 수사를 담당하는 경찰관이 업무상 수백 건의 영상을 반복 검토한 뒤 침투 기억과 회피가 3개월째 지속된다. 기준 A 판단으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "외상 당시 극심한 공포를 느꼈다고 보고해야만 기준 A를 충족한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 주관적 공포 반응 요건은 DSM-5에서 삭제되었다."
+   },
+   {
+    "key": "2",
+    "text": "피해자가 가족이어야 기준 A를 충족한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 가족 관련 요건은 사건을 전해 들어 알게 되는 세 번째 경로에 해당하는 조건이다."
+   },
+   {
+    "key": "3",
+    "text": "직무상 혐오스러운 세부 사항에 반복 노출된 것이므로 매체를 통한 노출이라도 기준 A를 충족한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 전자매체 노출 제외에는 직무 관련 예외가 있어 이 경찰관의 노출은 기준 A에 해당한다."
+   },
+   {
+    "key": "4",
+    "text": "영상을 통한 노출이므로 어떤 경우에도 기준 A를 충족하지 않는다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 직무 관련 예외를 놓친 판단이다."
+   },
+   {
+    "key": "5",
+    "text": "피해자를 직접 만나지 않았으므로 기준 A를 충족하지 않는다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 네 번째 경로인 반복적이거나 극심한 세부 사항 노출은 직접 대면을 요구하지 않는다."
+   }
+  ],
+  "answer": [
+   "3"
+  ],
+  "theory": "기준 A 직무상 반복 노출",
+  "concept": "기준A-직무노출",
+  "explanation": "기준 A의 매체 노출 제외에는 직무 관련 예외가 있다. 경찰관, 응급요원, 콘텐츠 검토 업무가 대표적 예이다.",
+  "sources": [
+   {
+    "source_name": "미국심리학회(APA) 출판부 견본 페이지 및 PMC 게재 진단기준 표",
+    "ref": "https://www.apa.org/pubs/books/3836374-sample-pages.pdf",
+    "unit": "PTSD 기준 A 네 번째 노출 경로",
+    "basis": "외상 사건의 혐오스러운 세부 사항에 반복적이거나 극심하게 노출되는 경우가 포함되며, 유해 수습 응급요원이나 아동학대 세부 내용에 반복 노출되는 경찰관이 예시이다. 전자매체, 텔레비전, 영화, 사진을 통한 노출은 직무와 관련된 경우가 아니면 해당하지 않는다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-004",
+  "domain": "trauma",
+  "disorder": "trauma_overview",
+  "related": [
+   "ptsd",
+   "adjustment"
+  ],
+  "level": 3,
+  "type": "multi",
+  "polarity": "correct",
+  "case": null,
+  "stem": "대학생 A는 대형 참사 영상을 SNS로 매일 몇 시간씩 시청한 후 악몽과 불안을 호소한다. A는 직접 현장에 있지 않았고 피해자 중 아는 사람도 없다. 진단적 판단으로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "A의 매체 노출은 직무와 관련이 없으므로 PTSD 기준 A를 충족하지 않는다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 일반인의 매체 노출은 기준 A의 노출 경로로 인정되지 않는다."
+   },
+   {
+    "key": "2",
+    "text": "A는 기준 A를 충족하지 않으므로 증상이 PTSD와 유사해도 PTSD로 진단할 수 없다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 기준 A가 필수 요건이므로 증상이 비슷해도 PTSD는 진단하지 않는다."
+   },
+   {
+    "key": "3",
+    "text": "임상적으로 의미 있는 고통이 있다면 적응장애나 다른 불안 관련 장애를 고려할 수 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 적응장애는 외상 수준이 아닌 스트레스 요인에도 진단할 수 있다."
+   },
+   {
+    "key": "4",
+    "text": "하루 몇 시간 이상 반복 시청했다면 노출 강도가 커서 기준 A를 충족한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 시청 시간이 길어도 직무 관련이 아니면 매체 노출 제외가 적용된다."
+   },
+   {
+    "key": "5",
+    "text": "피해자의 고통에 공감했다는 사실만으로 간접 외상으로서 기준 A를 충족한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 공감이나 정서적 동일시는 기준 A의 노출 경로가 아니다."
+   }
+  ],
+  "answer": [
+   "1",
+   "2",
+   "3"
+  ],
+  "theory": "기준 A 매체 노출 예외",
+  "concept": "기준A-SNS노출",
+  "explanation": "기준 A는 증상의 유사성보다 우선하는 관문 기준이다. 충족하지 못하면 적응장애 등 다른 진단을 검토한다.",
+  "sources": [
+   {
+    "source_name": "미국심리학회(APA) 출판부 견본 페이지 및 PMC 게재 진단기준 표",
+    "ref": "https://www.apa.org/pubs/books/3836374-sample-pages.pdf",
+    "unit": "PTSD 기준 A 네 번째 노출 경로",
+    "basis": "외상 사건의 혐오스러운 세부 사항에 반복적이거나 극심하게 노출되는 경우가 포함되며, 유해 수습 응급요원이나 아동학대 세부 내용에 반복 노출되는 경찰관이 예시이다. 전자매체, 텔레비전, 영화, 사진을 통한 노출은 직무와 관련된 경우가 아니면 해당하지 않는다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/anxiety-and-trauma-and-stressor-related-disorders/adjustment-disorders",
+    "unit": "적응장애",
+    "basis": "DSM-5-TR 기준에서 증상은 스트레스 요인 노출 후 3개월 이내에 시작되어야 하며, 대개 스트레스 요인과 그 결과가 끝난 뒤 6개월 이내에 해소된다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-005",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [
+   "panic"
+  ],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "PTSD 환자가 공황발작을 경험할 때 공황장애와의 감별 판단으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "외상 단서에 의한 발작은 공황장애의 전형적인 예기치 않은 발작이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 명확한 촉발 단서가 있으면 예상된 발작이다."
+   },
+   {
+    "key": "2",
+    "text": "PTSD 환자에게는 공황장애를 공존 진단할 수 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 외상과 무관한 예기치 않은 발작이 반복되고 기준을 충족하면 공존 진단할 수 있다."
+   },
+   {
+    "key": "3",
+    "text": "공황발작이 있으면 PTSD 진단을 철회하고 공황장애로 바꾼다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 공황발작 동반은 PTSD 진단을 배제하지 않는다."
+   },
+   {
+    "key": "4",
+    "text": "발작이 외상 단서에 노출될 때만 나타나고 예기치 않은 발작이 없다면 PTSD의 침투 또는 생리적 반응으로 보며 공황장애를 추가하지 않는다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 공황장애는 반복적인 예기치 않은 공황발작을 요구하므로 외상 단서에 의한 예상된 발작만으로는 진단하지 않는다."
+   },
+   {
+    "key": "5",
+    "text": "공황발작이 한 번이라도 있으면 공황장애를 반드시 함께 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 공황발작은 여러 장애에 동반될 수 있는 명시자이며 그 자체가 공황장애는 아니다."
+   }
+  ],
+  "answer": [
+   "4"
+  ],
+  "theory": "PTSD와 공황장애 감별",
+  "concept": "감별-PTSDvs공황",
+  "explanation": "감별 핵심은 발작의 촉발 단서이다. 외상 단서와 연결되면 PTSD, 예기치 않은 반복 발작과 발작에 대한 걱정이면 공황장애이다.",
+  "sources": [
+   {
+    "source_name": "미국정신의학회 DSM-5(2013) 및 DSM-5-TR(2022)",
+    "ref": "American Psychiatric Association. DSM-5 (2013), DSM-5-TR (2022).",
+    "unit": "외상 및 스트레스 관련 장애",
+    "basis": "진단 범주와 기준 구성에 관한 모델 지식 기반 요약.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ }
+]

@@ -1,0 +1,1292 @@
+[
+  {
+    "id": "OCD-L1-001",
+    "domain": "ocd",
+    "disorder": "ocd_overview",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "DSM-5에서 강박장애는 불안장애 범주에서 분리되어 강박 및 관련 장애라는 독립된 범주에 속하게 되었다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. DSM-IV에서 강박장애는 불안장애에 속했으나 DSM-5는 반복적 사고와 행동이라는 공통 특징, 신경회로와 가족력의 유사성을 근거로 강박 및 관련 장애라는 새 범주를 만들고 강박장애, 신체이형장애, 저장장애, 발모광, 피부뜯기장애 등을 함께 묶었다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. DSM-IV에서 강박장애는 불안장애에 속했으나 DSM-5는 반복적 사고와 행동이라는 공통 특징, 신경회로와 가족력의 유사성을 근거로 강박 및 관련 장애라는 새 범주를 만들고 강박장애, 신체이형장애, 저장장애, 발모광, 피부뜯기장애 등을 함께 묶었다."
+      }
+    ],
+    "answer": [
+      "O"
+    ],
+    "theory": "DSM-5 분류 체계",
+    "concept": "강박관련-DSM5 범주 신설",
+    "explanation": "DSM-5의 가장 큰 분류 변화 중 하나로, 강박장애가 더 이상 불안장애의 하위 장애가 아니라는 점이 자주 출제된다.",
+    "sources": [
+      {
+        "source_name": "DSM-5 및 이상심리학 표준 교재 일반 지식",
+        "ref": "APA(2013) DSM-5; 이상심리학 개론서 일반",
+        "unit": "강박 및 관련 장애",
+        "basis": "해당 문항의 핵심 내용은 이 세션에서 웹검색으로 확인하지 못했으며 모델의 일반 지식에 근거함.",
+        "checked_date": "2026-11-20",
+        "source_verified": false,
+        "verify_method": "미확인(모델 지식)",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "자체검토(출처 미검증)",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-002",
+    "domain": "ocd",
+    "disorder": "ocd",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "강박사고나 강박행동이 하루 1시간 이상 걸리지 않는다면, 임상적으로 심각한 고통이나 기능 손상이 있더라도 강박장애로 진단할 수 없다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. DSM-5 기준은 시간 소모가 하루 1시간 이상이거나, 또는 임상적으로 유의한 고통이나 사회적, 직업적 기능 손상을 초래하는 것이다. 두 조건은 또는으로 연결되므로 1시간 미만이라도 고통이나 손상이 뚜렷하면 기준을 충족한다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. DSM-5 기준은 시간 소모가 하루 1시간 이상이거나, 또는 임상적으로 유의한 고통이나 사회적, 직업적 기능 손상을 초래하는 것이다. 두 조건은 또는으로 연결되므로 1시간 미만이라도 고통이나 손상이 뚜렷하면 기준을 충족한다."
+      }
+    ],
+    "answer": [
+      "X"
+    ],
+    "theory": "DSM-5 강박장애 진단 기준",
+    "concept": "강박장애-1시간 기준",
+    "explanation": "1시간 기준은 필수 조건이 아니라 고통 또는 손상과 함께 제시된 선택적 조건이라는 점이 함정이다.",
+    "sources": [
+      {
+        "source_name": "Focus (American Psychiatric Association) 강박장애 개관 및 DSM-5 기준 요약",
+        "ref": "https://focus.psychiatryonline.org/doi/10.1176/appi.focus.130211 ; https://pmc.ncbi.nlm.nih.gov/articles/PMC4120194/",
+        "unit": "강박장애 진단 기준과 명시자",
+        "basis": "강박사고나 강박행동이 하루 1시간 이상 소요되거나 임상적으로 유의한 고통 또는 기능 손상을 초래함. 통찰 명시자는 좋거나 양호한 통찰, 좋지 않은 통찰, 통찰 결여 및 망상적 믿음의 세 수준이며 마지막 경우에도 정신병적 장애로 진단하지 않음. 틱 관련 명시자는 현재 또는 과거 틱장애 병력이 있을 때 적용.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "출처확인",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-003",
+    "domain": "ocd",
+    "disorder": "ocd",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "DSM-5의 강박장애 통찰 명시자는 좋거나 양호한 통찰, 좋지 않은 통찰, 통찰 결여와 망상적 믿음 동반의 세 수준으로 구분된다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. DSM-IV의 좋지 않은 통찰 동반이라는 단일 명시자가 DSM-5에서 세 수준의 연속선으로 확장되었다. 이는 강박 믿음의 확신 정도가 사람마다 크게 다르다는 연구를 반영한다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. DSM-IV의 좋지 않은 통찰 동반이라는 단일 명시자가 DSM-5에서 세 수준의 연속선으로 확장되었다. 이는 강박 믿음의 확신 정도가 사람마다 크게 다르다는 연구를 반영한다."
+      }
+    ],
+    "answer": [
+      "O"
+    ],
+    "theory": "DSM-5 통찰 명시자",
+    "concept": "강박장애-통찰 명시자 수준",
+    "explanation": "세 수준의 명칭을 정확히 알아 두어야 하며, 신체이형장애와 저장장애에도 같은 방식의 통찰 명시자가 있다.",
+    "sources": [
+      {
+        "source_name": "Focus (American Psychiatric Association) 강박장애 개관 및 DSM-5 기준 요약",
+        "ref": "https://focus.psychiatryonline.org/doi/10.1176/appi.focus.130211 ; https://pmc.ncbi.nlm.nih.gov/articles/PMC4120194/",
+        "unit": "강박장애 진단 기준과 명시자",
+        "basis": "강박사고나 강박행동이 하루 1시간 이상 소요되거나 임상적으로 유의한 고통 또는 기능 손상을 초래함. 통찰 명시자는 좋거나 양호한 통찰, 좋지 않은 통찰, 통찰 결여 및 망상적 믿음의 세 수준이며 마지막 경우에도 정신병적 장애로 진단하지 않음. 틱 관련 명시자는 현재 또는 과거 틱장애 병력이 있을 때 적용.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "출처확인",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-004",
+    "domain": "ocd",
+    "disorder": "ocd",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "강박 관련 믿음이 망상 수준으로 확고하다면, 다른 정신병적 증상이 없더라도 강박장애가 아니라 조현병 스펙트럼 장애로 진단해야 한다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. DSM-5는 강박 믿음이 사실이라고 완전히 확신하는 경우 강박장애에 통찰 결여와 망상적 믿음 동반 명시자를 붙이도록 하며, 그것만으로 정신병적 장애로 진단하지 않는다. 환각이나 와해된 사고 같은 다른 정신병 증상이 있을 때 별도 평가가 필요하다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. DSM-5는 강박 믿음이 사실이라고 완전히 확신하는 경우 강박장애에 통찰 결여와 망상적 믿음 동반 명시자를 붙이도록 하며, 그것만으로 정신병적 장애로 진단하지 않는다. 환각이나 와해된 사고 같은 다른 정신병 증상이 있을 때 별도 평가가 필요하다."
+      }
+    ],
+    "answer": [
+      "X"
+    ],
+    "theory": "DSM-5 통찰 명시자",
+    "concept": "강박장애-망상적 믿음과 정신병 감별",
+    "explanation": "통찰 결여라는 이유만으로 진단을 정신병으로 바꾸지 않는다는 점이 DSM-5의 핵심 변화다.",
+    "sources": [
+      {
+        "source_name": "Focus (American Psychiatric Association) 강박장애 개관 및 DSM-5 기준 요약",
+        "ref": "https://focus.psychiatryonline.org/doi/10.1176/appi.focus.130211 ; https://pmc.ncbi.nlm.nih.gov/articles/PMC4120194/",
+        "unit": "강박장애 진단 기준과 명시자",
+        "basis": "강박사고나 강박행동이 하루 1시간 이상 소요되거나 임상적으로 유의한 고통 또는 기능 손상을 초래함. 통찰 명시자는 좋거나 양호한 통찰, 좋지 않은 통찰, 통찰 결여 및 망상적 믿음의 세 수준이며 마지막 경우에도 정신병적 장애로 진단하지 않음. 틱 관련 명시자는 현재 또는 과거 틱장애 병력이 있을 때 적용.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "출처확인",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-005",
+    "domain": "ocd",
+    "disorder": "ocd_overview",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "강박사고와 내용이 비슷한 원치 않는 침투사고는 강박장애가 없는 일반인 대다수에게서도 나타난다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. Rachman과 de Silva의 1978년 연구와 이후 반복연구는 일반인의 약 90% 이상이 해치는 생각, 오염 생각 같은 침투사고를 경험함을 보여주었다. 인지모형은 침투사고 자체보다 그에 대한 해석과 반응이 강박장애를 만든다고 본다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. Rachman과 de Silva의 1978년 연구와 이후 반복연구는 일반인의 약 90% 이상이 해치는 생각, 오염 생각 같은 침투사고를 경험함을 보여주었다. 인지모형은 침투사고 자체보다 그에 대한 해석과 반응이 강박장애를 만든다고 본다."
+      }
+    ],
+    "answer": [
+      "O"
+    ],
+    "theory": "Rachman과 de Silva의 정상 강박사고 연구",
+    "concept": "침투사고-정상성",
+    "explanation": "침투사고의 정상성은 Salkovskis와 Rachman 인지모형의 출발점이다.",
+    "sources": [
+      {
+        "source_name": "Salkovskis(1999) Understanding and treating obsessive-compulsive disorder, Behaviour Research and Therapy 37",
+        "ref": "https://www.dimence.nl/sites/default/files/inline-files/Salkovskis_P._M._%281999%29._Understanding_and_treating_obsessive-compulsive_disorder._Behaviour_Research_and_Therapy_37_%281999%29_29-52._23p.pdf",
+        "unit": "정상 침투사고",
+        "basis": "Rachman과 de Silva(1978)와 후속 반복연구에서 강박사고와 유사한 침투사고가 일반 인구의 최소 90%에서 나타남이 보고됨.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "출처확인",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-006",
+    "domain": "ocd",
+    "disorder": "ocd",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "Wegner의 흰곰 실험에서 흰곰을 생각하지 않으려고 억제했던 참가자들은 이후 억제를 멈추었을 때 흰곰에 대한 생각이 오히려 더 많이 떠오르는 반동효과를 보였다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. Wegner와 동료들의 1987년 연구에서 억제 과제를 먼저 한 집단은 처음부터 흰곰을 생각하라고 지시받은 집단보다 이후 흰곰 생각이 더 많았다. 이 역설적 효과는 강박사고를 억누르려는 시도가 오히려 침투사고를 늘린다는 설명에 활용된다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. Wegner와 동료들의 1987년 연구에서 억제 과제를 먼저 한 집단은 처음부터 흰곰을 생각하라고 지시받은 집단보다 이후 흰곰 생각이 더 많았다. 이 역설적 효과는 강박사고를 억누르려는 시도가 오히려 침투사고를 늘린다는 설명에 활용된다."
+      }
+    ],
+    "answer": [
+      "O"
+    ],
+    "theory": "Wegner 사고억제의 역설적 효과",
+    "concept": "사고억제-반동효과",
+    "explanation": "사고억제 연구는 대학생 대상 실험이라는 점과 반동효과라는 핵심 결과를 함께 기억해 두면 좋다.",
+    "sources": [
+      {
+        "source_name": "PubMed: Wegner, Schneider, Carter, White(1987) Paradoxical effects of thought suppression",
+        "ref": "https://pubmed.ncbi.nlm.nih.gov/3612492/",
+        "unit": "사고억제의 역설적 효과",
+        "basis": "흰곰을 생각하지 말라는 억제 과제 후 생각해도 되는 시기에 처음부터 생각하라고 지시받은 집단보다 흰곰 관련 생각이 더 많이 나타나는 반동효과. 대학생 대상 실험.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "출처확인",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-007",
+    "domain": "ocd",
+    "disorder": "ocd",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "사고-행위 융합의 도덕성 차원은 어떤 불행한 사건을 생각하기만 해도 그 사건이 실제로 일어날 가능성이 높아진다는 믿음을 말한다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. 설명된 내용은 가능성 차원이다. 도덕성 차원은 받아들일 수 없는 생각을 하는 것 자체가 그 행위를 실제로 한 것과 도덕적으로 같다는 믿음이다. Shafran, Thordarson, Rachman은 두 차원을 구분하는 척도를 개발했다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. 설명된 내용은 가능성 차원이다. 도덕성 차원은 받아들일 수 없는 생각을 하는 것 자체가 그 행위를 실제로 한 것과 도덕적으로 같다는 믿음이다. Shafran, Thordarson, Rachman은 두 차원을 구분하는 척도를 개발했다."
+      }
+    ],
+    "answer": [
+      "X"
+    ],
+    "theory": "사고-행위 융합(Shafran과 Rachman)",
+    "concept": "사고행위융합-가능성 대 도덕성",
+    "explanation": "두 차원의 정의를 바꿔 제시하는 것이 전형적 함정이다.",
+    "sources": [
+      {
+        "source_name": "PubMed: Thought-action fusion: a review 및 강박신념 영역 관련 리뷰",
+        "ref": "https://pubmed.ncbi.nlm.nih.gov/15210372/",
+        "unit": "사고-행위 융합, OCCWG 신념 영역",
+        "basis": "사고-행위 융합은 불쾌한 사건을 생각하면 그 일이 일어날 가능성이 높아진다는 믿음(가능성 차원)과 받아들일 수 없는 생각을 하는 것이 그 행위를 한 것과 도덕적으로 같다는 믿음(도덕성 차원)으로 구성. Shafran, Thordarson, Rachman(1996) 척도에서 가능성 차원은 자기와 타인으로 나뉨. OCCWG는 사고의 중요성, 사고 통제, 책임감, 위협 평가, 불확실성 인내 불능, 완벽주의의 6개 신념 영역 제시.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "출처확인",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-008",
+    "domain": "ocd",
+    "disorder": "ocd",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "Mowrer의 2요인 이론은 강박장애 환자 상당수가 증상의 시작이 된 뚜렷한 외상적 조건형성 사건을 기억하지 못한다는 점에서 한계가 지적된다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. 2요인 이론은 중성 자극이 혐오 사건과 짝지어져 공포를 획득한다고 가정하지만, 실제 환자들은 그런 조건형성 사건을 보고하지 않는 경우가 많다. 그래서 이 이론은 증상의 유지, 즉 강박행동이 불안 감소로 부적 강화된다는 부분에서 더 설득력이 있다고 평가된다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. 2요인 이론은 중성 자극이 혐오 사건과 짝지어져 공포를 획득한다고 가정하지만, 실제 환자들은 그런 조건형성 사건을 보고하지 않는 경우가 많다. 그래서 이 이론은 증상의 유지, 즉 강박행동이 불안 감소로 부적 강화된다는 부분에서 더 설득력이 있다고 평가된다."
+      }
+    ],
+    "answer": [
+      "O"
+    ],
+    "theory": "Mowrer 2요인 이론",
+    "concept": "2요인이론-한계",
+    "explanation": "2요인 이론은 획득 설명은 약하고 유지 설명은 강하다는 평가가 일반적이다.",
+    "sources": [
+      {
+        "source_name": "학습이론 일반 지식",
+        "ref": "Mowrer(1960) 2요인 이론; Foa & Kozak(1986) 정서처리 이론",
+        "unit": "강박장애의 행동주의 설명",
+        "basis": "고전적 조건형성으로 공포가 획득되고 회피와 강박행동이 불안 감소에 의해 부적 강화되어 유지됨. 이 세션에서 웹검색으로 확인하지 못함.",
+        "checked_date": "2026-11-20",
+        "source_verified": false,
+        "verify_method": "미확인(모델 지식)",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "자체검토(출처 미검증)",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-009",
+    "domain": "ocd",
+    "disorder": "ocd",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "노출 및 반응방지법은 Meyer가 1966년 씻기와 청소 의식이 있는 강박 환자에게 노출과 의식 차단을 결합하여 적용한 데서 비롯되었다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. Meyer는 런던의 병원에서 입원 환자들에게 두려워하는 자극에 노출시키면서 강박의식을 하지 못하도록 하는 방법을 시행했고, 이후 이 방법이 노출 및 반응방지로 불리며 Foa 등에 의해 체계화되었다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. Meyer는 런던의 병원에서 입원 환자들에게 두려워하는 자극에 노출시키면서 강박의식을 하지 못하도록 하는 방법을 시행했고, 이후 이 방법이 노출 및 반응방지로 불리며 Foa 등에 의해 체계화되었다."
+      }
+    ],
+    "answer": [
+      "O"
+    ],
+    "theory": "노출 및 반응방지(Meyer, Foa)",
+    "concept": "ERP-기원",
+    "explanation": "ERP의 창시자로 Meyer, 체계화와 정서처리 이론으로 Foa를 구분해 기억한다.",
+    "sources": [
+      {
+        "source_name": "OCD History 및 PMC 리뷰",
+        "ref": "https://www.ocdhistory.net/20thcentury/behaviortherapy.html ; https://pmc.ncbi.nlm.nih.gov/articles/PMC3181959",
+        "unit": "노출 및 반응방지의 기원",
+        "basis": "Meyer(1966)는 씻기와 청소 의식이 있는 강박 환자에게 노출과 의식 차단을 결합한 치료를 처음 적용했고 이것이 이후 노출 및 반응방지로 불림.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "출처확인",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-010",
+    "domain": "ocd",
+    "disorder": "ocd",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "정신분석에서 취소는 받아들일 수 없는 생각으로부터 감정을 떼어 내어 생각만 무덤덤하게 의식하게 만드는 방어기제를 말한다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. 감정을 생각과 분리하는 것은 격리이다. 취소는 이미 떠오른 받아들일 수 없는 생각이나 행동을 반대되는 의식적 행동으로 무효화하려는 방어로, 특정 주문을 외우거나 행동을 되돌리는 강박의식과 관련된다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. 감정을 생각과 분리하는 것은 격리이다. 취소는 이미 떠오른 받아들일 수 없는 생각이나 행동을 반대되는 의식적 행동으로 무효화하려는 방어로, 특정 주문을 외우거나 행동을 되돌리는 강박의식과 관련된다."
+      }
+    ],
+    "answer": [
+      "X"
+    ],
+    "theory": "Freud 정신역동 방어기제",
+    "concept": "정신역동-격리 대 취소",
+    "explanation": "강박신경증의 대표 방어기제인 격리, 취소, 반동형성의 정의를 서로 바꿔 내는 문제가 흔하다.",
+    "sources": [
+      {
+        "source_name": "정신역동 이론 일반 지식",
+        "ref": "Freud(1909) 쥐인간 사례; 정신분석 방어기제 문헌 일반",
+        "unit": "강박신경증의 정신역동",
+        "basis": "항문기 고착 및 퇴행, 격리, 취소, 반동형성, 전치 등의 방어기제로 강박 증상을 설명함. 이 세션에서 웹검색으로 확인하지 못함.",
+        "checked_date": "2026-11-20",
+        "source_verified": false,
+        "verify_method": "미확인(모델 지식)",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "자체검토(출처 미검증)",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-011",
+    "domain": "ocd",
+    "disorder": "bdd",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "신체이형장애로 진단하려면 경과 중 어느 시점에서 거울 확인, 위장, 남과 외모 비교 같은 반복행동이나 정신행위가 나타나야 한다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. DSM-5 신체이형장애 기준 B는 외모 걱정에 대한 반응으로 반복행동이나 정신행위를 한 적이 있어야 한다는 것이다. 거울 확인, 과도한 몸단장, 피부뜯기, 안심 구하기, 외모 비교 등이 포함되며 거의 모든 환자가 경과 중 이를 보인다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. DSM-5 신체이형장애 기준 B는 외모 걱정에 대한 반응으로 반복행동이나 정신행위를 한 적이 있어야 한다는 것이다. 거울 확인, 과도한 몸단장, 피부뜯기, 안심 구하기, 외모 비교 등이 포함되며 거의 모든 환자가 경과 중 이를 보인다."
+      }
+    ],
+    "answer": [
+      "O"
+    ],
+    "theory": "DSM-5 신체이형장애 진단 기준",
+    "concept": "신체이형-반복행동 기준",
+    "explanation": "이 반복행동 기준은 DSM-5에서 추가된 것으로 신체이형장애를 강박 관련 장애로 묶는 근거가 된다.",
+    "sources": [
+      {
+        "source_name": "Focus (American Psychiatric Association) 신체이형장애 개관",
+        "ref": "https://focus.psychiatryonline.org/doi/10.1176/appi.focus.130205 ; https://www.ncbi.nlm.nih.gov/books/NBK555901/",
+        "unit": "신체이형장애 진단 기준과 명시자",
+        "basis": "경과 중 거울 확인, 위장, 과도한 몸단장, 피부뜯기, 타인과 외모 비교 같은 반복행동 또는 정신행위가 있어야 함. 근육이형증 명시자는 체격이 너무 작거나 근육이 부족하다는 집착에 적용되며 다른 신체 부위 집착이 함께 있어도 적용. 통찰 명시자 있음. 현재 유병률은 약 2~3%로 강박장애보다 흔하며 남녀 비율이 비슷함.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "출처확인",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-012",
+    "domain": "ocd",
+    "disorder": "bdd",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "근육이형증 동반 명시자는 체격에 대한 집착 이외에 코나 피부 등 다른 신체 부위에 대한 집착이 함께 있으면 적용할 수 없다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. DSM-5는 체격이 너무 작거나 근육이 부족하다는 생각에 집착하면 근육이형증 동반을 명시하며, 다른 신체 부위에 대한 집착이 함께 있어도 적용한다고 밝힌다. 실제로 다른 부위 집착이 함께 있는 경우가 흔하다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. DSM-5는 체격이 너무 작거나 근육이 부족하다는 생각에 집착하면 근육이형증 동반을 명시하며, 다른 신체 부위에 대한 집착이 함께 있어도 적용한다고 밝힌다. 실제로 다른 부위 집착이 함께 있는 경우가 흔하다."
+      }
+    ],
+    "answer": [
+      "X"
+    ],
+    "theory": "근육이형증 명시자",
+    "concept": "신체이형-근육이형증 적용범위",
+    "explanation": "근육이형증은 배타적 명시자가 아니라는 점이 함정 포인트다.",
+    "sources": [
+      {
+        "source_name": "Focus (American Psychiatric Association) 신체이형장애 개관",
+        "ref": "https://focus.psychiatryonline.org/doi/10.1176/appi.focus.130205 ; https://www.ncbi.nlm.nih.gov/books/NBK555901/",
+        "unit": "신체이형장애 진단 기준과 명시자",
+        "basis": "경과 중 거울 확인, 위장, 과도한 몸단장, 피부뜯기, 타인과 외모 비교 같은 반복행동 또는 정신행위가 있어야 함. 근육이형증 명시자는 체격이 너무 작거나 근육이 부족하다는 집착에 적용되며 다른 신체 부위 집착이 함께 있어도 적용. 통찰 명시자 있음. 현재 유병률은 약 2~3%로 강박장애보다 흔하며 남녀 비율이 비슷함.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "출처확인",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-013",
+    "domain": "ocd",
+    "disorder": "hoarding",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "DSM-5에서도 저장장애는 독립된 진단이 아니라 강박장애의 한 하위유형으로 분류된다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. 과거에는 저장 증상을 강박장애의 한 증상이나 강박성 성격장애의 특징으로 보았으나, DSM-5는 저장장애를 독립된 진단으로 신설했다. 강박사고와 무관한 경우가 많고 신경생물학적 특징과 치료 반응이 다르다는 연구가 근거가 되었다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. 과거에는 저장 증상을 강박장애의 한 증상이나 강박성 성격장애의 특징으로 보았으나, DSM-5는 저장장애를 독립된 진단으로 신설했다. 강박사고와 무관한 경우가 많고 신경생물학적 특징과 치료 반응이 다르다는 연구가 근거가 되었다."
+      }
+    ],
+    "answer": [
+      "X"
+    ],
+    "theory": "DSM-5 저장장애 신설",
+    "concept": "저장장애-독립진단",
+    "explanation": "저장장애와 피부뜯기장애가 DSM-5에서 새로 생긴 진단이라는 점은 기본 출제 포인트다.",
+    "sources": [
+      {
+        "source_name": "Focus (American Psychiatric Association) 저장장애 개관 및 PsychDB",
+        "ref": "https://focus.psychiatryonline.org/doi/10.1176/appi.focus.130202 ; https://www.psychdb.com/ocd/hoarding",
+        "unit": "저장장애",
+        "basis": "DSM-5에서 강박장애의 하위유형으로 여겨지던 저장 증상을 독립 진단으로 분류. 실제 가치와 무관하게 소유물을 버리기 어려움. 과도한 획득 명시자가 있으며 약 80~90%가 과도한 획득을 보임. 통찰은 좋거나 양호, 좋지 않음, 결여 및 망상적 믿음으로 평정. 성인 지역사회 유병률 약 2~6%, 약 75%가 기분 또는 불안장애 동반.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "출처확인",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-014",
+    "domain": "ocd",
+    "disorder": "hoarding",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "저장장애의 과도한 획득 동반 명시자는 필요하지 않거나 둘 공간이 없는 물건을 과도하게 사거나 모으는 경우에 붙이며, 저장장애 환자의 대다수가 이에 해당한다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. 과도한 획득 동반 명시자는 버리지 못함과 함께 불필요한 구매, 무료 물건 수집, 드물게 훔치기 같은 과도한 획득이 있을 때 쓴다. 보고에 따르면 저장장애의 약 80~90%가 과도한 획득을 보인다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. 과도한 획득 동반 명시자는 버리지 못함과 함께 불필요한 구매, 무료 물건 수집, 드물게 훔치기 같은 과도한 획득이 있을 때 쓴다. 보고에 따르면 저장장애의 약 80~90%가 과도한 획득을 보인다."
+      }
+    ],
+    "answer": [
+      "O"
+    ],
+    "theory": "과도한 획득 명시자",
+    "concept": "저장장애-과도한 획득 명시자",
+    "explanation": "저장장애 명시자는 과도한 획득 명시자와 통찰 명시자 두 가지다.",
+    "sources": [
+      {
+        "source_name": "Focus (American Psychiatric Association) 저장장애 개관 및 PsychDB",
+        "ref": "https://focus.psychiatryonline.org/doi/10.1176/appi.focus.130202 ; https://www.psychdb.com/ocd/hoarding",
+        "unit": "저장장애",
+        "basis": "DSM-5에서 강박장애의 하위유형으로 여겨지던 저장 증상을 독립 진단으로 분류. 실제 가치와 무관하게 소유물을 버리기 어려움. 과도한 획득 명시자가 있으며 약 80~90%가 과도한 획득을 보임. 통찰은 좋거나 양호, 좋지 않음, 결여 및 망상적 믿음으로 평정. 성인 지역사회 유병률 약 2~6%, 약 75%가 기분 또는 불안장애 동반.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "출처확인",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-015",
+    "domain": "ocd",
+    "disorder": "trichotillomania",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "발모광 진단 기준에는 털뽑기를 줄이거나 멈추려는 반복적인 시도가 포함된다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. 발모광과 피부뜯기장애는 모두 행동을 줄이거나 멈추려고 반복해서 시도했지만 실패한다는 기준을 공유한다. 이는 행동이 본인의 의지만으로 통제되지 않음을 보여준다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. 발모광과 피부뜯기장애는 모두 행동을 줄이거나 멈추려고 반복해서 시도했지만 실패한다는 기준을 공유한다. 이는 행동이 본인의 의지만으로 통제되지 않음을 보여준다."
+      }
+    ],
+    "answer": [
+      "O"
+    ],
+    "theory": "DSM-5 발모광 진단 기준",
+    "concept": "발모광-중단 시도 기준",
+    "explanation": "반복적 중단 시도 기준은 발모광과 피부뜯기장애의 공통 기준이다.",
+    "sources": [
+      {
+        "source_name": "MSD 매뉴얼 전문가판 및 CMAJ 임상 요약",
+        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/obsessive-compulsive-and-related-disorders/trichotillomania ; https://www.cmaj.ca/content/194/40/e1381",
+        "unit": "발모광, 피부뜯기장애, 신체 초점 반복행동",
+        "basis": "발모광과 피부뜯기장애는 강박 및 관련 장애로 분류되며 행동을 줄이거나 멈추려는 반복적 시도가 진단 기준에 포함됨. 습관반전훈련은 1차 행동치료로 인식훈련(자기관찰, 촉발요인 확인), 자극통제, 경쟁반응훈련으로 구성.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "출처확인",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-016",
+    "domain": "ocd",
+    "disorder": "trichotillomania",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "발모광은 DSM-IV와 마찬가지로 DSM-5에서도 달리 분류되지 않는 충동조절장애 범주에 속한다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. DSM-IV에서 발모광은 충동조절장애에 속했지만, DSM-5에서는 강박 및 관련 장애 범주로 이동했다. 신체에 초점을 둔 반복행동이라는 점과 강박장애와의 관련성이 고려되었다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. DSM-IV에서 발모광은 충동조절장애에 속했지만, DSM-5에서는 강박 및 관련 장애 범주로 이동했다. 신체에 초점을 둔 반복행동이라는 점과 강박장애와의 관련성이 고려되었다."
+      }
+    ],
+    "answer": [
+      "X"
+    ],
+    "theory": "DSM-5 분류 변화",
+    "concept": "발모광-범주 이동",
+    "explanation": "발모광은 충동조절장애에서, 신체이형장애는 신체형장애에서 강박 및 관련 장애로 옮겨 왔다.",
+    "sources": [
+      {
+        "source_name": "MSD 매뉴얼 전문가판 및 CMAJ 임상 요약",
+        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/obsessive-compulsive-and-related-disorders/trichotillomania ; https://www.cmaj.ca/content/194/40/e1381",
+        "unit": "발모광, 피부뜯기장애, 신체 초점 반복행동",
+        "basis": "발모광과 피부뜯기장애는 강박 및 관련 장애로 분류되며 행동을 줄이거나 멈추려는 반복적 시도가 진단 기준에 포함됨. 습관반전훈련은 1차 행동치료로 인식훈련(자기관찰, 촉발요인 확인), 자극통제, 경쟁반응훈련으로 구성.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      },
+      {
+        "source_name": "DSM-5 및 이상심리학 표준 교재 일반 지식",
+        "ref": "APA(2013) DSM-5; 이상심리학 개론서 일반",
+        "unit": "강박 및 관련 장애",
+        "basis": "해당 문항의 핵심 내용은 이 세션에서 웹검색으로 확인하지 못했으며 모델의 일반 지식에 근거함.",
+        "checked_date": "2026-11-20",
+        "source_verified": false,
+        "verify_method": "미확인(모델 지식)",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "자체검토(출처 미검증)",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-017",
+    "domain": "ocd",
+    "disorder": "excoriation",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "피부뜯기장애는 DSM-5에서 강박 및 관련 장애의 공식 진단으로 새로 추가되었다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. 피부뜯기장애는 DSM-IV에는 독립 진단이 없었고 달리 분류되지 않는 충동조절장애 정도로 다루어졌으나, DSM-5에서 저장장애와 함께 새로 공식 진단이 되었다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. 피부뜯기장애는 DSM-IV에는 독립 진단이 없었고 달리 분류되지 않는 충동조절장애 정도로 다루어졌으나, DSM-5에서 저장장애와 함께 새로 공식 진단이 되었다."
+      }
+    ],
+    "answer": [
+      "O"
+    ],
+    "theory": "DSM-5 분류 변화",
+    "concept": "피부뜯기-신설",
+    "explanation": "DSM-5 신설 진단은 저장장애와 피부뜯기장애 두 가지라는 점을 기억한다.",
+    "sources": [
+      {
+        "source_name": "DSM-5 및 이상심리학 표준 교재 일반 지식",
+        "ref": "APA(2013) DSM-5; 이상심리학 개론서 일반",
+        "unit": "강박 및 관련 장애",
+        "basis": "해당 문항의 핵심 내용은 이 세션에서 웹검색으로 확인하지 못했으며 모델의 일반 지식에 근거함.",
+        "checked_date": "2026-11-20",
+        "source_verified": false,
+        "verify_method": "미확인(모델 지식)",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "자체검토(출처 미검증)",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-018",
+    "domain": "ocd",
+    "disorder": "ocd",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "강박장애의 평균 발병 연령은 대략 19~20세이며, 아동기의 조기 발병군에서는 남성의 비율이 더 높다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. 강박장애는 대개 청소년기 후기에서 성인 초기에 시작되며 평균 발병 연령은 약 19~20세다. 조기 발병 사례에는 남성이 많고 틱장애 동반도 흔하며, 성인기 전체로는 여성이 약간 더 많다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. 강박장애는 대개 청소년기 후기에서 성인 초기에 시작되며 평균 발병 연령은 약 19~20세다. 조기 발병 사례에는 남성이 많고 틱장애 동반도 흔하며, 성인기 전체로는 여성이 약간 더 많다."
+      }
+    ],
+    "answer": [
+      "O"
+    ],
+    "theory": "강박장애 역학",
+    "concept": "강박장애-발병연령과 성차",
+    "explanation": "아동기 남성 우세, 성인기 여성 약간 우세라는 성차의 방향이 함정으로 자주 쓰인다.",
+    "sources": [
+      {
+        "source_name": "MSD 매뉴얼 전문가판",
+        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/obsessive-compulsive-and-related-disorders/obsessive-compulsive-disorder-ocd",
+        "unit": "강박장애",
+        "basis": "시점 유병률 약 1~3%, 성인기에는 여성에서 약간 더 흔함. 평균 발병 연령 약 19~20세, 조기 발병군에서 남성 비율이 높음. 치료는 노출 및 의식방지 인지행동치료와 SSRI 또는 클로미프라민이며 심한 경우 병합이 좋다는 견해가 많음. SSRI가 부작용이 적어 클로미프라민보다 먼저 시도됨.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "출처확인",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-019",
+    "domain": "ocd",
+    "disorder": "ocd",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "강박장애 약물치료에서 클로미프라민은 SSRI보다 부작용이 적기 때문에 일반적으로 가장 먼저 시도된다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. 클로미프라민은 세로토닌 재흡수 억제가 강한 삼환계 항우울제로 효과가 입증되었지만, 항콜린 작용과 심장 독성 등 부작용이 더 많다. 그래서 부작용이 적은 SSRI를 먼저 쓰고 클로미프라민은 이후 단계에서 고려하는 것이 일반적이다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. 클로미프라민은 세로토닌 재흡수 억제가 강한 삼환계 항우울제로 효과가 입증되었지만, 항콜린 작용과 심장 독성 등 부작용이 더 많다. 그래서 부작용이 적은 SSRI를 먼저 쓰고 클로미프라민은 이후 단계에서 고려하는 것이 일반적이다."
+      }
+    ],
+    "answer": [
+      "X"
+    ],
+    "theory": "강박장애 약물치료(세로토닌 가설)",
+    "concept": "강박장애-클로미프라민 대 SSRI",
+    "explanation": "클로미프라민은 효과가 확립된 약이지만 1차 선택은 대개 SSRI이다.",
+    "sources": [
+      {
+        "source_name": "MSD 매뉴얼 전문가판",
+        "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/obsessive-compulsive-and-related-disorders/obsessive-compulsive-disorder-ocd",
+        "unit": "강박장애",
+        "basis": "시점 유병률 약 1~3%, 성인기에는 여성에서 약간 더 흔함. 평균 발병 연령 약 19~20세, 조기 발병군에서 남성 비율이 높음. 치료는 노출 및 의식방지 인지행동치료와 SSRI 또는 클로미프라민이며 심한 경우 병합이 좋다는 견해가 많음. SSRI가 부작용이 적어 클로미프라민보다 먼저 시도됨.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "출처확인",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L1-020",
+    "domain": "ocd",
+    "disorder": "ocd",
+    "related": [],
+    "level": 1,
+    "type": "ox",
+    "polarity": "correct",
+    "case": null,
+    "stem": "신경영상 연구에서는 강박장애 환자의 안와전두피질, 전대상피질, 미상핵에서 과활성이 반복적으로 보고되어 왔다.",
+    "options": [
+      {
+        "key": "O",
+        "text": "옳다",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "정답이다. 이 영역들은 피질-선조체-시상-피질 회로를 이루며, 강박장애 환자에서 안정 시에도 활동이 높고 증상이 유발되면 더 증가하며 성공적 치료 후 정상 쪽으로 감소한다는 결과가 보고되었다."
+      },
+      {
+        "key": "X",
+        "text": "옳지 않다",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "오답이다. 이 영역들은 피질-선조체-시상-피질 회로를 이루며, 강박장애 환자에서 안정 시에도 활동이 높고 증상이 유발되면 더 증가하며 성공적 치료 후 정상 쪽으로 감소한다는 결과가 보고되었다."
+      }
+    ],
+    "answer": [
+      "O"
+    ],
+    "theory": "피질-선조체-시상-피질 회로, 기저핵 가설",
+    "concept": "강박장애-신경회로",
+    "explanation": "미상핵은 기저핵의 일부로, 기저핵 기능 이상 가설과 연결된다.",
+    "sources": [
+      {
+        "source_name": "PMC 신경회로 리뷰(강박장애의 피질-선조체-시상-피질 회로)",
+        "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2889493 ; https://pmc.ncbi.nlm.nih.gov/articles/PMC4955838",
+        "unit": "강박장애 신경회로",
+        "basis": "안와전두피질, 전대상피질, 미상핵의 과활성이 반복 보고되며 안정 시 증가, 증상 유발 시 더 증가, 성공적 치료 후 정상 방향으로 감소.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "출처확인",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L2-001",
+    "domain": "ocd",
+    "disorder": "ocd_overview",
+    "related": [],
+    "level": 2,
+    "type": "single",
+    "polarity": "incorrect",
+    "case": null,
+    "stem": "DSM-5의 강박 및 관련 장애 범주에 속하는 장애로 옳지 않은 것은?",
+    "options": [
+      {
+        "key": "1",
+        "text": "강박장애",
+        "is_true": true,
+        "in_answer": false,
+        "explanation": "강박 및 관련 장애의 대표 장애로 DSM-5에서 불안장애에서 이 범주로 옮겨 왔다."
+      },
+      {
+        "key": "2",
+        "text": "신체이형장애",
+        "is_true": true,
+        "in_answer": false,
+        "explanation": "DSM-IV에서는 신체형장애에 속했으나 DSM-5에서 이 범주로 이동했다."
+      },
+      {
+        "key": "3",
+        "text": "저장장애",
+        "is_true": true,
+        "in_answer": false,
+        "explanation": "DSM-5에서 새로 만들어진 독립 진단으로 이 범주에 속한다."
+      },
+      {
+        "key": "4",
+        "text": "피부뜯기장애",
+        "is_true": true,
+        "in_answer": false,
+        "explanation": "DSM-5에서 새로 공식 진단이 되어 이 범주에 포함되었다."
+      },
+      {
+        "key": "5",
+        "text": "강박성 성격장애",
+        "is_true": false,
+        "in_answer": true,
+        "explanation": "강박성 성격장애는 C군 성격장애로 분류되며 강박 및 관련 장애에 속하지 않는다. 이름이 비슷해 생기는 대표적 오개념이다."
+      }
+    ],
+    "answer": [
+      "5"
+    ],
+    "theory": "DSM-5 분류 체계",
+    "concept": "강박관련-범주 구성",
+    "explanation": "강박성 성격장애는 이름이 비슷하지만 성격장애 C군에 속한다. 강박 및 관련 장애에는 강박장애, 신체이형장애, 저장장애, 발모광, 피부뜯기장애와 물질 및 의학적 상태로 인한 장애, 다른 명시된 장애 등이 있다.",
+    "sources": [
+      {
+        "source_name": "DSM-5 및 이상심리학 표준 교재 일반 지식",
+        "ref": "APA(2013) DSM-5; 이상심리학 개론서 일반",
+        "unit": "강박 및 관련 장애",
+        "basis": "해당 문항의 핵심 내용은 이 세션에서 웹검색으로 확인하지 못했으며 모델의 일반 지식에 근거함.",
+        "checked_date": "2026-11-20",
+        "source_verified": false,
+        "verify_method": "미확인(모델 지식)",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "자체검토(출처 미검증)",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L2-002",
+    "domain": "ocd",
+    "disorder": "ocd",
+    "related": [],
+    "level": 2,
+    "type": "single",
+    "polarity": "correct",
+    "case": null,
+    "stem": "DSM-5에서 정의하는 강박행동에 대한 설명으로 옳은 것은?",
+    "options": [
+      {
+        "key": "1",
+        "text": "강박행동은 손 씻기나 확인처럼 겉으로 관찰되는 행동이어야 하며 마음속 행위는 포함되지 않는다.",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "숫자 세기, 기도, 단어 반복 같은 정신 행위도 강박행동에 포함된다. 겉으로 드러나지 않는 의식도 반응방지의 대상이다."
+      },
+      {
+        "key": "2",
+        "text": "강박사고에 대한 반응으로 또는 엄격하게 따라야 하는 규칙에 따라 수행하도록 내몰리는 반복적 행동이나 정신 행위이다.",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "DSM-5 정의의 핵심이다. 행동의 목적은 불안이나 고통을 줄이거나 두려운 사건을 막는 것이다."
+      },
+      {
+        "key": "3",
+        "text": "행동을 하는 과정 자체에서 즐거움과 쾌감을 얻는 것이 강박행동의 본질적 특징이다.",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "강박행동은 즐거움을 위한 것이 아니라 불안 감소를 위한 것이다. 쾌감이 중심이면 강박행동으로 보지 않는다."
+      },
+      {
+        "key": "4",
+        "text": "성인은 자신의 강박행동이 과도하고 비합리적이라는 것을 인식해야만 진단될 수 있다.",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "이것은 DSM-IV 기준이었다. DSM-5는 이 요구를 없애고 통찰 수준을 명시자로 평정한다."
+      },
+      {
+        "key": "5",
+        "text": "행동이 막으려는 사건과 현실적으로 연결되어 있고 적절한 정도일수록 강박행동으로 판단된다.",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "정반대다. 강박행동은 막으려는 대상과 현실적으로 연결되지 않거나 명백히 지나친 것이 특징이다."
+      }
+    ],
+    "answer": [
+      "2"
+    ],
+    "theory": "DSM-5 강박장애 진단 기준",
+    "concept": "강박장애-강박행동 정의",
+    "explanation": "강박행동은 외현적 행동뿐 아니라 숫자 세기, 기도하기, 마음속으로 단어 반복하기 같은 정신 행위도 포함하며, 강박사고에 대한 반응이나 엄격한 규칙에 따라 하도록 내몰리는 느낌이 특징이다.",
+    "sources": [
+      {
+        "source_name": "DSM-5 및 이상심리학 표준 교재 일반 지식",
+        "ref": "APA(2013) DSM-5; 이상심리학 개론서 일반",
+        "unit": "강박 및 관련 장애",
+        "basis": "해당 문항의 핵심 내용은 이 세션에서 웹검색으로 확인하지 못했으며 모델의 일반 지식에 근거함.",
+        "checked_date": "2026-11-20",
+        "source_verified": false,
+        "verify_method": "미확인(모델 지식)",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "자체검토(출처 미검증)",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L2-003",
+    "domain": "ocd",
+    "disorder": "ocd",
+    "related": [],
+    "level": 2,
+    "type": "single",
+    "polarity": "correct",
+    "case": null,
+    "stem": "Salkovskis의 강박장애 인지모형의 핵심 주장으로 가장 적절한 것은?",
+    "options": [
+      {
+        "key": "1",
+        "text": "침투사고는 뇌 기능 이상이 있는 사람에게만 나타나는 비정상적 현상이다.",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "인지모형은 침투사고가 일반인 대부분에게 나타나는 정상적 경험이라고 본다."
+      },
+      {
+        "key": "2",
+        "text": "강박 증상은 항문기에 고착된 공격 충동이 의식으로 떠오르는 것이다.",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "이는 Freud 정신역동 설명이며 Salkovskis 인지모형과 무관하다."
+      },
+      {
+        "key": "3",
+        "text": "강박장애는 고전적 조건형성만으로 충분히 설명되며 인지적 평가는 중요하지 않다.",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "인지모형은 바로 인지적 평가를 핵심으로 본다. 조건형성 중심 설명은 Mowrer 2요인 이론이다."
+      },
+      {
+        "key": "4",
+        "text": "침투사고 자체보다 그것을 해에 대한 자신의 책임으로 과장되게 평가하는 것이 불안과 중화행동을 일으킨다.",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "Salkovskis 모형의 핵심인 책임감 과장 평가를 정확히 설명한다."
+      },
+      {
+        "key": "5",
+        "text": "침투사고를 적극적으로 억제하는 것이 가장 효과적인 대처이므로 치료에서 이를 훈련한다.",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "사고억제는 Wegner 연구처럼 역설적으로 침투사고를 늘리며, 인지모형에서는 중화나 억제를 유지 요인으로 본다."
+      }
+    ],
+    "answer": [
+      "4"
+    ],
+    "theory": "Salkovskis 인지모형(책임감 과장)",
+    "concept": "인지모형-Salkovskis 책임감",
+    "explanation": "Salkovskis는 침투사고가 보편적이라는 전제에서 출발하여, 침투사고를 자신이나 타인에게 해를 끼칠 수 있는 일에 대한 책임으로 평가할 때 불안과 중화행동이 생기고 이 중화가 평가를 강화하여 장애가 유지된다고 보았다.",
+    "sources": [
+      {
+        "source_name": "DSM-5 및 이상심리학 표준 교재 일반 지식",
+        "ref": "APA(2013) DSM-5; 이상심리학 개론서 일반",
+        "unit": "강박 및 관련 장애",
+        "basis": "해당 문항의 핵심 내용은 이 세션에서 웹검색으로 확인하지 못했으며 모델의 일반 지식에 근거함.",
+        "checked_date": "2026-11-20",
+        "source_verified": false,
+        "verify_method": "미확인(모델 지식)",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "자체검토(출처 미검증)",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L2-004",
+    "domain": "ocd",
+    "disorder": "ocd",
+    "related": [],
+    "level": 2,
+    "type": "single",
+    "polarity": "incorrect",
+    "case": null,
+    "stem": "강박인지작업집단(OCCWG)이 제시한 강박 관련 신념 영역에 해당하지 않는 것은?",
+    "options": [
+      {
+        "key": "1",
+        "text": "책임감 과장",
+        "is_true": true,
+        "in_answer": false,
+        "explanation": "자신이 해로운 결과를 막을 결정적 힘과 책임이 있다는 믿음으로 OCCWG 영역에 포함된다."
+      },
+      {
+        "key": "2",
+        "text": "위협의 과대평가",
+        "is_true": true,
+        "in_answer": false,
+        "explanation": "부정적 사건의 확률과 심각성을 과장하는 믿음으로 OCCWG 영역에 포함된다."
+      },
+      {
+        "key": "3",
+        "text": "타인에 대한 의존 욕구",
+        "is_true": false,
+        "in_answer": true,
+        "explanation": "OCCWG 영역이 아니다. 돌봄을 받으려는 과도한 욕구는 의존성 성격장애의 특징이다."
+      },
+      {
+        "key": "4",
+        "text": "불확실성에 대한 인내 불능",
+        "is_true": true,
+        "in_answer": false,
+        "explanation": "확실하지 않은 상태를 견디지 못하는 믿음으로 확인 강박과 관련이 깊으며 OCCWG 영역에 포함된다."
+      },
+      {
+        "key": "5",
+        "text": "사고의 중요성",
+        "is_true": true,
+        "in_answer": false,
+        "explanation": "생각이 떠올랐다는 사실 자체가 중요한 의미를 가진다는 믿음으로, 사고-행위 융합도 이 영역에 속한다."
+      }
+    ],
+    "answer": [
+      "3"
+    ],
+    "theory": "OCCWG 신념 영역",
+    "concept": "OCCWG-6개 신념영역",
+    "explanation": "OCCWG의 여섯 영역은 사고의 중요성, 사고 통제의 중요성, 책임감 과장, 위협의 과대평가, 불확실성에 대한 인내 불능, 완벽주의다. 타인에 대한 의존 욕구는 의존성 성격의 특징이다.",
+    "sources": [
+      {
+        "source_name": "PubMed: Thought-action fusion: a review 및 강박신념 영역 관련 리뷰",
+        "ref": "https://pubmed.ncbi.nlm.nih.gov/15210372/",
+        "unit": "사고-행위 융합, OCCWG 신념 영역",
+        "basis": "사고-행위 융합은 불쾌한 사건을 생각하면 그 일이 일어날 가능성이 높아진다는 믿음(가능성 차원)과 받아들일 수 없는 생각을 하는 것이 그 행위를 한 것과 도덕적으로 같다는 믿음(도덕성 차원)으로 구성. Shafran, Thordarson, Rachman(1996) 척도에서 가능성 차원은 자기와 타인으로 나뉨. OCCWG는 사고의 중요성, 사고 통제, 책임감, 위협 평가, 불확실성 인내 불능, 완벽주의의 6개 신념 영역 제시.",
+        "checked_date": "2026-11-20",
+        "source_verified": true,
+        "verify_method": "WebSearch 결과 요약 확인",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "출처확인",
+    "textbook_compared": false
+  },
+  {
+    "id": "OCD-L2-005",
+    "domain": "ocd",
+    "disorder": "ocd",
+    "related": [],
+    "level": 2,
+    "type": "single",
+    "polarity": "correct",
+    "case": null,
+    "stem": "Freud의 정신역동적 관점에서 강박 증상과 방어기제를 짝지은 것으로 옳은 것은?",
+    "options": [
+      {
+        "key": "1",
+        "text": "반동형성: 더럽히고 싶은 충동을 정반대인 지나친 청결과 정돈으로 바꾼다.",
+        "is_true": true,
+        "in_answer": true,
+        "explanation": "받아들일 수 없는 충동을 반대 방향의 태도로 과장하는 반동형성의 전형적 예다. 항문기의 더럽힘 충동과 연결된다."
+      },
+      {
+        "key": "2",
+        "text": "격리: 떠오른 나쁜 생각을 정해진 행동을 반복하여 없었던 일로 만든다.",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "행동으로 무효화하는 것은 취소이다. 격리는 생각에서 감정을 떼어 내는 것이다."
+      },
+      {
+        "key": "3",
+        "text": "취소: 미운 사람에게 오히려 지나치게 친절하고 공손하게 대한다.",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "반대 감정을 과장하는 것은 반동형성이다. 취소는 이미 한 생각이나 행동을 되돌리려는 의식이다."
+      },
+      {
+        "key": "4",
+        "text": "전환: 공격 충동이 마비나 실명 같은 신체 증상으로 바뀐다.",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "전환은 히스테리 즉 전환장애 설명에 쓰이는 기제로 강박신경증의 대표 방어가 아니다."
+      },
+      {
+        "key": "5",
+        "text": "투사: 자신의 성적 충동을 억압하여 기억에서 완전히 지운다.",
+        "is_true": false,
+        "in_answer": false,
+        "explanation": "설명은 억압에 가깝고, 투사는 자기 충동을 타인의 것으로 돌리는 것으로 편집적 사고 설명에 주로 쓰인다."
+      }
+    ],
+    "answer": [
+      "1"
+    ],
+    "theory": "Freud 정신역동(항문기, 방어기제)",
+    "concept": "정신역동-방어기제 짝짓기",
+    "explanation": "Freud는 강박신경증을 항문기 고착이나 그 시기로의 퇴행과 관련지었고, 공격적이고 불결한 충동에 대한 방어로 격리, 취소, 반동형성, 전치를 강조했다.",
+    "sources": [
+      {
+        "source_name": "정신역동 이론 일반 지식",
+        "ref": "Freud(1909) 쥐인간 사례; 정신분석 방어기제 문헌 일반",
+        "unit": "강박신경증의 정신역동",
+        "basis": "항문기 고착 및 퇴행, 격리, 취소, 반동형성, 전치 등의 방어기제로 강박 증상을 설명함. 이 세션에서 웹검색으로 확인하지 못함.",
+        "checked_date": "2026-11-20",
+        "source_verified": false,
+        "verify_method": "미확인(모델 지식)",
+        "textbook_compared": false
+      }
+    ],
+    "verification_status": "자체검토(출처 미검증)",
+    "textbook_compared": false
+  }
+]

@@ -1,0 +1,1888 @@
+[
+ {
+  "id": "TRM-L3-006",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [
+   "ptsd"
+  ],
+  "level": 3,
+  "type": "multi",
+  "polarity": "correct",
+  "case": null,
+  "stem": "PTSD와 주요우울장애의 감별 또는 공존에 관한 설명으로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "PTSD의 인지와 기분의 부정적 변화 군에는 흥미 저하와 긍정 정서 결여처럼 우울증과 겹치는 증상이 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 흥미 상실, 소외감, 긍정 정서 결여는 두 장애에 공통으로 나타날 수 있다."
+   },
+   {
+    "key": "2",
+    "text": "주요우울장애는 외상 사건 노출을 진단 요건으로 요구하지 않는다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 기준 A는 PTSD의 요건이며 주요우울장애에는 해당하지 않는다."
+   },
+   {
+    "key": "3",
+    "text": "외상 관련 침투 증상과 외상 단서 회피는 PTSD를 시사하는 특징적 소견이다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 우울증의 반추와 달리 PTSD의 침투는 외상 기억이 감각적으로 재경험되는 특징이 있다."
+   },
+   {
+    "key": "4",
+    "text": "두 장애의 기준을 모두 충족해도 PTSD가 있으면 주요우울장애를 공존 진단할 수 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. PTSD와 주요우울장애의 공존은 매우 흔하며 둘 다 진단할 수 있다."
+   },
+   {
+    "key": "5",
+    "text": "PTSD와 주요우울장애는 HPA축에서 같은 방향의 코르티솔 이상을 보인다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. PTSD는 낮은 코르티솔과 강화된 음성 되먹임, 주요우울장애는 높은 코르티솔과 약화된 되먹임 경향으로 대비된다."
+   }
+  ],
+  "answer": [
+   "1",
+   "2",
+   "3"
+  ],
+  "theory": "PTSD와 주요우울장애 감별",
+  "concept": "감별-PTSDvs우울",
+  "explanation": "증상 중복이 있어도 외상 노출, 침투, 외상 단서 회피가 PTSD의 구별점이며 공존 진단이 가능하다.",
+  "sources": [
+   {
+    "source_name": "Yehuda R, Journal of Clinical Psychiatry 2001 및 PubMed Central 메타분석",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3340453",
+    "unit": "PTSD의 HPA축 변화",
+    "basis": "PTSD 환자에게서 낮은 코르티솔, 당질코르티코이드 수용체 민감도 증가에 따른 음성 되먹임 강화, 덱사메타손 억제 증가가 보고되며 주요우울장애는 반대 양상을 보인다. 기저 코르티솔 결과는 연구마다 일관되지 않다는 단서가 있다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "Friedman MJ, Focus(미국정신의학회 학술지) 2013",
+    "ref": "https://focus.psychiatryonline.org/doi/10.1176/appi.focus.11.3.358",
+    "unit": "Finalizing PTSD in DSM-5",
+    "basis": "DSM-5는 증상군을 재경험, 회피, 인지와 기분의 부정적 변화, 각성의 네 군으로 재편하고 기존 회피와 마비 군을 분리했다. 침투 1개, 회피 1개, 인지와 기분 2개 이상이 필요하며, 이인증 또는 비현실감이 두드러지는 해리 하위유형이 신설되었다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-007",
+  "domain": "trauma",
+  "disorder": "rad",
+  "related": [],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "시설에서 자란 3세 아동이 양육자에게 위안을 구하지 않고 사회적 반응이 적다. 반응성 애착장애와 자폐스펙트럼장애를 감별할 때 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "불충분한 양육 이력이 있으면 자폐스펙트럼장애는 진단할 수 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 양육 결핍 이력이 있어도 자폐스펙트럼장애가 존재할 수 있으므로 별도로 평가해야 한다."
+   },
+   {
+    "key": "2",
+    "text": "두 장애 모두 불충분한 양육 이력이 필수 요건이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 불충분한 양육은 반응성 애착장애의 요건이며 자폐스펙트럼장애의 요건이 아니다."
+   },
+   {
+    "key": "3",
+    "text": "반응성 애착장애에서는 언어와 인지 지연이 결코 나타나지 않는다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 방임과 관련해 언어나 인지 지연이 동반될 수 있으므로 지연 여부만으로 감별할 수 없다."
+   },
+   {
+    "key": "4",
+    "text": "양육 환경이 개선되어도 반응성 애착장애 아동의 사회적 반응은 전혀 변하지 않는다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 반응성 애착장애는 안정적 양육 환경에서 호전될 수 있다는 점이 자폐스펙트럼장애와의 차이로 거론된다."
+   },
+   {
+    "key": "5",
+    "text": "자폐스펙트럼장애 기준을 충족하면 반응성 애착장애로 진단하지 않으며, 제한적이고 반복적인 행동 패턴의 유무가 중요한 감별 단서이다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 반응성 애착장애 기준에 자폐스펙트럼장애 배제가 명시되어 있고, 상동행동과 제한된 관심은 자폐스펙트럼장애를 시사한다."
+   }
+  ],
+  "answer": [
+   "5"
+  ],
+  "theory": "반응성 애착장애와 자폐스펙트럼장애 감별",
+  "concept": "감별-RADvsASD자폐",
+  "explanation": "반응성 애착장애는 자폐스펙트럼장애 배제 기준이 명시되어 있다. 상동행동과 제한된 관심, 양육 개선에 따른 반응 변화가 감별 단서이다.",
+  "sources": [
+   {
+    "source_name": "California Evidence-Based Clearinghouse for Child Welfare 및 StatPearls 반응성 애착장애",
+    "ref": "https://www.cebc4cw.org/dsm-5-criteria-for-reactive-attachment-disorder-rad",
+    "unit": "DSM-5 Criteria for Reactive Attachment Disorder",
+    "basis": "양육자에 대한 일관된 정서적 위축 행동, 지속적 사회정서 장해, 불충분한 양육 이력이 필요하고, 자폐스펙트럼장애 기준을 충족하지 않아야 하며, 장해는 5세 이전에 분명하고 발달연령은 최소 9개월이어야 한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-008",
+  "domain": "trauma",
+  "disorder": "rad",
+  "related": [
+   "dsed"
+  ],
+  "level": 3,
+  "type": "multi",
+  "polarity": "correct",
+  "case": null,
+  "stem": "반응성 애착장애와 탈억제 사회관여장애의 비교로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "두 장애 모두 사회적 방임이나 잦은 양육자 교체 같은 불충분한 양육 이력을 요구한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 불충분한 양육은 두 장애의 공통 필수 요건이다."
+   },
+   {
+    "key": "2",
+    "text": "두 장애 모두 발달연령 최소 9개월 기준이 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 두 장애 모두 9개월 이상의 발달연령을 요구한다."
+   },
+   {
+    "key": "3",
+    "text": "반응성 애착장애는 정서적 위축과 억제된 애착 행동, 탈억제 사회관여장애는 낯선 성인에 대한 무분별한 접근이 핵심이다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 위축형과 탈억제형으로 대비된다."
+   },
+   {
+    "key": "4",
+    "text": "탈억제 사회관여장애는 안정적인 애착 대상이 생기면 증상도 즉시 사라진다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 탈억제 사회관여장애의 무분별한 사회성은 양육 환경이 개선되고 애착이 형성된 뒤에도 지속될 수 있다."
+   },
+   {
+    "key": "5",
+    "text": "DSM-5에서 두 장애는 반응성 애착장애의 두 하위유형으로 묶여 있다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. DSM-IV의 억제형과 탈억제형이 DSM-5에서 별개의 두 장애로 분리되었다."
+   }
+  ],
+  "answer": [
+   "1",
+   "2",
+   "3"
+  ],
+  "theory": "반응성 애착장애와 탈억제 사회관여장애",
+  "concept": "감별-RADvsDSED",
+  "explanation": "DSM-5에서 두 장애가 분리된 이유는 증상 양상, 경과, 양육 개선에 대한 반응이 다르기 때문이다.",
+  "sources": [
+   {
+    "source_name": "California Evidence-Based Clearinghouse for Child Welfare 및 StatPearls 반응성 애착장애",
+    "ref": "https://www.cebc4cw.org/dsm-5-criteria-for-reactive-attachment-disorder-rad",
+    "unit": "DSM-5 Criteria for Reactive Attachment Disorder",
+    "basis": "양육자에 대한 일관된 정서적 위축 행동, 지속적 사회정서 장해, 불충분한 양육 이력이 필요하고, 자폐스펙트럼장애 기준을 충족하지 않아야 하며, 장해는 5세 이전에 분명하고 발달연령은 최소 9개월이어야 한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "California Evidence-Based Clearinghouse for Child Welfare",
+    "ref": "https://cebc4cw.org/search/topic-areas/dsm-5-criteria-for-disinhibited-social-engagement-disorder",
+    "unit": "DSM-5 Criteria for Disinhibited Social Engagement Disorder",
+    "basis": "낯선 성인에게 적극적으로 다가가 상호작용하며 지나친 친숙함, 양육자 확인의 감소, 낯선 성인을 주저 없이 따라감 등 가운데 2개 이상을 보이고, 불충분한 양육 이력이 있으며, 발달연령이 최소 9개월이어야 한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-009",
+  "domain": "trauma",
+  "disorder": "dsed",
+  "related": [
+   "rad"
+  ],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "생후 2년간 여러 위탁가정을 옮겨 다닌 5세 아동이 처음 본 어른에게 안기고 따라가려 한다. 주의력결핍 과잉행동장애와의 감별로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "낯선 사람에 대한 무분별한 접근이 일반적 충동성으로만 설명되지 않고 불충분한 양육 이력이 있다면 탈억제 사회관여장애를 고려한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 기준에는 해당 행동이 ADHD처럼 충동성에 국한되지 않고 사회적 탈억제를 포함해야 한다는 조건이 있다."
+   },
+   {
+    "key": "2",
+    "text": "충동적인 아동은 모두 탈억제 사회관여장애로 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 충동성만으로는 진단하지 않으며 사회적 경계 부족과 양육 결핍 이력이 필요하다."
+   },
+   {
+    "key": "3",
+    "text": "ADHD 증상이 조금이라도 있으면 탈억제 사회관여장애는 배제된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 두 장애는 공존할 수 있으며, 탈억제 사회관여장애의 행동이 충동성만으로 설명되지 않는지를 본다."
+   },
+   {
+    "key": "4",
+    "text": "5세라는 나이 때문에 탈억제 사회관여장애는 진단할 수 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 5세 이전 발현 조건은 반응성 애착장애에 명시된 것이며, 탈억제 사회관여장애에는 발달연령 9개월 이상이 요구된다."
+   },
+   {
+    "key": "5",
+    "text": "이 아동은 위축과 위안 추구 결여가 핵심이므로 반응성 애착장애이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 사례의 핵심은 위축이 아니라 무분별한 사회적 접근이다."
+   }
+  ],
+  "answer": [
+   "1"
+  ],
+  "theory": "탈억제 사회관여장애와 ADHD 감별",
+  "concept": "감별-DSEDvsADHD",
+  "explanation": "탈억제 사회관여장애는 ADHD와 공존할 수 있으나, 낯선 사람에 대한 경계 부족이 충동성 이상의 사회적 탈억제여야 한다.",
+  "sources": [
+   {
+    "source_name": "California Evidence-Based Clearinghouse for Child Welfare",
+    "ref": "https://cebc4cw.org/search/topic-areas/dsm-5-criteria-for-disinhibited-social-engagement-disorder",
+    "unit": "DSM-5 Criteria for Disinhibited Social Engagement Disorder",
+    "basis": "낯선 성인에게 적극적으로 다가가 상호작용하며 지나친 친숙함, 양육자 확인의 감소, 낯선 성인을 주저 없이 따라감 등 가운데 2개 이상을 보이고, 불충분한 양육 이력이 있으며, 발달연령이 최소 9개월이어야 한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "미국정신의학회 DSM-5(2013) 및 DSM-5-TR(2022)",
+    "ref": "American Psychiatric Association. DSM-5 (2013), DSM-5-TR (2022).",
+    "unit": "외상 및 스트레스 관련 장애",
+    "basis": "진단 범주와 기준 구성에 관한 모델 지식 기반 요약.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-010",
+  "domain": "trauma",
+  "disorder": "prolonged_grief",
+  "related": [
+   "adjustment"
+  ],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "어머니가 4개월 전 사망한 35세 성인이 강한 그리움, 고인 생각에의 몰두, 정서적 고통을 거의 매일 보인다. 다른 정신장애 기준은 충족하지 않는다. DSM-5-TR에 근거한 판단으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "사망이 자연사이므로 지속성 비탄장애는 처음부터 해당될 수 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 지속성 비탄장애는 사망 원인을 제한하지 않는다."
+   },
+   {
+    "key": "2",
+    "text": "성인은 사망 후 최소 12개월이 필요하므로 현재는 지속성 비탄장애로 진단할 수 없으며 정상 애도 범위일 수 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 4개월은 성인 기준 12개월에 미달한다. 다만 경과 관찰과 지지가 필요할 수 있다."
+   },
+   {
+    "key": "3",
+    "text": "고인에 대한 몰두가 있으므로 지속성 비탄장애로 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 핵심 증상이 있어도 기간 기준을 충족하지 않는다."
+   },
+   {
+    "key": "4",
+    "text": "ICD-11 기준과 동일하게 DSM-5-TR에서도 6개월이면 진단할 수 있다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. ICD-11은 6개월이지만 DSM-5-TR 성인 기준은 12개월이다. 게다가 현재 4개월이다."
+   },
+   {
+    "key": "5",
+    "text": "애도 반응은 모두 적응장애로 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 정상 애도는 적응장애에서 제외된다."
+   }
+  ],
+  "answer": [
+   "2"
+  ],
+  "theory": "지속성 비탄장애와 정상 애도 감별",
+  "concept": "감별-지속성비탄vs정상애도",
+  "explanation": "DSM-5-TR 지속성 비탄장애는 신설 진단이므로 교재 3판에는 없을 수 있다. 성인 12개월, 아동 6개월 기준이 정상 애도와의 첫 감별 축이다.",
+  "sources": [
+   {
+    "source_name": "미국정신의학회(APA) DSM-5-TR 지속성 비탄장애 자료",
+    "ref": "https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/DSM-5-TR/APA-DSM5TR-ProlongedGriefDisorder.pdf",
+    "unit": "Prolonged Grief Disorder",
+    "basis": "가까운 사람의 사망 후 성인은 최소 12개월, 아동과 청소년은 최소 6개월이 지나야 하며, 고인에 대한 강렬한 그리움 또는 고인에 대한 생각과 기억에의 몰두가 핵심이다. 일상 기능에 정상 애도와 달리 손상을 준다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "PubMed Central 게재 지속성 비탄장애 기준 비교 논문 및 Psychiatric News 2020",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8475918/",
+    "unit": "DSM-5-TR과 ICD-11 지속성 비탄장애 비교",
+    "basis": "ICD-11 지침은 6개월 기간을 요구하는 반면 DSM-5-TR은 성인 12개월을 요구하며, 정상 애도를 병리화하지 않기 위한 취지가 언급된다. 2020년 APA 이사회가 신설 진단을 승인하였다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-011",
+  "domain": "trauma",
+  "disorder": "prolonged_grief",
+  "related": [
+   "ptsd"
+  ],
+  "level": 3,
+  "type": "multi",
+  "polarity": "correct",
+  "case": null,
+  "stem": "지속성 비탄장애와 주요우울장애의 감별에 관한 설명으로 옳은 것을 모두 고르시오. 지속성 비탄장애는 DSM-5-TR 신설 진단이다.",
+  "options": [
+   {
+    "key": "1",
+    "text": "지속성 비탄장애의 고통은 고인에 대한 그리움과 몰두에 초점이 맞추어져 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 상실 대상에 초점화된 고통이 지속성 비탄장애의 특징이다."
+   },
+   {
+    "key": "2",
+    "text": "주요우울장애는 상실과 무관하게 전반적으로 저조한 기분과 즐거움 상실이 퍼져 있는 경향이 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 우울증의 기분 저하는 특정 대상에 국한되지 않고 전반적이다."
+   },
+   {
+    "key": "3",
+    "text": "두 장애의 기준을 모두 충족하면 함께 진단할 수 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 사별 후 두 장애가 공존할 수 있다."
+   },
+   {
+    "key": "4",
+    "text": "사별 후에는 주요우울장애를 진단할 수 없다는 사별 배제 기준이 DSM-5에서도 유지되었다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. DSM-5에서 주요우울장애의 사별 배제 기준은 삭제되었다."
+   },
+   {
+    "key": "5",
+    "text": "자기 가치감이 전반적으로 무너지는 무가치감은 지속성 비탄장애의 핵심이고 우울증에서는 드물다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 전반적 무가치감과 자기혐오는 오히려 주요우울장애에 더 특징적이다."
+   }
+  ],
+  "answer": [
+   "1",
+   "2",
+   "3"
+  ],
+  "theory": "지속성 비탄장애와 주요우울장애 감별",
+  "concept": "감별-지속성비탄vs우울",
+  "explanation": "사별 배제 기준 삭제는 DSM-5의 변화이고, 지속성 비탄장애 신설은 DSM-5-TR의 변화이다. 두 변화를 구분해 기억해야 한다.",
+  "sources": [
+   {
+    "source_name": "미국정신의학회(APA) DSM-5-TR 지속성 비탄장애 자료",
+    "ref": "https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/DSM-5-TR/APA-DSM5TR-ProlongedGriefDisorder.pdf",
+    "unit": "Prolonged Grief Disorder",
+    "basis": "가까운 사람의 사망 후 성인은 최소 12개월, 아동과 청소년은 최소 6개월이 지나야 하며, 고인에 대한 강렬한 그리움 또는 고인에 대한 생각과 기억에의 몰두가 핵심이다. 일상 기능에 정상 애도와 달리 손상을 준다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "미국정신의학회 DSM-5(2013) 및 DSM-5-TR(2022)",
+    "ref": "American Psychiatric Association. DSM-5 (2013), DSM-5-TR (2022).",
+    "unit": "외상 및 스트레스 관련 장애",
+    "basis": "진단 범주와 기준 구성에 관한 모델 지식 기반 요약.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-012",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "화재 사고 직후 가벼운 악몽만 있던 사람이 8개월 후 처음으로 PTSD 전체 기준을 충족했다. 가장 적절한 진단 판단은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "초기에 증상이 있었으므로 지연된 표현을 붙일 수 없다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 지연된 표현은 전체 기준 충족 시점으로 판단하며 일부 증상의 즉시 발현은 허용된다."
+   },
+   {
+    "key": "2",
+    "text": "6개월이 지나면 외상과의 연관성이 끊어지므로 PTSD로 진단할 수 없다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 지연 발병 PTSD를 위해 지연된 표현 명시자가 있다."
+   },
+   {
+    "key": "3",
+    "text": "PTSD, 지연된 표현 명시",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 사건 후 최소 6개월 이후에 전체 기준을 충족했으므로 지연된 표현을 명시한다. 일부 증상이 일찍 있었어도 해당된다."
+   },
+   {
+    "key": "4",
+    "text": "급성 스트레스장애",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 급성 스트레스장애는 외상 후 1개월까지만 진단한다."
+   },
+   {
+    "key": "5",
+    "text": "적응장애, 지속성",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. PTSD 기준을 충족하므로 적응장애를 진단하지 않는다."
+   }
+  ],
+  "answer": [
+   "3"
+  ],
+  "theory": "PTSD 지연된 표현",
+  "concept": "감별-지연된표현",
+  "explanation": "지연된 표현의 기준점은 6개월이며, 증상의 첫 발생이 아니라 전체 기준 충족 시점으로 판단한다.",
+  "sources": [
+   {
+    "source_name": "Epocrates 제공 DSM-5-TR PTSD 진단기준 요약, AMBOSS 급성 및 외상후 스트레스장애",
+    "ref": "https://www.epocrates.com/sites/epocrates/files/2024-05/DSM-5-TR%20Diagnostic%20Criteria%20for%20Posttraumatic%20Stress%20Disorder.pdf",
+    "unit": "외상후 스트레스장애 진단기준",
+    "basis": "증상이 1개월을 초과해 지속되어야 하며, 사건 후 최소 6개월이 지나서야 전체 기준을 충족하면 지연된 표현 명시자를 붙인다. 6세 이하 아동에게는 발달에 맞춘 별도 기준이 있고 놀이를 통한 재연이 나타날 수 있다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-013",
+  "domain": "trauma",
+  "disorder": "adjustment",
+  "related": [],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "실직 후 우울과 불안을 보이던 사람이 6개월 전 재취업에 성공해 스트레스 요인과 그 결과가 모두 해소되었는데, 증상이 8개월째 그대로 지속된다. 판단으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "적응장애는 발생 후 3개월 이내라면 기간 제한이 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 3개월 이내는 발생 시점 기준이고 소멸 기준은 별도로 있다."
+   },
+   {
+    "key": "2",
+    "text": "실직은 외상 사건이므로 PTSD로 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 실직은 기준 A의 외상 사건이 아니다."
+   },
+   {
+    "key": "3",
+    "text": "증상이 지속되므로 급성 스트레스장애로 바꾼다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 급성 스트레스장애는 외상 사건 후 1개월 이내 반응이다."
+   },
+   {
+    "key": "4",
+    "text": "스트레스 요인 종료 후 6개월을 넘겨 지속되므로 적응장애로 보기 어렵고, 주요우울장애나 다른 장애를 재평가해야 한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 적응장애 증상은 스트레스 요인과 결과가 끝난 뒤 6개월 이내에 소멸해야 한다."
+   },
+   {
+    "key": "5",
+    "text": "적응장애, 지속성 명시로 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 지속성 명시자는 스트레스 요인이 지속될 때 쓰며, 종료 후 6개월을 넘는 경우를 정당화하지 않는다."
+   }
+  ],
+  "answer": [
+   "4"
+  ],
+  "theory": "적응장애 기간 기준",
+  "concept": "감별-적응장애소멸기준",
+  "explanation": "적응장애의 시간 틀은 스트레스 요인 후 3개월 내 시작, 종료 후 6개월 내 소멸이다. 이를 벗어나면 다른 진단을 검토한다.",
+  "sources": [
+   {
+    "source_name": "PubMed Central 게재 적응장애 리뷰 논문",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6678970/",
+    "unit": "Adjustment disorder 진단 개념",
+    "basis": "DSM-5에서 증상은 스트레스 요인과 그 결과가 종료된 뒤 6개월을 넘어 지속되지 않아야 한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/anxiety-and-trauma-and-stressor-related-disorders/adjustment-disorders",
+    "unit": "적응장애",
+    "basis": "DSM-5-TR 기준에서 증상은 스트레스 요인 노출 후 3개월 이내에 시작되어야 하며, 대개 스트레스 요인과 그 결과가 끝난 뒤 6개월 이내에 해소된다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-014",
+  "domain": "trauma",
+  "disorder": "asd",
+  "related": [],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "지진 피해 다음 날 응급실을 찾은 사람이 심한 해리, 침투, 불면을 보인다. 이 시점의 진단 판단으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "증상이 9개 이상이면 첫날에도 급성 스트레스장애로 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 최소 3일 기준을 놓친 판단이다."
+   },
+   {
+    "key": "2",
+    "text": "외상 직후이므로 PTSD로 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. PTSD는 1개월 초과가 필요하다."
+   },
+   {
+    "key": "3",
+    "text": "즉시 모든 피해자에게 단회기 심리적 디브리핑을 실시해야 한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 단회기 디브리핑은 예방 효과가 없고 해로울 수 있다."
+   },
+   {
+    "key": "4",
+    "text": "외상 직후의 해리는 반드시 해리성 정체성장애를 시사한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 외상 직후 일시적 해리는 흔한 반응이다."
+   },
+   {
+    "key": "5",
+    "text": "급성 스트레스장애는 외상 후 최소 3일 이상 지속되어야 하므로 아직 진단할 수 없고, 급성 지지와 경과 관찰을 하면서 재평가한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 3일 미만의 즉각적 반응은 진단하지 않는다. 다만 위험 평가와 심리적 응급처치는 할 수 있다."
+   }
+  ],
+  "answer": [
+   "5"
+  ],
+  "theory": "급성 스트레스장애 최소 기간",
+  "concept": "감별-ASD최소3일",
+  "explanation": "급성 스트레스장애의 최소 3일 기준은 즉각적이고 일시적인 반응을 병리화하지 않기 위한 것이다.",
+  "sources": [
+   {
+    "source_name": "NCBI StatPearls",
+    "ref": "https://www.ncbi.nlm.nih.gov/books/NBK560815/",
+    "unit": "Acute Stress Disorder",
+    "basis": "급성 스트레스장애는 외상 노출 후 최소 3일에서 최대 1개월 사이의 반응이며, 4주를 넘어 지속되면 PTSD 기준을 검토한다. DSM-5에서는 해리 증상이 더 이상 필수 요건이 아니다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "Cochrane 체계적 문헌고찰 CD000560",
+    "ref": "https://www.cochrane.org/CD000560/EMERG_psychological-debriefing-for-preventing-post-traumatic-stress-disorder-pstd",
+    "unit": "Psychological debriefing for preventing PTSD",
+    "basis": "단회기 개인 심리적 디브리핑은 PTSD 예방이나 고통 감소에 효과가 없었고, 한 시험에서는 1년 후 PTSD 위험이 오히려 높았다. 단회기 디브리핑은 권장되지 않는다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-015",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [
+   "adjustment"
+  ],
+  "level": 3,
+  "type": "multi",
+  "polarity": "incorrect",
+  "case": null,
+  "stem": "외상 사건을 겪은 후 증상을 보이는 사람의 PTSD와 적응장애 감별에 관한 설명으로 옳지 않은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "기준 A 외상 사건 후 1개월이 지났지만 PTSD 증상군 기준을 일부 충족하지 못하면 적응장애를 고려할 수 있다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 설명이다. 역치 미만 PTSD 반응은 적응장애로 진단할 수 있다."
+   },
+   {
+    "key": "2",
+    "text": "적응장애는 외상 수준이 아닌 스트레스 요인에도 진단할 수 있지만 PTSD는 기준 A를 반드시 요구한다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 설명이다. 스트레스 요인의 심각도 요건이 두 장애를 구분한다."
+   },
+   {
+    "key": "3",
+    "text": "PTSD 기준을 모두 충족하더라도 스트레스 요인이 명확하면 적응장애를 우선 진단한다.",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "옳지 않다. 적응장애는 다른 특정 장애 기준을 충족하면 진단하지 않는다."
+   },
+   {
+    "key": "4",
+    "text": "적응장애에는 특징적 증상 목록이 정해져 있으며 침투 증상이 반드시 포함되어야 한다.",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "옳지 않다. 적응장애는 특정 증상 목록 없이 정서나 행동 증상과 기능 손상으로 정의된다."
+   },
+   {
+    "key": "5",
+    "text": "PTSD는 외상 후 수개월이 지나 전체 기준을 충족할 수도 있으며, 6개월 이후라면 지연된 표현을 명시한다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 설명이다. 지연된 표현의 기준은 6개월이다."
+   }
+  ],
+  "answer": [
+   "3",
+   "4"
+  ],
+  "theory": "PTSD와 적응장애 감별",
+  "concept": "감별-PTSDvs적응장애",
+  "explanation": "적응장애는 특정 증상 목록이 없는 잔여 진단이며, PTSD 기준을 충족하면 적응장애를 쓰지 않는다.",
+  "sources": [
+   {
+    "source_name": "Epocrates 제공 DSM-5-TR PTSD 진단기준 요약, AMBOSS 급성 및 외상후 스트레스장애",
+    "ref": "https://www.epocrates.com/sites/epocrates/files/2024-05/DSM-5-TR%20Diagnostic%20Criteria%20for%20Posttraumatic%20Stress%20Disorder.pdf",
+    "unit": "외상후 스트레스장애 진단기준",
+    "basis": "증상이 1개월을 초과해 지속되어야 하며, 사건 후 최소 6개월이 지나서야 전체 기준을 충족하면 지연된 표현 명시자를 붙인다. 6세 이하 아동에게는 발달에 맞춘 별도 기준이 있고 놀이를 통한 재연이 나타날 수 있다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/anxiety-and-trauma-and-stressor-related-disorders/adjustment-disorders",
+    "unit": "적응장애",
+    "basis": "DSM-5-TR 기준에서 증상은 스트레스 요인 노출 후 3개월 이내에 시작되어야 하며, 대개 스트레스 요인과 그 결과가 끝난 뒤 6개월 이내에 해소된다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-016",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "4세 아동이 교통사고로 부모가 다치는 장면을 목격한 뒤 2개월째 사고 장면을 놀이에서 반복하고, 악몽을 꾸며, 짜증과 수면 곤란을 보인다. 판단으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "6세 이하 PTSD 기준을 적용해 평가하며, 놀이 속 재연은 침투 증상으로 볼 수 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 6세 이하 기준은 놀이를 통한 재연과 행동 중심 증상을 반영한다."
+   },
+   {
+    "key": "2",
+    "text": "4세 아동은 외상 사건을 인지하지 못하므로 PTSD를 진단할 수 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 6세 이하 아동을 위한 별도 기준이 있다."
+   },
+   {
+    "key": "3",
+    "text": "아동은 성인 기준의 증상 20개 중 해당 개수를 그대로 충족해야 한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 6세 이하는 별도 증상 구성과 개수를 적용한다."
+   },
+   {
+    "key": "4",
+    "text": "사고 장면을 놀이로 반복하는 것은 정상 발달이므로 증상으로 보지 않는다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 외상 주제가 반복적으로 재연되고 고통이나 기능 손상과 연결되면 침투 증상으로 평가한다."
+   },
+   {
+    "key": "5",
+    "text": "2개월이 지났으므로 급성 스트레스장애로 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 급성 스트레스장애는 1개월까지이다."
+   }
+  ],
+  "answer": [
+   "1"
+  ],
+  "theory": "6세 이하 PTSD",
+  "concept": "감별-6세이하PTSD",
+  "explanation": "6세 이하 기준에서는 부모나 주 양육자에게 일어난 사건의 목격이 강조되며 놀이 재연이 침투 증상으로 인정된다.",
+  "sources": [
+   {
+    "source_name": "Epocrates 제공 DSM-5-TR PTSD 진단기준 요약, AMBOSS 급성 및 외상후 스트레스장애",
+    "ref": "https://www.epocrates.com/sites/epocrates/files/2024-05/DSM-5-TR%20Diagnostic%20Criteria%20for%20Posttraumatic%20Stress%20Disorder.pdf",
+    "unit": "외상후 스트레스장애 진단기준",
+    "basis": "증상이 1개월을 초과해 지속되어야 하며, 사건 후 최소 6개월이 지나서야 전체 기준을 충족하면 지연된 표현 명시자를 붙인다. 6세 이하 아동에게는 발달에 맞춘 별도 기준이 있고 놀이를 통한 재연이 나타날 수 있다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-017",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "전투 경험이 있는 참전군인이 폭발음을 들으면 전쟁터에 있는 것처럼 느끼고 숨는다. 정신병적 장애의 환각과 감별할 때 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "플래시백은 언어적으로 정교하게 서술된 기억에서 비롯된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. Brewin 이론에서 플래시백은 감각 중심의 상황적 접근 기억에서 비롯된다."
+   },
+   {
+    "key": "2",
+    "text": "외상 단서에 의해 촉발되어 외상 장면을 재경험하는 플래시백이며 현실 검증이 대체로 회복된다면 PTSD의 침투 증상으로 본다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 플래시백은 외상 내용과 직접 연결되고 단서 의존적이라는 점에서 정신병적 환각과 구별된다."
+   },
+   {
+    "key": "3",
+    "text": "현실이 아닌 장면을 지각했으므로 조현병으로 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 외상 관련 해리성 재경험을 정신병적 환각으로 오인한 판단이다."
+   },
+   {
+    "key": "4",
+    "text": "플래시백은 PTSD의 각성 증상군에 속한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 플래시백은 침투 증상군에 속한다."
+   },
+   {
+    "key": "5",
+    "text": "숨는 행동은 회피 증상이므로 플래시백이 아니다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 플래시백 중에는 외상 상황처럼 행동하는 반응이 나타날 수 있다."
+   }
+  ],
+  "answer": [
+   "2"
+  ],
+  "theory": "플래시백과 환각 감별",
+  "concept": "감별-플래시백vs환각",
+  "explanation": "외상 내용과의 직접 연관성, 단서 의존성, 일시성, 현실 검증의 회복이 플래시백의 특징이다.",
+  "sources": [
+   {
+    "source_name": "Brewin, Dalgleish, Joseph 1996, Psychological Review(PubMed)",
+    "ref": "https://pubmed.ncbi.nlm.nih.gov/8888651/",
+    "unit": "A dual representation theory of PTSD",
+    "basis": "외상은 의도적으로 인출 가능한 언어적 접근 기억과 상황 단서에 의해 자동 촉발되는 상황적 접근 기억의 두 표상을 만들며, 플래시백은 상황적 접근 기억에서 비롯된다. 2010년 개정판은 감각 기반 표상과 맥락 기반 표상으로 재정리했다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "미국정신의학회 DSM-5(2013) 및 DSM-5-TR(2022)",
+    "ref": "American Psychiatric Association. DSM-5 (2013), DSM-5-TR (2022).",
+    "unit": "외상 및 스트레스 관련 장애",
+    "basis": "진단 범주와 기준 구성에 관한 모델 지식 기반 요약.",
+    "checked_date": "2026-11-20",
+    "source_verified": false,
+    "verify_method": "미확인(모델 지식)",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-018",
+  "domain": "trauma",
+  "disorder": "prolonged_grief",
+  "related": [
+   "ptsd"
+  ],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "아버지가 노환으로 자연사한 뒤 1년 넘게 극심한 그리움과 기능 손상을 겪는 성인에 대한 판단으로 옳은 것은? 지속성 비탄장애는 DSM-5-TR 신설 진단이다.",
+  "options": [
+   {
+    "key": "1",
+    "text": "반드시 적응장애로 진단해야 한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 지속성 비탄장애 기준을 충족하면 그것을 우선 진단한다."
+   },
+   {
+    "key": "2",
+    "text": "지속성 비탄장애는 DSM-5 원판에서부터 본문의 정식 진단이었다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. DSM-5에서는 추가 연구 조건이었고 DSM-5-TR에서 정식 진단이 되었다."
+   },
+   {
+    "key": "3",
+    "text": "자연사는 PTSD 기준 A에 해당하지 않으므로 PTSD가 아니라 지속성 비탄장애를 우선 검토한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 가까운 사람의 죽음을 알게 된 경우 폭력이나 사고에 의한 죽음이어야 기준 A가 된다. 지속성 비탄장애는 사망 원인 제한이 없다."
+   },
+   {
+    "key": "4",
+    "text": "가족의 죽음은 원인과 관계없이 기준 A이므로 PTSD를 우선 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 자연사는 기준 A의 노출 경로에서 제외된다."
+   },
+   {
+    "key": "5",
+    "text": "정상 애도이므로 기간에 관계없이 진단하지 않는다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 12개월 이상 지속되고 기능 손상과 핵심 증상이 있으면 지속성 비탄장애 기준을 검토한다."
+   }
+  ],
+  "answer": [
+   "3"
+  ],
+  "theory": "기준 A와 지속성 비탄장애",
+  "concept": "감별-자연사-기준A",
+  "explanation": "사별 후 증상이라도 자연사는 기준 A가 아니다. 이 경우 지속성 비탄장애, 주요우울장애, 적응장애를 검토한다.",
+  "sources": [
+   {
+    "source_name": "미국정신의학회(APA) DSM-5-TR 지속성 비탄장애 자료",
+    "ref": "https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/DSM-5-TR/APA-DSM5TR-ProlongedGriefDisorder.pdf",
+    "unit": "Prolonged Grief Disorder",
+    "basis": "가까운 사람의 사망 후 성인은 최소 12개월, 아동과 청소년은 최소 6개월이 지나야 하며, 고인에 대한 강렬한 그리움 또는 고인에 대한 생각과 기억에의 몰두가 핵심이다. 일상 기능에 정상 애도와 달리 손상을 준다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "미국심리학회(APA) 출판부 견본 페이지 및 PMC 게재 진단기준 표",
+    "ref": "https://www.apa.org/pubs/books/3836374-sample-pages.pdf",
+    "unit": "PTSD 기준 A 네 번째 노출 경로",
+    "basis": "외상 사건의 혐오스러운 세부 사항에 반복적이거나 극심하게 노출되는 경우가 포함되며, 유해 수습 응급요원이나 아동학대 세부 내용에 반복 노출되는 경찰관이 예시이다. 전자매체, 텔레비전, 영화, 사진을 통한 노출은 직무와 관련된 경우가 아니면 해당하지 않는다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-019",
+  "domain": "trauma",
+  "disorder": "rad",
+  "related": [
+   "dsed"
+  ],
+  "level": 3,
+  "type": "multi",
+  "polarity": "incorrect",
+  "case": null,
+  "stem": "반응성 애착장애, 탈억제 사회관여장애, 자폐스펙트럼장애를 감별할 때 옳지 않은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "반응성 애착장애는 자폐스펙트럼장애 기준을 충족하면 진단하지 않는다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 설명이다. 배제 기준으로 명시되어 있다."
+   },
+   {
+    "key": "2",
+    "text": "자폐스펙트럼장애는 양육 결핍 이력과 무관하게 진단할 수 있다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 설명이다. 자폐스펙트럼장애는 신경발달장애로 양육 이력을 요건으로 하지 않는다."
+   },
+   {
+    "key": "3",
+    "text": "탈억제 사회관여장애 아동은 낯선 사람과의 상호작용을 피하는 경향이 자폐스펙트럼장애보다 강하다.",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "옳지 않다. 탈억제 사회관여장애 아동은 오히려 낯선 사람에게 과도하게 접근한다."
+   },
+   {
+    "key": "4",
+    "text": "반응성 애착장애 아동은 상동행동과 제한된 관심을 핵심 증상으로 보인다.",
+    "is_true": false,
+    "in_answer": true,
+    "explanation": "옳지 않다. 상동행동과 제한된 관심은 자폐스펙트럼장애의 핵심 영역이다."
+   },
+   {
+    "key": "5",
+    "text": "반응성 애착장애에서 애착 행동의 결여는 양육 환경 결핍과 연결된다.",
+    "is_true": true,
+    "in_answer": false,
+    "explanation": "옳은 설명이다. 불충분한 양육이 장해의 원인으로 간주된다."
+   }
+  ],
+  "answer": [
+   "3",
+   "4"
+  ],
+  "theory": "애착 관련 장애와 자폐스펙트럼장애 감별",
+  "concept": "감별-RAD-DSED-자폐",
+  "explanation": "반응성 애착장애는 위축, 탈억제 사회관여장애는 무분별한 접근, 자폐스펙트럼장애는 사회적 의사소통 결함과 제한적 반복 행동으로 구분한다.",
+  "sources": [
+   {
+    "source_name": "California Evidence-Based Clearinghouse for Child Welfare 및 StatPearls 반응성 애착장애",
+    "ref": "https://www.cebc4cw.org/dsm-5-criteria-for-reactive-attachment-disorder-rad",
+    "unit": "DSM-5 Criteria for Reactive Attachment Disorder",
+    "basis": "양육자에 대한 일관된 정서적 위축 행동, 지속적 사회정서 장해, 불충분한 양육 이력이 필요하고, 자폐스펙트럼장애 기준을 충족하지 않아야 하며, 장해는 5세 이전에 분명하고 발달연령은 최소 9개월이어야 한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "California Evidence-Based Clearinghouse for Child Welfare",
+    "ref": "https://cebc4cw.org/search/topic-areas/dsm-5-criteria-for-disinhibited-social-engagement-disorder",
+    "unit": "DSM-5 Criteria for Disinhibited Social Engagement Disorder",
+    "basis": "낯선 성인에게 적극적으로 다가가 상호작용하며 지나친 친숙함, 양육자 확인의 감소, 낯선 성인을 주저 없이 따라감 등 가운데 2개 이상을 보이고, 불충분한 양육 이력이 있으며, 발달연령이 최소 9개월이어야 한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "자체검토(출처 미검증)",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L3-020",
+  "domain": "trauma",
+  "disorder": "prolonged_grief",
+  "related": [
+   "ptsd"
+  ],
+  "level": 3,
+  "type": "single",
+  "polarity": "correct",
+  "case": null,
+  "stem": "아버지를 교통사고로 잃은 10세 아동이 7개월째 고인에 대한 강한 그리움과 몰두, 일상 기능 손상을 보인다. DSM-5-TR에 근거한 판단으로 옳은 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "10세 아동은 지속성 비탄장애를 진단할 수 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 지속성 비탄장애는 아동 기준을 별도로 두고 있다."
+   },
+   {
+    "key": "2",
+    "text": "사고사는 기준 A이므로 지속성 비탄장애는 배제된다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 두 장애는 공존할 수 있으며 서로 배제하지 않는다."
+   },
+   {
+    "key": "3",
+    "text": "아동의 비탄은 성인보다 항상 짧으므로 기간 기준이 필요 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 아동에게도 6개월이라는 명시적 기간 기준이 있다."
+   },
+   {
+    "key": "4",
+    "text": "아동과 청소년은 사망 후 최소 6개월 기준이 적용되므로 지속성 비탄장애 진단을 검토할 수 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 7개월은 아동 기준 6개월을 충족한다. 사고사이므로 PTSD 기준 A에도 해당할 수 있어 PTSD 증상도 함께 평가한다."
+   },
+   {
+    "key": "5",
+    "text": "아동도 성인처럼 12개월이 지나야 하므로 아직 진단할 수 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 아동과 청소년의 기간 기준은 6개월이다."
+   }
+  ],
+  "answer": [
+   "4"
+  ],
+  "theory": "지속성 비탄장애 아동 기준",
+  "concept": "감별-지속성비탄-아동6개월",
+  "explanation": "지속성 비탄장애는 DSM-5-TR 신설이라 교재 3판에는 없을 수 있다. 사고사 같은 외상적 사별에서는 PTSD와 지속성 비탄장애를 함께 평가한다.",
+  "sources": [
+   {
+    "source_name": "미국정신의학회(APA) DSM-5-TR 지속성 비탄장애 자료",
+    "ref": "https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/DSM-5-TR/APA-DSM5TR-ProlongedGriefDisorder.pdf",
+    "unit": "Prolonged Grief Disorder",
+    "basis": "가까운 사람의 사망 후 성인은 최소 12개월, 아동과 청소년은 최소 6개월이 지나야 하며, 고인에 대한 강렬한 그리움 또는 고인에 대한 생각과 기억에의 몰두가 핵심이다. 일상 기능에 정상 애도와 달리 손상을 준다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L4-001",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 4,
+  "type": "single",
+  "polarity": "correct",
+  "case": "32세 회사원 B씨는 3개월 전 고속도로에서 차량이 전복되어 동승자가 크게 다친 사고를 겪었다. 이후 사고 장면이 갑자기 떠오르고 주 3회 이상 악몽을 꾼다. 운전을 피하고 사고 이야기가 나오면 자리를 뜬다. 내가 더 조심했어야 했다며 자신을 탓하고, 예전에 즐기던 운동에도 흥미를 잃었다. 작은 소리에도 깜짝 놀라며 잠들기 어렵다. 업무 실수가 늘어 인사 경고를 받았다.",
+  "stem": "교통사고를 겪은 B씨에게 가장 적절한 진단은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "급성 스트레스장애",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 외상 후 1개월을 넘었으므로 급성 스트레스장애 기간을 벗어난다."
+   },
+   {
+    "key": "2",
+    "text": "적응장애, 불안 동반",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. PTSD 기준을 충족하면 적응장애를 진단하지 않는다."
+   },
+   {
+    "key": "3",
+    "text": "특정공포증, 상황형",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 운전 회피만이 아니라 악몽, 자기비난, 과각성 등 외상 관련 증상군 전체가 나타난다."
+   },
+   {
+    "key": "4",
+    "text": "주요우울장애",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 흥미 저하가 있지만 침투와 외상 단서 회피 같은 외상 특유 증상이 중심이다."
+   },
+   {
+    "key": "5",
+    "text": "외상후 스트레스장애",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "적절하다. 생명을 위협하는 사고라는 기준 A, 침투, 회피, 인지와 기분의 부정적 변화, 각성 증상이 모두 있고 3개월째 지속되어 1개월 초과 기준을 충족한다."
+   }
+  ],
+  "answer": [
+   "5"
+  ],
+  "theory": "PTSD 진단 기준 적용",
+  "concept": "사례-PTSD기본진단",
+  "explanation": "사례에서 기준 A, 네 증상군, 1개월 초과, 기능 손상을 순서대로 확인하는 것이 PTSD 진단의 기본 절차이다.",
+  "sources": [
+   {
+    "source_name": "Epocrates 제공 DSM-5-TR PTSD 진단기준 요약, AMBOSS 급성 및 외상후 스트레스장애",
+    "ref": "https://www.epocrates.com/sites/epocrates/files/2024-05/DSM-5-TR%20Diagnostic%20Criteria%20for%20Posttraumatic%20Stress%20Disorder.pdf",
+    "unit": "외상후 스트레스장애 진단기준",
+    "basis": "증상이 1개월을 초과해 지속되어야 하며, 사건 후 최소 6개월이 지나서야 전체 기준을 충족하면 지연된 표현 명시자를 붙인다. 6세 이하 아동에게는 발달에 맞춘 별도 기준이 있고 놀이를 통한 재연이 나타날 수 있다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "Friedman MJ, Focus(미국정신의학회 학술지) 2013",
+    "ref": "https://focus.psychiatryonline.org/doi/10.1176/appi.focus.11.3.358",
+    "unit": "Finalizing PTSD in DSM-5",
+    "basis": "DSM-5는 증상군을 재경험, 회피, 인지와 기분의 부정적 변화, 각성의 네 군으로 재편하고 기존 회피와 마비 군을 분리했다. 침투 1개, 회피 1개, 인지와 기분 2개 이상이 필요하며, 이인증 또는 비현실감이 두드러지는 해리 하위유형이 신설되었다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L4-002",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 4,
+  "type": "multi",
+  "polarity": "correct",
+  "case": "소방관 C씨는 지난 1년간 대형 화재와 교통사고 현장에서 시신 수습을 여러 차례 맡았다. 마지막 출동은 6주 전이었다. 최근 현장 장면이 갑자기 떠오르고, 출동 사이렌만 들어도 심장이 뛴다. 동료들의 회식 권유를 거절하고 혼자 지내며 아무도 나를 이해하지 못한다고 느낀다. 잠들기 위해 음주량이 늘었다. 그는 현장에서는 두렵지 않았고 그냥 일이었을 뿐이라고 말한다.",
+  "stem": "소방관 C씨에 대한 판단으로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "C씨의 반복적 시신 수습 노출은 기준 A의 직무상 반복 노출 경로에 해당한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 유해 수습을 하는 응급요원은 기준 A 네 번째 경로의 대표 예이다."
+   },
+   {
+    "key": "2",
+    "text": "외상 후 6주가 지났으므로 기간 기준상 PTSD를 검토할 수 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 마지막 출동을 기준으로 해도 1개월을 넘었다."
+   },
+   {
+    "key": "3",
+    "text": "훈련된 소방관이 현장에서 공포를 느끼지 않았다면 기준 A를 충족하지 않는다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 주관적 공포 반응 요건인 A2는 DSM-5에서 삭제되었다."
+   },
+   {
+    "key": "4",
+    "text": "음주량 증가는 PTSD 진단에 반드시 필요한 핵심 증상이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 물질 사용은 흔한 동반 문제일 뿐 진단 기준 증상이 아니며, 오히려 증상이 물질 효과가 아닌지 감별할 정보이다."
+   },
+   {
+    "key": "5",
+    "text": "동료의 회식 권유를 거절하고 혼자 지내는 것은 인지와 기분의 부정적 변화 군의 소외감으로 평가할 수 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 타인과의 거리감이나 소외감은 인지와 기분의 부정적 변화 군 증상이다."
+   }
+  ],
+  "answer": [
+   "1",
+   "2",
+   "5"
+  ],
+  "theory": "기준 A 직무상 노출과 A2 삭제",
+  "concept": "사례-소방관-기준A",
+  "explanation": "직무상 반복 노출은 단일 사건이 아니어도 기준 A가 될 수 있다. 동반 음주는 진단 증상이 아니라 감별과 치료 계획 정보이다.",
+  "sources": [
+   {
+    "source_name": "미국심리학회(APA) 출판부 견본 페이지 및 PMC 게재 진단기준 표",
+    "ref": "https://www.apa.org/pubs/books/3836374-sample-pages.pdf",
+    "unit": "PTSD 기준 A 네 번째 노출 경로",
+    "basis": "외상 사건의 혐오스러운 세부 사항에 반복적이거나 극심하게 노출되는 경우가 포함되며, 유해 수습 응급요원이나 아동학대 세부 내용에 반복 노출되는 경찰관이 예시이다. 전자매체, 텔레비전, 영화, 사진을 통한 노출은 직무와 관련된 경우가 아니면 해당하지 않는다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "Friedman MJ, Focus(미국정신의학회 학술지) 2013",
+    "ref": "https://focus.psychiatryonline.org/doi/10.1176/appi.focus.11.3.358",
+    "unit": "Finalizing PTSD in DSM-5",
+    "basis": "DSM-5는 증상군을 재경험, 회피, 인지와 기분의 부정적 변화, 각성의 네 군으로 재편하고 기존 회피와 마비 군을 분리했다. 침투 1개, 회피 1개, 인지와 기분 2개 이상이 필요하며, 이인증 또는 비현실감이 두드러지는 해리 하위유형이 신설되었다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L4-003",
+  "domain": "trauma",
+  "disorder": "asd",
+  "related": [],
+  "level": 4,
+  "type": "multi",
+  "polarity": "correct",
+  "case": "대학생 D씨는 10일 전 귀갓길에 성폭력 피해를 당했다. 이후 주변이 꿈처럼 느껴지고 자신이 몸 밖에서 자신을 보는 것 같다고 말한다. 사건 장면이 반복해서 떠오르고, 사건 장소 근처를 피해 먼 길로 돌아다닌다. 잠을 거의 자지 못하고 수업에 집중하지 못한다. 전체적으로 14개 증상 가운데 11개가 확인되었다. D씨는 경영학을 전공하며 어릴 때 피아노를 배웠다.",
+  "stem": "이 사례에서 진단 판단에 핵심이 되는 정보를 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "사건이 10일 전에 일어났다는 경과 기간",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "핵심 정보이다. 3일에서 1개월 사이라는 점이 급성 스트레스장애를 지지하고 PTSD를 배제한다."
+   },
+   {
+    "key": "2",
+    "text": "성폭력이라는 사건의 성격",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "핵심 정보이다. 직접 경험한 성폭력은 기준 A를 충족한다."
+   },
+   {
+    "key": "3",
+    "text": "주변이 꿈처럼 느껴지는 비현실감과 침투, 회피, 수면 곤란 등 증상의 개수",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "핵심 정보이다. 다섯 범주 중 9개 이상의 증상 충족 여부를 판단하는 근거이다."
+   },
+   {
+    "key": "4",
+    "text": "D씨가 대학에서 경영학을 전공한다는 사실",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "부수 정보이다. 전공은 진단 판단과 직접 관련이 없다."
+   },
+   {
+    "key": "5",
+    "text": "D씨가 어릴 때 피아노를 배웠다는 사실",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "부수 정보이다. 진단 기준과 관련 없는 배경 정보이다."
+   }
+  ],
+  "answer": [
+   "1",
+   "2",
+   "3"
+  ],
+  "theory": "급성 스트레스장애 사례 판단",
+  "concept": "사례-ASD-핵심정보",
+  "explanation": "사례형 문제에서는 기간, 기준 A, 증상 개수와 기능 손상을 핵심 정보로 골라내고 배경 정보는 구분해야 한다.",
+  "sources": [
+   {
+    "source_name": "NCBI StatPearls",
+    "ref": "https://www.ncbi.nlm.nih.gov/books/NBK560815/",
+    "unit": "Acute Stress Disorder",
+    "basis": "급성 스트레스장애는 외상 노출 후 최소 3일에서 최대 1개월 사이의 반응이며, 4주를 넘어 지속되면 PTSD 기준을 검토한다. DSM-5에서는 해리 증상이 더 이상 필수 요건이 아니다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/anxiety-and-trauma-and-stressor-related-disorders/acute-stress-disorder",
+    "unit": "급성 스트레스장애",
+    "basis": "DSM-5-TR 기준에서 외상 노출과 함께 다섯 범주의 증상 가운데 9개 이상이 필요하다. 총 증상 수 14개는 이 검색에서 직접 확인하지 못함.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L4-004",
+  "domain": "trauma",
+  "disorder": "adjustment",
+  "related": [],
+  "level": 4,
+  "type": "single",
+  "polarity": "correct",
+  "case": "45세 E씨는 2개월 전 이혼한 뒤 기분이 가라앉고 자주 운다. 앞날이 막막하다고 말하며 업무 보고서를 여러 차례 기한 내 제출하지 못했다. 식욕과 수면은 대체로 유지되며 자살 사고는 없다. 평가 결과 주요우울장애의 증상 개수 기준에는 미치지 않았다. 이혼 전에는 정신과 병력이 없었다.",
+  "stem": "이혼 후 우울을 호소하는 E씨에게 가장 적절한 진단은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "적응장애, 우울 기분 동반",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "적절하다. 이혼이라는 스트레스 요인 후 2개월 이내 발생, 불균형한 고통과 기능 저하가 있고 주요우울장애 기준에 미달한다."
+   },
+   {
+    "key": "2",
+    "text": "주요우울장애",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 우울 기분은 있으나 증상 개수가 주요우울장애 기준에 미달한다고 평가되었다."
+   },
+   {
+    "key": "3",
+    "text": "외상후 스트레스장애",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 이혼은 기준 A 외상 사건이 아니다."
+   },
+   {
+    "key": "4",
+    "text": "지속성 우울장애",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 지속성 우울장애는 성인에서 최소 2년의 기간을 요구한다."
+   },
+   {
+    "key": "5",
+    "text": "정상 반응이므로 진단하지 않는다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 업무 기능의 뚜렷한 저하와 스트레스 요인에 비해 과도한 고통이 있다."
+   }
+  ],
+  "answer": [
+   "1"
+  ],
+  "theory": "적응장애 진단",
+  "concept": "사례-적응장애-우울",
+  "explanation": "적응장애는 스트레스 요인 후 3개월 내 발생, 다른 장애 기준 미달이라는 조건으로 진단하며 우세한 증상에 따라 명시자를 붙인다.",
+  "sources": [
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/anxiety-and-trauma-and-stressor-related-disorders/adjustment-disorders",
+    "unit": "적응장애",
+    "basis": "DSM-5-TR 기준에서 증상은 스트레스 요인 노출 후 3개월 이내에 시작되어야 하며, 대개 스트레스 요인과 그 결과가 끝난 뒤 6개월 이내에 해소된다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L4-005",
+  "domain": "trauma",
+  "disorder": "adjustment",
+  "related": [],
+  "level": 4,
+  "type": "single",
+  "polarity": "correct",
+  "case": "52세 F씨는 9개월 전 공장 폐쇄로 실직한 후 여전히 재취업하지 못했다. 실직 1개월 뒤부터 불안과 우울한 기분, 짜증이 시작되었고 지금까지 계속된다. 가족과의 다툼이 늘고 구직 활동을 미룬다. 다른 정신장애의 기준은 충족하지 않는다.",
+  "stem": "이 사례에 붙일 명시자로 가장 적절한 것은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "스트레스 요인이 지속되므로 적응장애 진단 자체가 불가능하다",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 스트레스 요인이 계속되면 증상도 계속될 수 있으며 이를 위한 명시자가 있다."
+   },
+   {
+    "key": "2",
+    "text": "지속성 또는 만성 명시자",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "적절하다. 스트레스 요인인 실직 상태가 계속되어 증상이 6개월 이상 지속되므로 지속성 명시자를 붙인다."
+   },
+   {
+    "key": "3",
+    "text": "급성 명시자",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 급성은 증상 지속이 6개월 미만일 때이다."
+   },
+   {
+    "key": "4",
+    "text": "지연된 표현 명시자",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 지연된 표현은 PTSD의 명시자이다."
+   },
+   {
+    "key": "5",
+    "text": "해리 증상 동반",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 해리 명시자는 PTSD에 있으며 사례에 해리 증상도 없다."
+   }
+  ],
+  "answer": [
+   "2"
+  ],
+  "theory": "적응장애 기간 명시자",
+  "concept": "사례-적응장애-지속성",
+  "explanation": "적응장애의 6개월 제한은 스트레스 요인 종료 후부터 계산하므로, 스트레스 요인이 계속되는 동안의 장기 지속은 지속성 명시자로 표시한다.",
+  "sources": [
+   {
+    "source_name": "PubMed Central 게재 적응장애 리뷰 논문",
+    "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6678970/",
+    "unit": "Adjustment disorder 진단 개념",
+    "basis": "DSM-5에서 증상은 스트레스 요인과 그 결과가 종료된 뒤 6개월을 넘어 지속되지 않아야 한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   },
+   {
+    "source_name": "MSD 매뉴얼 전문가판",
+    "ref": "https://www.msdmanuals.com/professional/psychiatric-disorders/anxiety-and-trauma-and-stressor-related-disorders/adjustment-disorders",
+    "unit": "적응장애",
+    "basis": "DSM-5-TR 기준에서 증상은 스트레스 요인 노출 후 3개월 이내에 시작되어야 하며, 대개 스트레스 요인과 그 결과가 끝난 뒤 6개월 이내에 해소된다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L4-006",
+  "domain": "trauma",
+  "disorder": "rad",
+  "related": [],
+  "level": 4,
+  "type": "multi",
+  "polarity": "correct",
+  "case": "3세 G는 생후부터 2년 반 동안 보육 인력이 자주 바뀌는 시설에서 지내다 6개월 전 입양되었다. 넘어져 울 때도 양부모에게 다가가지 않고 안아주면 몸을 굳힌다. 웃음이 적고 이유 없이 짜증을 내거나 슬퍼한다. 언어 발달이 다소 늦다. 반복적 상동행동 여부는 아직 평가되지 않았다.",
+  "stem": "입양아 G에 대한 판단으로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "양육자에게 위안을 구하지 않고 위안에 반응하지 않는 양상은 반응성 애착장애의 핵심 증상과 일치한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 양육자에 대한 일관된 정서적 위축 행동이다."
+   },
+   {
+    "key": "2",
+    "text": "생후 2년 반 동안 보육 인력이 자주 바뀐 시설 양육은 불충분한 양육 이력에 해당한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 선택적 애착 형성 기회를 제한하는 양육 환경이다."
+   },
+   {
+    "key": "3",
+    "text": "반응성 애착장애를 확정하기 전에 자폐스펙트럼장애 평가가 필요하다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 자폐스펙트럼장애 기준을 충족하면 반응성 애착장애를 진단하지 않으므로 반복 행동과 사회적 의사소통을 평가해야 한다."
+   },
+   {
+    "key": "4",
+    "text": "3세라는 연령은 진단 연령 기준을 벗어난다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 발달연령 9개월 이상이고 5세 이전 발현이므로 연령 기준에 맞다."
+   },
+   {
+    "key": "5",
+    "text": "입양 후 양육 환경이 좋아졌으므로 증상과 무관하게 진단할 필요가 없다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 현재 기준을 충족하면 진단하며, 안정적 양육은 치료적 개입의 핵심 맥락이 된다."
+   }
+  ],
+  "answer": [
+   "1",
+   "2",
+   "3"
+  ],
+  "theory": "반응성 애착장애 사례",
+  "concept": "사례-RAD",
+  "explanation": "반응성 애착장애 진단에는 위축 증상, 사회정서 장해, 불충분한 양육 이력, 자폐스펙트럼장애 배제, 연령 기준을 함께 확인한다.",
+  "sources": [
+   {
+    "source_name": "California Evidence-Based Clearinghouse for Child Welfare 및 StatPearls 반응성 애착장애",
+    "ref": "https://www.cebc4cw.org/dsm-5-criteria-for-reactive-attachment-disorder-rad",
+    "unit": "DSM-5 Criteria for Reactive Attachment Disorder",
+    "basis": "양육자에 대한 일관된 정서적 위축 행동, 지속적 사회정서 장해, 불충분한 양육 이력이 필요하고, 자폐스펙트럼장애 기준을 충족하지 않아야 하며, 장해는 5세 이전에 분명하고 발달연령은 최소 9개월이어야 한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L4-007",
+  "domain": "trauma",
+  "disorder": "dsed",
+  "related": [
+   "rad"
+  ],
+  "level": 4,
+  "type": "single",
+  "polarity": "correct",
+  "case": "4세 H는 생후 18개월까지 여러 위탁가정을 옮겨 다녔고 이후 현재 가정에 입양되었다. 놀이터에서 처음 본 어른에게 다가가 안기고 집에 같이 가자고 한다. 마트에서 양부모를 확인하지 않고 낯선 사람을 따라 나가려 한 적이 여러 번 있다. 양부모에게도 애정을 표현하지만 누구에게나 비슷하게 대한다.",
+  "stem": "이 사례에 가장 적절한 진단 가설은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "자폐스펙트럼장애",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 사회적 접근이 과도할 뿐 사회적 의사소통 결함이나 제한적 반복 행동이 제시되지 않았다."
+   },
+   {
+    "key": "2",
+    "text": "정상 발달 범위의 외향적 기질",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 낯선 사람을 따라가는 행동은 문화적 기준을 벗어난 경계 부족이며 양육 결핍 이력과 연결된다."
+   },
+   {
+    "key": "3",
+    "text": "탈억제 사회관여장애",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "적절하다. 낯선 성인에게 적극 접근하고, 양육자를 확인하지 않으며, 낯선 사람을 따라가려 하고, 불충분한 양육 이력이 있다."
+   },
+   {
+    "key": "4",
+    "text": "반응성 애착장애",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 위축과 위안 추구 결여가 아니라 무분별한 사회적 접근이 핵심이다."
+   },
+   {
+    "key": "5",
+    "text": "분리불안장애",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 분리불안장애 아동은 애착 대상과 떨어지는 것을 두려워하지만, 이 아동은 양육자를 확인하지 않고 낯선 사람을 따라간다."
+   }
+  ],
+  "answer": [
+   "3"
+  ],
+  "theory": "탈억제 사회관여장애 사례",
+  "concept": "사례-DSED",
+  "explanation": "탈억제 사회관여장애는 낯선 성인과의 지나친 친숙함, 양육자 확인 감소, 낯선 성인을 따라감 중 2개 이상과 불충분한 양육 이력으로 진단한다.",
+  "sources": [
+   {
+    "source_name": "California Evidence-Based Clearinghouse for Child Welfare",
+    "ref": "https://cebc4cw.org/search/topic-areas/dsm-5-criteria-for-disinhibited-social-engagement-disorder",
+    "unit": "DSM-5 Criteria for Disinhibited Social Engagement Disorder",
+    "basis": "낯선 성인에게 적극적으로 다가가 상호작용하며 지나친 친숙함, 양육자 확인의 감소, 낯선 성인을 주저 없이 따라감 등 가운데 2개 이상을 보이고, 불충분한 양육 이력이 있으며, 발달연령이 최소 9개월이어야 한다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L4-008",
+  "domain": "trauma",
+  "disorder": "prolonged_grief",
+  "related": [],
+  "level": 4,
+  "type": "single",
+  "polarity": "correct",
+  "case": "58세 I씨는 14개월 전 어머니를 암으로 잃었다. 거의 매일 어머니를 그리워하며 하루 대부분을 어머니 생각으로 보낸다. 어머니 없이는 내가 누군지 모르겠다고 말하고 삶이 의미 없다고 느낀다. 친구 모임을 끊고 직장 업무도 제대로 하지 못한다. 그는 자신의 반응이 가족과 지역 문화의 일반적 애도 기간을 훨씬 넘는다고 인정한다.",
+  "stem": "이 사례에 대한 진단 판단으로 가장 적절한 것은? 지속성 비탄장애는 DSM-5-TR 신설 진단으로 교재 3판에는 수록되지 않았을 수 있다.",
+  "options": [
+   {
+    "key": "1",
+    "text": "PTSD로 진단한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 암으로 인한 자연사는 기준 A가 아니며 침투나 공포 반응보다 그리움이 중심이다."
+   },
+   {
+    "key": "2",
+    "text": "적응장애로만 진단해야 한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 지속성 비탄장애 기준을 충족하면 그것을 우선 고려한다."
+   },
+   {
+    "key": "3",
+    "text": "사망 후 6개월이 지나야 하는 기준을 충족하지 못한다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 성인 기준은 12개월이며 이 사례는 14개월로 기준을 충족한다."
+   },
+   {
+    "key": "4",
+    "text": "DSM-5-TR 기준으로 지속성 비탄장애를 고려할 수 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "적절하다. 사망 후 14개월로 성인 기준 12개월을 넘고, 강한 그리움, 정체성 혼란, 의미 상실, 기능 손상이 있다."
+   },
+   {
+    "key": "5",
+    "text": "정상 애도이므로 진단하지 않는다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적절하지 않다. 기간과 강도, 기능 손상이 정상 애도의 범위를 넘는다."
+   }
+  ],
+  "answer": [
+   "4"
+  ],
+  "theory": "지속성 비탄장애 사례",
+  "concept": "사례-지속성비탄",
+  "explanation": "지속성 비탄장애는 성인 12개월 경과, 그리움 또는 몰두, 정체성 혼란 등 부가 증상, 기능 손상으로 판단한다.",
+  "sources": [
+   {
+    "source_name": "미국정신의학회(APA) DSM-5-TR 지속성 비탄장애 자료",
+    "ref": "https://www.psychiatry.org/File%20Library/Psychiatrists/Practice/DSM/DSM-5-TR/APA-DSM5TR-ProlongedGriefDisorder.pdf",
+    "unit": "Prolonged Grief Disorder",
+    "basis": "가까운 사람의 사망 후 성인은 최소 12개월, 아동과 청소년은 최소 6개월이 지나야 하며, 고인에 대한 강렬한 그리움 또는 고인에 대한 생각과 기억에의 몰두가 핵심이다. 일상 기능에 정상 애도와 달리 손상을 준다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L4-009",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 4,
+  "type": "single",
+  "polarity": "correct",
+  "case": "29세 J씨는 6개월 전 폭행을 당한 뒤 나는 영원히 망가졌고 다시는 안전할 수 없다고 말한다. 외출할 때마다 호신용품을 여러 개 챙기고 항상 출입문이 보이는 자리에 앉는다. 사건 생각이 떠오르면 억지로 다른 생각을 하려 애쓰지만 오히려 더 자주 떠오른다. 사건은 지나갔지만 지금도 언제든 공격당할 것 같다고 느낀다.",
+  "stem": "이 사례의 증상 유지 과정을 설명하기에 가장 적합한 이론은?",
+  "options": [
+   {
+    "key": "1",
+    "text": "Bowlby의 애착이론",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적합하지 않다. 사례의 핵심은 성인의 외상 평가와 유지 행동이며 초기 애착 문제가 아니다."
+   },
+   {
+    "key": "2",
+    "text": "Horowitz의 스트레스 반응 이론",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "덜 적합하다. 침투와 회피의 교대보다 외상의 의미 평가와 안전행동이 두드러진다."
+   },
+   {
+    "key": "3",
+    "text": "Mowrer의 2요인 이론",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "덜 적합하다. 회피는 설명하지만 자기 평가와 현재 위협감이라는 인지 요소를 설명하지 못한다."
+   },
+   {
+    "key": "4",
+    "text": "Freud의 유혹 이론",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "적합하지 않다. 사례의 인지와 행동 유지 요인을 설명하는 이론이 아니다."
+   },
+   {
+    "key": "5",
+    "text": "Ehlers와 Clark의 인지모형",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "적합하다. 나는 영원히 망가졌다는 부정적 평가가 현재 위협감을 만들고, 안전행동과 사고억제가 평가 수정을 막는다는 설명이 사례와 잘 맞는다."
+   }
+  ],
+  "answer": [
+   "5"
+  ],
+  "theory": "Ehlers & Clark 인지모형 적용",
+  "concept": "사례-이론-EhlersClark",
+  "explanation": "Ehlers와 Clark 모형은 부정적 평가, 정교화되지 않은 외상 기억, 안전행동과 사고억제라는 세 요소로 지속을 설명하며 인지치료의 근거가 된다.",
+  "sources": [
+   {
+    "source_name": "Ehlers & Clark 2000, Behaviour Research and Therapy(PubMed)",
+    "ref": "https://pubmed.ncbi.nlm.nih.gov/10761279/",
+    "unit": "A cognitive model of PTSD",
+    "basis": "PTSD는 외상을 현재의 심각한 위협감으로 처리할 때 지속되며, 그 원천은 외상과 후유증에 대한 과도한 부정적 평가와 정교화·맥락화가 부족한 외상 기억이다. 사고억제, 반추, 안전행동 같은 전략이 문제를 유지시킨다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ },
+ {
+  "id": "TRM-L4-010",
+  "domain": "trauma",
+  "disorder": "ptsd",
+  "related": [],
+  "level": 4,
+  "type": "multi",
+  "polarity": "correct",
+  "case": "주유소 폭발 사고 생존자 K씨는 휘발유 냄새를 맡으면 불길과 굉음이 지금 일어나는 것처럼 생생하게 떠오른다. 그 순간 몸이 굳고 뜨거운 열기를 느낀다. 그러나 상담에서 사고 경위를 설명하려 하면 장면이 단편적이고 순서가 뒤죽박죽이다. 그는 기억을 일부러 떠올리려 하면 잘 안 되는데 냄새만 맡으면 갑자기 덮쳐온다고 말한다.",
+  "stem": "이 사례에 Brewin의 이중표상 이론을 적용한 설명으로 옳은 것을 모두 고르시오.",
+  "options": [
+   {
+    "key": "1",
+    "text": "휘발유 냄새에 촉발된 생생한 장면 재경험은 상황적 접근 기억의 활성화로 볼 수 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 감각 단서에 의해 자동으로 촉발되는 감각적 기억이 상황적 접근 기억이다."
+   },
+   {
+    "key": "2",
+    "text": "사건 경위를 말로 설명하려 하면 단편적이고 순서가 뒤엉키는 것은 언어적 접근 기억의 정교화가 부족함을 시사한다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 언어적 접근 기억이 충분히 형성되지 않으면 맥락화된 서술이 어렵다."
+   },
+   {
+    "key": "3",
+    "text": "치료에서는 외상 기억을 언어화하고 맥락 속에 통합하여 언어적 접근 기억을 강화하는 것이 목표가 될 수 있다.",
+    "is_true": true,
+    "in_answer": true,
+    "explanation": "옳다. 상황적 기억 내용을 언어적, 맥락적 기억으로 옮겨 통합하면 플래시백이 줄어든다고 본다."
+   },
+   {
+    "key": "4",
+    "text": "재경험 장면이 현재처럼 느껴지는 것은 언어적 접근 기억이 시간 맥락을 너무 잘 담고 있기 때문이다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 시간 맥락이 결여된 감각 기억, 즉 상황적 접근 기억이 현재처럼 느껴지게 만든다."
+   },
+   {
+    "key": "5",
+    "text": "이중표상 이론에 따르면 플래시백은 의지로 자유롭게 불러낼 수 있다.",
+    "is_true": false,
+    "in_answer": false,
+    "explanation": "틀리다. 상황적 접근 기억은 의도적 인출이 어렵고 단서에 의해 자동 촉발된다."
+   }
+  ],
+  "answer": [
+   "1",
+   "2",
+   "3"
+  ],
+  "theory": "Brewin 이중표상 이론 적용",
+  "concept": "사례-이론-이중표상",
+  "explanation": "이중표상 이론은 플래시백의 감각성, 현재성, 단서 의존성과 서술 기억의 단편성을 함께 설명한다.",
+  "sources": [
+   {
+    "source_name": "Brewin, Dalgleish, Joseph 1996, Psychological Review(PubMed)",
+    "ref": "https://pubmed.ncbi.nlm.nih.gov/8888651/",
+    "unit": "A dual representation theory of PTSD",
+    "basis": "외상은 의도적으로 인출 가능한 언어적 접근 기억과 상황 단서에 의해 자동 촉발되는 상황적 접근 기억의 두 표상을 만들며, 플래시백은 상황적 접근 기억에서 비롯된다. 2010년 개정판은 감각 기반 표상과 맥락 기반 표상으로 재정리했다.",
+    "checked_date": "2026-11-20",
+    "source_verified": true,
+    "verify_method": "WebSearch 결과 요약 확인",
+    "textbook_compared": false
+   }
+  ],
+  "verification_status": "출처확인",
+  "textbook_compared": false
+ }
+]
