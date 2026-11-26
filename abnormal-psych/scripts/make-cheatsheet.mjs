@@ -3,7 +3,7 @@
 // 브라우저에서 실제 높이를 재며 쪽을 나누고(영역별 색 탭·머리글·쪽번호), 목표 쪽수에 맞을 때까지 글자 크기를 줄인다.
 import { createRequire } from 'node:module'; import fs from 'node:fs'; import path from 'node:path';
 const require = createRequire(import.meta.url); const { chromium } = require('playwright');
-const [srcDir, outPdf, targetArg] = process.argv.slice(2); const TARGET = Number(targetArg || 10);
+const [srcDir, outPdf, targetArg, minArg] = process.argv.slice(2); const TARGET = Number(targetArg || 10); const MINFS = Number(minArg || 6.9);
 const DOMS = [['anxiety', '불안장애', '#2f6f9f'], ['ocd', '강박 및 관련 장애', '#7a5aa6'], ['trauma', '외상·스트레스 관련 장애', '#b5651d'], ['personality', '성격장애', '#2e7d4f']];
 const data = DOMS.map(([d]) => JSON.parse(fs.readFileSync(path.join(srcDir, d + '.json'), 'utf8')));
 
@@ -16,7 +16,7 @@ body{font-family:"Noto Sans CJK KR","NanumGothic",sans-serif;color:#111;font-siz
 .hdr{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1.6pt solid var(--c);padding-bottom:1.2mm;margin-bottom:2mm;height:8mm}
 .hdr .t{font-weight:900;font-size:13pt;color:var(--c)}.hdr .s{font-size:7.5pt;color:#555;max-width:120mm;text-align:right;line-height:1.25}
 .pno{position:absolute;bottom:4mm;left:0;right:0;text-align:center;font-size:8pt;color:#555}
-.tab{position:absolute;right:0;width:10mm;height:38mm;background:var(--c);color:#fff;writing-mode:vertical-rl;font-weight:900;font-size:9.5pt;display:flex;align-items:center;justify-content:center;letter-spacing:1px;border-radius:2mm 0 0 2mm}
+.tab{position:absolute;right:0;width:10mm;height:40mm;background:var(--c);color:#fff;writing-mode:vertical-rl;font-weight:900;font-size:9.5pt;display:flex;align-items:center;justify-content:center;letter-spacing:1px;border-radius:2mm 0 0 2mm}
 .cols{display:flex;gap:4mm;height:calc(297mm - 18mm - 10mm - 6mm)}
 .col{flex:1;min-width:0;overflow:hidden}
 .unit{border:0.8pt solid var(--c);border-radius:1.5mm;margin-bottom:1.8mm;break-inside:avoid}
@@ -40,14 +40,14 @@ h2{font-size:10.5pt;margin:1.8mm 0 1mm;color:#222;border-left:2.2mm solid #333;p
 
 const browser = await chromium.launch(); const page = await browser.newPage();
 await page.setContent(html); await page.evaluate(() => document.fonts.ready);
-const result = await page.evaluate(({ DOMS, data, TARGET }) => {
+const result = await page.evaluate(({ DOMS, data, TARGET, MINFS }) => {
   const esc = s => String(s ?? '').replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
   const md = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
   const color = Object.fromEntries(DOMS.map(d => [d[0], d[2]])); const dname = Object.fromEntries(DOMS.map(d => [d[0], d[1]]));
   const TABTOP = { anxiety: 22, ocd: 64, trauma: 106, personality: 148, front: 190 };
   function mkPage(dom, title, sub) {
     const p = document.createElement('div'); p.className = 'page'; p.style.setProperty('--c', dom ? color[dom] : '#333');
-    p.innerHTML = `<div class="hdr"><span class="t">${esc(title)}</span><span class="s">${esc(sub || '')}</span></div><div class="tab" style="top:${TABTOP[dom || 'front']}mm">${esc(dom ? dname[dom] : '색인·총정리')}</div><div class="pno"></div>`;
+    p.innerHTML = `<div class="hdr"><span class="t">${esc(title)}</span><span class="s">${esc(sub || '')}</span></div><div class="tab" style="top:${TABTOP[dom || 'front']}mm">${esc(dom ? ({ anxiety: '불안장애', ocd: '강박관련', trauma: '외상·스트레스', personality: '성격장애' })[dom] : '색인')}</div><div class="pno"></div>`;
     document.body.appendChild(p); return p;
   }
   function run(fs) {
@@ -81,28 +81,35 @@ const result = await page.evaluate(({ DOMS, data, TARGET }) => {
       }
     });
     // 마지막 쪽: 감별 + 이론가 색인
-    const pl = mkPage(null, '감별진단 쌍 · 이론가 색인', '이론가는 가나다순 · 오른쪽 숫자 = 이 요약집 쪽'); pages.push({ el: pl, dom: null });
+    const pd = mkPage(null, '헷갈리는 감별진단 쌍', '영역 색 = 왼쪽 띠'); pages.push({ el: pd, dom: null });
+    const pl = mkPage(null, '이론가 색인', '가나다순 · (장애 p.쪽) = 이 요약집 쪽'); pages.push({ el: pl, dom: null });
     const diffs = data.flatMap((d, i) => (d.differentials || []).map(x => ({ ...x, dom: DOMS[i][0] })));
+    const norm = x => String(x).replace(/\s|성격장애|장애|\(.*?\)/g, '');
+    const pageOf = t => { const toks = String(t.disorder).split(/[·,\/]| 및 /).map(norm).filter(Boolean); const us = data[DOMS.findIndex(d => d[0] === t.dom)].units; const hits = [];
+      for (const tk of toks) { const u = us.find(u => norm(u.name) === tk) || us.find(u => norm(u.name).includes(tk) || tk.includes(norm(u.name))); if (u && where[u.name] && !hits.includes(where[u.name])) hits.push(where[u.name]); }
+      if (hits.length) return hits.sort((a, b) => a - b).join(','); const ps = pages.map((p, i) => i + 1).filter(i => pages[i - 1].dom === t.dom); return ps[0] + '–' + ps[ps.length - 1]; };
     const ths = data.flatMap((d, i) => (d.theorists || []).map(x => ({ ...x, dom: DOMS[i][0] }))).sort((a, b) => (a.ko || a.name).localeCompare(b.ko || b.name, 'ko'));
-    pl.insertAdjacentHTML('beforeend', `<h2>헷갈리는 감별쌍</h2><table class="small"><tbody>${diffs.map(x => `<tr><td style="width:30%;border-left:2mm solid ${color[x.dom]}"><b>${esc(x.a)}</b> vs <b>${esc(x.b)}</b></td><td>${md(x.point)}</td></tr>`).join('')}</tbody></table><h2>이론가 색인</h2><div class="idx small" style="font-size:calc(var(--fs) - 0.3pt);line-height:1.3">${ths.map(t => `<div style="display:block;border-bottom:0.4pt dotted #ccc"><span class="dot" style="background:${color[t.dom]}"></span><b>${esc(t.ko || t.name)}</b> ${esc(t.ko ? t.name : '')} — ${esc(t.idea)} <span style="color:#666">(${esc(t.disorder)} p.${where[t.disorder] || '·'})</span></div>`).join('')}</div>`);
+    pd.insertAdjacentHTML('beforeend', `<table style="font-size:calc(var(--fs) + 0.6pt)"><tbody>${diffs.map(x => `<tr><td style="width:30%;border-left:2mm solid ${color[x.dom]}"><b>${esc(x.a)}</b> vs <b>${esc(x.b)}</b></td><td>${md(x.point)}</td></tr>`).join('')}</tbody></table>`);
+    pl.insertAdjacentHTML('beforeend', `<div class="idx" style="column-count:2;font-size:var(--fs);line-height:1.35">${ths.map(t => `<div style="display:block;border-bottom:0.4pt dotted #ccc"><span class="dot" style="background:${color[t.dom]}"></span><b>${esc(t.ko || t.name)}</b> ${esc(t.ko ? t.name : '')} — ${esc(t.idea)} <span style="color:#666">(${esc(t.disorder)} p.${pageOf(t)})</span></div>`).join('')}</div>`);
     // 1쪽 색인
     const entries = Object.entries(where).sort((a, b) => a[0].localeCompare(b[0], 'ko'));
     const domOf = n => { for (let i = 0; i < data.length; i++) if (data[i].units.some(u => u.name === n)) return DOMS[i][0]; };
     const map = DOMS.map(([dom, name, c]) => { const ps = pages.map((p, i) => ({ ...p, n: i + 1 })).filter(p => p.dom === dom); return `<div><span class="dot" style="background:${c}"></span><b>${esc(name)}</b> p.${ps[0].n}–${ps[ps.length - 1].n} · 오른쪽 탭 ${['맨 위', '두 번째', '세 번째', '네 번째'][DOMS.findIndex(d => d[0] === dom)]}</div>`; }).join('');
-    p1.insertAdjacentHTML('beforeend', `<h2>영역 찾기 (오른쪽 가장자리 색 탭 위치)</h2><div class="legend">${map}<div><span class="dot" style="background:#333"></span><b>숫자 총정리</b> p.2 · <b>감별·이론가</b> p.${pages.length}</div></div>
+    p1.insertAdjacentHTML('beforeend', `<h2>영역 찾기 (오른쪽 가장자리 색 탭 위치)</h2><div class="legend">${map}<div><span class="dot" style="background:#333"></span><b>숫자 총정리</b> p.2 · <b>감별쌍</b> p.${pages.length - 1} · <b>이론가 색인</b> p.${pages.length}</div></div>
       <h2>장애·단원 색인 (가나다)</h2><div class="idx">${entries.map(([n, p]) => `<div><span><span class="dot" style="background:${color[domOf(n)]}"></span>${esc(n)}</span><b>${p}</b></div>`).join('')}</div>
-      <h2>쪽별 내용</h2><div class="idx" style="font-size:8pt">${pages.map((p, i) => `<div style="display:block"><b>p.${i + 1}</b> ${esc(i === 0 ? '색인' : i === 1 ? '숫자·기준 총정리' : i === pages.length - 1 ? '감별쌍·이론가 색인' : p.names.join(', '))}</div>`).join('')}</div>
+      <h2>쪽별 내용</h2><div class="idx" style="font-size:8pt">${pages.map((p, i) => `<div style="display:block"><b>p.${i + 1}</b> ${esc(i === 0 ? '색인' : i === 1 ? '숫자·기준 총정리' : i === pages.length - 2 ? '감별진단 쌍' : i === pages.length - 1 ? '이론가 색인' : p.names.join(', '))}</div>`).join('')}</div>
+      <h2>시험 빈출 숫자·함정 14</h2><div style="column-count:2;column-gap:4mm;font-size:8.2pt;line-height:1.4">${['**PTSD = 1개월 초과**, ASD = 외상 후 **3일~1개월** → 1개월 이내는 PTSD 진단 불가','기준 A: 매체(TV·사진·SNS) 노출은 **업무 관련일 때만**, 주관적 공포 반응(A2)은 DSM-5에서 **삭제**','적응장애: 스트레스 요인 후 **3개월 이내** 시작, 요인 종료 후 **6개월 이내** 소멸','RAD·DSED: 발달연령 **9개월↑**, RAD는 **5세 이전** 발현, 자폐스펙트럼장애면 RAD 진단 불가','지속성 비탄장애(**TR 신설**): 성인 **12개월**·아동 **6개월** — 교재(DSM-5)에 없을 수 있음','범불안장애 **6개월**, 6개 증상 중 **3개**(아동 **1개**) / 공황장애: 발작 후 **1개월↑** 걱정·행동 변화','광장공포증 5개 상황군 중 **2개↑**, 공황장애와 **별개 진단**(DSM-5) / 분리불안: 아동 **4주**, 성인 대개 **6개월**','선택적 무언증 **1개월↑**, 입학 **첫 1개월**은 제외 / 사회불안: 아동은 **또래 관계**에서도 불안','강박장애 \'하루 1시간\'은 **예시**(고통·손상으로도 충족), **통찰 결여**여도 강박장애(정신병 아님)','저장장애 **과도한 획득 = 명시자**(기준 아님), 발모광 **긴장·쾌감 기준 삭제**, 반복 중단 시도 기준','강박장애(**자아이질적**) vs 강박성 성격장애(**자아동조적**) — 둘 다 충족하면 **동시 진단**','성격장애 역치: 편집·조현·회피 **7중4** · 강박성 **8중4** · 반사회성 **7중3** · 연극·의존 **8중5** · 조현형·경계·자기애 **9중5**','반사회성: **18세↑** + **15세 이전 품행장애** 증거 / 18세 미만 성격장애는 **1년↑** 지속 시 가능(반사회성 제외)','대안모형: 성격기능 **4요소**(정체성·자기주도성·공감·친밀감, 0~4수준) + **5특성영역**, 특정 PD **6개**'].map((t, i) => `<div style="break-inside:avoid;padding:0.4mm 0 0.4mm 4mm;text-indent:-4mm;border-bottom:0.4pt dotted #ccc"><b>${i + 1}.</b> ${md(t)}</div>`).join('')}</div>
       <h2>시험장에서 쓰는 법</h2><div class="note">① 문제의 <b>장애명</b> → 이 쪽 색인에서 쪽 번호 → 해당 색 탭으로 바로 이동. ② <b>숫자</b>(몇 개 중 몇 개, 기간, 연령)를 묻는 문제 → p.2 표. ③ <b>학자 이름</b>이 나오면 → 마지막 쪽 이론가 색인. ④ "옳은/옳지 않은 것을 <b>모두</b>" → 각 장애 박스의 <b>감별·함정</b> 줄과 대조. ⑤ 본문 노란 밑줄(굵게) = 최소 역치·핵심어. ⑥ 이 요약집은 공개 전문자료로 만든 것이라 교재 표현·쪽수와 다를 수 있습니다. 교재 해당 쪽을 이 옆 여백에 적어 두세요.</div>
       <h2>교재 쪽 메모</h2><table class="small"><tr><th>불안장애</th><th>강박 및 관련</th><th>외상·스트레스</th><th>성격장애</th></tr><tr><td style="height:16mm"></td><td></td><td></td><td></td></tr></table>`);
     pages.forEach((p, i) => { p.el.querySelector('.pno').textContent = (i + 1) + ' / ' + pages.length; if (p.dom) p.el.querySelector('.hdr .s').textContent = p.names.join(' · '); });
-    const ovf = [p1, p2, pl].map(el => el.scrollHeight > el.clientHeight + 1);
+    const ovf = [p1, p2, pd, pl].map(el => el.scrollHeight > el.clientHeight + 1);
     return { n: pages.length, ovf };
   }
   let fs = 8.6, r;
-  for (; fs >= 6.9; fs = Math.round((fs - 0.1) * 10) / 10) { r = run(fs); if (r.n <= TARGET && !r.ovf.some(Boolean)) break; }
+  for (; fs >= MINFS; fs = Math.round((fs - 0.1) * 10) / 10) { r = run(fs); if (r.n <= TARGET && !r.ovf.some(Boolean)) break; }
   return { fs, ...r };
-}, { DOMS, data, TARGET });
-console.log('font', result.fs, 'pt, pages', result.n, 'overflow(p1,p2,last)', result.ovf);
+}, { DOMS, data, TARGET, MINFS });
+console.log('font', result.fs, 'pt, pages', result.n, 'overflow(p1,p2,diff,theorists)', result.ovf);
 await page.pdf({ path: outPdf, format: 'A4', printBackground: true, margin: { top: 0, right: 0, bottom: 0, left: 0 } });
 await page.screenshot({ path: outPdf.replace(/\.pdf$/, '-preview.png'), fullPage: false });
 await browser.close();
