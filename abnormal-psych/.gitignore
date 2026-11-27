@@ -4,3 +4,4 @@ tests/results/backup-sample.json
 tests/results/bad-backup.json
 release/
 app/dist/audio-single/
+__pycache__/
